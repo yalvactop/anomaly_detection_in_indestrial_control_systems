@@ -243,15 +243,15 @@ criticZ = [
 
 hyperparameters = {
     "epochs": 1,
-    "shape": (100, 53),
+    "shape": (100, 52),
     "optimizer": "keras.optimizers.Adam",
     "learning_rate": 0.0005,
     "latent_dim": 20,
     "batch_size": 64,
     "n_critic": 5,
-    "encoder_input_shape": (100, 53),
+    "encoder_input_shape": (100, 52),
     "generator_input_shape": (20, 1),
-    "critic_x_input_shape": (100, 53),
+    "critic_x_input_shape": (100, 52),
     "critic_z_input_shape": (20, 1),
     "encoder_reshape_shape": (20, 1),
     "generator_reshape_shape": (50, 1),
