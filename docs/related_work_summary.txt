@@ -1,0 +1,79 @@
+5. Multivariate Industrial Time Series with Cyber-Attack Simulation: Fault Detection Using an LSTM-based Predictive Data Model	|2016|cited119|
+4. Multi-level Anomaly Detection in Industrial Control Systems via Package Signatures and LSTM networks				|2017|cited122|
+3. DeepLog: anomaly detection and diagnosis from system logs through deep learning						|2017|cited483|
+2. MAD-GAN: Multivariate Anomaly Detection for Time Series Data with Generative Adversarial Networks				|2019|cited136|
+1. TadGAN: Time Series Anomaly Detection Using Generative Adversarial Networks							|2020|cited005|
+
+Useful Articles:
+Deep learning for time series classification: a review										|2019|cited754|
+Adversarial Attacks on Time-Series Intrusion Detection for Industrial Control Systems						|2020|   -    |
+Detecting Cyberattacks in Industrial Control Systems Using Convolutional Neural Networks					|2018|cited114|
+Time Series Analysis: Unsupervised Anomaly Detection Beyond Outlier Detection							|2018|cited018|
+
+## TadGAN
+They generate time series data using GAN and measure the difference between generated and real data to detect anomalies.
+No need to know how the anomaly looks like. Model learns time series pattern.
+Related Work
+There are proximity based methods to identify anomalies like KNN. Drawbacks: apriori knowledge is required about anomaly duration andnumber of anomalies and cannot capture temporal correlations.
+Prediction-based methods: compares the real data and the predicted value. Drawback: requires domain knowledge, sensitive to parameter selection
+Reconstruction based methods: captures low dimensional represntation of the data to generate syntetic reconstruction. It is based on the idea that anomalies lose information when they are mapped to a lower dimensional space thereby cannot be effectively reconstructed thus high construction errors suggest a high change of anomaly. PCA for dimension reduction but requires high correlation and folloow gaussian distribution.
+there are also  deep learningn based approaches like AE or LSTM. Drawback without proper regularization can be overfitted
+Paper introduces cycle consistent generative adverserial learning where Critic and Generator outputs are used for anomaly score compuutation. Generators are used for time-series reconstruction
+Reconstruction based anomaly detection works because the model encodes the time series and decodes it back for reconstruction. During encoding, information about anomalies are lost so they are not decoded for reconstruction.
+Generators: E and G. E:encodes time series to latent space, G:decodes latent to reconstructed time series
+Critics (Discriminators): C_x: difference between real time series and generated time series. C_z: measeures performance of the mapping into latent space
+They have a Critic that is Cx trained to distinguish between real and fake time series sequences, hence the score of the Critic can directly serve as an anomaly measure. Second, the two Generators trained with cycle consistency loss allow us to encode and decode a time series sequence. The difference between the original sequence and the decoded sequence can be used as a second anomaly detection measure.
+Anomaly pruning approach to reduce false positives caused by sliding window approach
+Only Critics based TadGAN is weak because critics can only differentiate real data with generated data
+DWT(window based): distance measure to measure reconstructioon error	
+CriticxDTW is the best result: multiplication to amplify high anomaly scores.
+any reconstruction-based algorithm of time series can employ our anomaly scoring method for time series anomaly detection.
+Future Work:
+investigate various strategies for time series reconstruction and compare their performances to the current state-of-the-art
+
+## DeepLog
+DeepLog is a deep neural network that models this sequence of log entries using a Long Short-Term Memory (LSTM). (natural language processing)	
+challenge: log data is unstructured and vary a lot. rule-based approach can overcome this problem but requires domain knowledge. Decisions need to be made in streaming fashion so offline methods cannot be used since they make several passes on the data
+Deeplog also adapts itself to new system execution by asking feedback from the user for the classification
+Log Parser: parses unstructured texts into structured texts
+Past work discarded timestamps. Deeplog appends the time difference between two log entries into the vector which i used in deeplog in addition to the log key
+three main components: the log key anomaly detection model, the parameter value anomaly detection model, and the workƒow model to diagnose detected anomalies.
+learns and encodes entire log message including timestamp, log key, and parameter values, performs anomaly detection at per log entry level, rather than at per session level
+DeepLog can separate out different tasks from a log €le and construct a work-ƒlow model for each task using both deep learning (LSTM) and classic mining (density clustering) approaches
+future work: use other NN, use different domains and systems
+
+## MADGAN
+Statistical process control methods like CUSUM are not successful because of the increasingly complex and dynamic nature of cyber physical systems
+the GAN's generator and discriminator are constructed as two Long-Short-Term Recurrent Neural Networks (LSTM-RNN)
+(G) generates fake time series with sequences from a random latent space as its inputs, and passes the generated sequence samples to the discriminator (D), which will try to distinguish the generated (i.e. \fake") data sequences from the actual (i.e. \real") normal training data sequences
+Instead of treating each data stream independently, the MAD-GAN framework considers the entire variable set concurrently in order to capture the latent interactions amongst the variables into the models. they divide the multivariate time series into sub-sequences with a sliding window before discrimination
+discriminator can be trained to be as sensitive as possible to assign correct labels to both real and fake sequences, while the generator will be trained to be as smart as possible to fool the discriminator (i.e. to mislead D to assign real labels to fake sequences)
+G learns to generate data as real as possible and D learns to distinguish fake data from real
+Both G and D are expoited for the anomaly detection task by (i) reconstruction: exploiting the residuals between real-time testing samples and reconstructed samples by G based on the mapping from real-time space to the GAN latent space; and (ii) discrimination: using the discriminator D to classify the time series
+Discrimination and reconstruction score is calculated by mapping the anomaly detection loss (output of discriminator and generator) back to the original time series
+PCA is used to reduce the dimension to prevent computation overload for LSTM
+subsequence length = window size: hyperparameter: small better
+Future Work:
+determining subsequence length
+choosing latent and PC dimensions in PCA
+feature selection
+
+## Multi-level Anomaly Detection in Industrial Control Systems via Package Signatures and LSTM networks
+The anomaly detector takes advantage of predicatable and regular nature of communcation patterns between field devices.
+Current challanges: no generalizebility, signature-based, temporal dependencies between packages are least studied but they are important
+Package level anomaly detection: signature database: the network packages are transformed into feature vectors. For continuous values discritizatoin is a problem which affects the accuracy.
+Bloom filter is a probabilistic data structure to store signatures. It is like a hash table. so there is probability of collusion or false positive lookup.
+Packages that pass the bloom filter can be still anomalous so stacked LSTM is used for time-series level anomaly detection.
+LSTM take timeseries as input and learn their high dimensional features to predict the next timestep. The predicted timestep can be compared with the actual one to determine whether the actual one is an anomaly or not.
+Because of high dimensionality, it is difficult/impossible to precisely reconstruct the next timestep to compute similarity metrics between two packages. To overcome this problem, LSTM predicts the most probable "k" signatures from the signature database rather than the package itself.
+Note that this mechanism should work well since the false positive rate of the Bloom filter detector can be estimated by the validation error during the training phase, and thus can be well controlled by tuning the granularity of feature discretization.
+Future Work:
+test with a bigger dataset
+try convolutional LSTM with larger and more complicated dataset
+research on setting "k" dynamically based on previous predictions
+
+## Multivariate Industrial Time Series with Cyber-Attack Simulation: Fault Detection Using an LSTM-based Predictive Data Model
+Regular LSTM for anomaly detection. They calculate anomalies in terms of forecasting error. If the error is above the precalculated threshold then classified as an anomaly. This threshold can be used as a hyperparameter to adjust the false positives.
+Future work:
+instead of a binary classifier, make prioritization of anomalies. this can be provided using ROC curves
+do not only provide the time when the anomaly happened but also localize the subset of channels where it was detected.
