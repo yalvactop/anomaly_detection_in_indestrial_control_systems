@@ -204,6 +204,11 @@ class TadGAN(object):
         self.encoder_generator_model.compile(loss=[self._wasserstein_loss, self._wasserstein_loss,
                                                    'mse'], optimizer=self.optimizer,
                                              loss_weights=[1, 1, 10])
+        
+        print("self.encoder_input_shape ", self.encoder_input_shape)
+        print("self.generator_input_shape ", self.generator_input_shape)
+        print("self.critic_x_input_shape ", self.critic_x_input_shape)
+        print("self.critic_z_input_shape ", self.critic_z_input_shape)
 
     def _fit(self, X):
         fake = np.ones((self.batch_size, 1))
