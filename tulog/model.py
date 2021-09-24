@@ -90,7 +90,7 @@ generator = [
             "layer": {
                 "class": "keras.layers.Dense",
                 "parameters": {
-                    "units": 1
+                    "units": 52
                 }
             }
         }
