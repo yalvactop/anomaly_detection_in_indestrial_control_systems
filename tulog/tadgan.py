@@ -107,6 +107,10 @@ class TadGAN(object):
             built_layer = build_layer(layer, hyperparameters)
             model.add(built_layer)
 
+        #print("hyperparameters: ", hyperparameters)
+        #print(Model(x, model(x)).__dict__)
+        #print()
+        #print()
         return Model(x, model(x))
 
     def _wasserstein_loss(self, y_true, y_pred):
@@ -162,28 +166,9 @@ class TadGAN(object):
         z = Input(shape=(self.latent_dim, 1))
         x = Input(shape=self.shape)
         x_ = self.generator(z)
-        print("input: z.shape: ", z.shape)
-        print("output: x_.shape: ", x_.shape)
-        print("self.generator: ", self.generator.summary())
-        print()
-        print()
         z_ = self.encoder(x)
-        print("input: x.shape: ", x.shape)
-        print("output: z_.shape: ", z_.shape)
-        print("self.encoder: ", self.encoder.summary())
-        print()
-        print()
         fake_x = self.critic_x(x_)
-        print("input: x_.shape: ", x_.shape)
-        print("output: fake_x.shape: ", fake_x.shape)
-        print()
-        print()
         valid_x = self.critic_x(x)
-        print("input: x.shape: ", x.shape)
-        print("output: valid_x.shape: ", valid_x.shape)
-        print("self.critic_x: ", self.critic_x.summary())
-        print()
-        print()
         interpolated_x = RandomWeightedAverage()([x, x_])
         validity_interpolated_x = self.critic_x(interpolated_x)
         partial_gp_loss_x = partial(self._gradient_penalty_loss, averaged_samples=interpolated_x)
@@ -193,21 +178,20 @@ class TadGAN(object):
         self.critic_x_model.compile(loss=[self._wasserstein_loss, self._wasserstein_loss,
                                           partial_gp_loss_x], optimizer=self.optimizer,
                                     loss_weights=[1, 1, 10])
+        
+        '''
+        print("input: x_.shape: ", x_.shape)
+        print("output: fake_x.shape: ", fake_x.shape)
+        print("input: x.shape: ", x.shape)
+        print("output: valid_x.shape: ", valid_x.shape)
+        print("self.critic_x.summary(): ", self.critic_x.summary())
         print("self.critic_x_model.summary(): ", self.critic_x_model.summary())
         print()
         print()
+        '''
 
         fake_z = self.critic_z(z_)
-        print("input: z_.shape: ", z_.shape)
-        print("output: fake_z.shape: ", fake_z.shape)
-        print()
-        print()
         valid_z = self.critic_z(z)
-        print("input: z.shape: ", z.shape)
-        print("output: valid_z.shape: ", valid_z.shape)
-        print("self.critic_z: ", self.critic_z.summary())
-        print()
-        print()
         interpolated_z = RandomWeightedAverage()([z, z_])
         validity_interpolated_z = self.critic_z(interpolated_z)
         partial_gp_loss_z = partial(self._gradient_penalty_loss, averaged_samples=interpolated_z)
@@ -217,9 +201,17 @@ class TadGAN(object):
         self.critic_z_model.compile(loss=[self._wasserstein_loss, self._wasserstein_loss,
                                           partial_gp_loss_z], optimizer=self.optimizer,
                                     loss_weights=[1, 1, 10])
+        
+        '''
+        print("input: z_.shape: ", z_.shape)
+        print("output: fake_z.shape: ", fake_z.shape)
+        print("input: z.shape: ", z.shape)
+        print("output: valid_z.shape: ", valid_z.shape)
+        print("self.critic_z.summary(): ", self.critic_z.summary())
         print("self.critic_z_model.summary(): ", self.critic_z_model.summary())
         print()
         print()
+        '''
 
         self.critic_x.trainable = False
         self.critic_z.trainable = False
@@ -238,6 +230,14 @@ class TadGAN(object):
         self.encoder_generator_model.compile(loss=[self._wasserstein_loss, self._wasserstein_loss,
                                                    'mse'], optimizer=self.optimizer,
                                              loss_weights=[1, 1, 10])
+        
+        '''
+        print("input: x.shape: ", x.shape)
+        print("output: z_.shape: ", z_.shape)
+        print("self.encoder.summary(): ", self.encoder.summary())
+        print("input: z.shape: ", z.shape)
+        print("output: x_.shape: ", x_.shape)
+        print("self.generator.summary(): ", self.generator.summary())
         print("self.encoder_generator_model.summary(): ", self.encoder_generator_model.summary())
         print()
         print()
@@ -246,6 +246,7 @@ class TadGAN(object):
         print("self.generator_input_shape: ", self.generator_input_shape)
         print("self.critic_x_input_shape: ", self.critic_x_input_shape)
         print("self.critic_z_input_shape: ", self.critic_z_input_shape)
+        '''
 
     def _fit(self, X):
         fake = np.ones((self.batch_size, 1))
@@ -290,7 +291,7 @@ class TadGAN(object):
                 N-dimensional array containing the input training sequences for the model.
         """
         self._build_tadgan(**kwargs)
-        X = X.reshape((-1, self.shape[0], 1))
+        #X = X.reshape((-1, self.shape[0], 1))              COMMEMNTED THIS OUT
         self._fit(X)
 
     def predict(self, X):
