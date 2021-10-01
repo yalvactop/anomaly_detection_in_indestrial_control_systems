@@ -308,7 +308,8 @@ class TadGAN(object):
                 N-dimensional array containing the critic scores for each input sequence.
         """
 
-        X = X.reshape((-1, self.shape[0], 1))
+        #X = X.reshape((-1, self.shape[0], 1))
+        print(X.shape)
         z_ = self.encoder.predict(X)
         y_hat = self.generator.predict(z_)
         critic = self.critic_x.predict(X)
