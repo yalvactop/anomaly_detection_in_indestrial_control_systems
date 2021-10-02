@@ -293,6 +293,11 @@ class TadGAN(object):
         self._build_tadgan(**kwargs)
         #X = X.reshape((-1, self.shape[0], 1))              COMMEMNTED THIS OUT
         self._fit(X)
+        
+    def save_model(self, epoch):
+        self.critic_x_model.save("criticx_"+epoch)
+        self.critic_z_model.save("criticz"+epoch)
+        self.encoder_generator_model.save("encoder_generator_"+epoch)
 
     def predict(self, X):
         """Predict values using the initialized object.
@@ -427,6 +432,9 @@ def score_anomalies(y, y_hat, critic, index, score_window=10, critic_smooth_wind
 
     # Compute critic scores
     critic_scores = _compute_critic_score(critic_kde_max, critic_smooth_window)
+    
+    print("y.shape, y_hat.shape, step_size, score_window, error_smooth_window, smooth, rec_error_type: " )
+    print(y.shape, y_hat.shape, step_size, score_window, error_smooth_window, smooth, rec_error_type)
 
     # Compute reconstruction scores
     rec_scores, predictions = reconstruction_errors(
