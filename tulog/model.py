@@ -236,7 +236,7 @@ criticZ = [
     {
         "class": "keras.layers.Dense",
         "parameters": {
-            "units": 51
+            "units": 1
         }
     }
 ]
