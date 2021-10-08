@@ -16,7 +16,10 @@ from mlprimitives.adapters.keras import build_layer
 from mlprimitives.utils import import_object
 from scipy import stats
 
-from orion.primitives.timeseries_errors import reconstruction_errors
+#from orion.primitives.timeseries_errors import reconstruction_errors
+from timeseries_errors import reconstruction_errors
+
+#from tensorflow import keras
 
 LOGGER = logging.getLogger(__name__)
 
@@ -201,7 +204,7 @@ class TadGAN(object):
         self.critic_z_model.compile(loss=[self._wasserstein_loss, self._wasserstein_loss,
                                           partial_gp_loss_z], optimizer=self.optimizer,
                                     loss_weights=[1, 1, 10])
-        
+
         '''
         print("input: z_.shape: ", z_.shape)
         print("output: fake_z.shape: ", fake_z.shape)
@@ -230,7 +233,7 @@ class TadGAN(object):
         self.encoder_generator_model.compile(loss=[self._wasserstein_loss, self._wasserstein_loss,
                                                    'mse'], optimizer=self.optimizer,
                                              loss_weights=[1, 1, 10])
-        
+
         '''
         print("input: x.shape: ", x.shape)
         print("output: z_.shape: ", z_.shape)
@@ -297,7 +300,21 @@ class TadGAN(object):
     def save_model(self, epoch):
         self.critic_x_model.save("criticx_"+epoch)
         self.critic_z_model.save("criticz"+epoch)
+        self.generator.save("generator"+epoch)
+        self.encoder.save("encoder"+epoch)
+        self.critic_x.save("critic_x"+epoch)
+        self.critic_z.save("critic_z"+epoch)
         self.encoder_generator_model.save("encoder_generator_"+epoch)
+        
+    def load_model(self, epoch):
+        
+        self.critic_x_model = keras.models.load_model("criticx_"+epoch, custom_objects={'RandomWeightedAverage':RandomWeightedAverage, 'self._wasserstein_loss':self._wasserstein_loss}, compile=False)
+        self.critic_z_model = keras.models.load_model("criticz"+epoch, custom_objects={'RandomWeightedAverage':RandomWeightedAverage, 'self._wasserstein_loss':self._wasserstein_loss}, compile=False)
+        self.generator = keras.models.load_model("generator"+epoch, custom_objects={'RandomWeightedAverage':RandomWeightedAverage, 'self._wasserstein_loss':self._wasserstein_loss}, compile=False)
+        self.encoder = keras.models.load_model("encoder"+epoch, custom_objects={'RandomWeightedAverage':RandomWeightedAverage, 'self._wasserstein_loss':self._wasserstein_loss}, compile=False)
+        self.critic_x = keras.models.load_model("critic_x"+epoch, custom_objects={'RandomWeightedAverage':RandomWeightedAverage, 'self._wasserstein_loss':self._wasserstein_loss}, compile=False)
+        self.critic_z = keras.models.load_model("critic_z"+epoch, custom_objects={'RandomWeightedAverage':RandomWeightedAverage, 'self._wasserstein_loss':self._wasserstein_loss}, compile=False)
+        self.encoder_generator_model = keras.models.load_model("encoder_generator_"+epoch, custom_objects={'RandomWeightedAverage':RandomWeightedAverage, 'self._wasserstein_loss':self._wasserstein_loss}, compile=False)
 
     def predict(self, X):
         """Predict values using the initialized object.
