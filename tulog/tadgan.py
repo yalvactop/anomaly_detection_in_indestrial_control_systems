@@ -416,10 +416,19 @@ def score_anomalies(y, y_hat, critic, index, score_window=10, critic_smooth_wind
 
     true_index = index  # no offset
 
+    '''
     true = [item[0] for item in y.reshape((y.shape[0], -1))]
 
     for item in y[-1][1:]:
         true.extend(item)
+    '''
+    
+    true = []
+    for item in y:
+        true.append(item[0])
+
+    for item in y[-1][1:]:
+        true.append(item)
 
     critic_extended = list()
     for c in critic:
@@ -459,6 +468,9 @@ def score_anomalies(y, y_hat, critic, index, score_window=10, critic_smooth_wind
 
     rec_scores = stats.zscore(rec_scores)
     rec_scores = np.clip(rec_scores, a_min=0, a_max=None) + 1
+    
+    print("critic_scores.shape, rec_scores.shape")
+    print(critic_scores.shape, rec_scores.shape)
 
     # Combine the two scores
     if comb == "mult":
@@ -474,5 +486,8 @@ def score_anomalies(y, y_hat, critic, index, score_window=10, critic_smooth_wind
         raise ValueError(
             'Unknown combination specified {}, use "mult", "sum", or "rec" instead.'.format(comb))
 
-    true = [[t] for t in true]
+    #true = [[t] for t in true]
+    
+    print("final_scores.shape, true_index.shape, true.shape, predictions.shape")
+    print(np.array(final_scores).shape, np.array(true_index).shape, np.array(true).shape, np.array(predictions).shape)
     return final_scores, true_index, true, predictions

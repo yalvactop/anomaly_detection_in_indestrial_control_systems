@@ -156,16 +156,23 @@ def reconstruction_errors(y, y_hat, step_size=1, score_window=10, smoothing_wind
     if isinstance(smoothing_window, float):
         smoothing_window = min(math.trunc(len(y) * smoothing_window), 200)
 
-    print("y.reshape((y.shape[0], -1)).shape")
-    print(y.reshape((y.shape[0], -1)).shape)
-    true = [item[0] for item in y]#.reshape((y.shape[0], -1))]
+    '''
+    true = [item[0] for item in y.reshape((y.shape[0], -1))]
     for item in y[-1][1:]:
         true.extend(item)
         
     print("true.shape")
     print(np.array(true).shape)
+    '''
     
+    true = []
+    for item in y:
+        true.append(item[0])
 
+    for item in y[-1][1:]:
+        true.append(item)
+    
+    '''
     predictions = []
     predictions_vs = []
 
@@ -186,13 +193,40 @@ def reconstruction_errors(y, y_hat, step_size=1, score_window=10, smoothing_wind
                 np.percentile(np.asarray(intermediate), 75),
                 np.max(np.asarray(intermediate))
             ]])
+    '''
+    
+    
+    predictions = []
+    predictions_vs = []
+
+    ax = 0
+
+    pred_length = y_hat.shape[1] #100
+    num_errors = y_hat.shape[1] + 1 * (y_hat.shape[0] - 1) #7499
+
+    for i in range(num_errors): #(0, 7499)
+        intermediate = []
+        for j in range(max(0, i - num_errors + pred_length), min(i + 1, pred_length)):
+            intermediate.append(y_hat[i - j, j])
+        if intermediate:
+            predictions.append(np.median(np.asarray(intermediate), axis=0))
+
+            predictions_vs.append([[
+                np.min(np.asarray(intermediate), axis=ax),
+                np.percentile(np.asarray(intermediate), 25, axis=ax),
+                np.percentile(np.asarray(intermediate), 50, axis=ax),
+                np.percentile(np.asarray(intermediate), 75, axis=ax),
+                np.max(np.asarray(intermediate), axis=ax)
+            ]])
+    
+    
 
     true = np.asarray(true)
     predictions = np.asarray(predictions)
     predictions_vs = np.asarray(predictions_vs)
         
-    print("true.shape, predictions.shape, score_window")
-    print(true.shape, predictions.shape, score_window)
+    print("true.shape, predictions.shape, predictions_vs.shape")
+    print(true.shape, predictions.shape, predictions_vs.shape)
 
     # Compute reconstruction errors
     if rec_error_type.lower() == "point":
