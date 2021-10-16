@@ -148,6 +148,10 @@ class TadGAN(object):
         self.layers_critic_x, self.layers_critic_z = layers_critic_x, layers_critic_z
 
         self.optimizer = import_object(optimizer)(learning_rate)
+        
+        self.total_cx_loss = []
+        self.total_cz_loss = []
+        self.total_g_loss = []
 
     def _build_tadgan(self, **kwargs):
 
@@ -255,6 +259,7 @@ class TadGAN(object):
         fake = np.ones((self.batch_size, 1))
         valid = -np.ones((self.batch_size, 1))
         delta = np.ones((self.batch_size, 1))
+        
 
         X_ = np.copy(X)
         for epoch in range(1, self.epochs + 1):
@@ -285,6 +290,11 @@ class TadGAN(object):
             g_loss = np.mean(np.array(epoch_g_loss), axis=0)
             print('Epoch: {}/{}, [Dx loss: {}] [Dz loss: {}] [G loss: {}]'.format(
                 epoch, self.epochs, cx_loss, cz_loss, g_loss))
+        
+            self.total_cx_loss.append(cx_loss)
+            self.total_cz_loss.append(cz_loss)
+            self.total_g_loss.append(g_loss)
+            
 
     def fit(self, X, **kwargs):
         """Fit the TadGAN.
@@ -459,8 +469,8 @@ def score_anomalies(y, y_hat, critic, index, score_window=10, critic_smooth_wind
     # Compute critic scores
     critic_scores = _compute_critic_score(critic_kde_max, critic_smooth_window)
     
-    print("y.shape, y_hat.shape, step_size, score_window, error_smooth_window, smooth, rec_error_type: " )
-    print(y.shape, y_hat.shape, step_size, score_window, error_smooth_window, smooth, rec_error_type)
+#     print("y.shape, y_hat.shape, step_size, score_window, error_smooth_window, smooth, rec_error_type: " )
+#     print(y.shape, y_hat.shape, step_size, score_window, error_smooth_window, smooth, rec_error_type)
 
     # Compute reconstruction scores
     rec_scores, predictions = reconstruction_errors(
@@ -469,8 +479,8 @@ def score_anomalies(y, y_hat, critic, index, score_window=10, critic_smooth_wind
     rec_scores = stats.zscore(rec_scores)
     rec_scores = np.clip(rec_scores, a_min=0, a_max=None) + 1
     
-    print("critic_scores.shape, rec_scores.shape")
-    print(critic_scores.shape, rec_scores.shape)
+#     print("critic_scores.shape, rec_scores.shape")
+#     print(critic_scores.shape, rec_scores.shape)
 
     # Combine the two scores
     if comb == "mult":
@@ -488,6 +498,6 @@ def score_anomalies(y, y_hat, critic, index, score_window=10, critic_smooth_wind
 
     #true = [[t] for t in true]
     
-    print("final_scores.shape, true_index.shape, true.shape, predictions.shape")
-    print(np.array(final_scores).shape, np.array(true_index).shape, np.array(true).shape, np.array(predictions).shape)
+#     print("final_scores.shape, true_index.shape, true.shape, predictions.shape")
+#     print(np.array(final_scores).shape, np.array(true_index).shape, np.array(true).shape, np.array(predictions).shape)
     return final_scores, true_index, true, predictions

@@ -225,8 +225,8 @@ def reconstruction_errors(y, y_hat, step_size=1, score_window=10, smoothing_wind
     predictions = np.asarray(predictions)
     predictions_vs = np.asarray(predictions_vs)
         
-    print("true.shape, predictions.shape, predictions_vs.shape")
-    print(true.shape, predictions.shape, predictions_vs.shape)
+#     print("true.shape, predictions.shape, predictions_vs.shape")
+#     print(true.shape, predictions.shape, predictions_vs.shape)
 
     # Compute reconstruction errors
     if rec_error_type.lower() == "point":
