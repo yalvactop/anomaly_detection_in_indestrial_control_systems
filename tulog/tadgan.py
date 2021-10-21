@@ -31,7 +31,7 @@ class RandomWeightedAverage(_Merge):
             inputs[0] x     original input
             inputs[1] x_    predicted input
         """
-        alpha = K.random_uniform((64, 1, 1))
+        alpha = K.random_uniform((bbb, 1, 1))
         return (alpha * inputs[0]) + ((1 - alpha) * inputs[1])
 
 
@@ -135,6 +135,8 @@ class TadGAN(object):
         self.shape = shape
         self.latent_dim = latent_dim
         self.batch_size = batch_size
+        global bbb
+        bbb = batch_size
         self.iterations_critic = iterations_critic
         self.epochs = epochs
         self.hyperparameters = hyperparameters
@@ -176,6 +178,7 @@ class TadGAN(object):
         z_ = self.encoder(x)
         fake_x = self.critic_x(x_)
         valid_x = self.critic_x(x)
+        
         interpolated_x = RandomWeightedAverage()([x, x_])
         validity_interpolated_x = self.critic_x(interpolated_x)
         partial_gp_loss_x = partial(self._gradient_penalty_loss, averaged_samples=interpolated_x)

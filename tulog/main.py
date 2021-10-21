@@ -21,6 +21,7 @@ import json
 
 from multiprocessing import Process
 import multiprocessing as mp
+import os
 
 def time_segments_aggregate(X, interval, time_column, method=['mean']):
     """Aggregate values over given time span.
@@ -158,9 +159,9 @@ def main():
 
     del df["Normal/Attack"]
 
-    #df = df.iloc[:5*len(df.index)//8]
+    df = df.iloc[:5*len(df.index)//8]
     #df = df.iloc[:len(df.index)//2]
-    df = df.iloc[:7500]                                   #CHANGE THIS!!!
+    #df = df.iloc[:7500]                                   #CHANGE THIS!!!
     
     X_tsa, index = time_segments_aggregate(df, interval=1000000000, time_column='timestamp')
     
@@ -176,43 +177,37 @@ def main():
     fig1.savefig('tuning/X_scl.png')
     
     ##################### tuning starts here #####################
-    
-    print("Number of CPUs available: ", mp.cpu_count())
-    
+        
     pool = mp.Pool(mp.cpu_count())
     processes = []
     
-    window_size = np.linspace(start=1000, stop=1000, num=1, dtype=int)
     step_size = np.linspace(start=1, stop=100, num=2, dtype=int)
-    epoch = np.linspace(start=1, stop=1, num=1, dtype=int)
+    epoch = np.linspace(start=10, stop=100, num=10, dtype=int)
     learning_rate = np.linspace(start=0.0005, stop=0.0005, num=1)
-    latent_dim = np.linspace(start=100, stop=1000, num=2, dtype=int)
-    batch_size = [64, 126, 256]
-    rec_error_type = ["dtw", "point", "area"]
+    latent_dim = np.linspace(start=10, stop=100, num=10, dtype=int)
+    batch_size = [32, 64, 126, 256, 512]
     comb = ["mult", "sum", "rec"]
     
-    for window in window_size:
-        for step in step_size:
-            for e in epoch:
-                for rate in learning_rate:
-                    for dim in latent_dim:
-                        for batch in batch_size:
-                            for rec_error in rec_error_type:
-                                for c in comb:                                    
+    for step in step_size:
+        for e in epoch:
+            for rate in learning_rate:
+                for dim in latent_dim:
+                    for batch in batch_size:
+                        for c in comb:                                    
+
+                            #args = 
+                            p = Process(target=tune, args=(X_scl, index, known_anomalies, step, e, rate, dim, c, batch))
+                            processes.append(p)
+                            p.start()
                                     
-                                    #args = 
-                                    p = Process(target=tune, args=(X_scl, index, known_anomalies, window, step, e, rate, dim, rec_error, c, batch))
-                                    processes.append(p)
-                                    p.start()
-                                    
-    for proc in processess:
+    for proc in processes:
         proc.join()
 
     
     #print(tune(X_scl, index, known_anomalies))
     
     
-def tune(X_scl, index, known_anomalies, window_size, step_size, epoch, learning_rate, latent_dim, rec_error_type, comb, batch_size):
+def tune(X_scl, index, known_anomalies, step_size, epoch, learning_rate, latent_dim, comb, batch_size):
     
     X_rws, y, X_index, y_index = rolling_window_sequences(X_scl, index, 
                                                       window_size=100, 
@@ -235,6 +230,25 @@ def tune(X_scl, index, known_anomalies, window_size, step_size, epoch, learning_
     hyperparameters["layers_encoder"][2]["parameters"]["units"] = latent_dim
     
     hyperparameters["batch_size"] = batch_size
+    # hyperparameters["layers_generator"][3]["parameters"]["layer"]["parameters"]["units"] = batch_size
+    # hyperparameters["layers_generator"][5]["parameters"]["layer"]["parameters"]["units"] = batch_size
+    # hyperparameters["layers_critic_x"][0]["parameters"]["filters"] = batch_size
+    # hyperparameters["layers_critic_x"][3]["parameters"]["filters"] = batch_size
+    # hyperparameters["layers_critic_x"][6]["parameters"]["filters"] = batch_size
+    # hyperparameters["layers_critic_x"][9]["parameters"]["filters"] = batch_size
+    
+                    
+    res = dict()
+    res["step_size"] = step_size
+    res["epoch"] = epoch
+    res["learning_rate"] = learning_rate
+    res["latent_dim"] = latent_dim
+    res["comb"] = comb
+    res["batch_size"] = batch_size
+
+    with open('tuning/resultfile', 'a') as fout:
+        fout.write(json.dumps(str(os.getpid()) + "  " + str(list(res.values()))))
+        fout.write("\n")
 
 
     tgan = TadGAN(**hyperparameters)
@@ -242,7 +256,7 @@ def tune(X_scl, index, known_anomalies, window_size, step_size, epoch, learning_
     
     X_hat, critic = tgan.predict(X_rws)
 
-    error, true_index, true, pred = score_anomalies(X_rws, X_hat, critic, X_index, rec_error_type=rec_error_type, comb=comb)
+    error, true_index, true, pred = score_anomalies(X_rws, X_hat, critic, X_index, rec_error_type="dtw", comb=comb)
     pred = np.array(pred).mean(axis=2)
     
     # find anomalies
@@ -261,21 +275,11 @@ def tune(X_scl, index, known_anomalies, window_size, step_size, epoch, learning_
                 if anomalies_window["start"][j] <= i <= anomalies_window["end"][j]:
                     score += 1
                     
-                    step_size, epoch, learning_rate, latent_dim, rec_error_type, comb, batch_size
-                    
-    res = dict()
-    res["window_size"] = window_size
-    res["step_size"] = step_size
-    res["epoch"] = epoch
-    res["learning_rate"] = learning_rate
-    res["latent_dim"] = latent_dim
-    res["rec_error_type"] = rec_error_type
-    res["comb"] = comb
-    res["batch_size"] = batch_size
     res["score"] = score
 
     with open('tuning/resultfile', 'a') as fout:
-        fout.write(json.dumps(str(list(res.values()))))
+        fout.write(json.dumps(str(os.getpid()) + "  " + str(score)))
+        fout.write("\n")
         fout.write("\n")
     
 main()

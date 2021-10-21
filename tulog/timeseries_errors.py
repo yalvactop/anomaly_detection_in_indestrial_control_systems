@@ -51,6 +51,10 @@ def _point_wise_error(y, y_hat):
         ndarray:
             An array of smoothed point-wise error.
     """
+#     print("np.array(y).shape")
+#     print(np.array(y).shape)
+#     print("np.array(y_hat).shape")
+#     print(np.array(y_hat).shape)
     return abs(y - y_hat)
 
 
@@ -70,10 +74,14 @@ def _area_error(y, y_hat, score_window=10):
         ndarray:
             An array of area error.
     """
-    smooth_y = pd.Series(y).rolling(
-        score_window, center=True, min_periods=score_window // 2).apply(integrate.trapz)
-    smooth_y_hat = pd.Series(y_hat).rolling(
-        score_window, center=True, min_periods=score_window // 2).apply(integrate.trapz)
+#     print("np.array(y).shape")
+#     print(np.array(y).shape)
+#     print("np.array(y_hat).shape")
+#     print(np.array(y_hat).shape)
+    smooth_y = pd.Series(y).rolling(score_window, center=True, min_periods=score_window // 2)
+    smooth_y = smooth_y.apply(integrate.trapz)
+    smooth_y_hat = pd.Series(y_hat).rolling(score_window, center=True, min_periods=score_window // 2)
+    smooth_y_hat = smooth_y_hat.apply(integrate.trapz)
 
     errors = abs(smooth_y - smooth_y_hat)
 
@@ -237,10 +245,14 @@ def reconstruction_errors(y, y_hat, step_size=1, score_window=10, smoothing_wind
 
     elif rec_error_type.lower() == "dtw":
         errors = _dtw_error(true, predictions, score_window)
+        
+#     print(np.array(errors).shape)
 
     # Apply smoothing
     if smooth:
         errors = pd.Series(errors).rolling(
             smoothing_window, center=True, min_periods=smoothing_window // 2).mean().values
+        
+#     print(np.array(errors).shape)
 
     return errors, predictions_vs
