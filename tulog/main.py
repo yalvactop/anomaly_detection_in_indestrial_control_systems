@@ -159,9 +159,9 @@ def main():
 
     del df["Normal/Attack"]
 
-    df = df.iloc[:5*len(df.index)//8]
+    #df = df.iloc[:5*len(df.index)//8]
     #df = df.iloc[:len(df.index)//2]
-    #df = df.iloc[:7500]                                   #CHANGE THIS!!!
+    df = df.iloc[:7500]                                   #CHANGE THIS!!!
     
     X_tsa, index = time_segments_aggregate(df, interval=1000000000, time_column='timestamp')
     
@@ -177,28 +177,30 @@ def main():
     fig1.savefig('tuning/X_scl.png')
     
     ##################### tuning starts here #####################
-        
-    pool = mp.Pool(mp.cpu_count())
+
     processes = []
     
-    step_size = np.linspace(start=1, stop=100, num=2, dtype=int)
-    epoch = np.linspace(start=10, stop=100, num=10, dtype=int)
-    learning_rate = np.linspace(start=0.0005, stop=0.0005, num=1)
-    latent_dim = np.linspace(start=10, stop=100, num=10, dtype=int)
-    batch_size = [32, 64, 126, 256, 512]
+    window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)
+    epoch = np.linspace(start=50, stop=500, num=10, dtype=int)
+    learning_rate = [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]
+    latent_dim = np.linspace(start=10, stop=110, num=11, dtype=int)
+    batch_size = [32, 64, 128, 256, 512]
     comb = ["mult", "sum", "rec"]
     
-    for step in step_size:
+    for window in window_size:
         for e in epoch:
             for rate in learning_rate:
                 for dim in latent_dim:
-                    for batch in batch_size:
-                        for c in comb:                                    
+                    if dim > window//2:
+                        continue
+                    else:
+                        for batch in batch_size:
+                            for c in comb:
 
-                            #args = 
-                            p = Process(target=tune, args=(X_scl, index, known_anomalies, step, e, rate, dim, c, batch))
-                            processes.append(p)
-                            p.start()
+                                #163350
+                                p = Process(target=tune, args=(X_scl, index, known_anomalies, window, e, rate, dim, c, batch))
+                                processes.append(p)
+                                p.start()
                                     
     for proc in processes:
         proc.join()
@@ -207,19 +209,24 @@ def main():
     #print(tune(X_scl, index, known_anomalies))
     
     
-def tune(X_scl, index, known_anomalies, step_size, epoch, learning_rate, latent_dim, comb, batch_size):
+def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, comb, batch_size):
     
     X_rws, y, X_index, y_index = rolling_window_sequences(X_scl, index, 
-                                                      window_size=100, 
+                                                      window_size=window_size, 
                                                       target_size=51, 
                                                       step_size=1,
                                                       target_column=50)
     
     hyperparameters["epochs"] = epoch
     
-    hyperparameters["shape"] = (100, 51) # based on the window size
-    hyperparameters["critic_x_input_shape"] = (100, 51)
-    hyperparameters["encoder_input_shape"] = (100, 51)
+    hyperparameters["shape"] = (window_size, 51) # based on the window size
+    hyperparameters["critic_x_input_shape"] = (window_size, 51)
+    hyperparameters["encoder_input_shape"] = (window_size, 51)
+    hyperparameters["layers_generator"][1]["parameters"]["units"] = window_size//2
+    hyperparameters["generator_reshape_shape"] = (window_size//2, 1)
+    hyperparameters["layers_encoder"][0]["parameters"]["layer"]["parameters"]["units"] = window_size
+    hyperparameters["layers_critic_z"][1]["parameters"]["units"] = window_size
+    hyperparameters["layers_critic_z"][4]["parameters"]["units"] = window_size
     
     hyperparameters["learning_rate"] = learning_rate
     
@@ -230,16 +237,16 @@ def tune(X_scl, index, known_anomalies, step_size, epoch, learning_rate, latent_
     hyperparameters["layers_encoder"][2]["parameters"]["units"] = latent_dim
     
     hyperparameters["batch_size"] = batch_size
-    # hyperparameters["layers_generator"][3]["parameters"]["layer"]["parameters"]["units"] = batch_size
-    # hyperparameters["layers_generator"][5]["parameters"]["layer"]["parameters"]["units"] = batch_size
-    # hyperparameters["layers_critic_x"][0]["parameters"]["filters"] = batch_size
-    # hyperparameters["layers_critic_x"][3]["parameters"]["filters"] = batch_size
-    # hyperparameters["layers_critic_x"][6]["parameters"]["filters"] = batch_size
-    # hyperparameters["layers_critic_x"][9]["parameters"]["filters"] = batch_size
+    hyperparameters["layers_generator"][3]["parameters"]["layer"]["parameters"]["units"] = batch_size
+    hyperparameters["layers_generator"][5]["parameters"]["layer"]["parameters"]["units"] = batch_size
+    hyperparameters["layers_critic_x"][0]["parameters"]["filters"] = batch_size
+    hyperparameters["layers_critic_x"][3]["parameters"]["filters"] = batch_size
+    hyperparameters["layers_critic_x"][6]["parameters"]["filters"] = batch_size
+    hyperparameters["layers_critic_x"][9]["parameters"]["filters"] = batch_size
     
                     
     res = dict()
-    res["step_size"] = step_size
+    res["batch_size"] = batch_size
     res["epoch"] = epoch
     res["learning_rate"] = learning_rate
     res["latent_dim"] = latent_dim

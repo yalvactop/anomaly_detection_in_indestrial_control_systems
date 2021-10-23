@@ -179,7 +179,8 @@ class TadGAN(object):
         fake_x = self.critic_x(x_)
         valid_x = self.critic_x(x)
         
-        interpolated_x = RandomWeightedAverage()([x, x_])
+        interpolated_x = RandomWeightedAverage()
+        interpolated_x = interpolated_x([x, x_])
         validity_interpolated_x = self.critic_x(interpolated_x)
         partial_gp_loss_x = partial(self._gradient_penalty_loss, averaged_samples=interpolated_x)
         partial_gp_loss_x.__name__ = 'gradient_penalty'
