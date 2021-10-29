@@ -183,11 +183,11 @@ def main():
         max_processes = 31
 
         window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)#[100]#
-        epoch = [1]#np.linspace(start=50, stop=500, num=10, dtype=int)#[1]#
+        epoch = np.linspace(start=50, stop=500, num=10, dtype=int)#[1]#
         learning_rate = [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]#[0.0005]#
-        latent_dim = [20]#np.linspace(start=10, stop=110, num=11, dtype=int)#[20]#
-        batch_size = [64]#[32, 64, 128, 256, 512]#[64]#
-        comb = ["mult"]#["mult", "sum", "rec"]#["mult"]#
+        latent_dim = np.linspace(start=10, stop=110, num=11, dtype=int)#[20]#
+        batch_size = [32, 64, 128, 256, 512]#[64]#
+        comb = ["mult", "sum", "rec"]#["mult"]#
         
         p_count = 0
 
