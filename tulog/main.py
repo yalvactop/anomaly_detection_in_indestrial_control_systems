@@ -12,6 +12,7 @@ from orion.data import load_signal, load_anomalies
 
 from model import hyperparameters
 from tadgan import TadGAN
+import tensorflow as tf
 
 from orion.primitives.timeseries_anomalies import find_anomalies
     
@@ -20,7 +21,6 @@ from tadgan import score_anomalies
 import json
 
 from multiprocessing import Process
-import multiprocessing as mp
 import os
 
 def time_segments_aggregate(X, interval, time_column, method=['mean']):
@@ -139,77 +139,83 @@ def rolling_window_sequences(X, index, window_size, target_size, step_size, targ
 
 
 def main():
-    signal = 'swat.csv'
+    with tf.device("gpu:0"):
+        signal = 'swat.csv'
 
-    df = pd.read_csv(signal)
+        df = pd.read_csv(signal)
 
-    prev_state = "Normal"
-    anomalies = []
-    for ind in df.index:
-        #print(df['timestamp'][ind], df['Normal/Attack'][ind])
-        if prev_state == "Normal" and df['Normal/Attack'][ind] == "Attack":
-            start = df['timestamp'][ind]
-        if prev_state == "Attack" and df['Normal/Attack'][ind] == "Normal":
-            stop = df['timestamp'][ind-1]
-            anomalies.append([start, stop])
+        prev_state = "Normal"
+        anomalies = []
+        for ind in df.index:
+            #print(df['timestamp'][ind], df['Normal/Attack'][ind])
+            if prev_state == "Normal" and df['Normal/Attack'][ind] == "Attack":
+                start = df['timestamp'][ind]
+            if prev_state == "Attack" and df['Normal/Attack'][ind] == "Normal":
+                stop = df['timestamp'][ind-1]
+                anomalies.append([start, stop])
 
-        prev_state = df['Normal/Attack'][ind]
+            prev_state = df['Normal/Attack'][ind]
 
-    known_anomalies = pd.DataFrame(anomalies, columns=['start', 'end'])
+        known_anomalies = pd.DataFrame(anomalies, columns=['start', 'end'])
 
-    del df["Normal/Attack"]
+        del df["Normal/Attack"]
 
-    #df = df.iloc[:5*len(df.index)//8]
-    #df = df.iloc[:len(df.index)//2]
-    df = df.iloc[:7500]                                   #CHANGE THIS!!!
-    
-    X_tsa, index = time_segments_aggregate(df, interval=1000000000, time_column='timestamp')
-    
-    imp = SimpleImputer()
-    X_imp = imp.fit_transform(X_tsa)
-    
-    scaler = MinMaxScaler(feature_range=(-1, 1)) ## for the gradients to converge faster
-    X_scl = scaler.fit_transform(X_imp)
-    
-    fig1, ax1 = plt.subplots()
-    ax1.plot(X_scl)
-    ax1.set_title("X_scl")
-    fig1.savefig('tuning/X_scl.png')
-    
-    ##################### tuning starts here #####################
+        #df = df.iloc[:5*len(df.index)//8]
+        #df = df.iloc[:len(df.index)//2]
+        df = df.iloc[:7500]                                   #CHANGE THIS!!!
 
-    processes = []
-    
-    window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)
-    epoch = np.linspace(start=50, stop=500, num=10, dtype=int)
-    learning_rate = [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]
-    latent_dim = np.linspace(start=10, stop=110, num=11, dtype=int)
-    batch_size = [32, 64, 128, 256, 512]
-    comb = ["mult", "sum", "rec"]
-    
-    for window in window_size:
-        for e in epoch:
-            for rate in learning_rate:
-                for dim in latent_dim:
-                    if dim > window//2:
-                        continue
-                    else:
+        X_tsa, index = time_segments_aggregate(df, interval=1000000000, time_column='timestamp')
+
+        imp = SimpleImputer()
+        X_imp = imp.fit_transform(X_tsa)
+
+        scaler = MinMaxScaler(feature_range=(-1, 1)) ## for the gradients to converge faster
+        X_scl = scaler.fit_transform(X_imp)
+
+        fig1, ax1 = plt.subplots()
+        ax1.plot(X_scl)
+        ax1.set_title("X_scl")
+        fig1.savefig('tuning/X_scl.png')
+
+        ##################### tuning starts here #####################
+
+        processes = []
+        max_processes = 31
+
+        window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)#[100]#
+        epoch = [1]#np.linspace(start=50, stop=500, num=10, dtype=int)#[1]#
+        learning_rate = [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]#[0.0005]#
+        latent_dim = [20]#np.linspace(start=10, stop=110, num=11, dtype=int)#[20]#
+        batch_size = [64]#[32, 64, 128, 256, 512]#[64]#
+        comb = ["mult"]#["mult", "sum", "rec"]#["mult"]#
+        
+        p_count = 0
+
+        for window in window_size:
+            for e in epoch:
+                for rate in learning_rate:
+                    for dim in latent_dim:
                         for batch in batch_size:
                             for c in comb:
+                                if p_count == max_processes:
+                                    print("PROCESS COUNT REACHED MAX. WAITING FOR PROCESSES TO BE COMPLETED TO CONTINUE")
+                                    for proc in processes:
+                                        proc.join()
+                                    print("PROCESSES ARE COMPLETED! CONTINUE..")
+                                    p_count = 0
+                                else:
+                                    p = Process(target=tune, args=(X_scl, index, known_anomalies, window, e, rate, dim, batch, c))
+                                    processes.append(p)
+                                    p.start()
+                                    p_count += 1
 
-                                #163350
-                                p = Process(target=tune, args=(X_scl, index, known_anomalies, window, e, rate, dim, c, batch))
-                                processes.append(p)
-                                p.start()
-                                    
-    for proc in processes:
-        proc.join()
+
+
+        #print(tune(X_scl, index, known_anomalies))
 
     
-    #print(tune(X_scl, index, known_anomalies))
+def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb):
     
-    
-def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, comb, batch_size):
     
     X_rws, y, X_index, y_index = rolling_window_sequences(X_scl, index, 
                                                       window_size=window_size, 
@@ -246,6 +252,7 @@ def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, laten
     
                     
     res = dict()
+    res["window_size"] = window_size
     res["batch_size"] = batch_size
     res["epoch"] = epoch
     res["learning_rate"] = learning_rate
@@ -286,7 +293,6 @@ def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, laten
 
     with open('tuning/resultfile', 'a') as fout:
         fout.write(json.dumps(str(os.getpid()) + "  " + str(score)))
-        fout.write("\n")
         fout.write("\n")
     
 main()
