@@ -15,7 +15,7 @@ from tadgan import TadGAN
 import tensorflow as tf
 
 from orion.primitives.timeseries_anomalies import find_anomalies
-    
+
 from tadgan import score_anomalies
 
 import json
@@ -97,6 +97,7 @@ def main():
         target_size=51
         step_size=1
         target_column=50
+        drop_windows = False
 
         out_X = list()
         out_y = list()
@@ -191,5 +192,9 @@ def main():
                         score += 1
 
         return score
-    
-print(main())
+
+result = main()
+
+print(result)
+
+
