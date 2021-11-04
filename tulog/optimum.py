@@ -24,7 +24,7 @@ from multiprocessing import Process
 import os
 
 
-def main():
+def main(window, dim):
     with tf.device("gpu:0"):
         signal = 'swat.csv'
 
@@ -45,8 +45,8 @@ def main():
 
         del df["Normal/Attack"] # delete because not needed
 
-        #df = df.iloc[:5*len(df.index)//8] #use smaller dataset for test and bigger for real test :)
-        df = df.iloc[:7500]                                   #CHANGE THIS!!
+        df = df.iloc[:5*len(df.index)//8] #use smaller dataset for test and bigger for real test :)
+        #df = df.iloc[:7500]                                   #CHANGE THIS!!
         
         X = df
         interval=1000000000
@@ -87,16 +87,17 @@ def main():
         X_scl = scaler.fit_transform(X_imp)
 
         X = X_scl
-        window_size = 100 #these hyperparameters will be defined after grid search
+        window_size = window #these hyperparameters will be defined after grid search
         epoch = 1
         learning_rate = 0.0005
-        latent_dim = 20
-        batch_size = 64
+        latent_dim = dim
+        batch_size = 512
         comb = "mult"
     
         target_size=51
         step_size=1
         target_column=50
+        drop_windows = False
 
         out_X = list()
         out_y = list()
@@ -181,15 +182,59 @@ def main():
                                    fixed_threshold=True) # leave this part for now
         anomalies_window = pd.DataFrame(intervals_window, columns=['start', 'end', 'score']) #find the anomalies to compare with the new anomalies extracted at the beginning
         del anomalies_window["score"]
-
+                        
         score = 0
-
+        overall_count = 0
         for ind in range(len(known_anomalies)):# compare known and predicted anomalies to find the score. we can use this score to compare the efficacy of the feature selection algorithms
             for i in range(known_anomalies["start"][ind], known_anomalies["end"][ind], 1000000000):
+                overall_count += 1
                 for j in range(len(anomalies_window)):
                     if anomalies_window["start"][j] <= i <= anomalies_window["end"][j]:
                         score += 1
+        
+        with open('tuning/results', 'a') as fout:
+            fout.write(str(score) + " / " + str(overall_count) + "  " + "g_5_8dataset_window_size-" + str(window) + "_epoch-200_learning_rate-0.0005_latent_dim-" + str(dim) + "_batch_size-512_comb-mult")
+            fout.write("\n")
+        
+        fig1, ax1 = plt.subplots()
+        ax1.plot(range(len(tgan.total_cx_loss)), np.array(tgan.total_cx_loss)[:,0], "-b")
+        ax1.plot(range(len(tgan.total_cx_loss)), np.array(tgan.total_cx_loss)[:,1], "-g")
+        ax1.plot(range(len(tgan.total_cx_loss)), np.array(tgan.total_cx_loss)[:,-2], "-y")
+        ax1.plot(range(len(tgan.total_cx_loss)), np.array(tgan.total_cx_loss)[:,-1], "-r")
+        ax1.set_title("CX")
+        fig1.savefig('tuning/cx_5_8dataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+        fig2, ax2 = plt.subplots()
+        ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,0], "-b")
+        ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,1], "-g")
+        ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,-2], "-y")
+        ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,-1], "-r")
+        ax2.set_title("CZ")
+        fig2.savefig('tuning/cz_5_8dataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
 
-        return score
-    
-print(main())
+        fig3, ax3 = plt.subplots()
+        ax3.plot(range(len(tgan.total_g_loss)), np.array(tgan.total_g_loss)[:,0], "-b")
+        ax3.plot(range(len(tgan.total_g_loss)), np.array(tgan.total_g_loss)[:,1], "-g")
+        ax3.plot(range(len(tgan.total_g_loss)), np.array(tgan.total_g_loss)[:,-2], "-y")
+        ax3.plot(range(len(tgan.total_g_loss)), np.array(tgan.total_g_loss)[:,-1], "-r")
+        ax3.set_title("G")
+        fig3.savefig('tuning/g_5_8dataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+        
+        plt.rcParams['figure.figsize'] = [30, 20]
+        df.plot(x="timestamp")
+
+        for ind in range(35):
+            plt.axvspan(known_anomalies["start"][ind], known_anomalies["end"][ind], color='red', alpha=0.5)
+        for ind in range(len(intervals_window)):
+            plt.axvspan(anomalies_window["start"][ind], anomalies_window["end"][ind], color='blue', alpha=0.5)
+
+        plt.savefig('tuning/output_5_8dataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+
+
+window_sizes = [50, 100,  200,  300,  400,  500,  600,  700,  800,  900, 1000]#[50]#
+latent_dim = [10, 20, 30, 40, 50]#[10]#
+for i in window_sizes:
+    for j in latent_dim:
+        try:
+            main(i, j)
+        except:
+            continue

@@ -258,7 +258,6 @@ def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, laten
     res["learning_rate"] = learning_rate
     res["latent_dim"] = latent_dim
     res["comb"] = comb
-    res["batch_size"] = batch_size
 
     with open('tuning/resultfile', 'a') as fout:
         fout.write(json.dumps(str(os.getpid()) + "  " + str(list(res.values()))))
