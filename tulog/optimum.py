@@ -15,7 +15,7 @@ from tadgan import TadGAN
 import tensorflow as tf
 
 from orion.primitives.timeseries_anomalies import find_anomalies
-    
+
 from tadgan import score_anomalies
 
 import json
@@ -222,6 +222,7 @@ def main(window, dim):
         plt.rcParams['figure.figsize'] = [30, 20]
         df.plot(x="timestamp")
 
+<<<<<<< HEAD
         for ind in range(35):
             plt.axvspan(known_anomalies["start"][ind], known_anomalies["end"][ind], color='red', alpha=0.5)
         for ind in range(len(intervals_window)):
@@ -238,3 +239,12 @@ for i in window_sizes:
             main(i, j)
         except:
             continue
+=======
+        return score
+
+result = main()
+
+print(result)
+
+
+>>>>>>> d00d4afc4b7017d544261f27296ea856b6f6ec77
