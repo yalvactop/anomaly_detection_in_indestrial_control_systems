@@ -179,6 +179,7 @@ def main():
 
         ##################### tuning starts here #####################
 
+        q = multiprocessing.Queue()
 
         window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)#[100]#
         epoch = np.linspace(start=50, stop=500, num=10, dtype=int)#[1]#
