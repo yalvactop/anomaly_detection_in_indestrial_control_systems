@@ -144,6 +144,10 @@ def main():
 
         df = pd.read_csv(signal)
 
+        df = df.iloc[:5*len(df.index)//8]
+        #df = df.iloc[:len(df.index)//2]
+        #df = df.iloc[:7500] 
+
         prev_state = "Normal"
         anomalies = []
         for ind in df.index:
@@ -158,11 +162,7 @@ def main():
 
         known_anomalies = pd.DataFrame(anomalies, columns=['start', 'end'])
 
-        del df["Normal/Attack"]
-
-        df = df.iloc[:5*len(df.index)//8]
-        #df = df.iloc[:len(df.index)//2]
-        #df = df.iloc[:7500]                                   #CHANGE THIS!!!
+        del df["Normal/Attack"]                                  #CHANGE THIS!!!
 
         X_tsa, index = time_segments_aggregate(df, interval=1000000000, time_column='timestamp')
 
@@ -188,12 +188,12 @@ def main():
         batch_size = [32, 64, 128, 256, 512]#[64]#
         comb = ["mult", "sum", "rec"]#["mult"]#
 
-        for window in window_size:
-            for e in epoch:
-                for rate in learning_rate:
-                    for dim in latent_dim:
-                        for batch in batch_size:
-                            for c in comb:
+        for window in reversed(window_size):
+            for e in reversed(epoch):
+                for rate in reversed(learning_rate):
+                    for dim in reversed(latent_dim):
+                        for batch in reversed(batch_size):
+                            for c in reversed(comb):
                                 q.put((X_scl, index, known_anomalies, window, e, rate, dim, batch, c))
                                 #try:
                                 #    tune(X_scl, index, known_anomalies, window, e, rate, dim, batch, c)
