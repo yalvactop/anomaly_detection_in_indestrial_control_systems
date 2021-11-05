@@ -88,7 +88,7 @@ def main(window, dim):
 
         X = X_scl
         window_size = window #these hyperparameters will be defined after grid search
-        epoch = 1
+        epoch = 200
         learning_rate = 0.0005
         latent_dim = dim
         batch_size = 512
@@ -222,7 +222,6 @@ def main(window, dim):
         plt.rcParams['figure.figsize'] = [30, 20]
         df.plot(x="timestamp")
 
-<<<<<<< HEAD
         for ind in range(35):
             plt.axvspan(known_anomalies["start"][ind], known_anomalies["end"][ind], color='red', alpha=0.5)
         for ind in range(len(intervals_window)):
@@ -233,18 +232,9 @@ def main(window, dim):
 
 window_sizes = [50, 100,  200,  300,  400,  500,  600,  700,  800,  900, 1000]#[50]#
 latent_dim = [10, 20, 30, 40, 50]#[10]#
-for i in window_sizes:
-    for j in latent_dim:
+for i in reversed(window_sizes):
+    for j in reversed(latent_dim):
         try:
             main(i, j)
         except:
             continue
-=======
-        return score
-
-result = main()
-
-print(result)
-
-
->>>>>>> d00d4afc4b7017d544261f27296ea856b6f6ec77

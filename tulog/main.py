@@ -20,7 +20,7 @@ from tadgan import score_anomalies
 
 import json
 
-from multiprocessing import Process
+from multiprocessing import Process, Queue
 import os
 
 def time_segments_aggregate(X, interval, time_column, method=['mean']):
@@ -160,9 +160,9 @@ def main():
 
         del df["Normal/Attack"]
 
-        #df = df.iloc[:5*len(df.index)//8]
+        df = df.iloc[:5*len(df.index)//8]
         #df = df.iloc[:len(df.index)//2]
-        df = df.iloc[:7500]                                   #CHANGE THIS!!!
+        #df = df.iloc[:7500]                                   #CHANGE THIS!!!
 
         X_tsa, index = time_segments_aggregate(df, interval=1000000000, time_column='timestamp')
 
@@ -179,8 +179,6 @@ def main():
 
         ##################### tuning starts here #####################
 
-        processes = []
-        max_processes = 31
 
         window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)#[100]#
         epoch = np.linspace(start=50, stop=500, num=10, dtype=int)#[1]#
@@ -188,8 +186,6 @@ def main():
         latent_dim = np.linspace(start=10, stop=110, num=11, dtype=int)#[20]#
         batch_size = [32, 64, 128, 256, 512]#[64]#
         comb = ["mult", "sum", "rec"]#["mult"]#
-        
-        p_count = 0
 
         for window in window_size:
             for e in epoch:
@@ -197,21 +193,38 @@ def main():
                     for dim in latent_dim:
                         for batch in batch_size:
                             for c in comb:
-                                if p_count == max_processes:
-                                    print("PROCESS COUNT REACHED MAX. WAITING FOR PROCESSES TO BE COMPLETED TO CONTINUE")
-                                    for proc in processes:
-                                        proc.join()
-                                    print("PROCESSES ARE COMPLETED! CONTINUE..")
-                                    p_count = 0
-                                else:
-                                    p = Process(target=tune, args=(X_scl, index, known_anomalies, window, e, rate, dim, batch, c))
-                                    processes.append(p)
-                                    p.start()
-                                    p_count += 1
+                                q.put((X_scl, index, known_anomalies, window, e, rate, dim, batch, c))
+                                #try:
+                                #    tune(X_scl, index, known_anomalies, window, e, rate, dim, batch, c)
+                                #except:
+                                #    continue
+        
 
+        num_processes = 40
+        pool = []
+
+        for i in range(num_processes):
+            p = multiprocessing.Process(target=worker, args=(q,))
+            p.start()
+            pool.append(p)
+
+        for p in pool:
+            p.join()
 
 
         #print(tune(X_scl, index, known_anomalies))
+
+
+def worker(q):
+    while not q.empty():
+        try:
+            params = q.get(False)
+            X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb = params
+            tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb)
+
+        except Exception as e:
+            print(e)
+            break
 
     
 def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb):
@@ -259,10 +272,6 @@ def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, laten
     res["latent_dim"] = latent_dim
     res["comb"] = comb
 
-    with open('tuning/resultfile', 'a') as fout:
-        fout.write(json.dumps(str(os.getpid()) + "  " + str(list(res.values()))))
-        fout.write("\n")
-
 
     tgan = TadGAN(**hyperparameters)
     tgan.fit(X_rws)
@@ -291,7 +300,7 @@ def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, laten
     res["score"] = score
 
     with open('tuning/resultfile', 'a') as fout:
-        fout.write(json.dumps(str(os.getpid()) + "  " + str(score)))
+        fout.write(json.dumps(str(os.getpid()) + "  " + str(list(res.values()))))
         fout.write("\n")
     
 main()
