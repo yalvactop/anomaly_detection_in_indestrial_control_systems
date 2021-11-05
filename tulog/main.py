@@ -104,8 +104,6 @@ def rolling_window_sequences(X, index, window_size, target_size, step_size, targ
     X_index = list()
     y_index = list()
     target = X[:, target_column]
-    print("X.shape: ", X.shape)
-    print("target.shape: ", target.shape)
 
     if drop_windows:
         if hasattr(drop, '__len__') and (not isinstance(drop, str)):
