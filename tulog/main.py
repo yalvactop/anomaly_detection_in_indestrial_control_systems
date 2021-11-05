@@ -200,7 +200,7 @@ def main():
                                 #    continue
         
 
-        num_processes = 40
+        num_processes = 25
         pool = []
 
         for i in range(num_processes):
