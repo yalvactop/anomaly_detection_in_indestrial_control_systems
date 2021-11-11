@@ -20,7 +20,7 @@ from tadgan import score_anomalies
 
 import json
 
-from multiprocessing import Process, Queue
+import multiprocessing
 import os
 
 def time_segments_aggregate(X, interval, time_column, method=['mean']):
@@ -193,6 +193,7 @@ def main():
                         for batch in reversed(batch_size):
                             for c in reversed(comb):
                                 q.put((X_scl, index, known_anomalies, window, e, rate, dim, batch, c))
+                                time.sleep(0.1) # Just enough to let the Queue finish
                                 #try:
                                 #    tune(X_scl, index, known_anomalies, window, e, rate, dim, batch, c)
                                 #except:
