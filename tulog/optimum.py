@@ -20,7 +20,7 @@ from tadgan import score_anomalies
 
 import json
 
-from multiprocessing import Process
+import concurrent.futures
 import os
 
 
