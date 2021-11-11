@@ -141,9 +141,9 @@ def main():
 
     df = pd.read_csv(signal)
 
-    #df = df.iloc[:5*len(df.index)//8]
+    df = df.iloc[:5*len(df.index)//8]
     #df = df.iloc[:len(df.index)//2]
-    df = df.iloc[:7500] 
+    #df = df.iloc[:7500] 
 
     prev_state = "Normal"
     anomalies = []
@@ -177,13 +177,15 @@ def main():
     ##################### tuning starts here #####################
 
     window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)#[100]#
-    epoch = [1]#np.linspace(start=50, stop=500, num=10, dtype=int)#
+    epoch = np.linspace(start=50, stop=500, num=10, dtype=int)#[1]#
     learning_rate = [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]#[0.0005]#
     latent_dim = np.linspace(start=10, stop=110, num=11, dtype=int)#[20]#
     batch_size = [32, 64, 128, 256, 512]#[64]#
     comb = ["mult", "sum", "rec"]#["mult"]#
+    
+    print("before tuning for loops")
 
-    with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=25) as executor:
         for window in reversed(window_size):
             for e in reversed(epoch):
                 for rate in reversed(learning_rate):
@@ -197,14 +199,14 @@ def main():
 def tune(params):
     
     (X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb) = params #unpack
-    
+    print("before rolling window")
     
     X_rws, y, X_index, y_index = rolling_window_sequences(X_scl, index, 
                                                       window_size=window_size, 
                                                       target_size=51, 
                                                       step_size=1,
                                                       target_column=50)
-    
+    print("after rolling window")
     hyperparameters["epochs"] = epoch
     
     hyperparameters["shape"] = (window_size, 51) # based on the window size
@@ -242,19 +244,24 @@ def tune(params):
     res["comb"] = comb
 
 
+    print("before tgan.fit")
     tgan = TadGAN(**hyperparameters)
     tgan.fit(X_rws)
+    print("after tgan.fit")
     
     X_hat, critic = tgan.predict(X_rws)
 
+    print("after tgan.predict")
     error, true_index, true, pred = score_anomalies(X_rws, X_hat, critic, X_index, rec_error_type="dtw", comb=comb)
     pred = np.array(pred).mean(axis=2)
+    print("after score_anomalies")
     
     # find anomalies
     intervals_window = find_anomalies(error, index, 
                                window_size_portion=0.33, 
                                window_step_size_portion=0.1, 
                                fixed_threshold=True) # leave this part for now
+    print("after find_anomalies")
     anomalies_window = pd.DataFrame(intervals_window, columns=['start', 'end', 'score'])
     del anomalies_window["score"]
     
@@ -266,6 +273,7 @@ def tune(params):
                 if anomalies_window["start"][j] <= i <= anomalies_window["end"][j]:
                     score += 1
                     
+    print("after score calculation")
     res["score"] = score
 
     with open('tuning/resultfile', 'a') as fout:
@@ -273,5 +281,4 @@ def tune(params):
         fout.write("\n")
     
 
-if __name__ == '__main__':
-    main()
+main()

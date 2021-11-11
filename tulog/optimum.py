@@ -233,15 +233,15 @@ def main(window, dim):
 
 if __name__ == '__main__':
 
-    window_sizes = [50, 100,  200,  300,  400,  500,  600,  700,  800,  900, 1000]#[50]#
-    latent_dim = [10, 20, 30, 40, 50]#[10]#
+    window_sizes = [100]#[50, 100,  200,  300,  400,  500,  600,  700,  800,  900, 1000]#
+    latent_dim = [20]#[10, 20, 30, 40, 50]#
     
-    with concurrent.futures.ProcessPoolExecutor(max_workers=40) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=25) as executor:
         for i in reversed(window_sizes):
             for j in reversed(latent_dim):
                 try:
-                    params = (i, j) #pack
-                    executor.submit(main, params)
-                    #main(i, j)
+                    #params = (i, j) #pack
+                    #executor.submit(main, params)
+                    main(i, j)
                 except:
                     continue
