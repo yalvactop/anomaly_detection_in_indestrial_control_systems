@@ -20,7 +20,7 @@ from tadgan import score_anomalies
 
 import json
 
-import multiprocessing
+import concurrent.futures
 import os
 
 def time_segments_aggregate(X, interval, time_column, method=['mean']):
@@ -177,7 +177,6 @@ def main():
 
         ##################### tuning starts here #####################
 
-        q = multiprocessing.Queue()
 
         window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)#[100]#
         epoch = np.linspace(start=50, stop=500, num=10, dtype=int)#[1]#
@@ -186,48 +185,20 @@ def main():
         batch_size = [32, 64, 128, 256, 512]#[64]#
         comb = ["mult", "sum", "rec"]#["mult"]#
 
-        for window in reversed(window_size):
-            for e in reversed(epoch):
-                for rate in reversed(learning_rate):
-                    for dim in reversed(latent_dim):
-                        for batch in reversed(batch_size):
-                            for c in reversed(comb):
-                                q.put((X_scl, index, known_anomalies, window, e, rate, dim, batch, c))
-                                time.sleep(0.1) # Just enough to let the Queue finish
-                                #try:
-                                #    tune(X_scl, index, known_anomalies, window, e, rate, dim, batch, c)
-                                #except:
-                                #    continue
-        
-
-        num_processes = 25
-        pool = []
-
-        for i in range(num_processes):
-            p = multiprocessing.Process(target=worker, args=(q,))
-            p.start()
-            pool.append(p)
-
-        for p in pool:
-            p.join()
-
-
-        #print(tune(X_scl, index, known_anomalies))
-
-
-def worker(q):
-    while not q.empty():
-        try:
-            params = q.get(False)
-            X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb = params
-            tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb)
-
-        except Exception as e:
-            print(e)
-            break
+        with concurrent.futures.ProcessPoolExecutor(max_workers=40) as executor:
+            for window in reversed(window_size):
+                for e in reversed(epoch):
+                    for rate in reversed(learning_rate):
+                        for dim in reversed(latent_dim):
+                            for batch in reversed(batch_size):
+                                for c in reversed(comb):
+                                    params = (X_scl, index, known_anomalies, window, e, rate, dim, size, c) #pack
+                                    executor.submit(tune, params)
 
     
-def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb):
+def tune(params):
+    
+    (X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb) = params #unpack
     
     
     X_rws, y, X_index, y_index = rolling_window_sequences(X_scl, index, 
@@ -303,4 +274,6 @@ def tune(X_scl, index, known_anomalies, window_size, epoch, learning_rate, laten
         fout.write(json.dumps(str(os.getpid()) + "  " + str(list(res.values()))))
         fout.write("\n")
     
-main()
+
+if __name__ == '__main__':
+    main()

@@ -229,12 +229,16 @@ def main(window, dim):
 
         plt.savefig('tuning/output_5_8dataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
 
+        
+        
 
-window_sizes = [50, 100,  200,  300,  400,  500,  600,  700,  800,  900, 1000]#[50]#
-latent_dim = [10, 20, 30, 40, 50]#[10]#
-for i in reversed(window_sizes):
-    for j in reversed(latent_dim):
-        try:
-            main(i, j)
-        except:
-            continue
+if __name__ == '__main__':
+
+    window_sizes = [50, 100,  200,  300,  400,  500,  600,  700,  800,  900, 1000]#[50]#
+    latent_dim = [10, 20, 30, 40, 50]#[10]#
+    for i in reversed(window_sizes):
+        for j in reversed(latent_dim):
+            try:
+                main(i, j)
+            except:
+                continue
