@@ -137,63 +137,61 @@ def rolling_window_sequences(X, index, window_size, target_size, step_size, targ
 
 
 def main():
-    with tf.device("gpu:0"):
-        signal = 'swat.csv'
+    signal = 'swat.csv'
 
-        df = pd.read_csv(signal)
+    df = pd.read_csv(signal)
 
-        df = df.iloc[:5*len(df.index)//8]
-        #df = df.iloc[:len(df.index)//2]
-        #df = df.iloc[:7500] 
+    #df = df.iloc[:5*len(df.index)//8]
+    #df = df.iloc[:len(df.index)//2]
+    df = df.iloc[:7500] 
 
-        prev_state = "Normal"
-        anomalies = []
-        for ind in df.index:
-            #print(df['timestamp'][ind], df['Normal/Attack'][ind])
-            if prev_state == "Normal" and df['Normal/Attack'][ind] == "Attack":
-                start = df['timestamp'][ind]
-            if prev_state == "Attack" and df['Normal/Attack'][ind] == "Normal":
-                stop = df['timestamp'][ind-1]
-                anomalies.append([start, stop])
+    prev_state = "Normal"
+    anomalies = []
+    for ind in df.index:
+        #print(df['timestamp'][ind], df['Normal/Attack'][ind])
+        if prev_state == "Normal" and df['Normal/Attack'][ind] == "Attack":
+            start = df['timestamp'][ind]
+        if prev_state == "Attack" and df['Normal/Attack'][ind] == "Normal":
+            stop = df['timestamp'][ind-1]
+            anomalies.append([start, stop])
 
-            prev_state = df['Normal/Attack'][ind]
+        prev_state = df['Normal/Attack'][ind]
 
-        known_anomalies = pd.DataFrame(anomalies, columns=['start', 'end'])
+    known_anomalies = pd.DataFrame(anomalies, columns=['start', 'end'])
 
-        del df["Normal/Attack"]                                  #CHANGE THIS!!!
+    del df["Normal/Attack"]                                  #CHANGE THIS!!!
 
-        X_tsa, index = time_segments_aggregate(df, interval=1000000000, time_column='timestamp')
+    X_tsa, index = time_segments_aggregate(df, interval=1000000000, time_column='timestamp')
 
-        imp = SimpleImputer()
-        X_imp = imp.fit_transform(X_tsa)
+    imp = SimpleImputer()
+    X_imp = imp.fit_transform(X_tsa)
 
-        scaler = MinMaxScaler(feature_range=(-1, 1)) ## for the gradients to converge faster
-        X_scl = scaler.fit_transform(X_imp)
+    scaler = MinMaxScaler(feature_range=(-1, 1)) ## for the gradients to converge faster
+    X_scl = scaler.fit_transform(X_imp)
 
-        fig1, ax1 = plt.subplots()
-        ax1.plot(X_scl)
-        ax1.set_title("X_scl")
-        fig1.savefig('tuning/X_scl.png')
+    fig1, ax1 = plt.subplots()
+    ax1.plot(X_scl)
+    ax1.set_title("X_scl")
+    fig1.savefig('tuning/X_scl.png')
 
-        ##################### tuning starts here #####################
+    ##################### tuning starts here #####################
 
+    window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)#[100]#
+    epoch = [1]#np.linspace(start=50, stop=500, num=10, dtype=int)#
+    learning_rate = [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]#[0.0005]#
+    latent_dim = np.linspace(start=10, stop=110, num=11, dtype=int)#[20]#
+    batch_size = [32, 64, 128, 256, 512]#[64]#
+    comb = ["mult", "sum", "rec"]#["mult"]#
 
-        window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)#[100]#
-        epoch = np.linspace(start=50, stop=500, num=10, dtype=int)#[1]#
-        learning_rate = [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]#[0.0005]#
-        latent_dim = np.linspace(start=10, stop=110, num=11, dtype=int)#[20]#
-        batch_size = [32, 64, 128, 256, 512]#[64]#
-        comb = ["mult", "sum", "rec"]#["mult"]#
-
-        with concurrent.futures.ProcessPoolExecutor(max_workers=40) as executor:
-            for window in reversed(window_size):
-                for e in reversed(epoch):
-                    for rate in reversed(learning_rate):
-                        for dim in reversed(latent_dim):
-                            for batch in reversed(batch_size):
-                                for c in reversed(comb):
-                                    params = (X_scl, index, known_anomalies, window, e, rate, dim, size, c) #pack
-                                    executor.submit(tune, params)
+    with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
+        for window in reversed(window_size):
+            for e in reversed(epoch):
+                for rate in reversed(learning_rate):
+                    for dim in reversed(latent_dim):
+                        for batch in reversed(batch_size):
+                            for c in reversed(comb):
+                                params = (X_scl, index, known_anomalies, window, e, rate, dim, batch, c) #pack
+                                executor.submit(tune, params)
 
     
 def tune(params):
