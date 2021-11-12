@@ -14,3 +14,10 @@ Use tf.where in 2.0, which has the same broadcast rule as np.where
 2021-11-12 12:55:16.409836: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
 
+2021-11-12 12:57:49.830862: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-11-12 12:57:49.881372: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-11-12 12:57:50.010240: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-11-12 12:57:50.339417: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-11-12 12:57:50.441326: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-11-12 12:57:50.487157: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-11-12 12:57:50.537719: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
