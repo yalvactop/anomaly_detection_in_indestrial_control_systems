@@ -45,8 +45,8 @@ def main(window, dim):
     del df["Normal/Attack"] # delete because not needed
 
     #df = df.iloc[:5*len(df.index)//8] #use smaller dataset for test and bigger for real test :)
-    df = df.iloc[:len(df.index)//2]
-    #df = df.iloc[:7500]                                   #CHANGE THIS!!
+    #df = df.iloc[:len(df.index)//2]
+    df = df.iloc[:7500]                                   #CHANGE THIS!!
 
     X = df
     interval=1000000000
@@ -193,7 +193,7 @@ def main(window, dim):
                     score += 1
 
     with open('tuning/results', 'a') as fout:
-        fout.write(str(score) + " / " + str(overall_count) + "  " + "g_halfdataset_window_size-" + str(window) + "_epoch-200_learning_rate-0.0005_latent_dim-" + str(dim) + "_batch_size-512_comb-mult")
+        fout.write(str(score) + " / " + str(overall_count) + "  " + "g_7500dataset_window_size-" + str(window) + "_epoch-200_learning_rate-0.0005_latent_dim-" + str(dim) + "_batch_size-512_comb-mult")
         fout.write("\n")
 
     fig1, ax1 = plt.subplots()
@@ -202,14 +202,14 @@ def main(window, dim):
     ax1.plot(range(len(tgan.total_cx_loss)), np.array(tgan.total_cx_loss)[:,-2], "-y")
     ax1.plot(range(len(tgan.total_cx_loss)), np.array(tgan.total_cx_loss)[:,-1], "-r")
     ax1.set_title("CX")
-    fig1.savefig('tuning/cx_halfdataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+    fig1.savefig('tuning/cx_7500dataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
     fig2, ax2 = plt.subplots()
     ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,0], "-b")
     ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,1], "-g")
     ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,-2], "-y")
     ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,-1], "-r")
     ax2.set_title("CZ")
-    fig2.savefig('tuning/cz_halfdataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+    fig2.savefig('tuning/cz_7500dataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
 
     fig3, ax3 = plt.subplots()
     ax3.plot(range(len(tgan.total_g_loss)), np.array(tgan.total_g_loss)[:,0], "-b")
@@ -217,7 +217,7 @@ def main(window, dim):
     ax3.plot(range(len(tgan.total_g_loss)), np.array(tgan.total_g_loss)[:,-2], "-y")
     ax3.plot(range(len(tgan.total_g_loss)), np.array(tgan.total_g_loss)[:,-1], "-r")
     ax3.set_title("G")
-    fig3.savefig('tuning/g_halfdataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+    fig3.savefig('tuning/g_7500dataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
 
     plt.rcParams['figure.figsize'] = [30, 20]
     df.plot(x="timestamp")
@@ -227,11 +227,9 @@ def main(window, dim):
     for ind in range(len(intervals_window)):
         plt.axvspan(anomalies_window["start"][ind], anomalies_window["end"][ind], color='blue', alpha=0.5)
 
-    plt.savefig('tuning/output_halfdataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+    plt.savefig('tuning/output_7500dataset_window_size-' + str(window) + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
 
-        
-        
-
+       
 if __name__ == '__main__':
 
     window_sizes = [100]#[50, 100,  200,  300,  400,  500,  600,  700,  800,  900, 1000]#
@@ -240,9 +238,6 @@ if __name__ == '__main__':
     with concurrent.futures.ProcessPoolExecutor(max_workers=25) as executor:
         for i in reversed(window_sizes):
             for j in reversed(latent_dim):
-                try:
-                    #params = (i, j) #pack
-                    #executor.submit(main, params)
-                    main(i, j)
-                except:
-                    continue
+                #params = (i, j) #pack
+                #executor.submit(main, params)
+                main(i, j)
