@@ -29,6 +29,10 @@ def main(window, dim):
 
     df = pd.read_csv(signal)
 
+    #df = df.iloc[:5*len(df.index)//8] #use smaller dataset for test and bigger for real test :)
+    #df = df.iloc[:len(df.index)//2]
+    df = df.iloc[:7500]
+
     prev_state = "Normal"
     anomalies = []
     for ind in df.index:
@@ -42,11 +46,7 @@ def main(window, dim):
 
     known_anomalies = pd.DataFrame(anomalies, columns=['start', 'end']) #identify known anomalies
 
-    del df["Normal/Attack"] # delete because not needed
-
-    #df = df.iloc[:5*len(df.index)//8] #use smaller dataset for test and bigger for real test :)
-    #df = df.iloc[:len(df.index)//2]
-    df = df.iloc[:7500]                                   #CHANGE THIS!!
+    del df["Normal/Attack"] # delete because not needed                                #CHANGE THIS!!
 
     X = df
     interval=1000000000
@@ -193,7 +193,7 @@ def main(window, dim):
                     score += 1
 
     with open('tuning/results', 'a') as fout:
-        fout.write(str(score) + " / " + str(overall_count) + "  " + "g_7500dataset_window_size-" + str(window) + "_epoch-200_learning_rate-0.0005_latent_dim-" + str(dim) + "_batch_size-512_comb-mult")
+        fout.write(str(score) + " / " + str(overall_count) + "  " + "7500dataset_window_size-" + str(window) + "_epoch-200_learning_rate-0.0005_latent_dim-" + str(dim) + "_batch_size-512_comb-mult")
         fout.write("\n")
 
     fig1, ax1 = plt.subplots()
