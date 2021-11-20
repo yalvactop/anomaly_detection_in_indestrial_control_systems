@@ -222,7 +222,7 @@ def main(window, dim):
     plt.rcParams['figure.figsize'] = [30, 20]
     df.plot(x="timestamp")
 
-    for ind in range(35):
+    for ind in range(len(known_anomalies)):
         plt.axvspan(known_anomalies["start"][ind], known_anomalies["end"][ind], color='red', alpha=0.5)
     for ind in range(len(intervals_window)):
         plt.axvspan(anomalies_window["start"][ind], anomalies_window["end"][ind], color='blue', alpha=0.5)
