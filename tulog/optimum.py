@@ -144,7 +144,7 @@ def run_tadgan(df, techniques):
     df_train = df.iloc[(len(df.index)*2)//10:]
     
     window_size = 100 #these hyperparameters will be defined after grid search
-    epoch = 1
+    epoch = 100
     learning_rate = 0.0005
     latent_dim = 20
     batch_size = 512
@@ -255,7 +255,7 @@ def run_tadgan(df, techniques):
                     score += 1
 
     with open('tuning/results', 'a') as fout:
-        fout.write(str(score) + " / " + str(overall_count) + "  " + "window_size-" + str(window) + "_epoch-200_learning_rate-0.0005_latent_dim-" + str(dim) + "_batch_size-512_comb-mult_" + techniques)
+        fout.write(str(score) + " / " + str(overall_count) + "  " + "window_size-" + str(window_size) + "_epoch-" + str(epoch) + "_learning_rate-0.0005_latent_dim-" + str(latent_dim) + "_batch_size-512_comb-mult_" + techniques)
         fout.write("\n")
 
     fig1, ax1 = plt.subplots()
@@ -264,14 +264,14 @@ def run_tadgan(df, techniques):
     ax1.plot(range(len(tgan.total_cx_loss)), np.array(tgan.total_cx_loss)[:,-2], "-y")
     ax1.plot(range(len(tgan.total_cx_loss)), np.array(tgan.total_cx_loss)[:,-1], "-r")
     ax1.set_title("CX")
-    fig1.savefig('tuning/cx_window_size-' + str(window) + "_" + techniques + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+    fig1.savefig('tuning/cx_window_size-' + str(window_size) + "_" + techniques + '_epoch-' + str(epoch) + '_learning_rate-0.0005_latent_dim-' + str(latent_dim) + '_batch_size-512_comb-mult.png')
     fig2, ax2 = plt.subplots()
     ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,0], "-b")
     ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,1], "-g")
     ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,-2], "-y")
     ax2.plot(range(len(tgan.total_cz_loss)), np.array(tgan.total_cz_loss)[:,-1], "-r")
     ax2.set_title("CZ")
-    fig2.savefig('tuning/cz_window_size-' + str(window) + "_" + techniques + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+    fig2.savefig('tuning/cz_window_size-' + str(window_size) + "_" + techniques + '_epoch-' + str(epoch) + '_learning_rate-0.0005_latent_dim-' + str(latent_dim) + '_batch_size-512_comb-mult.png')
 
     fig3, ax3 = plt.subplots()
     ax3.plot(range(len(tgan.total_g_loss)), np.array(tgan.total_g_loss)[:,0], "-b")
@@ -279,7 +279,7 @@ def run_tadgan(df, techniques):
     ax3.plot(range(len(tgan.total_g_loss)), np.array(tgan.total_g_loss)[:,-2], "-y")
     ax3.plot(range(len(tgan.total_g_loss)), np.array(tgan.total_g_loss)[:,-1], "-r")
     ax3.set_title("G")
-    fig3.savefig('tuning/g_window_size-' + str(window) + "_" + techniques + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+    fig3.savefig('tuning/g_window_size-' + str(window_size) + "_" + techniques + '_epoch-' + str(epoch) + '_learning_rate-0.0005_latent_dim-' + str(latent_dim) + '_batch_size-512_comb-mult.png')
 
     plt.rcParams['figure.figsize'] = [30, 20]
     df.plot(x="timestamp")
@@ -289,7 +289,7 @@ def run_tadgan(df, techniques):
     for ind in range(len(intervals_window)):
         plt.axvspan(anomalies_window["start"][ind], anomalies_window["end"][ind], color='blue', alpha=0.5)
 
-    plt.savefig('tuning/output_window_size-' + str(window) + "_" + techniques + '_epoch-200_learning_rate-0.0005_latent_dim-' + str(dim) + '_batch_size-512_comb-mult.png')
+    plt.savefig('tuning/output_window_size-' + str(window_size) + "_" + techniques + '_epoch-' + str(epoch) + '_learning_rate-0.0005_latent_dim-' + str(latent_dim) + '_batch_size-512_comb-mult.png')
     return str(score) + " / " + str(overall_count)
 
        

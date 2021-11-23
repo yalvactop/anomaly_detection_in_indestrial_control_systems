@@ -16,10 +16,10 @@ Call initializer instance with the dtype argument instead of passing it to the c
 WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
 Instructions for updating:
 If using Keras pass *_constraint arguments to layers.
-2021-11-23 17:28:32.856406: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2021-11-23 17:28:32.909450: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1996035000 Hz
-2021-11-23 17:28:32.913970: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x71c1d40 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2021-11-23 17:28:32.914037: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-11-23 17:28:33.611599: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-11-23 17:28:33.626009: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1996035000 Hz
+2021-11-23 17:28:33.631057: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7e10ef0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-11-23 17:28:33.631129: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
   'Discrepancy between trainable weights and collected trainable'
 WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/math_grad.py:1424: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
@@ -27,10 +27,10 @@ Instructions for updating:
 Use tf.where in 2.0, which has the same broadcast rule as np.where
 WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
 
-2021-11-23 17:31:00.588247: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
-2021-11-23 17:31:00.618062: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
-2021-11-23 17:31:00.724588: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
-2021-11-23 17:31:00.970925: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
-2021-11-23 17:31:01.000924: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
-2021-11-23 17:31:01.025266: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
-2021-11-23 17:31:01.052125: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-11-23 17:31:08.309797: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-11-23 17:31:08.405255: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-11-23 17:31:08.668103: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-11-23 17:31:09.158622: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-11-23 17:31:09.260404: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-11-23 17:31:09.308357: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-11-23 17:31:09.366006: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
