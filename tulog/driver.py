@@ -49,19 +49,19 @@ def main():
     #try these different techniques and their combination with tadgan
     df_pca["Normal/Attack"] = y
     df_pca["timestamp"] = timestamp
-    pca_score = run_tadgan(df_pca, "pca_" + rows + "_")
+    pca_score = run_tadgan(df_pca, "pca_" + str(rows) + "_")
     
     df_ae["Normal/Attack"] = y
     df_ae["timestamp"] = timestamp
-    ae_score = run_tadgan(df_ae, "autoencoder_" + rows + "_")
+    ae_score = run_tadgan(df_ae, "autoencoder_" + str(rows) + "_")
     
     df_fs["Normal/Attack"] = y
     df_fs["timestamp"] = timestamp
-    fs_score = run_tadgan(df_fs, "feature_selection_" + rows + "_")
+    fs_score = run_tadgan(df_fs, "feature_selection_" + str(rows) + "_")
     
     df["Normal/Attack"] = y
     df["timestamp"] = timestamp
-    bare_score = run_tadgan(df, "bare_" + rows + "_")
+    bare_score = run_tadgan(df, "bare_" + str(rows) + "_")
     
     print("bare_score: ", bare_score)
     print("fs_score: ", fs_score)

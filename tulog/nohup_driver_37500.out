@@ -16,16 +16,40 @@ Call initializer instance with the dtype argument instead of passing it to the c
 WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
 Instructions for updating:
 If using Keras pass *_constraint arguments to layers.
-2021-11-23 12:56:44.719583: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2021-11-23 12:56:44.833772: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1996035000 Hz
-2021-11-23 12:56:44.842874: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x75d6860 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2021-11-23 12:56:44.842944: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-11-23 15:22:08.981795: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-11-23 15:22:09.037614: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1996035000 Hz
+2021-11-23 15:22:09.054796: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x71926b0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-11-23 15:22:09.054894: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/math_grad.py:1424: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+2021-11-23 15:29:43.642718: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-11-23 15:29:43.792614: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-11-23 15:29:44.462941: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-11-23 15:29:45.812760: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-11-23 15:29:46.065390: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-11-23 15:29:46.204652: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-11-23 15:29:46.381511: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
 pca.n_components_:  23
 df_pca.shape:  (37500, 23)
 X_ae.shape:  (37500, 26)
+Epoch: 1/1, [Dx loss: [ 0.18105048 -0.13416174 -0.01029416  0.03255063]] [Dz loss: [-2.6223772  -0.9931606  -2.4652154   0.08359992]] [G loss: [7.711542   0.02827455 6.6236196  0.10596473]]
+(7378, 100, 23)
 Traceback (most recent call last):
   File "driver.py", line 73, in <module>
     main()
   File "driver.py", line 52, in main
-    pca_score = run_tadgan(df_pca, "pca_" + rows + "_")
-TypeError: can only concatenate str (not "int") to str
+    pca_score = run_tadgan(df_pca, "pca_" + str(rows) + "_")
+  File "/home/top/anomaly_detection_in_indestrial_control_systems/tulog/optimum.py", line 258, in run_tadgan
+    fout.write(str(score) + " / " + str(overall_count) + "  " + "window_size-" + str(window) + "_epoch-200_learning_rate-0.0005_latent_dim-" + str(dim) + "_batch_size-512_comb-mult_" + techniques)
+NameError: name 'window' is not defined
