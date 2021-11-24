@@ -1,0 +1,2 @@
+nohup: ignoring input
+2021-11-24 14:06:01.163360: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA

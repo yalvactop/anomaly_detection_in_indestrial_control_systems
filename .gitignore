@@ -1,4 +1,8 @@
-
 tulog/swat.csv
-MAD-GANs
+MAD-GANs/data/*
 tulog/swat1.csv
+GAN-AD/data/*
+GAN-AD/lib/*
+MAD-GANs/lib/*
+**/*.csv
+**/*.so

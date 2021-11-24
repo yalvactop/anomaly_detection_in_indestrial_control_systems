@@ -1,0 +1,229 @@
+nohup: ignoring input
+2021-11-24 12:05:13.227229: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Loading settings from ./experiments/settings/swat_train.txt
+Loaded swat from .npy
+Generated/loaded 42819 samples from data-type swat_train
+Ready to run with settings:
+ 	 settings_file
+swat_train 	 data
+47508 	 num_samples
+120 	 seq_length
+10 	 seq_step
+5 	 num_signals
+False 	 normalise
+0 	 cond_dim
+1 	 max_val
+False 	 one_hot
+False 	 predict_labels
+0.1 	 scale
+1.0 	 freq_low
+5.0 	 freq_high
+0.1 	 amplitude_low
+0.9 	 amplitude_high
+False 	 multivariate_mnist
+False 	 full_mnist
+ 	 data_load_from
+15 	 resample_rate_in_min
+100 	 hidden_units_g
+100 	 hidden_units_d
+1 	 kappa
+15 	 latent_dim
+False 	 batch_mean
+False 	 learn_scale
+0.1 	 learning_rate
+500 	 batch_size
+100 	 num_epochs
+1 	 D_rounds
+3 	 G_rounds
+False 	 use_time
+False 	 WGAN
+False 	 WGAN_clip
+True 	 shuffle
+False 	 wrong_labels
+swat 	 identifier
+False 	 dp
+1e-05 	 l2norm_bound
+1 	 batches_per_lot
+1e-05 	 dp_sigma
+44979 	 num_samples_t
+5 	 num_generated_features
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+0	0.2578	2.2330	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_0.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+1	0.0996	6.7440	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_1.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+2	0.5924	11.3841	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_2.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+3	0.0257	10.0660	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_3.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+4	0.0144	9.8347	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_4.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+5	0.0108	9.6945	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_5.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+6	0.0105	9.4501	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_6.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+7	0.0217	13.8777	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_7.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+8	0.0114	13.9941	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_8.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+9	0.0078	14.0511	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_9.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+10	0.0066	8.5232	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_10.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+11	0.0062	8.9452	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_11.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+12	0.0298	15.9952	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_12.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+13	0.0145	11.5782	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_13.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+14	0.0127	5.9314	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_14.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+15	0.0026	7.1066	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_15.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+16	0.0023	7.6377	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_16.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+17	0.0032	6.4808	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_17.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+18	0.0022	7.3644	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_18.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+19	0.0020	7.8413	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_19.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+20	0.0018	8.1665	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_20.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+21	0.0017	8.4199	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_21.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+22	0.0016	8.6332	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_22.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+23	0.0015	8.8205	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_23.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+24	0.0015	8.9844	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_24.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+25	0.0014	9.1341	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_25.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+26	0.0014	9.2741	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_26.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+27	0.0014	9.3166	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_27.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+28	0.0013	9.4402	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_28.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+29	0.0013	9.5599	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_29.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+30	0.0012	9.6736	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_30.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+31	0.0011	9.7777	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_31.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+32	0.0011	9.8742	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_32.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+33	0.0011	9.9642	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_33.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+34	0.0010	10.0474	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_34.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+35	0.0010	10.1262	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_35.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+36	0.0010	10.2013	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_36.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+37	0.0009	10.2706	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_37.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+38	0.0009	10.3175	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_38.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+39	0.0009	10.3603	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_39.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+40	0.0009	10.4259	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_40.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+41	0.0009	10.4802	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_41.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+42	0.0008	10.5161	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_42.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+43	0.0008	10.5624	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_43.npy
+vis_sample shape:(500, 120, 5)
+epoch, D_loss_curr, G_loss_curr, seq_length
+44	0.0008	10.6474	120
+Recorded 8 parameters to ./experiments/parameters/swat_120_44.npy

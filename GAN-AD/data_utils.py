@@ -97,16 +97,27 @@ def swat_train(seq_length, seq_step, num_signals, randomize=False):
     m, n = train.shape # m=496800, n=52
 
     samples = train[21600:, 0:n-1]
-    labels = train[21600:, n-1]    # the last colummn is label
+    y = train[21600:, n-1]    # the last colummn is label
+    
+    y = np.array(y, dtype=str)
+    labels = []
+    for i in y:
+        if i == "Normal":
+            labels.append(False)  #false == normal
+        else:
+            labels.append(True)   #true == attack
+
+    labels = np.array(labels)
     #############################
     # --- choose variables here --- #
     # samples = samples[:, [1, 2, 3, 4]]
     ############################
 
+    
     #####################################
     ####################################
     from sklearn.decomposition import PCA
-    X_n = samples
+    X_n = samples.astype(float)
     #####################################
     ####################################
     pca = PCA(n_components=num_signals, svd_solver='full')
@@ -125,19 +136,21 @@ def swat_train(seq_length, seq_step, num_signals, randomize=False):
     ###########################################
     ###########################################
     num_samples = (samples.shape[0] - seq_length) // seq_step
-    aa = np.empty([num_samples, seq_length, num_singls])
+    aa = np.empty([num_samples, seq_length, num_signals])
     bb = np.empty([num_samples, seq_length, 1])
 
 
     for j in range(num_samples):
        bb[j, :, :] = np.reshape(labels[(j * seq_step):(j * seq_step + seq_length)], [-1, 1])
        # aa[j, :, :] = np.reshape(samples[(j * seq_step):(j * seq_step + seq_length)], [-1, 1])
-       for i in range(num_singls):
+       for i in range(num_signals):
            aa[j, :, i] = samples[(j * seq_step):(j * seq_step + seq_length), i]
 
     samples = aa
     labels = bb
 
+    print("samples.shape: ", samples.shape)
+    print("labels.shape: ", labels.shape)
     return samples, labels
 
 

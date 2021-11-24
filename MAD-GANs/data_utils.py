@@ -23,10 +23,10 @@ from sklearn import preprocessing
 # --- deal with the SWaT data --- #
 def swat(seq_length, seq_step, num_signals, randomize=False):
     """ Load and serialise """
-    # train = np.load('./data/swat.npy')
-    # print('Loaded swat from .npy')
-    train = np.loadtxt(open('./data/swat.csv'), delimiter=',')
-    print('Loaded swat from .csv')
+    train = np.load('./data/swat.npy')
+    print('Loaded swat from .npy')
+    # train = np.loadtxt(open('./data/swat.csv'), delimiter=',')
+    # print('Loaded swat from .csv')
     m, n = train.shape # m=496800, n=52
     for i in range(n - 1):
         A = max(train[:, i])
@@ -38,7 +38,17 @@ def swat(seq_length, seq_step, num_signals, randomize=False):
             train[:, i] = train[:, i]
 
     samples = train[21600:, 0:n-1]
-    labels = train[21600:, n-1]    # the last colummn is label
+    y = train[21600:, n-1]    # the last colummn is label
+    
+    y = np.array(y, dtype=str)
+    labels = []
+    for i in y:
+        if i == "Normal":
+            labels.append(False)  #false == normal
+        else:
+            labels.append(True)   #true == attack
+
+    labels = np.array(labels)
     #############################
     # -- choose variable for uni-variate GAN-AD -- #
     # samples = samples[:, [1, 8, 18, 28]]
@@ -50,7 +60,7 @@ def swat(seq_length, seq_step, num_signals, randomize=False):
     # X_n = samples[:, XS]
     # X_a = samples_a[:, XS]
     # All VARIABLES
-    X_n = samples
+    X_n = samples.astype(float)
     ####################################
     ###################################
     # -- the best PC dimension is chosen pc=5 -- #
@@ -553,7 +563,7 @@ def get_data(data_type, seq_length, seq_step, num_signals, sub_id, eval_single, 
         samples = data_dict['samples']
         pdf = data_dict['pdf']
         labels = data_dict['labels']
-    elif data_type == 'swat':
+    elif data_type == 'swat_train':
         samples, labels = swat(seq_length, seq_step, num_signals)
     elif data_type == 'swat_test':
         samples, labels, index = swat_test(seq_length, seq_step, num_signals)
