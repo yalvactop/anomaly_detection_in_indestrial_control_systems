@@ -1,6 +1,6 @@
 {
 "settings_file": "",
-"data": "swat_test",
+"data": "swat_train",
 "seq_length": 120,
 "num_signals": 5,
 "normalise": false,

@@ -86,9 +86,9 @@ def swat(seq_length, seq_step, num_signals, randomize=False):
     bb = np.empty([num_samples, seq_length, 1])
 
     for j in range(num_samples):
-       bb[j, :, :] = np.reshape(labels[(j * seq_step):(j * seq_step + seq_length)], [-1,1])
-       for i in range(num_signals):
-           aa[j, :, i] = samples[(j * seq_step):(j*seq_step + seq_length), i]
+        bb[j, :, :] = np.reshape(labels[(j * seq_step):(j * seq_step + seq_length)], [-1,1])
+        for i in range(num_signals):
+            aa[j, :, i] = samples[(j * seq_step):(j*seq_step + seq_length), i]
 
     # samples = aa[:, 0:7200:200, :]
     # labels = bb[:, 0:7200:200, :]
@@ -142,10 +142,10 @@ def swat_birgan(seq_length, seq_step, num_signals, randomize=False):
 
 def swat_test(seq_length, seq_step, num_signals, randomize=False):
     """ Load and serialise """
-    # test = np.load('./data/swat_a.npy')
-    # print('Loaded swat_a from .npy')
-    test = np.loadtxt(open('./data/swat_a.csv'), delimiter=',')
-    print('Loaded swat_a from .csv')
+    test = np.load('./data/swat_a.npy')
+    print('Loaded swat_a from .npy')
+    # test = np.loadtxt(open('./data/swat_a.csv'), delimiter=',')
+    # print('Loaded swat_a from .csv')
     m, n = test.shape  # m1=449919, n1=52
     for i in range(n - 1):
         B = max(test[:, i])
@@ -157,7 +157,17 @@ def swat_test(seq_length, seq_step, num_signals, randomize=False):
             test[:, i] = test[:, i]
 
     samples = test[:, 0:n - 1]
-    labels = test[:, n - 1]
+    y = test[:, n - 1]    # the last colummn is label
+    
+    y = np.array(y, dtype=str)
+    labels = []
+    for i in y:
+        if i == "Normal":
+            labels.append(False)  #false == normal
+        else:
+            labels.append(True)   #true == attack
+
+    labels = np.array(labels)
     idx = np.asarray(list(range(0, m)))  # record the idx of each point
     #############################
     # -- choose variable for uni-variate GAN-AD -- #
@@ -173,7 +183,7 @@ def swat_test(seq_length, seq_step, num_signals, randomize=False):
     # X_n = samples[:, XS]
     # X_a = samples_a[:, XS]
     # All VARIABLES
-    X_a = samples
+    X_a = samples.astype(float)
     ####################################
     ###################################
     # -- the best PC dimension is chosen pc=5 -- #
@@ -193,6 +203,14 @@ def swat_test(seq_length, seq_step, num_signals, randomize=False):
     aa = np.empty([num_samples_t, seq_length, num_signals])
     bb = np.empty([num_samples_t, seq_length, 1])
     bbb = np.empty([num_samples_t, seq_length, 1])
+    
+    print("bb.shape: ", bb.shape)
+    print("bbb.shape: ", bbb.shape)
+    print("aa.shape: ", aa.shape)
+    
+    print("labels.shape: ", labels.shape)
+    print("idx.shape: ", idx.shape)
+    print("samples.shape: ", samples.shape)
 
     for j in range(num_samples_t):
         bb[j, :, :] = np.reshape(labels[(j * seq_step):(j * seq_step + seq_length)], [-1, 1])

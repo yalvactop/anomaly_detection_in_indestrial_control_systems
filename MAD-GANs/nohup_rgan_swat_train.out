@@ -1,2 +1,374 @@
 nohup: ignoring input
 2021-11-24 14:06:01.163360: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Loading settings from ./experiments/settings/swat_train.txt
+hidden_units_e not found in loaded settings - adopting value from command line defaults:  100
+weight not found in loaded settings - adopting value from command line defaults:  0.5
+degree not found in loaded settings - adopting value from command line defaults:  1
+E_rounds not found in loaded settings - adopting value from command line defaults:  1
+eval_mul not found in loaded settings - adopting value from command line defaults:  False
+eval_an not found in loaded settings - adopting value from command line defaults:  False
+eval_single not found in loaded settings - adopting value from command line defaults:  False
+sub_id not found in loaded settings - adopting value from command line defaults:  test
+Loading data from ./experiments/data/.data.npy
+data_type
+Loaded swat from .npy
+num_samples: 42819
+num_signals: 5
+Generated/loaded 42819 samples from data-type swat_train
+samples_size: (42819, 120, 5)
+num_variables: 5
+Ready to run with settings:
+ 	 settings_file
+swat_train 	 data
+120 	 seq_length
+5 	 num_signals
+False 	 normalise
+0.1 	 scale
+1.0 	 freq_low
+5.0 	 freq_high
+0.1 	 amplitude_low
+0.9 	 amplitude_high
+False 	 multivariate_mnist
+False 	 full_mnist
+ 	 data_load_from
+15 	 resample_rate_in_min
+100 	 hidden_units_g
+100 	 hidden_units_d
+100 	 hidden_units_e
+1 	 kappa
+15 	 latent_dim
+0.5 	 weight
+1 	 degree
+False 	 batch_mean
+False 	 learn_scale
+0.1 	 learning_rate
+500 	 batch_size
+100 	 num_epochs
+1 	 D_rounds
+3 	 G_rounds
+1 	 E_rounds
+True 	 shuffle
+False 	 eval_mul
+False 	 eval_an
+False 	 eval_single
+False 	 wrong_labels
+swat 	 identifier
+test 	 sub_id
+False 	 dp
+1e-05 	 l2norm_bound
+1 	 batches_per_lot
+1e-05 	 dp_sigma
+47508 	 num_samples
+10 	 seq_step
+0 	 cond_dim
+1 	 max_val
+False 	 one_hot
+False 	 predict_labels
+False 	 use_time
+False 	 WGAN
+False 	 WGAN_clip
+44979 	 num_samples_t
+5 	 num_generated_features
+epoch, D_loss_curr, G_loss_curr, seq_length
+0	0.1327	3.9777	120
+Recorded 8 parameters to ./experiments/parameters/test_120_0.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+1	0.0830	6.3301	120
+Recorded 8 parameters to ./experiments/parameters/test_120_1.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+2	0.0493	7.4219	120
+Recorded 8 parameters to ./experiments/parameters/test_120_2.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+3	0.0343	8.0951	120
+Recorded 8 parameters to ./experiments/parameters/test_120_3.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+4	0.0213	8.5725	120
+Recorded 8 parameters to ./experiments/parameters/test_120_4.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+5	0.0145	8.8811	120
+Recorded 8 parameters to ./experiments/parameters/test_120_5.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+6	0.0065	8.5727	120
+Recorded 8 parameters to ./experiments/parameters/test_120_6.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+7	0.0039	9.5773	120
+Recorded 8 parameters to ./experiments/parameters/test_120_7.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+8	0.0015	7.2251	120
+Recorded 8 parameters to ./experiments/parameters/test_120_8.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+9	0.0015	7.1068	120
+Recorded 8 parameters to ./experiments/parameters/test_120_9.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+10	0.0015	7.1375	120
+Recorded 8 parameters to ./experiments/parameters/test_120_10.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+11	0.0014	7.1998	120
+Recorded 8 parameters to ./experiments/parameters/test_120_11.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+12	0.0014	7.2716	120
+Recorded 8 parameters to ./experiments/parameters/test_120_12.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+13	0.0013	7.3442	120
+Recorded 8 parameters to ./experiments/parameters/test_120_13.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+14	0.0013	7.4157	120
+Recorded 8 parameters to ./experiments/parameters/test_120_14.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+15	0.0022	6.5281	120
+Recorded 8 parameters to ./experiments/parameters/test_120_15.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+16	0.0120	4.4780	120
+Recorded 8 parameters to ./experiments/parameters/test_120_16.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+17	0.0211	3.9420	120
+Recorded 8 parameters to ./experiments/parameters/test_120_17.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+18	0.0056	5.2867	120
+Recorded 8 parameters to ./experiments/parameters/test_120_18.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+19	0.0030	5.9919	120
+Recorded 8 parameters to ./experiments/parameters/test_120_19.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+20	0.0023	6.3434	120
+Recorded 8 parameters to ./experiments/parameters/test_120_20.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+21	0.0024	6.2570	120
+Recorded 8 parameters to ./experiments/parameters/test_120_21.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+22	0.0020	6.5252	120
+Recorded 8 parameters to ./experiments/parameters/test_120_22.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+23	0.0017	6.7077	120
+Recorded 8 parameters to ./experiments/parameters/test_120_23.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+24	0.0016	6.8481	120
+Recorded 8 parameters to ./experiments/parameters/test_120_24.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+25	0.0015	6.9654	120
+Recorded 8 parameters to ./experiments/parameters/test_120_25.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+26	0.0014	7.0665	120
+Recorded 8 parameters to ./experiments/parameters/test_120_26.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+27	0.0013	7.1564	120
+Recorded 8 parameters to ./experiments/parameters/test_120_27.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+28	0.0013	7.2205	120
+Recorded 8 parameters to ./experiments/parameters/test_120_28.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+29	0.0014	7.0861	120
+Recorded 8 parameters to ./experiments/parameters/test_120_29.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+30	0.0015	7.2403	120
+Recorded 8 parameters to ./experiments/parameters/test_120_30.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+31	0.0072	5.2474	120
+Recorded 8 parameters to ./experiments/parameters/test_120_31.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+32	0.0034	6.0073	120
+Recorded 8 parameters to ./experiments/parameters/test_120_32.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+33	0.0026	6.3672	120
+Recorded 8 parameters to ./experiments/parameters/test_120_33.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+34	0.0021	6.6305	120
+Recorded 8 parameters to ./experiments/parameters/test_120_34.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+35	0.0018	6.8362	120
+Recorded 8 parameters to ./experiments/parameters/test_120_35.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+36	0.0015	7.0085	120
+Recorded 8 parameters to ./experiments/parameters/test_120_36.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+37	0.0013	7.1586	120
+Recorded 8 parameters to ./experiments/parameters/test_120_37.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+38	0.0012	7.2919	120
+Recorded 8 parameters to ./experiments/parameters/test_120_38.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+39	0.0011	7.4098	120
+Recorded 8 parameters to ./experiments/parameters/test_120_39.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+40	0.0010	7.5169	120
+Recorded 8 parameters to ./experiments/parameters/test_120_40.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+41	0.0009	7.6188	120
+Recorded 8 parameters to ./experiments/parameters/test_120_41.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+42	0.0009	7.7127	120
+Recorded 8 parameters to ./experiments/parameters/test_120_42.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+43	0.0008	7.8032	120
+Recorded 8 parameters to ./experiments/parameters/test_120_43.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+44	0.0008	7.8915	120
+Recorded 8 parameters to ./experiments/parameters/test_120_44.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+45	0.0008	7.9783	120
+Recorded 8 parameters to ./experiments/parameters/test_120_45.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+46	0.0008	8.0631	120
+Recorded 8 parameters to ./experiments/parameters/test_120_46.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+47	0.0017	8.1148	120
+Recorded 8 parameters to ./experiments/parameters/test_120_47.npy
+epoch, D_loss_curr, G_loss_curr, seq_lengthUsing TensorFlow backend.
+
+48	0.0752	3.6105	120
+Recorded 8 parameters to ./experiments/parameters/test_120_48.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+49	0.0303	4.5660	120
+Recorded 8 parameters to ./experiments/parameters/test_120_49.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+50	0.0179	5.0917	120
+Recorded 8 parameters to ./experiments/parameters/test_120_50.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+51	0.0123	5.5160	120
+Recorded 8 parameters to ./experiments/parameters/test_120_51.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+52	0.0092	5.8952	120
+Recorded 8 parameters to ./experiments/parameters/test_120_52.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+53	0.0072	6.2505	120
+Recorded 8 parameters to ./experiments/parameters/test_120_53.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+54	0.0059	6.5716	120
+Recorded 8 parameters to ./experiments/parameters/test_120_54.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+55	0.0053	6.8660	120
+Recorded 8 parameters to ./experiments/parameters/test_120_55.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+56	0.0049	7.1334	120
+Recorded 8 parameters to ./experiments/parameters/test_120_56.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+57	0.0046	7.3766	120
+Recorded 8 parameters to ./experiments/parameters/test_120_57.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+58	0.0047	7.6039	120
+Recorded 8 parameters to ./experiments/parameters/test_120_58.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+59	0.0059	7.8373	120
+Recorded 8 parameters to ./experiments/parameters/test_120_59.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+60	0.0087	6.1739	120
+Recorded 8 parameters to ./experiments/parameters/test_120_60.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+61	0.0064	6.7322	120
+Recorded 8 parameters to ./experiments/parameters/test_120_61.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+62	0.0050	7.2376	120
+Recorded 8 parameters to ./experiments/parameters/test_120_62.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+63	0.0042	7.6352	120
+Recorded 8 parameters to ./experiments/parameters/test_120_63.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+64	0.0036	7.9514	120
+Recorded 8 parameters to ./experiments/parameters/test_120_64.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+65	0.0032	8.2124	120
+Recorded 8 parameters to ./experiments/parameters/test_120_65.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+66	0.0029	8.4336	120
+Recorded 8 parameters to ./experiments/parameters/test_120_66.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+67	0.0027	8.6253	120
+Recorded 8 parameters to ./experiments/parameters/test_120_67.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+68	0.0025	8.7952	120
+Recorded 8 parameters to ./experiments/parameters/test_120_68.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+69	0.0024	8.9471	120
+Recorded 8 parameters to ./experiments/parameters/test_120_69.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+70	0.0024	9.0863	120
+Recorded 8 parameters to ./experiments/parameters/test_120_70.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+71	0.0023	9.2125	120
+Recorded 8 parameters to ./experiments/parameters/test_120_71.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+72	0.0023	9.3293	120
+Recorded 8 parameters to ./experiments/parameters/test_120_72.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+73	0.0023	9.4404	120
+Recorded 8 parameters to ./experiments/parameters/test_120_73.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+74	0.0024	9.5194	120
+Recorded 8 parameters to ./experiments/parameters/test_120_74.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+75	0.0025	9.5625	120
+Recorded 8 parameters to ./experiments/parameters/test_120_75.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+76	0.0025	9.6369	120
+Recorded 8 parameters to ./experiments/parameters/test_120_76.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+77	0.0024	9.6779	120
+Recorded 8 parameters to ./experiments/parameters/test_120_77.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+78	0.0024	9.7055	120
+Recorded 8 parameters to ./experiments/parameters/test_120_78.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+79	0.0023	9.7332	120
+Recorded 8 parameters to ./experiments/parameters/test_120_79.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+80	0.0023	9.7613	120
+Recorded 8 parameters to ./experiments/parameters/test_120_80.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+81	0.0022	9.7882	120
+Recorded 8 parameters to ./experiments/parameters/test_120_81.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+82	0.0022	9.8184	120
+Recorded 8 parameters to ./experiments/parameters/test_120_82.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+83	0.0021	9.8516	120
+Recorded 8 parameters to ./experiments/parameters/test_120_83.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+84	0.0021	9.8883	120
+Recorded 8 parameters to ./experiments/parameters/test_120_84.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+85	0.0021	9.9300	120
+Recorded 8 parameters to ./experiments/parameters/test_120_85.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+86	0.0020	9.9729	120
+Recorded 8 parameters to ./experiments/parameters/test_120_86.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+87	0.0020	10.0162	120
+Recorded 8 parameters to ./experiments/parameters/test_120_87.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+88	0.0020	10.0622	120
+Recorded 8 parameters to ./experiments/parameters/test_120_88.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+89	0.0020	10.1124	120
+Recorded 8 parameters to ./experiments/parameters/test_120_89.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+90	0.0020	10.1657	120
+Recorded 8 parameters to ./experiments/parameters/test_120_90.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+91	0.0019	10.2178	120
+Recorded 8 parameters to ./experiments/parameters/test_120_91.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+92	0.0019	10.2681	120
+Recorded 8 parameters to ./experiments/parameters/test_120_92.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+93	0.0019	10.3163	120
+Recorded 8 parameters to ./experiments/parameters/test_120_93.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+94	0.0019	10.3632	120
+Recorded 8 parameters to ./experiments/parameters/test_120_94.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+95	0.0018	10.4094	120
+Recorded 8 parameters to ./experiments/parameters/test_120_95.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+96	0.0018	10.4562	120
+Recorded 8 parameters to ./experiments/parameters/test_120_96.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+97	0.0018	10.5056	120
+Recorded 8 parameters to ./experiments/parameters/test_120_97.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+98	0.0018	10.5592	120
+Recorded 8 parameters to ./experiments/parameters/test_120_98.npy
+epoch, D_loss_curr, G_loss_curr, seq_length
+99	0.0018	10.6170	120
+Recorded 8 parameters to ./experiments/parameters/test_120_99.npy
+Training terminated | Training time=33549 s
+Training terminated | training time = 33549s  
