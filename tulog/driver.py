@@ -9,8 +9,9 @@ def main():
     
     signal = 'swat.csv'
     df = pd.read_csv(signal)
-    rows = 37500
-    #df = df.iloc[:5*len(df.index)//8]
+    #rows = 37500
+    rows = len(df.index)//2
+    #rows = len(df.index)//8
     df = df.iloc[:rows]
     y = df["Normal/Attack"]
     timestamp = df["timestamp"]
@@ -39,7 +40,7 @@ def main():
     #feature extraction
     #pca
     df_pca = run_pca(df)
-    print("df_pca.shape: " ,df_pca.shape)
+    print("df_pca_09.shape: " ,df_pca.shape)
     
     #ae
     X_ae = ae_test(df.to_numpy()) #X is numpy. returns the extracted features dataset
@@ -49,7 +50,7 @@ def main():
     #try these different techniques and their combination with tadgan
     df_pca["Normal/Attack"] = y
     df_pca["timestamp"] = timestamp
-    pca_score = run_tadgan(df_pca, "pca_" + str(rows) + "_")
+    pca_score = run_tadgan(df_pca, "pca_09" + str(rows) + "_")
     
     df_ae["Normal/Attack"] = y
     df_ae["timestamp"] = timestamp
@@ -65,7 +66,7 @@ def main():
     
     print("bare_score: ", bare_score)
     print("fs_score: ", fs_score)
-    print("pca_score: ", pca_score)
+    print("pca_09_score: ", pca_score)
     print("ae_score: ", ae_score)
 
     

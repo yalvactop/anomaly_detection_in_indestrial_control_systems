@@ -1,2 +1,518 @@
 nohup: ignoring input
 2021-11-26 14:51:43.326477: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Loading settings from ./experiments/settings/swat_test.txt
+Loaded swat_a from .npy
+Generated/loaded 44979 samples from data-type swat_test
+Ready to run with settings:
+ 	 settings_file
+swat_test 	 data
+47508 	 num_samples
+120 	 seq_length
+10 	 seq_step
+5 	 num_signals
+False 	 normalise
+0 	 cond_dim
+1 	 max_val
+False 	 one_hot
+False 	 predict_labels
+0.1 	 scale
+1.0 	 freq_low
+5.0 	 freq_high
+0.1 	 amplitude_low
+0.9 	 amplitude_high
+False 	 multivariate_mnist
+False 	 full_mnist
+ 	 data_load_from
+15 	 resample_rate_in_min
+100 	 hidden_units_g
+100 	 hidden_units_d
+1 	 kappa
+15 	 latent_dim
+False 	 batch_mean
+False 	 learn_scale
+0.1 	 learning_rate
+500 	 batch_size
+100 	 num_epochs
+1 	 D_rounds
+3 	 G_rounds
+False 	 use_time
+False 	 WGAN
+False 	 WGAN_clip
+True 	 shuffle
+False 	 wrong_labels
+swat 	 identifier
+False 	 dp
+1e-05 	 l2norm_bound
+1 	 batches_per_lot
+1e-05 	 dp_sigma
+44979 	 num_samples_t
+5 	 num_generated_features
+Main Starting...
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 0; tao=0.2; Accu: 56.32; Pre: 9.488; Rec: 30.4; F1: 0.1411; FPR: 40.09
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.2; Accu: 55.97; Pre: 10.18; Rec: 30.36; F1: 0.1488; FPR: 40.19
+seq_length: 120
+point-wise-Epoch: 0; tao=0.3; Accu: 50.19; Pre: 9.647; Rec: 37.07; F1: 0.1499; FPR: 48.0
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.3; Accu: 49.95; Pre: 10.36; Rec: 37.09; F1: 0.1586; FPR: 48.13
+seq_length: 120
+point-wise-Epoch: 0; tao=0.4; Accu: 46.53; Pre: 9.543; Rec: 40.13; F1: 0.1512; FPR: 52.58
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.4; Accu: 46.44; Pre: 10.35; Rec: 40.53; F1: 0.1617; FPR: 52.67
+seq_length: 120
+point-wise-Epoch: 0; tao=0.5; Accu: 44.67; Pre: 11.12; Rec: 50.84; F1: 0.1796; FPR: 56.18
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.5; Accu: 44.72; Pre: 11.97; Rec: 50.96; F1: 0.1908; FPR: 56.22
+seq_length: 120
+point-wise-Epoch: 0; tao=0.6; Accu: 42.85; Pre: 11.06; Rec: 52.62; F1: 0.1799; FPR: 58.5
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.6; Accu: 42.98; Pre: 11.92; Rec: 52.8; F1: 0.1916; FPR: 58.5
+seq_length: 120
+point-wise-Epoch: 0; tao=0.7; Accu: 39.32; Pre: 12.33; Rec: 65.42; F1: 0.2049; FPR: 64.29
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.7; Accu: 39.63; Pre: 13.27; Rec: 65.55; F1: 0.218; FPR: 64.26
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 1; tao=0.2; Accu: 52.26; Pre: 6.674; Rec: 22.58; F1: 0.09962; FPR: 43.64
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.2; Accu: 52.06; Pre: 7.532; Rec: 23.73; F1: 0.1108; FPR: 43.69
+seq_length: 120
+point-wise-Epoch: 1; tao=0.3; Accu: 45.35; Pre: 8.377; Rec: 35.22; F1: 0.1323; FPR: 53.25
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.3; Accu: 45.34; Pre: 9.269; Rec: 36.3; F1: 0.1445; FPR: 53.3
+seq_length: 120
+point-wise-Epoch: 1; tao=0.4; Accu: 43.12; Pre: 9.699; Rec: 44.33; F1: 0.1563; FPR: 57.05
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.4; Accu: 43.12; Pre: 10.53; Rec: 44.83; F1: 0.1675; FPR: 57.14
+seq_length: 120
+point-wise-Epoch: 1; tao=0.5; Accu: 41.08; Pre: 10.27; Rec: 49.77; F1: 0.1674; FPR: 60.12
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.5; Accu: 41.17; Pre: 11.11; Rec: 50.14; F1: 0.179; FPR: 60.18
+seq_length: 120
+point-wise-Epoch: 1; tao=0.6; Accu: 39.96; Pre: 10.08; Rec: 49.78; F1: 0.1648; FPR: 61.4
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.6; Accu: 40.06; Pre: 10.9; Rec: 50.14; F1: 0.1762; FPR: 61.46
+seq_length: 120
+point-wise-Epoch: 1; tao=0.7; Accu: 37.22; Pre: 10.04; Rec: 52.37; F1: 0.1658; FPR: 64.87
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.7; Accu: 37.46; Pre: 10.91; Rec: 52.96; F1: 0.1781; FPR: 64.87
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 2; tao=0.2; Accu: 67.21; Pre: 16.74; Rec: 42.78; F1: 0.2367; FPR: 29.41
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.2; Accu: 68.17; Pre: 18.65; Rec: 42.85; F1: 0.2557; FPR: 28.03
+seq_length: 120
+point-wise-Epoch: 2; tao=0.3; Accu: 63.35; Pre: 15.5; Rec: 45.34; F1: 0.2273; FPR: 34.16
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.3; Accu: 63.44; Pre: 16.9; Rec: 46.02; F1: 0.2433; FPR: 33.95
+seq_length: 120
+point-wise-Epoch: 2; tao=0.4; Accu: 58.91; Pre: 13.78; Rec: 45.34; F1: 0.2078; FPR: 39.22
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.4; Accu: 58.99; Pre: 15.02; Rec: 46.02; F1: 0.2228; FPR: 39.06
+seq_length: 120
+point-wise-Epoch: 2; tao=0.5; Accu: 57.1; Pre: 13.56; Rec: 47.12; F1: 0.2072; FPR: 41.52
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.5; Accu: 57.29; Pre: 14.84; Rec: 48.01; F1: 0.2232; FPR: 41.32
+seq_length: 120
+point-wise-Epoch: 2; tao=0.6; Accu: 53.78; Pre: 15.88; Rec: 65.28; F1: 0.2523; FPR: 47.81
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.6; Accu: 55.07; Pre: 17.37; Rec: 65.06; F1: 0.2709; FPR: 46.43
+seq_length: 120
+point-wise-Epoch: 2; tao=0.7; Accu: 50.4; Pre: 14.88; Rec: 65.36; F1: 0.2395; FPR: 51.67
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.7; Accu: 50.62; Pre: 15.92; Rec: 65.06; F1: 0.2527; FPR: 51.55
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 3; tao=0.2; Accu: 61.51; Pre: 4.37; Rec: 10.39; F1: 0.05762; FPR: 31.43
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.2; Accu: 60.92; Pre: 4.953; Rec: 10.98; F1: 0.06423; FPR: 31.59
+seq_length: 120
+point-wise-Epoch: 3; tao=0.3; Accu: 57.07; Pre: 6.66; Rec: 19.48; F1: 0.0956; FPR: 37.73
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.3; Accu: 56.47; Pre: 7.15; Rec: 19.5; F1: 0.1008; FPR: 37.98
+seq_length: 120
+point-wise-Epoch: 3; tao=0.4; Accu: 53.81; Pre: 6.19; Rec: 19.8; F1: 0.09082; FPR: 41.48
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.4; Accu: 53.27; Pre: 6.659; Rec: 19.84; F1: 0.09609; FPR: 41.71
+seq_length: 120
+point-wise-Epoch: 3; tao=0.5; Accu: 53.22; Pre: 7.841; Rec: 26.53; F1: 0.1176; FPR: 43.1
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.5; Accu: 52.71; Pre: 8.317; Rec: 26.2; F1: 0.1227; FPR: 43.32
+seq_length: 120
+point-wise-Epoch: 3; tao=0.6; Accu: 52.09; Pre: 7.633; Rec: 26.53; F1: 0.1152; FPR: 44.37
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.6; Accu: 51.6; Pre: 8.098; Rec: 26.2; F1: 0.1202; FPR: 44.59
+seq_length: 120
+point-wise-Epoch: 3; tao=0.7; Accu: 49.43; Pre: 7.816; Rec: 29.31; F1: 0.1202; FPR: 47.79
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.7; Accu: 49.03; Pre: 8.345; Rec: 29.13; F1: 0.1264; FPR: 47.99
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 4; tao=0.2; Accu: 60.98; Pre: 9.667; Rec: 26.52; F1: 0.1379; FPR: 34.26
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.2; Accu: 60.58; Pre: 10.45; Rec: 26.73; F1: 0.1463; FPR: 34.34
+seq_length: 120
+point-wise-Epoch: 4; tao=0.3; Accu: 58.93; Pre: 9.389; Rec: 27.54; F1: 0.1363; FPR: 36.74
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.3; Accu: 58.55; Pre: 10.07; Rec: 27.46; F1: 0.1435; FPR: 36.79
+seq_length: 120
+point-wise-Epoch: 4; tao=0.4; Accu: 55.19; Pre: 13.27; Rec: 48.6; F1: 0.2052; FPR: 43.9
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.4; Accu: 55.07; Pre: 14.14; Rec: 48.2; F1: 0.2152; FPR: 43.9
+seq_length: 120
+point-wise-Epoch: 4; tao=0.5; Accu: 50.78; Pre: 12.07; Rec: 48.6; F1: 0.1903; FPR: 48.92
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.5; Accu: 50.62; Pre: 12.85; Rec: 48.2; F1: 0.1997; FPR: 49.02
+seq_length: 120
+point-wise-Epoch: 4; tao=0.6; Accu: 48.86; Pre: 11.87; Rec: 49.95; F1: 0.1887; FPR: 51.29
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.6; Accu: 48.76; Pre: 12.65; Rec: 49.6; F1: 0.1984; FPR: 51.36
+seq_length: 120
+point-wise-Epoch: 4; tao=0.7; Accu: 45.57; Pre: 12.7; Rec: 59.29; F1: 0.2064; FPR: 56.32
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.7; Accu: 45.56; Pre: 13.49; Rec: 58.62; F1: 0.2163; FPR: 56.4
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 5; tao=0.2; Accu: 62.64; Pre: 12.18; Rec: 33.43; F1: 0.1747; FPR: 33.32
+seq_length: 120
+sample-wise-Epoch: 5; tao=0.2; Accu: 62.4; Pre: 13.18; Rec: 33.7; F1: 0.1855; FPR: 33.3
+seq_length: 120
+point-wise-Epoch: 5; tao=0.3; Accu: 60.38; Pre: 11.43; Rec: 33.53; F1: 0.1668; FPR: 35.91
+seq_length: 120
+sample-wise-Epoch: 5; tao=0.3; Accu: 59.07; Pre: 11.98; Rec: 33.7; F1: 0.173; FPR: 37.13
+seq_length: 120
+point-wise-Epoch: 5; tao=0.4; Accu: 59.27; Pre: 13.29; Rec: 42.61; F1: 0.1991; FPR: 38.43
+seq_length: 120
+sample-wise-Epoch: 5; tao=0.4; Accu: 59.07; Pre: 14.15; Rec: 42.22; F1: 0.2083; FPR: 38.41
+seq_length: 120
+point-wise-Epoch: 5; tao=0.5; Accu: 53.85; Pre: 11.72; Rec: 42.86; F1: 0.1807; FPR: 44.63
+seq_length: 120
+sample-wise-Epoch: 5; tao=0.5; Accu: 53.64; Pre: 12.5; Rec: 42.56; F1: 0.1898; FPR: 44.7
+seq_length: 120
+point-wise-Epoch: 5; tao=0.6; Accu: 50.47; Pre: 10.89; Rec: 42.87; F1: 0.1705; FPR: 48.48
+seq_length: 120
+sample-wise-Epoch: 5; tao=0.6; Accu: 50.31; Pre: 11.62; Rec: 42.56; F1: 0.1793; FPR: 48.53
+seq_length: 120
+point-wise-Epoch: 5; tao=0.7; Accu: 43.53; Pre: 10.11; Rec: 46.27; F1: 0.1631; FPR: 56.85
+seq_length: 120
+sample-wise-Epoch: 5; tao=0.7; Accu: 43.51; Pre: 10.88; Rec: 46.33; F1: 0.1732; FPR: 56.91
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 6; tao=0.2; Accu: 58.54; Pre: 8.718; Rec: 25.49; F1: 0.1262; FPR: 36.89
+seq_length: 120
+sample-wise-Epoch: 6; tao=0.2; Accu: 58.08; Pre: 9.412; Rec: 25.67; F1: 0.1339; FPR: 37.06
+seq_length: 120
+point-wise-Epoch: 6; tao=0.3; Accu: 57.79; Pre: 11.34; Rec: 36.31; F1: 0.1693; FPR: 39.24
+seq_length: 120
+sample-wise-Epoch: 6; tao=0.3; Accu: 57.45; Pre: 12.08; Rec: 36.03; F1: 0.1772; FPR: 39.34
+seq_length: 120
+point-wise-Epoch: 6; tao=0.4; Accu: 53.9; Pre: 10.83; Rec: 38.65; F1: 0.1658; FPR: 43.99
+seq_length: 120
+sample-wise-Epoch: 6; tao=0.4; Accu: 53.76; Pre: 11.71; Rec: 38.91; F1: 0.1765; FPR: 44.02
+seq_length: 120
+point-wise-Epoch: 6; tao=0.5; Accu: 53.87; Pre: 12.72; Rec: 47.74; F1: 0.1976; FPR: 45.28
+seq_length: 120
+sample-wise-Epoch: 6; tao=0.5; Accu: 53.76; Pre: 13.57; Rec: 47.43; F1: 0.2077; FPR: 45.3
+seq_length: 120
+point-wise-Epoch: 6; tao=0.6; Accu: 48.53; Pre: 12.35; Rec: 53.13; F1: 0.1974; FPR: 52.1
+seq_length: 120
+sample-wise-Epoch: 6; tao=0.6; Accu: 48.54; Pre: 13.23; Rec: 52.99; F1: 0.2086; FPR: 52.13
+seq_length: 120
+point-wise-Epoch: 6; tao=0.7; Accu: 44.46; Pre: 12.45; Rec: 59.28; F1: 0.203; FPR: 57.59
+seq_length: 120
+sample-wise-Epoch: 6; tao=0.7; Accu: 44.83; Pre: 13.56; Rec: 60.1; F1: 0.2183; FPR: 57.46
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 7; tao=0.2; Accu: 54.6; Pre: 11.63; Rec: 41.48; F1: 0.1783; FPR: 43.58
+seq_length: 120
+sample-wise-Epoch: 7; tao=0.2; Accu: 54.62; Pre: 12.7; Rec: 42.22; F1: 0.1918; FPR: 43.52
+seq_length: 120
+point-wise-Epoch: 7; tao=0.3; Accu: 50.15; Pre: 12.28; Rec: 50.56; F1: 0.1945; FPR: 49.91
+seq_length: 120
+sample-wise-Epoch: 7; tao=0.3; Accu: 50.17; Pre: 13.23; Rec: 50.74; F1: 0.2067; FPR: 49.91
+seq_length: 120
+point-wise-Epoch: 7; tao=0.4; Accu: 50.28; Pre: 14.02; Rec: 60.31; F1: 0.2245; FPR: 51.11
+seq_length: 120
+sample-wise-Epoch: 7; tao=0.4; Accu: 50.39; Pre: 15.0; Rec: 60.08; F1: 0.2369; FPR: 51.07
+seq_length: 120
+point-wise-Epoch: 7; tao=0.5; Accu: 50.28; Pre: 15.51; Rec: 69.54; F1: 0.2506; FPR: 52.38
+seq_length: 120
+sample-wise-Epoch: 7; tao=0.5; Accu: 50.39; Pre: 16.43; Rec: 68.6; F1: 0.262; FPR: 52.35
+seq_length: 120
+point-wise-Epoch: 7; tao=0.6; Accu: 44.74; Pre: 14.09; Rec: 69.63; F1: 0.2316; FPR: 58.7
+seq_length: 120
+sample-wise-Epoch: 7; tao=0.6; Accu: 44.83; Pre: 14.91; Rec: 68.6; F1: 0.242; FPR: 58.74
+seq_length: 120
+point-wise-Epoch: 7; tao=0.7; Accu: 38.81; Pre: 13.23; Rec: 72.65; F1: 0.2213; FPR: 65.86
+seq_length: 120
+sample-wise-Epoch: 7; tao=0.7; Accu: 39.1; Pre: 14.13; Rec: 72.23; F1: 0.2336; FPR: 65.87
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 8; tao=0.2; Accu: 63.46; Pre: 15.62; Rec: 45.64; F1: 0.229; FPR: 34.07
+seq_length: 120
+sample-wise-Epoch: 8; tao=0.2; Accu: 63.23; Pre: 16.6; Rec: 45.2; F1: 0.2389; FPR: 34.07
+seq_length: 120
+point-wise-Epoch: 8; tao=0.3; Accu: 58.26; Pre: 15.78; Rec: 56.19; F1: 0.243; FPR: 41.45
+seq_length: 120
+sample-wise-Epoch: 8; tao=0.3; Accu: 59.1; Pre: 16.99; Rec: 54.95; F1: 0.256; FPR: 40.28
+seq_length: 120
+point-wise-Epoch: 8; tao=0.4; Accu: 54.63; Pre: 15.23; Rec: 59.92; F1: 0.2397; FPR: 46.1
+seq_length: 120
+sample-wise-Epoch: 8; tao=0.4; Accu: 54.67; Pre: 16.19; Rec: 59.26; F1: 0.251; FPR: 46.03
+seq_length: 120
+point-wise-Epoch: 8; tao=0.5; Accu: 45.93; Pre: 12.99; Rec: 60.59; F1: 0.2111; FPR: 56.09
+seq_length: 120
+sample-wise-Epoch: 8; tao=0.5; Accu: 45.99; Pre: 13.83; Rec: 60.08; F1: 0.2219; FPR: 56.13
+seq_length: 120
+point-wise-Epoch: 8; tao=0.6; Accu: 43.18; Pre: 13.43; Rec: 67.58; F1: 0.2214; FPR: 60.2
+seq_length: 120
+sample-wise-Epoch: 8; tao=0.6; Accu: 43.58; Pre: 14.5; Rec: 67.91; F1: 0.2361; FPR: 60.07
+seq_length: 120
+point-wise-Epoch: 8; tao=0.7; Accu: 42.05; Pre: 13.19; Rec: 67.58; F1: 0.218; FPR: 61.48
+seq_length: 120
+sample-wise-Epoch: 8; tao=0.7; Accu: 42.47; Pre: 14.24; Rec: 67.91; F1: 0.2326; FPR: 61.35
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 9; tao=0.2; Accu: 71.11; Pre: 22.1; Rec: 54.65; F1: 0.3107; FPR: 26.62
+seq_length: 120
+sample-wise-Epoch: 9; tao=0.2; Accu: 70.93; Pre: 23.29; Rec: 53.6; F1: 0.3206; FPR: 26.47
+seq_length: 120
+point-wise-Epoch: 9; tao=0.3; Accu: 67.0; Pre: 19.73; Rec: 55.96; F1: 0.2879; FPR: 31.48
+seq_length: 120
+sample-wise-Epoch: 9; tao=0.3; Accu: 66.85; Pre: 20.82; Rec: 55.02; F1: 0.2982; FPR: 31.38
+seq_length: 120
+point-wise-Epoch: 9; tao=0.4; Accu: 63.0; Pre: 18.02; Rec: 57.67; F1: 0.271; FPR: 36.26
+seq_length: 120
+sample-wise-Epoch: 9; tao=0.4; Accu: 62.98; Pre: 19.19; Rec: 57.24; F1: 0.2837; FPR: 36.16
+seq_length: 120
+point-wise-Epoch: 9; tao=0.5; Accu: 60.84; Pre: 17.12; Rec: 57.93; F1: 0.2608; FPR: 38.76
+seq_length: 120
+sample-wise-Epoch: 9; tao=0.5; Accu: 60.9; Pre: 18.28; Rec: 57.58; F1: 0.2739; FPR: 38.61
+seq_length: 120
+point-wise-Epoch: 9; tao=0.6; Accu: 57.81; Pre: 16.19; Rec: 59.26; F1: 0.251; FPR: 42.39
+seq_length: 120
+sample-wise-Epoch: 9; tao=0.6; Accu: 57.93; Pre: 17.33; Rec: 59.01; F1: 0.2644; FPR: 42.23
+seq_length: 120
+point-wise-Epoch: 9; tao=0.7; Accu: 53.56; Pre: 14.92; Rec: 60.06; F1: 0.2359; FPR: 47.34
+seq_length: 120
+sample-wise-Epoch: 9; tao=0.7; Accu: 53.74; Pre: 16.01; Rec: 59.96; F1: 0.2494; FPR: 47.2
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 10; tao=0.2; Accu: 64.99; Pre: 7.108; Rec: 15.6; F1: 0.09355; FPR: 28.19
+seq_length: 120
+sample-wise-Epoch: 10; tao=0.2; Accu: 64.68; Pre: 8.241; Rec: 16.86; F1: 0.1065; FPR: 28.15
+seq_length: 120
+point-wise-Epoch: 10; tao=0.3; Accu: 59.54; Pre: 7.53; Rec: 20.67; F1: 0.1066; FPR: 35.09
+seq_length: 120
+sample-wise-Epoch: 10; tao=0.3; Accu: 59.57; Pre: 8.933; Rec: 22.84; F1: 0.1245; FPR: 34.92
+seq_length: 120
+point-wise-Epoch: 10; tao=0.4; Accu: 59.52; Pre: 10.19; Rec: 29.87; F1: 0.1483; FPR: 36.38
+seq_length: 120
+sample-wise-Epoch: 10; tao=0.4; Accu: 59.57; Pre: 11.5; Rec: 31.36; F1: 0.1644; FPR: 36.2
+seq_length: 120
+point-wise-Epoch: 10; tao=0.5; Accu: 55.77; Pre: 9.909; Rec: 32.65; F1: 0.1485; FPR: 41.04
+seq_length: 120
+sample-wise-Epoch: 10; tao=0.5; Accu: 55.89; Pre: 11.18; Rec: 34.29; F1: 0.165; FPR: 40.88
+seq_length: 120
+point-wise-Epoch: 10; tao=0.6; Accu: 52.44; Pre: 9.149; Rec: 32.66; F1: 0.1396; FPR: 44.83
+seq_length: 120
+sample-wise-Epoch: 10; tao=0.6; Accu: 52.55; Pre: 10.32; Rec: 34.29; F1: 0.1551; FPR: 44.71
+seq_length: 120
+point-wise-Epoch: 10; tao=0.7; Accu: 52.59; Pre: 11.33; Rec: 42.55; F1: 0.1757; FPR: 46.03
+seq_length: 120
+sample-wise-Epoch: 10; tao=0.7; Accu: 52.8; Pre: 12.53; Rec: 43.77; F1: 0.1914; FPR: 45.85
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 11; tao=0.2; Accu: 63.06; Pre: 14.0; Rec: 39.7; F1: 0.2032; FPR: 33.72
+seq_length: 120
+sample-wise-Epoch: 11; tao=0.2; Accu: 62.9; Pre: 15.09; Rec: 39.87; F1: 0.215; FPR: 33.65
+seq_length: 120
+point-wise-Epoch: 11; tao=0.3; Accu: 59.82; Pre: 13.94; Rec: 44.61; F1: 0.2088; FPR: 38.08
+seq_length: 120
+sample-wise-Epoch: 11; tao=0.3; Accu: 59.81; Pre: 14.09; Rec: 40.82; F1: 0.2057; FPR: 37.34
+seq_length: 120
+point-wise-Epoch: 11; tao=0.4; Accu: 56.5; Pre: 14.71; Rec: 53.81; F1: 0.2277; FPR: 43.13
+seq_length: 120
+sample-wise-Epoch: 11; tao=0.4; Accu: 56.38; Pre: 15.62; Rec: 53.25; F1: 0.2381; FPR: 43.15
+seq_length: 120
+point-wise-Epoch: 11; tao=0.5; Accu: 52.58; Pre: 13.89; Rec: 55.88; F1: 0.2194; FPR: 47.87
+seq_length: 120
+sample-wise-Epoch: 11; tao=0.5; Accu: 52.55; Pre: 14.8; Rec: 55.43; F1: 0.2303; FPR: 47.88
+seq_length: 120
+point-wise-Epoch: 11; tao=0.6; Accu: 50.34; Pre: 13.3; Rec: 55.99; F1: 0.2119; FPR: 50.44
+seq_length: 120
+sample-wise-Epoch: 11; tao=0.6; Accu: 50.33; Pre: 14.15; Rec: 55.43; F1: 0.2223; FPR: 50.44
+seq_length: 120
+point-wise-Epoch: 11; tao=0.7; Accu: 49.19; Pre: 14.51; Rec: 65.09; F1: 0.2344; FPR: 53.01
+seq_length: 120
+sample-wise-Epoch: 11; tao=0.7; Accu: 49.22; Pre: 15.33; Rec: 63.95; F1: 0.2442; FPR: 52.99
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 12; tao=0.2; Accu: 67.19; Pre: 11.22; Rec: 24.62; F1: 0.15; FPR: 26.92
+seq_length: 120
+sample-wise-Epoch: 12; tao=0.2; Accu: 66.83; Pre: 12.21; Rec: 24.94; F1: 0.1597; FPR: 26.89
+seq_length: 120
+point-wise-Epoch: 12; tao=0.3; Accu: 62.26; Pre: 10.27; Rec: 27.24; F1: 0.1453; FPR: 32.9
+seq_length: 120
+sample-wise-Epoch: 12; tao=0.3; Accu: 61.97; Pre: 11.19; Rec: 27.61; F1: 0.1552; FPR: 32.88
+seq_length: 120
+point-wise-Epoch: 12; tao=0.4; Accu: 57.92; Pre: 9.132; Rec: 27.54; F1: 0.1335; FPR: 37.88
+seq_length: 120
+sample-wise-Epoch: 12; tao=0.4; Accu: 57.62; Pre: 9.964; Rec: 27.99; F1: 0.1432; FPR: 37.93
+seq_length: 120
+point-wise-Epoch: 12; tao=0.5; Accu: 51.95; Pre: 8.521; Rec: 30.37; F1: 0.1297; FPR: 45.06
+seq_length: 120
+sample-wise-Epoch: 12; tao=0.5; Accu: 51.67; Pre: 9.256; Rec: 30.73; F1: 0.1388; FPR: 45.19
+seq_length: 120
+point-wise-Epoch: 12; tao=0.6; Accu: 49.54; Pre: 10.83; Rec: 43.62; F1: 0.1704; FPR: 49.64
+seq_length: 120
+sample-wise-Epoch: 12; tao=0.6; Accu: 49.35; Pre: 11.52; Rec: 43.16; F1: 0.1786; FPR: 49.72
+seq_length: 120
+point-wise-Epoch: 12; tao=0.7; Accu: 43.97; Pre: 11.28; Rec: 52.66; F1: 0.183; FPR: 57.23
+seq_length: 120
+sample-wise-Epoch: 12; tao=0.7; Accu: 43.79; Pre: 11.9; Rec: 51.68; F1: 0.1905; FPR: 57.39
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 13; tao=0.2; Accu: 65.25; Pre: 14.95; Rec: 39.72; F1: 0.2134; FPR: 31.22
+seq_length: 120
+sample-wise-Epoch: 13; tao=0.2; Accu: 63.39; Pre: 14.66; Rec: 37.48; F1: 0.2068; FPR: 32.73
+seq_length: 120
+point-wise-Epoch: 13; tao=0.3; Accu: 63.6; Pre: 14.82; Rec: 42.05; F1: 0.2153; FPR: 33.42
+seq_length: 120
+sample-wise-Epoch: 13; tao=0.3; Accu: 63.03; Pre: 15.28; Rec: 40.36; F1: 0.2177; FPR: 33.57
+seq_length: 120
+point-wise-Epoch: 13; tao=0.4; Accu: 60.76; Pre: 14.18; Rec: 44.17; F1: 0.2111; FPR: 36.95
+seq_length: 120
+sample-wise-Epoch: 13; tao=0.4; Accu: 60.24; Pre: 14.66; Rec: 42.47; F1: 0.2142; FPR: 37.09
+seq_length: 120
+point-wise-Epoch: 13; tao=0.5; Accu: 54.2; Pre: 13.07; Rec: 49.05; F1: 0.2031; FPR: 45.09
+seq_length: 120
+sample-wise-Epoch: 13; tao=0.5; Accu: 53.89; Pre: 13.73; Rec: 47.96; F1: 0.21; FPR: 45.22
+seq_length: 120
+point-wise-Epoch: 13; tao=0.6; Accu: 50.06; Pre: 12.24; Rec: 50.46; F1: 0.1939; FPR: 50.0
+seq_length: 120
+sample-wise-Epoch: 13; tao=0.6; Accu: 49.82; Pre: 12.87; Rec: 49.38; F1: 0.201; FPR: 50.12
+seq_length: 120
+point-wise-Epoch: 13; tao=0.7; Accu: 44.87; Pre: 13.52; Rec: 65.62; F1: 0.2215; FPR: 58.0
+seq_length: 120
+sample-wise-Epoch: 13; tao=0.7; Accu: 44.78; Pre: 14.21; Rec: 64.17; F1: 0.2297; FPR: 58.13
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 14; tao=0.2; Accu: 61.03; Pre: 9.696; Rec: 26.57; F1: 0.1383; FPR: 34.2
+seq_length: 120
+sample-wise-Epoch: 14; tao=0.2; Accu: 60.87; Pre: 10.83; Rec: 27.65; F1: 0.1517; FPR: 34.15
+seq_length: 120
+point-wise-Epoch: 14; tao=0.3; Accu: 56.62; Pre: 10.89; Rec: 35.82; F1: 0.1636; FPR: 40.5
+seq_length: 120
+sample-wise-Epoch: 14; tao=0.3; Accu: 56.6; Pre: 12.02; Rec: 36.83; F1: 0.1776; FPR: 40.44
+seq_length: 120
+point-wise-Epoch: 14; tao=0.4; Accu: 56.0; Pre: 13.22; Rec: 47.16; F1: 0.2032; FPR: 42.77
+seq_length: 120
+sample-wise-Epoch: 14; tao=0.4; Accu: 56.04; Pre: 14.3; Rec: 47.47; F1: 0.2162; FPR: 42.68
+seq_length: 120
+point-wise-Epoch: 14; tao=0.5; Accu: 51.84; Pre: 12.29; Rec: 48.36; F1: 0.1929; FPR: 47.68
+seq_length: 120
+sample-wise-Epoch: 14; tao=0.5; Accu: 51.91; Pre: 13.3; Rec: 48.7; F1: 0.2056; FPR: 47.61
+seq_length: 120
+point-wise-Epoch: 14; tao=0.6; Accu: 48.5; Pre: 11.51; Rec: 48.43; F1: 0.1829; FPR: 51.49
+seq_length: 120
+sample-wise-Epoch: 14; tao=0.6; Accu: 48.57; Pre: 12.43; Rec: 48.7; F1: 0.1949; FPR: 51.45
+seq_length: 120
+point-wise-Epoch: 14; tao=0.7; Accu: 43.37; Pre: 12.21; Rec: 59.18; F1: 0.1996; FPR: 58.82
+seq_length: 120
+sample-wise-Epoch: 14; tao=0.7; Accu: 43.5; Pre: 13.09; Rec: 59.06; F1: 0.2113; FPR: 58.84
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 15; tao=0.2; Accu: 60.8; Pre: 17.93; Rec: 62.28; F1: 0.275; FPR: 39.41
+seq_length: 120
+sample-wise-Epoch: 15; tao=0.2; Accu: 60.95; Pre: 19.18; Rec: 62.04; F1: 0.2894; FPR: 39.22
+seq_length: 120
+point-wise-Epoch: 15; tao=0.3; Accu: 54.31; Pre: 15.67; Rec: 63.03; F1: 0.2478; FPR: 46.9
+seq_length: 120
+sample-wise-Epoch: 15; tao=0.3; Accu: 54.47; Pre: 16.76; Rec: 62.77; F1: 0.2612; FPR: 46.78
+seq_length: 120
+point-wise-Epoch: 15; tao=0.4; Accu: 47.87; Pre: 14.67; Rec: 68.39; F1: 0.2387; FPR: 54.97
+seq_length: 120
+sample-wise-Epoch: 15; tao=0.4; Accu: 48.2; Pre: 15.78; Rec: 68.55; F1: 0.2536; FPR: 54.86
+seq_length: 120
+point-wise-Epoch: 15; tao=0.5; Accu: 43.61; Pre: 13.77; Rec: 69.27; F1: 0.2271; FPR: 59.94
+seq_length: 120
+sample-wise-Epoch: 15; tao=0.5; Accu: 44.01; Pre: 14.85; Rec: 69.56; F1: 0.2419; FPR: 59.82
+seq_length: 120
+point-wise-Epoch: 15; tao=0.6; Accu: 43.58; Pre: 13.78; Rec: 69.33; F1: 0.2271; FPR: 59.98
+seq_length: 120
+sample-wise-Epoch: 15; tao=0.6; Accu: 44.01; Pre: 14.85; Rec: 69.56; F1: 0.2419; FPR: 59.82
+seq_length: 120
+point-wise-Epoch: 15; tao=0.7; Accu: 40.13; Pre: 13.61; Rec: 73.47; F1: 0.227; FPR: 64.48
+seq_length: 120
+sample-wise-Epoch: 15; tao=0.7; Accu: 40.65; Pre: 14.67; Rec: 73.73; F1: 0.242; FPR: 64.31
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 16; tao=0.2; Accu: 65.86; Pre: 14.64; Rec: 37.51; F1: 0.2067; FPR: 30.22
+seq_length: 120
+sample-wise-Epoch: 16; tao=0.2; Accu: 65.29; Pre: 15.18; Rec: 36.24; F1: 0.2099; FPR: 30.36
+seq_length: 120
+point-wise-Epoch: 16; tao=0.3; Accu: 58.46; Pre: 13.22; Rec: 43.51; F1: 0.1993; FPR: 39.47
+seq_length: 120
+sample-wise-Epoch: 16; tao=0.3; Accu: 58.06; Pre: 13.89; Rec: 42.61; F1: 0.2058; FPR: 39.63
+seq_length: 120
+point-wise-Epoch: 16; tao=0.4; Accu: 56.25; Pre: 14.45; Rec: 52.88; F1: 0.2236; FPR: 43.28
+seq_length: 120
+sample-wise-Epoch: 16; tao=0.4; Accu: 55.97; Pre: 15.15; Rec: 51.64; F1: 0.2308; FPR: 43.39
+seq_length: 120
+point-wise-Epoch: 16; tao=0.5; Accu: 51.37; Pre: 13.51; Rec: 55.64; F1: 0.2144; FPR: 49.22
+seq_length: 120
+sample-wise-Epoch: 16; tao=0.5; Accu: 51.22; Pre: 14.27; Rec: 54.75; F1: 0.2232; FPR: 49.31
+seq_length: 120
+point-wise-Epoch: 16; tao=0.6; Accu: 46.21; Pre: 12.51; Rec: 57.24; F1: 0.2025; FPR: 55.31
+seq_length: 120
+sample-wise-Epoch: 16; tao=0.6; Accu: 46.16; Pre: 13.27; Rec: 56.49; F1: 0.2118; FPR: 55.39
+seq_length: 120
+point-wise-Epoch: 16; tao=0.7; Accu: 42.39; Pre: 13.44; Rec: 68.84; F1: 0.2222; FPR: 61.27
+seq_length: 120
+sample-wise-Epoch: 16; tao=0.7; Accu: 42.45; Pre: 14.22; Rec: 67.82; F1: 0.2323; FPR: 61.36
+sample_shape: 44979
+num_samples_t 44979
+seq_length: 120
+point-wise-Epoch: 17; tao=0.2; Accu: 57.24; Pre: 8.193; Rec: 24.71; F1: 0.1194; FPR: 38.27
+seq_length: 120
+sample-wise-Epoch: 17; tao=0.2; Accu: 57.05; Pre: 9.23; Rec: 25.96; F1: 0.1324; FPR: 38.29
+seq_length: 120
+point-wise-Epoch: 17; tao=0.3; Accu: 51.49; Pre: 8.041; Rec: 28.69; F1: 0.1223; FPR: 45.36
+seq_length: 120
+sample-wise-Epoch: 17; tao=0.3; Accu: 51.58; Pre: 9.194; Rec: 30.56; F1: 0.1379; FPR: 45.27
+seq_length: 120
+point-wise-Epoch: 17; tao=0.4; Accu: 47.1; Pre: 7.354; Rec: 28.94; F1: 0.1141; FPR: 50.39
+seq_length: 120
+sample-wise-Epoch: 17; tao=0.4; Accu: 47.26; Pre: 8.474; Rec: 31.06; F1: 0.1299; FPR: 50.31
+seq_length: 120
+point-wise-Epoch: 17; tao=0.5; Accu: 43.77; Pre: 6.88; Rec: 28.96; F1: 0.1082; FPR: 54.18
+seq_length: 120
+sample-wise-Epoch: 17; tao=0.5; Accu: 43.92; Pre: 7.921; Rec: 31.06; F1: 0.1231; FPR: 54.15
+seq_length: 120
+point-wise-Epoch: 17; tao=0.6; Accu: 40.81; Pre: 6.797; Rec: 30.47; F1: 0.1082; FPR: 57.76
+seq_length: 120
+sample-wise-Epoch: 17; tao=0.6; Accu: 41.07; Pre: 7.873; Rec: 32.88; F1: 0.124; FPR: 57.71
+seq_length: 120
+point-wise-Epoch: 17; tao=0.7; Accu: 40.78; Pre: 8.475; Rec: 39.56; F1: 0.1367; FPR: 59.05
+seq_length: 120
+sample-wise-Epoch: 17; tao=0.7; Accu: 41.07; Pre: 9.525; Rec: 41.4; F1: 0.1519; FPR: 58.99

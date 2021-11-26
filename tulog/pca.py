@@ -12,7 +12,7 @@ def run_pca(df):
     x = df.loc[:, feature_names[1:]].values
     x = StandardScaler().fit_transform(x)
 
-    pca = PCA(.99)
+    pca = PCA(.9)
     principalComponents = pca.fit_transform(x)
     principal_df = pd.DataFrame(data = principalComponents)
 
