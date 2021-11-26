@@ -175,7 +175,17 @@ def swat_test(seq_length, seq_step, num_signals, randomize=False):
     m1, n1 = test.shape # m1=449919, n1=52
 
     samples_a = test[:, 0:n1-1]
-    labels_a = test[:, n1 - 1]
+    y = test[:, n1 - 1]
+    
+    y = np.array(y, dtype=str)
+    labels_a = []
+    for i in y:
+        if i == "Normal":
+            labels_a.append(False)  #false == normal
+        else:
+            labels_a.append(True)   #true == attack
+
+    labels_a = np.array(labels_a)
     #############################
     # choose variable here
     # samples_a = samples_a[:, [1, 2, 3, 4]]
@@ -183,7 +193,7 @@ def swat_test(seq_length, seq_step, num_signals, randomize=False):
     ############################
     from sklearn.decomposition import PCA
     #
-    X_a = samples_a
+    X_a = samples_a.astype(float)
     #####################################
     ####################################
     pca_a = PCA(n_components=num_signals, svd_solver='full')

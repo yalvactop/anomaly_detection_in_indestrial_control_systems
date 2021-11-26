@@ -203,14 +203,6 @@ def swat_test(seq_length, seq_step, num_signals, randomize=False):
     aa = np.empty([num_samples_t, seq_length, num_signals])
     bb = np.empty([num_samples_t, seq_length, 1])
     bbb = np.empty([num_samples_t, seq_length, 1])
-    
-    print("bb.shape: ", bb.shape)
-    print("bbb.shape: ", bbb.shape)
-    print("aa.shape: ", aa.shape)
-    
-    print("labels.shape: ", labels.shape)
-    print("idx.shape: ", idx.shape)
-    print("samples.shape: ", samples.shape)
 
     for j in range(num_samples_t):
         bb[j, :, :] = np.reshape(labels[(j * seq_step):(j * seq_step + seq_length)], [-1, 1])

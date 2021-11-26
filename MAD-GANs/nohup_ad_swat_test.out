@@ -1,0 +1,312 @@
+nohup: ignoring input
+2021-11-26 12:25:32.455294: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Loading settings from ./experiments/settings/swat_test.txt
+hidden_units_e not found in loaded settings - adopting value from command line defaults:  100
+weight not found in loaded settings - adopting value from command line defaults:  0.5
+degree not found in loaded settings - adopting value from command line defaults:  1
+E_rounds not found in loaded settings - adopting value from command line defaults:  1
+eval_mul not found in loaded settings - adopting value from command line defaults:  False
+eval_an not found in loaded settings - adopting value from command line defaults:  False
+eval_single not found in loaded settings - adopting value from command line defaults:  False
+sub_id not found in loaded settings - adopting value from command line defaults:  test
+Loading data from ./experiments/data/.data.npy
+data_type
+Loaded swat_a from .npy
+Generated/loaded 44979 samples from data-type swat_test
+Ready to run with settings:
+ 	 settings_file
+swat_test 	 data
+120 	 seq_length
+5 	 num_signals
+False 	 normalise
+0.1 	 scale
+1.0 	 freq_low
+5.0 	 freq_high
+0.1 	 amplitude_low
+0.9 	 amplitude_high
+False 	 multivariate_mnist
+False 	 full_mnist
+ 	 data_load_from
+15 	 resample_rate_in_min
+100 	 hidden_units_g
+100 	 hidden_units_d
+100 	 hidden_units_e
+1 	 kappa
+15 	 latent_dim
+0.5 	 weight
+1 	 degree
+False 	 batch_mean
+False 	 learn_scale
+0.1 	 learning_rate
+500 	 batch_size
+100 	 num_epochs
+1 	 D_rounds
+3 	 G_rounds
+1 	 E_rounds
+True 	 shuffle
+False 	 eval_mul
+False 	 eval_an
+False 	 eval_single
+False 	 wrong_labels
+swat 	 identifier
+test 	 sub_id
+False 	 dp
+1e-05 	 l2norm_bound
+1 	 batches_per_lot
+1e-05 	 dp_sigma
+47508 	 num_samples
+10 	 seq_step
+0 	 cond_dim
+1 	 max_val
+False 	 one_hot
+False 	 predict_labels
+False 	 use_time
+False 	 WGAN
+False 	 WGAN_clip
+44979 	 num_samples_t
+5 	 num_generated_features
+Main Starting...
+sample_shape: 44979
+num_samples_t 44979
+0 % epoch1 % epoch2 % epoch3 % epoch4 % epoch5 % epoch6 % epoch7 % epoch8 % epoch10 % epoch11 % epoch12 % epoch13 % epoch14 % epoch15 % epoch16 % epoch17 % epoch19 % epoch20 % epoch21 % epoch22 % epoch23 % epoch24 % epoch25 % epoch26 % epoch28 % epoch29 % epoch30 % epoch31 % epoch32 % epoch33 % epoch34 % epoch35 % epoch37 % epoch38 % epoch39 % epoch40 % epoch41 % epoch42 % epoch43 % epoch44 % epoch46 % epoch47 % epoch48 % epoch49 % epoch50 % epoch51 % epoch52 % epoch53 % epoch55 % epoch56 % epoch57 % epoch58 % epoch59 % epoch60 % epoch61 % epoch62 % epoch64 % epoch65 % epoch66 % epoch67 % epoch68 % epoch69 % epoch70 % epoch71 % epoch73 % epoch74 % epoch75 % epoch76 % epoch77 % epoch78 % epoch79 % epoch80 % epoch82 % epoch83 % epoch84 % epoch85 % epoch86 % epoch87 % epoch88 % epoch89 % epoch91 % epoch92 % epoch93 % epoch94 % epoch95 % epoch96 % epoch97 % epoch98 % epochN: 389070
+seq_length: 120
+Comb-logits-based-Epoch: 0; tao=0.2; Accu: 86.48; Pre: 0.3357; Rec: 0.1161; F1: 0.1726
+N: 380733
+seq_length: 120
+Comb-statistic-based-Epoch: 0; tao=0.2; Accu: 84.63; Pre: 0.2092; Rec: 0.09577; F1: 0.1314
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.2; Accu: 84.24; Pre: 0.2288; Rec: 0.08779; F1: 0.1269
+N: 374112
+seq_length: 120
+Comb-logits-based-Epoch: 0; tao=0.3; Accu: 83.15; Pre: 0.1912; Rec: 0.12; F1: 0.1474
+N: 367662
+seq_length: 120
+Comb-statistic-based-Epoch: 0; tao=0.3; Accu: 81.72; Pre: 0.2204; Rec: 0.1993; F1: 0.2093
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.3; Accu: 81.16; Pre: 0.2288; Rec: 0.1875; F1: 0.2061
+N: 356762
+seq_length: 120
+Comb-logits-based-Epoch: 0; tao=0.4; Accu: 79.3; Pre: 0.1327; Rec: 0.1274; F1: 0.13
+N: 341700
+seq_length: 120
+Comb-statistic-based-Epoch: 0; tao=0.4; Accu: 75.95; Pre: 0.1953; Rec: 0.3144; F1: 0.241
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.4; Accu: 75.25; Pre: 0.2013; Rec: 0.3026; F1: 0.2418
+N: 341461
+seq_length: 120
+Comb-logits-based-Epoch: 0; tao=0.5; Accu: 75.9; Pre: 0.1091; Rec: 0.1375; F1: 0.1217
+N: 322910
+seq_length: 120
+Comb-statistic-based-Epoch: 0; tao=0.5; Accu: 71.77; Pre: 0.1708; Rec: 0.3438; F1: 0.2282
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.5; Accu: 71.35; Pre: 0.1787; Rec: 0.3329; F1: 0.2326
+N: 322386
+seq_length: 120
+Comb-logits-based-Epoch: 0; tao=0.6; Accu: 71.66; Pre: 0.09559; Rec: 0.1577; F1: 0.119
+N: 298676
+seq_length: 120
+Comb-statistic-based-Epoch: 0; tao=0.6; Accu: 66.39; Pre: 0.168; Rec: 0.4474; F1: 0.2443
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.6; Accu: 66.26; Pre: 0.178; Rec: 0.4388; F1: 0.2533
+N: 315473
+seq_length: 120
+Comb-logits-based-Epoch: 0; tao=0.7; Accu: 70.12; Pre: 0.153; Rec: 0.3221; F1: 0.2075
+N: 271247
+seq_length: 120
+Comb-statistic-based-Epoch: 0; tao=0.7; Accu: 60.29; Pre: 0.1857; Rec: 0.6709; F1: 0.2909
+seq_length: 120
+sample-wise-Epoch: 0; tao=0.7; Accu: 60.2; Pre: 0.1959; Rec: 0.6608; F1: 0.3022
+sample_shape: 44979
+num_samples_t 44979
+0 % epoch1 % epoch2 % epoch3 % epoch4 % epoch5 % epoch6 % epoch7 % epoch8 % epoch10 % epoch11 % epoch12 % epoch13 % epoch14 % epoch15 % epoch16 % epoch17 % epoch19 % epoch20 % epoch21 % epoch22 % epoch23 % epoch24 % epoch25 % epoch26 % epoch28 % epoch29 % epoch30 % epoch31 % epoch32 % epoch33 % epoch34 % epoch35 % epoch37 % epoch38 % epoch39 % epoch40 % epoch41 % epoch42 % epoch43 % epoch44 % epoch46 % epoch47 % epoch48 % epoch49 % epoch50 % epoch51 % epoch52 % epoch53 % epoch55 % epoch56 % epoch57 % epoch58 % epoch59 % epoch60 % epoch61 % epoch62 % epoch64 % epoch65 % epoch66 % epoch67 % epoch68 % epoch69 % epoch70 % epoch71 % epoch73 % epoch74 % epoch75 % epoch76 % epoch77 % epoch78 % epoch79 % epoch80 % epoch82 % epoch83 % epoch84 % epoch85 % epoch86 % epoch87 % epoch88 % epoch89 % epoch91 % epoch92 % epoch93 % epoch94 % epoch95 % epoch96 % epoch97 % epoch98 % epochN: 368555
+seq_length: 120
+Comb-logits-based-Epoch: 1; tao=0.2; Accu: 81.92; Pre: 0.04158; Rec: 0.02219; F1: 0.02894
+N: 382980
+seq_length: 120
+Comb-statistic-based-Epoch: 1; tao=0.2; Accu: 85.13; Pre: 0.1172; Rec: 0.03446; F1: 0.05325
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.2; Accu: 84.31; Pre: 0.1209; Rec: 0.03239; F1: 0.0511
+N: 355200
+seq_length: 120
+Comb-logits-based-Epoch: 1; tao=0.3; Accu: 78.95; Pre: 0.03309; Rec: 0.026; F1: 0.02912
+N: 372382
+seq_length: 120
+Comb-statistic-based-Epoch: 1; tao=0.3; Accu: 82.77; Pre: 0.2336; Rec: 0.1837; F1: 0.2057
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.3; Accu: 82.27; Pre: 0.2465; Rec: 0.1747; F1: 0.2045
+N: 343633
+seq_length: 120
+Comb-logits-based-Epoch: 1; tao=0.4; Accu: 76.38; Pre: 0.1223; Rec: 0.1531; F1: 0.136
+N: 352659
+seq_length: 120
+Comb-statistic-based-Epoch: 1; tao=0.4; Accu: 78.39; Pre: 0.1739; Rec: 0.208; F1: 0.1894
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.4; Accu: 77.91; Pre: 0.1816; Rec: 0.1979; F1: 0.1894
+N: 328459
+seq_length: 120
+Comb-logits-based-Epoch: 1; tao=0.5; Accu: 73.01; Pre: 0.1132; Rec: 0.179; F1: 0.1387
+N: 327725
+seq_length: 120
+Comb-statistic-based-Epoch: 1; tao=0.5; Accu: 72.84; Pre: 0.1341; Rec: 0.2267; F1: 0.1685
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.5; Accu: 72.06; Pre: 0.1396; Rec: 0.2213; F1: 0.1712
+N: 317049
+seq_length: 120
+Comb-logits-based-Epoch: 1; tao=0.6; Accu: 70.47; Pre: 0.1082; Rec: 0.1978; F1: 0.1399
+N: 296145
+seq_length: 120
+Comb-statistic-based-Epoch: 1; tao=0.6; Accu: 65.82; Pre: 0.1441; Rec: 0.3673; F1: 0.2069
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.6; Accu: 65.38; Pre: 0.1526; Rec: 0.3633; F1: 0.2149
+N: 304977
+seq_length: 120
+Comb-logits-based-Epoch: 1; tao=0.7; Accu: 67.79; Pre: 0.1024; Rec: 0.2128; F1: 0.1382
+N: 272873
+seq_length: 120
+Comb-statistic-based-Epoch: 1; tao=0.7; Accu: 60.65; Pre: 0.1528; Rec: 0.4931; F1: 0.2333
+seq_length: 120
+sample-wise-Epoch: 1; tao=0.7; Accu: 60.4; Pre: 0.1619; Rec: 0.4876; F1: 0.2431
+sample_shape: 44979
+num_samples_t 44979
+0 % epoch1 % epoch2 % epoch3 % epoch4 % epoch5 % epoch6 % epoch7 % epoch8 % epoch10 % epoch11 % epoch12 % epoch13 % epoch14 % epoch15 % epoch16 % epoch17 % epoch19 % epoch20 % epoch21 % epoch22 % epoch23 % epoch24 % epoch25 % epoch26 % epoch28 % epoch29 % epoch30 % epoch31 % epoch32 % epoch33 % epoch34 % epoch35 % epoch37 % epoch38 % epoch39 % epoch40 % epoch41 % epoch42 % epoch43 % epoch44 % epoch46 % epoch47 % epoch48 % epoch49 % epoch50 % epoch51 % epoch52 % epoch53 % epoch55 % epoch56 % epoch57 % epoch58 % epoch59 % epoch60 % epoch61 % epoch62 % epoch64 % epoch65 % epoch66 % epoch67 % epoch68 % epoch69 % epoch70 % epoch71 % epoch73 % epoch74 % epoch75 % epoch76 % epoch77 % epoch78 % epoch79 % epoch80 % epoch82 % epoch83 % epoch84 % epoch85 % epoch86 % epoch87 % epoch88 % epoch89 % epoch91 % epoch92 % epoch93 % epoch94 % epoch95 % epoch96 % epoch97 % epoch98 % epochN: 362108
+seq_length: 120
+Comb-logits-based-Epoch: 2; tao=0.2; Accu: 80.49; Pre: 0.03807; Rec: 0.02503; F1: 0.0302
+N: 374959
+seq_length: 120
+Comb-statistic-based-Epoch: 2; tao=0.2; Accu: 83.34; Pre: 0.09586; Rec: 0.04412; F1: 0.06043
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.2; Accu: 82.76; Pre: 0.1064; Rec: 0.04347; F1: 0.06172
+N: 357975
+seq_length: 120
+Comb-logits-based-Epoch: 2; tao=0.3; Accu: 79.57; Pre: 0.1613; Rec: 0.1627; F1: 0.162
+N: 359934
+seq_length: 120
+Comb-statistic-based-Epoch: 2; tao=0.3; Accu: 80.0; Pre: 0.07904; Rec: 0.06075; F1: 0.06869
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.3; Accu: 79.81; Pre: 0.09353; Rec: 0.06308; F1: 0.07534
+N: 347388
+seq_length: 120
+Comb-logits-based-Epoch: 2; tao=0.4; Accu: 77.21; Pre: 0.1451; Rec: 0.1792; F1: 0.1603
+N: 337960
+seq_length: 120
+Comb-statistic-based-Epoch: 2; tao=0.4; Accu: 75.12; Pre: 0.06304; Rec: 0.0757; F1: 0.0688
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.4; Accu: 74.61; Pre: 0.0751; Rec: 0.0837; F1: 0.07917
+N: 333143
+seq_length: 120
+Comb-logits-based-Epoch: 2; tao=0.5; Accu: 74.05; Pre: 0.1256; Rec: 0.1909; F1: 0.1515
+N: 311798
+seq_length: 120
+Comb-statistic-based-Epoch: 2; tao=0.5; Accu: 69.3; Pre: 0.06596; Rec: 0.1161; F1: 0.08413
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.5; Accu: 68.94; Pre: 0.07563; Rec: 0.1231; F1: 0.09369
+N: 320001
+seq_length: 120
+Comb-logits-based-Epoch: 2; tao=0.6; Accu: 71.13; Pre: 0.1114; Rec: 0.1975; F1: 0.1424
+N: 286683
+seq_length: 120
+Comb-statistic-based-Epoch: 2; tao=0.6; Accu: 63.72; Pre: 0.1024; Rec: 0.2559; F1: 0.1462
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.6; Accu: 63.37; Pre: 0.1132; Rec: 0.2647; F1: 0.1586
+N: 305838
+seq_length: 120
+Comb-logits-based-Epoch: 2; tao=0.7; Accu: 67.98; Pre: 0.1251; Rec: 0.2732; F1: 0.1716
+N: 248122
+seq_length: 120
+Comb-statistic-based-Epoch: 2; tao=0.7; Accu: 55.15; Pre: 0.1024; Rec: 0.347; F1: 0.1582
+seq_length: 120
+sample-wise-Epoch: 2; tao=0.7; Accu: 54.97; Pre: 0.1134; Rec: 0.3599; F1: 0.1725
+sample_shape: 44979
+num_samples_t 44979
+0 % epoch1 % epoch2 % epoch3 % epoch4 % epoch5 % epoch6 % epoch7 % epoch8 % epoch10 % epoch11 % epoch12 % epoch13 % epoch14 % epoch15 % epoch16 % epoch17 % epoch19 % epoch20 % epoch21 % epoch22 % epoch23 % epoch24 % epoch25 % epoch26 % epoch28 % epoch29 % epoch30 % epoch31 % epoch32 % epoch33 % epoch34 % epoch35 % epoch37 % epoch38 % epoch39 % epoch40 % epoch41 % epoch42 % epoch43 % epoch44 % epoch46 % epoch47 % epoch48 % epoch49 % epoch50 % epoch51 % epoch52 % epoch53 % epoch55 % epoch56 % epoch57 % epoch58 % epoch59 % epoch60 % epoch61 % epoch62 % epoch64 % epoch65 % epoch66 % epoch67 % epoch68 % epoch69 % epoch70 % epoch71 % epoch73 % epoch74 % epoch75 % epoch76 % epoch77 % epoch78 % epoch79 % epoch80 % epoch82 % epoch83 % epoch84 % epoch85 % epoch86 % epoch87 % epoch88 % epoch89 % epoch91 % epoch92 % epoch93 % epoch94 % epoch95 % epoch96 % epoch97 % epoch98 % epochN: 385065
+seq_length: 120
+Comb-logits-based-Epoch: 3; tao=0.2; Accu: 85.59; Pre: 0.2606; Rec: 0.1018; F1: 0.1464
+N: 347082
+seq_length: 120
+Comb-statistic-based-Epoch: 3; tao=0.2; Accu: 77.15; Pre: 0.07723; Rec: 0.08059; F1: 0.07887
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.2; Accu: 77.01; Pre: 0.09388; Rec: 0.08814; F1: 0.09092
+N: 369894
+seq_length: 120
+Comb-logits-based-Epoch: 3; tao=0.3; Accu: 82.22; Pre: 0.1751; Rec: 0.1253; F1: 0.1461
+N: 332648
+seq_length: 120
+Comb-statistic-based-Epoch: 3; tao=0.3; Accu: 73.94; Pre: 0.1679; Rec: 0.2899; F1: 0.2127
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.3; Accu: 73.69; Pre: 0.1838; Rec: 0.2958; F1: 0.2267
+N: 360586
+seq_length: 120
+Comb-logits-based-Epoch: 3; tao=0.4; Accu: 80.15; Pre: 0.1643; Rec: 0.1555; F1: 0.1598
+N: 314080
+seq_length: 120
+Comb-statistic-based-Epoch: 3; tao=0.4; Accu: 69.81; Pre: 0.1779; Rec: 0.4106; F1: 0.2483
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.4; Accu: 69.53; Pre: 0.1885; Rec: 0.4042; F1: 0.2571
+N: 344726
+seq_length: 120
+Comb-logits-based-Epoch: 3; tao=0.5; Accu: 76.62; Pre: 0.134; Rec: 0.1694; F1: 0.1496
+N: 296511
+seq_length: 120
+Comb-statistic-based-Epoch: 3; tao=0.5; Accu: 65.91; Pre: 0.1677; Rec: 0.4563; F1: 0.2453
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.5; Accu: 65.6; Pre: 0.1788; Rec: 0.456; F1: 0.2569
+N: 328482
+seq_length: 120
+Comb-logits-based-Epoch: 3; tao=0.6; Accu: 73.01; Pre: 0.1136; Rec: 0.1797; F1: 0.1392
+N: 275279
+seq_length: 120
+Comb-statistic-based-Epoch: 3; tao=0.6; Accu: 61.19; Pre: 0.1718; Rec: 0.5751; F1: 0.2646
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.6; Accu: 61.26; Pre: 0.1838; Rec: 0.5726; F1: 0.2783
+N: 317122
+seq_length: 120
+Comb-logits-based-Epoch: 3; tao=0.7; Accu: 70.49; Pre: 0.1072; Rec: 0.1953; F1: 0.1384
+N: 239596
+seq_length: 120
+Comb-statistic-based-Epoch: 3; tao=0.7; Accu: 53.26; Pre: 0.1482; Rec: 0.6002; F1: 0.2377
+seq_length: 120
+sample-wise-Epoch: 3; tao=0.7; Accu: 53.29; Pre: 0.159; Rec: 0.6019; F1: 0.2516
+sample_shape: 44979
+num_samples_t 44979
+0 % epoch1 % epoch2 % epoch3 % epoch4 % epoch5 % epoch6 % epoch7 % epoch8 % epoch10 % epoch11 % epoch12 % epoch13 % epoch14 % epoch15 % epoch16 % epoch17 % epoch19 % epoch20 % epoch21 % epoch22 % epoch23 % epoch24 % epoch25 % epoch26 % epoch28 % epoch29 % epoch30 % epoch31 % epoch32 % epoch33 % epoch34 % epoch35 % epoch37 % epoch38 % epoch39 % epoch40 % epoch41 % epoch42 % epoch43 % epoch44 % epoch46 % epoch47 % epoch48 % epoch49 % epoch50 % epoch51 % epoch52 % epoch53 % epoch55 % epoch56 % epoch57 % epoch58 % epoch59 % epoch60 % epoch61 % epoch62 % epoch64 % epoch65 % epoch66 % epoch67 % epoch68 % epoch69 % epoch70 % epoch71 % epoch73 % epoch74 % epoch75 % epoch76 % epoch77 % epoch78 % epoch79 % epoch80 % epoch82 % epoch83 % epoch84 % epoch85 % epoch86 % epoch87 % epoch88 % epoch89 % epoch91 % epoch92 % epoch93 % epoch94 % epoch95 % epoch96 % epoch97 % epoch98 % epochN: 369777
+seq_length: 120
+Comb-logits-based-Epoch: 4; tao=0.2; Accu: 82.19; Pre: 0.01384; Rec: 0.006646; F1: 0.00898
+N: 366955
+seq_length: 120
+Comb-statistic-based-Epoch: 4; tao=0.2; Accu: 81.56; Pre: 0.03267; Rec: 0.01812; F1: 0.02331
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.2; Accu: 80.92; Pre: 0.03844; Rec: 0.01926; F1: 0.02566
+N: 356038
+seq_length: 120
+Comb-logits-based-Epoch: 4; tao=0.3; Accu: 79.14; Pre: 0.05183; Rec: 0.04154; F1: 0.04612
+N: 351525
+seq_length: 120
+Comb-statistic-based-Epoch: 4; tao=0.3; Accu: 78.13; Pre: 0.05165; Rec: 0.04614; F1: 0.04874
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.3; Accu: 77.5; Pre: 0.0589; Rec: 0.04841; F1: 0.05314
+N: 335665
+seq_length: 120
+Comb-logits-based-Epoch: 4; tao=0.4; Accu: 74.61; Pre: 0.06763; Rec: 0.08535; F1: 0.07546
+N: 339323
+seq_length: 120
+Comb-statistic-based-Epoch: 4; tao=0.4; Accu: 75.42; Pre: 0.127; Rec: 0.1743; F1: 0.1469
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.4; Accu: 75.18; Pre: 0.1402; Rec: 0.1759; F1: 0.1561
+N: 313730
+seq_length: 120
+Comb-logits-based-Epoch: 4; tao=0.5; Accu: 69.73; Pre: 0.05288; Rec: 0.08828; F1: 0.06614
+N: 309990
+seq_length: 120
+Comb-statistic-based-Epoch: 4; tao=0.5; Accu: 68.9; Pre: 0.1102; Rec: 0.2207; F1: 0.147
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.5; Accu: 68.76; Pre: 0.122; Rec: 0.2252; F1: 0.1583
+N: 304407
+seq_length: 120
+Comb-logits-based-Epoch: 4; tao=0.6; Accu: 67.66; Pre: 0.05165; Rec: 0.09582; F1: 0.06712
+N: 273300
+seq_length: 120
+Comb-statistic-based-Epoch: 4; tao=0.6; Accu: 60.75; Pre: 0.09541; Rec: 0.2633; F1: 0.1401
+seq_length: 120
+sample-wise-Epoch: 4; tao=0.6; Accu: 60.59; Pre: 0.1054; Rec: 0.2702; F1: 0.1517
+N: 290354
+seq_length:
