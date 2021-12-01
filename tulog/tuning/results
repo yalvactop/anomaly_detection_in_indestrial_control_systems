@@ -3,3 +3,4 @@
 194 / 2347  window_size-100_epoch-100_learning_rate-0.0005_latent_dim-20_batch_size-512_comb-mult_pca_37500_
 156 / 2347  window_size-100_epoch-100_learning_rate-0.0005_latent_dim-20_batch_size-512_comb-mult_pca_37500_
 113 / 2347  window_size-100_epoch-100_learning_rate-0.0005_latent_dim-20_batch_size-512_comb-mult_autoencoder_37500_
+0 / 2347  window_size-100_epoch-100_learning_rate-0.0005_latent_dim-20_batch_size-512_comb-mult_feature_selection_37500_
