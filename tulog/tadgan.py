@@ -19,6 +19,8 @@ from scipy import stats
 #from orion.primitives.timeseries_errors import reconstruction_errors
 from timeseries_errors import reconstruction_errors
 
+import os
+
 #from tensorflow import keras
 
 LOGGER = logging.getLogger(__name__)
@@ -156,6 +158,12 @@ class TadGAN(object):
         self.total_g_loss = []
 
     def _build_tadgan(self, **kwargs):
+        
+        
+        
+        os.system("nvidia-smi")
+        print("Results Before Compile")  
+        #input("Press Enter to continue...")  
 
         hyperparameters = self.hyperparameters.copy()
         hyperparameters.update(kwargs)
@@ -241,6 +249,11 @@ class TadGAN(object):
         self.encoder_generator_model.compile(loss=[self._wasserstein_loss, self._wasserstein_loss,
                                                    'mse'], optimizer=self.optimizer,
                                              loss_weights=[1, 1, 10])
+        
+        
+        os.system("nvidia-smi")
+        print("Results After Compile")  
+        #input("Press Enter to continue...")  
 
         '''
         print("input: x.shape: ", x.shape)
@@ -260,10 +273,11 @@ class TadGAN(object):
         '''
 
     def _fit(self, X):
+
         fake = np.ones((self.batch_size, 1))
         valid = -np.ones((self.batch_size, 1))
         delta = np.ones((self.batch_size, 1))
-        
+
 
         X_ = np.copy(X)
         for epoch in range(1, self.epochs + 1):
@@ -274,6 +288,8 @@ class TadGAN(object):
 
             minibatches_size = self.batch_size * self.iterations_critic
             num_minibatches = int(X_.shape[0] // minibatches_size)
+
+
 
             for i in range(num_minibatches):
                 minibatch = X_[i * minibatches_size: (i + 1) * minibatches_size]
@@ -289,16 +305,21 @@ class TadGAN(object):
                 epoch_g_loss.append(
                     self.encoder_generator_model.train_on_batch([x, z], [valid, valid, x]))
 
+
+            os.system("nvidia-smi")
+            print("Results After 1 Iteration")  
+            input("Press Enter to continue...")  
+
             cx_loss = np.mean(np.array(epoch_cx_loss), axis=0)
             cz_loss = np.mean(np.array(epoch_cz_loss), axis=0)
             g_loss = np.mean(np.array(epoch_g_loss), axis=0)
             print('Epoch: {}/{}, [Dx loss: {}] [Dz loss: {}] [G loss: {}]'.format(
                 epoch, self.epochs, cx_loss, cz_loss, g_loss))
-        
+
             self.total_cx_loss.append(cx_loss)
             self.total_cz_loss.append(cz_loss)
             self.total_g_loss.append(g_loss)
-            
+
 
     def fit(self, X, **kwargs):
         """Fit the TadGAN.
