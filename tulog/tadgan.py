@@ -161,8 +161,8 @@ class TadGAN(object):
         
         
         
-        os.system("nvidia-smi")
-        print("Results Before Compile")  
+        #os.system("nvidia-smi")
+        #print("Results Before Compile")  
         #input("Press Enter to continue...")  
 
         hyperparameters = self.hyperparameters.copy()
@@ -251,8 +251,8 @@ class TadGAN(object):
                                              loss_weights=[1, 1, 10])
         
         
-        os.system("nvidia-smi")
-        print("Results After Compile")  
+        #os.system("nvidia-smi")
+        #print("Results After Compile")  
         #input("Press Enter to continue...")  
 
         '''
@@ -306,9 +306,9 @@ class TadGAN(object):
                     self.encoder_generator_model.train_on_batch([x, z], [valid, valid, x]))
 
 
-            os.system("nvidia-smi")
-            print("Results After 1 Iteration")  
-            input("Press Enter to continue...")  
+            #os.system("nvidia-smi")
+            #print("Results After 1 Iteration")  
+            #input("Press Enter to continue...")  
 
             cx_loss = np.mean(np.array(epoch_cx_loss), axis=0)
             cz_loss = np.mean(np.array(epoch_cz_loss), axis=0)
@@ -366,7 +366,7 @@ class TadGAN(object):
         """
 
         #X = X.reshape((-1, self.shape[0], 1))
-        print(X.shape)
+        #print(X.shape)
         z_ = self.encoder.predict(X)
         y_hat = self.generator.predict(z_)
         critic = self.critic_x.predict(X)

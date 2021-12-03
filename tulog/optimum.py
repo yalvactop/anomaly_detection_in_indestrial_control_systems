@@ -140,18 +140,18 @@ def rolling_window_sequences(X, index, window_size, target_size, step_size, targ
 
 def run_tadgan(df, techniques):
     
-    df_test = df.iloc[:(len(df.index)*2)//10]
-    df_train = df.iloc[(len(df.index)*2)//10:]
+    df_test = df.iloc[:len(df.index)*2//10]
+    df_train = df.iloc[len(df.index)*2//10:]
+    print("df_train.shape", df_train.shape)
+    print("df_test.shape", df_test.shape)
     
     window_size = 100 #these hyperparameters will be defined after grid search
-    epoch = 50
+    epoch = 100
     learning_rate = 0.0005
     latent_dim = 20
     batch_size = 512
     comb = "mult"
-    target_size=51
-    step_size=1
-    target_column=50
+    step_size=100
     drop_windows = False
 
     prev_state = "Normal"
@@ -174,6 +174,8 @@ def run_tadgan(df, techniques):
     X_tsa_train, index_train = time_segments_aggregate(df_train, interval=1000000000, time_column='timestamp')
     X_tsa_test, index_test = time_segments_aggregate(df_test, interval=1000000000, time_column='timestamp')
 
+    print("X_tsa_train.shape", X_tsa_train.shape)
+    print("X_tsa_test.shape", X_tsa_test.shape)
     imp = SimpleImputer()
     X_imp_train = imp.fit_transform(X_tsa_train)
     X_imp_test = imp.fit_transform(X_tsa_test)
@@ -186,13 +188,13 @@ def run_tadgan(df, techniques):
     X_rws_train, y_train, X_index_train, y_index_train = rolling_window_sequences(X_scl_train, index_train, 
                                                       window_size=window_size, 
                                                       target_size=X_scl_train.shape[1], 
-                                                      step_size=1,
+                                                      step_size=step_size,
                                                       target_column=X_scl_train.shape[1]-1)
 
     X_rws_test, y_test, X_index_test, y_index_test = rolling_window_sequences(X_scl_test, index_test, 
                                                       window_size=window_size, 
                                                       target_size=X_scl_test.shape[1], 
-                                                      step_size=1,
+                                                      step_size=step_size,
                                                       target_column=X_scl_test.shape[1]-1)
 
     ##set model architecture
