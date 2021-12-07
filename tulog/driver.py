@@ -65,35 +65,35 @@ def main():
         print()
         print("Training for PCA for 5 dimensions")
         print()
-        pca_score = run_tadgan(df_pca_dim, "full_rows_pca_dim-5" + str(rows) + "_")
+        pca_score = run_tadgan(df_pca_dim, str(rows) + "_rows_GPU_FINAL_pca_dim-5")
 
         df_pca_var["Normal/Attack"] = y
         df_pca_var["timestamp"] = timestamp
         print()
         print("Training for PCA for .99 variance")
         print()
-        pca_score = run_tadgan(df_pca_var, "full_rows_pca_var-099" + str(rows) + "_")
+        pca_score = run_tadgan(df_pca_var, str(rows) + "_rows_GPU_FINAL_rows_pca_var-099")
 
         df_ae["Normal/Attack"] = y
         df_ae["timestamp"] = timestamp
         print()
         print("Training for autoencoder")
         print()
-        ae_score = run_tadgan(df_ae, "full_rows_autoencoder_" + str(rows) + "_")
+        ae_score = run_tadgan(df_ae, str(rows) + "_rows_GPU_FINAL_rows_autoencoder_")
 
         df_fs["Normal/Attack"] = y
         df_fs["timestamp"] = timestamp
         print()
         print("Training for feature selection")
         print()
-        fs_score = run_tadgan(df_fs, "full_rows_feature_selection_" + str(rows) + "_")
+        fs_score = run_tadgan(df_fs, str(rows) + "_rows_GPU_FINAL_rows_feature_selection_")
 
         df["Normal/Attack"] = y
         df["timestamp"] = timestamp
         print()
         print("Bare training")
         print()
-        bare_score = run_tadgan(df, "full_rows_bare_" + str(rows) + "_")
+        bare_score = run_tadgan(df, str(rows) + "_rows_GPU_FINAL_rows_bare_")
 
         print()
         print("bare_score: ", bare_score)

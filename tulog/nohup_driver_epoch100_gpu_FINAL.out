@@ -1,0 +1,136 @@
+nohup: ignoring input
+Using TensorFlow backend.
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/numpy/lib/function_base.py:2530: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/numpy/lib/function_base.py:2531: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/init_ops.py:97: calling GlorotUniform.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/init_ops.py:97: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/init_ops.py:97: calling Ones.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+2021-12-07 18:04:34.825665: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-12-07 18:04:35.473206: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:21:00.0
+2021-12-07 18:04:35.474057: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:41:00.0
+2021-12-07 18:04:35.474326: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-07 18:04:35.475285: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-07 18:04:35.476317: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-07 18:04:35.476597: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-07 18:04:35.477736: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-07 18:04:35.478631: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-07 18:04:35.481238: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-07 18:04:35.484612: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-07 18:04:35.485035: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-12-07 18:04:35.496585: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1995975000 Hz
+2021-12-07 18:04:35.500892: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x889afc0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-12-07 18:04:35.500958: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-12-07 18:04:35.598560: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x707e770 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-12-07 18:04:35.598599: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): TITAN X (Pascal), Compute Capability 6.1
+2021-12-07 18:04:35.598604: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): GeForce GTX TITAN X, Compute Capability 5.2
+2021-12-07 18:04:35.599694: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:21:00.0
+2021-12-07 18:04:35.600515: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:41:00.0
+2021-12-07 18:04:35.600557: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-07 18:04:35.600571: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-07 18:04:35.600582: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-07 18:04:35.600594: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-07 18:04:35.600606: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-07 18:04:35.600617: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-07 18:04:35.600629: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-07 18:04:35.604946: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-07 18:04:35.604985: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-07 18:04:35.607098: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-07 18:04:35.607110: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 1 
+2021-12-07 18:04:35.607115: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N N 
+2021-12-07 18:04:35.607120: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 1:   N N 
+2021-12-07 18:04:35.609595: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11455 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:21:00.0, compute capability: 6.1)
+2021-12-07 18:04:35.610863: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11507 MB memory) -> physical GPU (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:41:00.0, compute capability: 5.2)
+2021-12-07 18:04:36.112360: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/math_grad.py:1424: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+2021-12-07 18:05:05.528185: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-07 18:05:19.993629: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-07 18:05:20.023068: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-07 18:05:20.060473: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-07 18:05:20.131953: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-07 18:05:20.365260: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-07 18:05:20.395364: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-07 18:05:20.419922: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-07 18:05:20.446620: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+
+ROW COUNT:  37500
+
+
+df_fs.shape:  (37500, 22)
+
+pca.n_components_:  5
+
+df_pca_dim.shape:  (37500, 5)
+
+pca.n_components_:  23
+
+df_pca_var.shape:  (37500, 23)
+
+X_ae.shape:  (37500, 26)
+
+Training for PCA for 5 dimensions
+
+Epoch: 1/100, [Dx loss: [-0.71784174 -1.322112    0.46132633  0.01429439]] [Dz loss: [-3.4905303   1.224137   -6.731514    0.20168495]] [G loss: [ 9.15638    -0.42564192  8.395903    0.11861198]]
+Epoch: 2/100, [Dx loss: [-0.3157289  -1.6695348   1.2781475   0.00756587]] [Dz loss: [ 0.04458197  0.90156937 -1.351688    0.04947008]] [G loss: [ 1.0684197  -1.2669986   1.5930707   0.07423479]]
+Epoch: 3/100, [Dx loss: [-0.31095585 -2.2678244   1.876748    0.0080121 ]] [Dz loss: [-0.05207126  1.2676862  -1.8485428   0.05287853]] [G loss: [ 0.9422499  -1.8568759   2.1325104   0.06666148]]
+Epoch: 4/100, [Dx loss: [-0.26323205 -2.2047348   1.8661726   0.00753303]] [Dz loss: [-0.26229036  0.84210503 -1.6663868   0.05619909]] [G loss: [ 0.7263469  -1.8430088   1.9295396   0.06398163]]
+Epoch: 5/100, [Dx loss: [-0.23320282 -2.0954864   1.7930695   0.00692136]] [Dz loss: [-0.9763253   0.5308695  -2.0121334   0.05049385]] [G loss: [ 1.1142658  -1.7901931   2.3116288   0.05928298]]
+Epoch: 6/100, [Dx loss: [-0.19333571 -2.2785494   2.0280962   0.00571168]] [Dz loss: [-1.3204185  -0.18246156 -1.5229573   0.0385    ]] [G loss: [ 0.29027238 -2.0006988   1.7628299   0.05281417]]
+Epoch: 7/100, [Dx loss: [-0.2116788  -2.68823     2.4114463   0.00651072]] [Dz loss: [-1.4944836 -0.3479661 -1.4891536  0.0342636]] [G loss: [-0.14624667 -2.4080138   1.7189409   0.05428271]]
+Epoch: 8/100, [Dx loss: [-0.20140705 -2.8475456   2.5845842   0.00615536]] [Dz loss: [-1.4027902  -1.0365835  -0.6817895   0.03155832]] [G loss: [-1.1518909  -2.5712266   0.88518286  0.0534153 ]]
+Epoch: 9/100, [Dx loss: [-0.17275478 -2.6949878   2.458075    0.0064159 ]] [Dz loss: [-1.2427541  -1.6216837   0.1172099   0.02617199]] [G loss: [-1.882064   -2.4542534   0.01347293  0.05587162]]
+Epoch: 10/100, [Dx loss: [-0.15939951 -2.691679    2.470556    0.00617239]] [Dz loss: [-1.4200406  -1.8561951   0.17694482  0.02592083]] [G loss: [-2.0603604  -2.4813194  -0.10279594  0.05237547]]
+Epoch: 11/100, [Dx loss: [-0.17295998 -2.0857327   1.8524173   0.00603549]] [Dz loss: [-1.6981437  -0.84598714 -1.1697097   0.03175546]] [G loss: [-0.03420528 -1.8350568   1.2405287   0.05603233]]
+Epoch: 12/100, [Dx loss: [-0.16524267 -3.2476642   3.0218904   0.00605294]] [Dz loss: [-2.1158133  -0.99742097 -1.4496065   0.03312152]] [G loss: [-1.0202664  -3.0229816   1.4889953   0.05137203]]
+Epoch: 13/100, [Dx loss: [-0.16125776 -3.0537786   2.8322194   0.00603032]] [Dz loss: [-1.8963686  -0.14230587 -2.071135    0.03170735]] [G loss: [-0.20094012 -2.8333826   2.1339715   0.0498471 ]]
+Epoch: 14/100, [Dx loss: [-0.17958179 -3.1760888   2.936702    0.00598025]] [Dz loss: [-1.933714    1.3402426  -3.6278236   0.03538701]] [G loss: [ 1.314312   -2.930643    3.6871362   0.05578194]]
+Epoch: 15/100, [Dx loss: [-0.18240014 -3.6168578   3.3666162   0.00678396]] [Dz loss: [-2.396047    2.1036928  -4.9350343   0.04352931]] [G loss: [ 2.104324   -3.3720949   4.965962    0.05104564]]
+Epoch: 16/100, [Dx loss: [-0.17756425 -4.643602    4.4029984   0.00630369]] [Dz loss: [-2.1041007   1.8649604  -4.3264055   0.03573443]] [G loss: [ 0.4979584 -4.4130416  4.3517413  0.055926 ]]
+Epoch: 17/100, [Dx loss: [-0.14768134 -4.5418997   4.336612    0.00576062]] [Dz loss: [-2.2143116   2.3214493  -4.9057536   0.03699933]] [G loss: [ 1.1408644  -4.341338    4.936441    0.05457616]]
+Epoch: 18/100, [Dx loss: [-1.2532172e-01 -5.8824492e+00  5.7014294e+00  5.5696974e-03]] [Dz loss: [-2.2952673   2.1653996  -4.8521004   0.03914307]] [G loss: [-0.36600208 -5.6948943   4.893383    0.04355091]]
+Epoch: 19/100, [Dx loss: [-0.08931498 -4.866856    4.7278094   0.00497326]] [Dz loss: [-2.3448036   0.6120599  -3.3599954   0.04031319]] [G loss: [-0.9099743  -4.706274    3.399197    0.03971021]]
+Epoch: 20/100, [Dx loss: [-0.11581179 -3.920538    3.7545726   0.00501545]] [Dz loss: [-2.391867    0.6552828  -3.4226801   0.03755302]] [G loss: [ 0.06649205 -3.7530003   3.4137082   0.04057848]]
+Epoch: 21/100, [Dx loss: [-9.3634762e-02 -5.2600818e+00  5.1153889e+00  5.1055406e-03]] [Dz loss: [-2.3415701  0.9486044 -3.6849473  0.0394773]] [G loss: [-0.90876263 -5.092837    3.739929    0.0444146 ]]
+Epoch: 22/100, [Dx loss: [-1.0711402e-01 -5.2313409e+00  5.0740814e+00  5.0143590e-03]] [Dz loss: [-2.2939146   0.15423529 -2.8335145   0.03853645]] [G loss: [-1.8112221  -5.091113    2.873459    0.04064326]]
+Epoch: 23/100, [Dx loss: [-1.0233883e-01 -5.0109930e+00  4.8614078e+00  4.7246171e-03]] [Dz loss: [-2.2587256   0.37073767 -3.0214958   0.03920339]] [G loss: [-1.3868575  -4.8396277   3.0557065   0.03970646]]
+Epoch: 24/100, [Dx loss: [-1.4353353e-01 -6.1575990e+00  5.9592748e+00  5.4789959e-03]] [Dz loss: [-2.1872046  -0.25365883 -2.3193257   0.03857803]] [G loss: [-3.18761   -5.9633975  2.329967   0.044582 ]]
+Epoch: 25/100, [Dx loss: [-1.0703763e-01 -8.0608568e+00  7.9029484e+00  5.0870702e-03]] [Dz loss: [-2.2266324   0.19821455 -2.802688    0.03778407]] [G loss: [-4.676652   -7.8808894   2.8332536   0.03709842]]
+Epoch: 26/100, [Dx loss: [-7.5985827e-02 -7.9115934e+00  7.7908049e+00  4.4798488e-03]] [Dz loss: [-2.1181407  -0.14850228 -2.366924    0.03972849]] [G loss: [-4.9806814  -7.757221    2.395483    0.03810548]]
+Epoch: 27/100, [Dx loss: [-7.4387841e-02 -5.8319521e+00  5.7129498e+00  4.4613960e-03]] [Dz loss: [-2.173418    0.26557496 -2.8167171   0.03777245]] [G loss: [-2.455576   -5.6811285   2.8402603   0.03852927]]
+Epoch: 28/100, [Dx loss: [-4.3718372e-02 -5.6658144e+00  5.5783906e+00  4.3704743e-03]] [Dz loss: [-2.1742067   1.6755071  -4.239388    0.03896758]] [G loss: [-1.0020422  -5.571356    4.2333903   0.03359247]]
+Epoch: 29/100, [Dx loss: [-5.6580778e-02 -4.9179564e+00  4.8234119e+00  3.7961153e-03]] [Dz loss: [-2.1665046   0.17502755 -2.7301567   0.03886234]] [G loss: [-1.5955749  -4.8208113   2.7313292   0.04939074]]
+Epoch: 30/100, [Dx loss: [-8.7602101e-02 -5.8996277e+00  5.7636571e+00  4.8370091e-03]] [Dz loss: [-2.1202912   0.39193413 -2.8871675   0.03749401]] [G loss: [-2.3559783  -5.7445745   2.9492626   0.04393316]]
+Epoch: 31/100, [Dx loss: [-1.0213922e-01 -7.4711537e+00  7.3222709e+00  4.6747182e-03]] [Dz loss: [-2.0831938   0.3087692  -2.7690248   0.03770606]] [G loss: [-4.1686697  -7.343096    2.7768972   0.03975292]]
+Epoch: 32/100, [Dx loss: [-8.7401204e-02 -6.5813284e+00  6.4476337e+00  4.6288753e-03]] [Dz loss: [-2.0821302   0.86126345 -3.3181832   0.03747909]] [G loss: [-2.7018604  -6.462055    3.3380396   0.04221559]]
+Epoch: 33/100, [Dx loss: [-9.4822235e-02 -6.3151121e+00  6.1724119e+00  4.7876122e-03]] [Dz loss: [-2.1412573   1.1544888  -3.7310393   0.04352939]] [G loss: [-1.8895856  -6.208807    3.7137275   0.06054931]]
+Epoch: 34/100, [Dx loss: [-8.4600441e-02 -6.6115193e+00  6.4771848e+00  4.9738814e-03]] [Dz loss: [-2.0984287   0.16126114 -2.641962    0.03822727]] [G loss: [-3.3834221 -6.4513893  2.661772   0.0406196]]
+Epoch: 35/100, [Dx loss: [-0.11191818 -4.5189056   4.3572435   0.00497443]] [Dz loss: [-2.082105   -0.64655775 -1.8277125   0.03921673]] [G loss: [-2.0599172  -4.3657684   1.8741262   0.04317249]]
+Epoch: 36/100, [Dx loss: [-1.3591127e-01 -5.9230504e+00  5.7320437e+00  5.5091516e-03]] [Dz loss: [-2.1863282   0.19731012 -2.7676141   0.03839737]] [G loss: [-2.458961   -5.7196774   2.8429356   0.04177805]]
+Epoch: 37/100, [Dx loss: [-1.4642337e-01 -5.6550345e+00  5.4557581e+00  5.2849776e-03]] [Dz loss: [-2.085825    1.1999911  -3.6787431   0.03929281]] [G loss: [-1.4023707  -5.507611    3.715953    0.03892879]]
+Epoch: 38/100, [Dx loss: [-9.883939e-02 -9.331818e+00  9.170927e+00  6.206049e-03]] [Dz loss: [-2.0867608   0.89417785 -3.3647907   0.03838522]] [G loss: [-5.5368705  -9.285769    3.386534    0.03623639]]
+Epoch: 39/100, [Dx loss: [-1.2830129e-01 -7.5737519e+00  7.3845129e+00  6.0931584e-03]] [Dz loss: [-2.1076417  -0.13445424 -2.3522046   0.03790167]] [G loss: [-4.368295   -7.4801235   2.3830855   0.07287433]]
+Epoch: 40/100, [Dx loss: [-0.1242403  -4.9110727   4.7224216   0.00644137]] [Dz loss: [-2.1841047  -0.04877427 -2.508026    0.03726967]] [G loss: [-1.7620715  -4.8109727   2.5347235   0.05141778]]
