@@ -1,1 +1,224 @@
 nohup: ignoring input
+Using TensorFlow backend.
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/numpy/lib/function_base.py:2530: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/numpy/lib/function_base.py:2531: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/init_ops.py:97: calling GlorotUniform.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/init_ops.py:97: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/init_ops.py:97: calling Ones.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+2021-12-03 18:26:26.213876: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-12-03 18:26:26.887384: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:21:00.0
+2021-12-03 18:26:26.888235: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:41:00.0
+2021-12-03 18:26:26.888480: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-03 18:26:26.889392: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-03 18:26:26.890390: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-03 18:26:26.890631: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-03 18:26:26.891686: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-03 18:26:26.892517: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-03 18:26:26.895112: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-03 18:26:26.898522: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-03 18:26:26.899366: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-12-03 18:26:26.917404: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1995975000 Hz
+2021-12-03 18:26:26.921819: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7690b70 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-12-03 18:26:26.921882: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-12-03 18:26:27.025604: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7a77e80 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-12-03 18:26:27.025642: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): TITAN X (Pascal), Compute Capability 6.1
+2021-12-03 18:26:27.025647: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): GeForce GTX TITAN X, Compute Capability 5.2
+2021-12-03 18:26:27.026915: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:21:00.0
+2021-12-03 18:26:27.027773: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:41:00.0
+2021-12-03 18:26:27.027825: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-03 18:26:27.027838: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-03 18:26:27.027849: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-03 18:26:27.027861: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-03 18:26:27.027873: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-03 18:26:27.027883: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-03 18:26:27.027895: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-03 18:26:27.031023: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-03 18:26:27.031067: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-03 18:26:27.033208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-03 18:26:27.033220: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 1 
+2021-12-03 18:26:27.033225: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N N 
+2021-12-03 18:26:27.033229: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 1:   N N 
+2021-12-03 18:26:27.035688: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11455 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:21:00.0, compute capability: 6.1)
+2021-12-03 18:26:27.036891: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11507 MB memory) -> physical GPU (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:41:00.0, compute capability: 5.2)
+2021-12-03 18:26:27.571515: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/math_grad.py:1424: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+2021-12-03 18:45:22.980599: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-03 18:45:40.848525: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-03 18:45:40.876592: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-03 18:45:40.911938: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-03 18:45:40.980006: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-03 18:45:41.209164: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-03 18:45:41.237545: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-03 18:45:41.260873: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-03 18:45:41.286440: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+ROW COUNT:  449919
+df.shape:  (449919, 51)
+y_binary.shape:  (449919,)
+df_fs.shape:  (449919, 31)
+pca.n_components_:  5
+df_pca_dim.shape:  (449919, 5)
+pca.n_components_:  24
+df_pca_var.shape:  (449919, 24)
+X_ae.shape:  (449919, 26)
+df_train.shape (359936, 7)
+df_test.shape (89983, 7)
+X_tsa_train.shape (2952017, 5)
+X_tsa_test.shape (89983, 5)
+Epoch: 1/100, [Dx loss: [ 0.47533426 -1.0822171   0.00993014  0.15476215]] [Dz loss: [ 0.7954514  -0.4286327   0.42799097  0.07960935]] [G loss: [ 5.398667   -0.06228146  2.7504282   0.27105206]]
+Epoch: 2/100, [Dx loss: [-1.1745453   1.6076059  -3.1040092   0.03218584]] [Dz loss: [-10.94214     -0.96598727 -19.963171     0.99870217]] [G loss: [30.45095     3.2067683  25.545866    0.16983165]]
+Epoch: 3/100, [Dx loss: [-1.1734     1.1317531 -2.471731   0.0166577]] [Dz loss: [ -8.721347     0.97328484 -12.012729     0.23180938]] [G loss: [20.213028    2.293364   15.816926    0.21027376]]
+Epoch: 4/100, [Dx loss: [-0.50282466  0.85284036 -1.4548604   0.00991953]] [Dz loss: [ -7.2631154    1.866556   -11.513183     0.23835121]] [G loss: [16.355705    1.6307553  13.568863    0.11560876]]
+Epoch: 5/100, [Dx loss: [-0.01289876 -0.24438062  0.03329588  0.0198186 ]] [Dz loss: [-5.931765    2.3666806  -9.998569    0.17001219]] [G loss: [11.617875    0.180679   10.928963    0.05082319]]
+Epoch: 6/100, [Dx loss: [-0.08641808  0.42989716 -0.6640119   0.01476967]] [Dz loss: [-1.840534    1.9796598  -4.566422    0.07462275]] [G loss: [5.623471   0.6241119  4.7429833  0.02563759]]
+Epoch: 7/100, [Dx loss: [-0.09091604 -1.4216622   1.2305945   0.01001522]] [Dz loss: [-0.27492568  1.0625868  -1.8788211   0.05413086]] [G loss: [ 0.6183984  -1.5068523   1.9360766   0.01891739]]
+Epoch: 8/100, [Dx loss: [-0.15612999  1.4266187  -1.6647084   0.00819597]] [Dz loss: [ 0.29120284  0.7680685  -0.9208703   0.04440045]] [G loss: [3.032512   1.7141883  1.11541    0.02029134]]
+Epoch: 9/100, [Dx loss: [-0.19883144 -0.4258591   0.17548981  0.00515378]] [Dz loss: [-0.67992824  0.8175463  -2.0111759   0.05137014]] [G loss: [ 1.9254851  -0.44524562  2.1667807   0.02039504]]
+Epoch: 10/100, [Dx loss: [-0.19607076 -2.2073545   1.9551535   0.0056131 ]] [Dz loss: [ 0.7325719   0.31545833 -0.05448787  0.04716014]] [G loss: [-1.3101575  -1.6120051   0.11870281  0.01831448]]
+Epoch: 11/100, [Dx loss: [-0.18777262 -0.97379977  0.76294315  0.00230841]] [Dz loss: [-0.78809744 -0.43492326 -0.7708296   0.04176555]] [G loss: [ 0.5791214  -0.6097788   1.03485     0.01540502]]
+Epoch: 12/100, [Dx loss: [-0.16913672  1.1681737  -1.3669859   0.00296761]] [Dz loss: [-2.0089304  -1.1312969  -1.513586    0.06359524]] [G loss: [2.920215   1.1002347  1.6620454  0.01579345]]
+Epoch: 13/100, [Dx loss: [-1.8120369e-01 -2.9130585e+00  2.7105820e+00  2.1272707e-03]] [Dz loss: [-1.5957512  -1.4208987  -0.63716733  0.04623151]] [G loss: [-1.7550756  -2.700659    0.79789406  0.01476893]]
+Epoch: 14/100, [Dx loss: [ 0.3033307  -2.2575233   2.1355746   0.04252794]] [Dz loss: [-2.4923894  -2.0676417  -1.031746    0.06069981]] [G loss: [ 0.05153114 -1.7296867   1.606041    0.01751769]]
+Epoch: 15/100, [Dx loss: [-0.06629801  0.6834262  -0.83840513  0.0088681 ]] [Dz loss: [-4.0372944  -2.2027209  -2.9202898   0.10857168]] [G loss: [4.2575603  1.0773311  3.032499   0.01477309]]
+Epoch: 16/100, [Dx loss: [2060.5444       2.3332093   -2.355813   206.05669  ]] [Dz loss: [-2.0666513  -2.5253587  -0.07529096  0.0533998 ]] [G loss: [7.0498624  6.476009   0.32235768 0.02514957]]
+Epoch: 17/100, [Dx loss: [121.06178    -2.9077566   2.8839903  12.108553 ]] [Dz loss: [-2.9048529  -2.6708817  -0.75593114  0.052196  ]] [G loss: [-3.1219976  -4.5118895   1.1612856   0.02286071]]
+Epoch: 18/100, [Dx loss: [ 0.54575324  5.3127646  -5.3495903   0.05825784]] [Dz loss: [-2.807416   -2.3675234  -1.0848984   0.06450048]] [G loss: [6.911141   5.5242248  1.244054   0.01428623]]
+Epoch: 19/100, [Dx loss: [ 0.5436566   5.2731857  -5.3262844   0.05967569]] [Dz loss: [-2.8672125  -2.7818139  -0.67395705  0.05885585]] [G loss: [6.4212766  5.194956   1.0819983  0.01443221]]
+Epoch: 20/100, [Dx loss: [ 0.09499618  5.2768927  -5.320305    0.01384087]] [Dz loss: [-2.6437497  -2.738136   -0.40792042  0.05023054]] [G loss: [6.0884395  5.321503   0.6395714  0.01273645]]
+Epoch: 21/100, [Dx loss: [ 0.05609271  4.5149865  -4.5488324   0.00899387]] [Dz loss: [-2.5236194  -2.2308438  -0.7862286   0.04934523]] [G loss: [5.8289866  4.5747137  1.119654   0.01346185]]
+Epoch: 22/100, [Dx loss: [ 0.06329234  4.795328   -4.8220005   0.00899648]] [Dz loss: [-2.8772578  -2.504072   -0.8467779   0.04735923]] [G loss: [6.299331   4.8710904  1.301789   0.01264516]]
+Epoch: 23/100, [Dx loss: [ 0.02227646  4.366429   -4.4388795   0.00947279]] [Dz loss: [-3.5564418  -2.462135   -1.7875223   0.06932152]] [G loss: [6.655743   4.4184337  2.1115124  0.01257966]]
+Epoch: 24/100, [Dx loss: [ 0.02222657  3.4853256  -3.5680327   0.01049346]] [Dz loss: [-3.2962463  -1.4044503  -2.487548    0.05957519]] [G loss: [6.6117706 3.5153549 2.985382  0.0111033]]
+Epoch: 25/100, [Dx loss: [ 0.07462996  4.683196   -4.74057     0.01320042]] [Dz loss: [-1.327596   -1.1538156  -0.55656403  0.03827833]] [G loss: [5.5754747  4.7206306  0.7405621  0.01142828]]
+Epoch: 26/100, [Dx loss: [ 0.04042207  1.4382012  -1.4864366   0.00886584]] [Dz loss: [-3.3519485  -2.85374    -1.06984     0.05716318]] [G loss: [2.7936456 1.2178351 1.4600513 0.0115759]]
+Epoch: 27/100, [Dx loss: [ 0.00680007 -0.47852916  0.39772484  0.00876044]] [Dz loss: [-3.2260811  -3.3840995  -0.3644987   0.05225171]] [G loss: [ 0.6167678  -0.22548938  0.73452187  0.01077353]]
+Epoch: 28/100, [Dx loss: [ 0.5633483   5.6416535  -5.6973276   0.06190223]] [Dz loss: [-2.65904    -1.8222888  -1.356643    0.05198919]] [G loss: [7.7679515  5.987879   1.684372   0.00957002]]
+Epoch: 29/100, [Dx loss: [ 0.20656535  5.5798483  -5.593247    0.0219963 ]] [Dz loss: [-2.3327513  -0.6329908  -2.1157954   0.04160351]] [G loss: [8.034963   5.224652   2.7264009  0.00839096]]
+Epoch: 30/100, [Dx loss: [ 0.05901211  1.564759   -1.5981021   0.00923553]] [Dz loss: [-1.9669324  -0.60410357 -1.8613257   0.04984967]] [G loss: [3.7102456  1.6081161  2.0092008  0.00929287]]
+Epoch: 31/100, [Dx loss: [ 0.00827992  2.045613   -2.1684618   0.01311287]] [Dz loss: [-1.9507394 -1.0613483 -1.2566279  0.0367237]] [G loss: [4.3827696 2.484771  1.7884716 0.0109527]]
+Epoch: 32/100, [Dx loss: [ 0.17755117  3.588213   -3.5916483   0.01809867]] [Dz loss: [-3.4412167  -1.1887258  -2.8435793   0.05910887]] [G loss: [6.686589   3.4445016  3.151419   0.00906681]]
+Epoch: 33/100, [Dx loss: [ 0.09777311  1.740608   -1.7455989   0.01027645]] [Dz loss: [-1.9310809  -1.6620436  -0.6145296   0.03454924]] [G loss: [2.441984   1.5051868  0.8120439  0.01247534]]
+Epoch: 34/100, [Dx loss: [ 0.07834207 -1.745489    1.732133    0.00916981]] [Dz loss: [-2.7996612  -3.3223062   0.05998246  0.04626621]] [G loss: [-1.1144112  -1.5582314   0.3311157   0.01127043]]
+Epoch: 35/100, [Dx loss: [ 0.08250301  7.779143   -7.8260508   0.01294107]] [Dz loss: [-4.153282   -3.5650399  -1.244552    0.06563094]] [G loss: [9.793184   8.163609   1.5271854  0.01023899]]
+Epoch: 36/100, [Dx loss: [ 0.06993838  8.715918   -8.735847    0.00898679]] [Dz loss: [-2.8771927  -3.3019507   0.02117386  0.04035842]] [G loss: [8.718016   8.33305    0.27751485 0.01074512]]
+Epoch: 37/100, [Dx loss: [ 0.01801629 -4.079015    4.0221324   0.00748985]] [Dz loss: [-3.2181466  -2.2352552  -1.4953052   0.05124143]] [G loss: [-2.4511065  -4.4175663   1.8572034   0.01092569]]
+Epoch: 38/100, [Dx loss: [ 0.06617843 -2.038301    2.0267107   0.00777692]] [Dz loss: [-2.2748322  -1.0474874  -1.6249042   0.03975593]] [G loss: [ 0.5130508  -1.4826518   1.8827507   0.01129517]]
+Epoch: 39/100, [Dx loss: [ 2.8021806e-03  4.4873486e+00 -4.5784898e+00  9.3944604e-03]] [Dz loss: [-2.0232217  -1.5375322  -0.84017605  0.03544861]] [G loss: [5.5010395  4.321834   1.0389243  0.01402809]]
+Epoch: 40/100, [Dx loss: [ 0.08897097 -0.2882455   0.2221794   0.0155037 ]] [Dz loss: [-2.7463832  -4.2113757   1.0487854   0.04162079]] [G loss: [-0.810614   -0.06483904 -0.8610461   0.01152712]]
+Epoch: 41/100, [Dx loss: [ 0.15214781  6.70287    -6.693869    0.01431453]] [Dz loss: [-4.4053106  -6.6458573   1.4440509   0.07964962]] [G loss: [ 5.8065495   6.901881   -1.2099633   0.01146323]]
+Epoch: 42/100, [Dx loss: [ 0.06913289  4.8768916  -4.9456043   0.01378456]] [Dz loss: [-3.739889   -6.055151    1.7246631   0.05905972]] [G loss: [ 3.6597824   5.0681224  -1.5177493   0.01094089]]
+Epoch: 43/100, [Dx loss: [ 0.08941221  5.472415   -5.4885864   0.01055846]] [Dz loss: [-1.3847921  -4.167917    2.545549    0.02375751]] [G loss: [ 3.141216    5.3567705  -2.3029633   0.00874085]]
+Epoch: 44/100, [Dx loss: [ 0.06978235  3.2583804  -3.29678     0.0108182 ]] [Dz loss: [-1.5315524 -3.4741497  1.6863394  0.0256258]] [G loss: [ 1.9746857   3.1250083  -1.2492887   0.00989661]]
+Epoch: 45/100, [Dx loss: [ 0.19439034  2.9691694  -3.0114934   0.0236714 ]] [Dz loss: [-4.122209   -0.7491693  -3.9881291   0.06150897]] [G loss: [8.234798   3.384993   4.7391644  0.01106413]]
+Epoch: 46/100, [Dx loss: [ 0.03334823  6.72256    -6.7813716   0.00921639]] [Dz loss: [-2.2706404   3.0654943  -5.779186    0.04430529]] [G loss: [1.28896055e+01 6.83620262e+00 5.95107889e+00 1.02324607e-02]]
+Epoch: 47/100, [Dx loss: [ 0.07694091  9.874246   -9.945498    0.01481957]] [Dz loss: [ 0.49115163  1.9693261  -1.750194    0.02720196]] [G loss: [1.1682659e+01 9.8475580e+00 1.7237457e+00 1.1135465e-02]]
+Epoch: 48/100, [Dx loss: [ 0.11086616  3.7846234  -3.7749114   0.01011533]] [Dz loss: [-1.0814788  -3.306654    1.5693035   0.06558716]] [G loss: [ 2.1949964   3.368062   -1.3986516   0.02255856]]
+Epoch: 49/100, [Dx loss: [ 0.06525633  2.3938367  -2.4190028   0.00904226]] [Dz loss: [-6.8233323  -8.55297     0.19962706  0.15300103]] [G loss: [ 2.6868057   2.6122248  -0.07739501  0.01519761]]
+Epoch: 50/100, [Dx loss: [ 0.07199917  0.5980845  -0.5864317   0.00603465]] [Dz loss: [-3.3722236  -7.3139844   3.3666742   0.05750837]] [G loss: [-2.5981987   0.5121809  -3.2455492   0.01351698]]
+Epoch: 51/100, [Dx loss: [ 0.06014075  6.8914156  -6.9575815   0.01263073]] [Dz loss: [-0.9546581  -6.405476    5.2568855   0.01939313]] [G loss: [ 2.267953    7.224272   -5.0932403   0.01369217]]
+Epoch: 52/100, [Dx loss: [ 0.08273649  1.2767044  -1.2763857   0.0082418 ]] [Dz loss: [-1.5532169  -6.14403     4.3865104   0.02043037]] [G loss: [-3.3371139   0.6930506  -4.1588955   0.01287307]]
+Epoch: 53/100, [Dx loss: [ 0.85022813  0.8507105  -0.8989829   0.08985006]] [Dz loss: [-2.5655956  -5.0204806   2.1159365   0.03389494]] [G loss: [ 0.02497838  1.6536174  -1.7704326   0.01417935]]
+Epoch: 54/100, [Dx loss: [  0.34378892  10.06227    -10.094803     0.03763233]] [Dz loss: [-2.9015803  -2.6705573  -0.602008    0.03709842]] [G loss: [11.137639   10.078239    0.94744974  0.01119494]]
+Epoch: 55/100, [Dx loss: [ 0.09457403  9.646154   -9.675726    0.01241456]] [Dz loss: [-1.965273    0.16653919 -2.4161901   0.02843776]] [G loss: [1.2517475e+01 9.6304522e+00 2.7972357e+00 8.9786714e-03]]
+Epoch: 56/100, [Dx loss: [ 0.18211864  8.701408   -8.725121    0.02058315]] [Dz loss: [-0.12743713  2.1944263  -2.5237038   0.02018402]] [G loss: [1.1537390e+01 8.6695309e+00 2.7759259e+00 9.1933273e-03]]
+Epoch: 57/100, [Dx loss: [ 0.16425453  7.7474155  -7.757956    0.01747946]] [Dz loss: [-2.1309655   1.5623986  -4.0268264   0.03334627]] [G loss: [1.2123319e+01 7.7430282e+00 4.2896967e+00 9.0592811e-03]]
+Epoch: 58/100, [Dx loss: [  0.18790188  11.966781   -12.003057     0.02241743]] [Dz loss: [-3.5447655  -3.511599   -0.54710484  0.05139388]] [G loss: [1.3269729e+01 1.2627395e+01 5.6237966e-01 7.9954658e-03]]
+Epoch: 59/100, [Dx loss: [ 9.9535540e-02  1.8053606e+01 -1.8084318e+01  1.3024948e-02]] [Dz loss: [-2.4135797  -5.617062    2.8511465   0.03523354]] [G loss: [ 1.5189429e+01  1.7880548e+01 -2.7721174e+00  8.0998009e-03]]
+Epoch: 60/100, [Dx loss: [  0.12164862  14.884897   -14.914343     0.0151095 ]] [Dz loss: [-0.9293115 -6.2125435  5.0824375  0.0200794]] [G loss: [ 1.0036157e+01  1.4913619e+01 -4.9574170e+00  7.9956483e-03]]
+Epoch: 61/100, [Dx loss: [  0.1899571   18.26512    -18.307318     0.02321533]] [Dz loss: [-2.984399   -6.3446302   2.889081    0.04711479]] [G loss: [ 1.6002480e+01  1.8529530e+01 -2.6033926e+00  7.6343720e-03]]
+Epoch: 62/100, [Dx loss: [  4.310874    18.898924   -18.905844     0.43177938]] [Dz loss: [-3.016679   -4.803006    1.3997236   0.03866036]] [G loss: [ 1.7550695e+01  1.8728104e+01 -1.2545909e+00  7.7185240e-03]]
+Epoch: 63/100, [Dx loss: [  0.24846826  13.676363   -13.691543     0.02636511]] [Dz loss: [-1.2128918  -3.9443767   2.549598    0.01818865]] [G loss: [ 1.0983464e+01  1.3362288e+01 -2.4571269e+00  7.8303358e-03]]
+Epoch: 64/100, [Dx loss: [-2.9038214e-03  1.2079262e+01 -1.2148574e+01  6.6407686e-03]] [Dz loss: [-1.1346866  -4.4387574   3.1095178   0.01945524]] [G loss: [ 9.1230135e+00  1.2043731e+01 -2.9956114e+00  7.4894801e-03]]
+Epoch: 65/100, [Dx loss: [ 3.9056882e-02  1.1260309e+01 -1.1282571e+01  6.1314781e-03]] [Dz loss: [-2.359094   -6.281764    3.5648363   0.03578339]] [G loss: [ 7.9795790e+00  1.1346656e+01 -3.4505358e+00  8.3459429e-03]]
+Epoch: 66/100, [Dx loss: [ 2.5272309e-03  1.4672796e+01 -1.4736647e+01  6.6380845e-03]] [Dz loss: [-3.3790138  -6.8761983   2.9869947   0.05101914]] [G loss: [ 1.2137900e+01  1.4909185e+01 -2.8468385e+00  7.5552966e-03]]
+Epoch: 67/100, [Dx loss: [ 8.8523313e-02  1.3885636e+01 -1.3915844e+01  1.1873086e-02]] [Dz loss: [-2.1048634  -5.890537    3.5205705   0.02651031]] [G loss: [ 1.0519118e+01  1.3839736e+01 -3.4400332e+00  1.1941575e-02]]
+Epoch: 68/100, [Dx loss: [  0.22224587  15.98244    -16.036985     0.02767947]] [Dz loss: [-1.1945508  -6.203109    4.8529887   0.01555691]] [G loss: [ 1.1574185e+01  1.6213900e+01 -4.7216492e+00  8.1933839e-03]]
+Epoch: 69/100, [Dx loss: [ 2.6354378e-02  1.6804222e+01 -1.6841976e+01  6.4110262e-03]] [Dz loss: [-2.1661024  -5.826902    3.3703701   0.02904287]] [G loss: [ 1.3790060e+01  1.6856585e+01 -3.1406705e+00  7.4144704e-03]]
+Epoch: 70/100, [Dx loss: [ 1.7439343e-02  1.6896683e+01 -1.6954905e+01  7.5662229e-03]] [Dz loss: [-2.6430862  -5.133558    2.1574328   0.03330388]] [G loss: [ 1.5047910e+01  1.6917198e+01 -1.9406670e+00  7.1377512e-03]]
+Epoch: 71/100, [Dx loss: [ 2.1474508e-03  1.6487152e+01 -1.6533401e+01  4.8393859e-03]] [Dz loss: [-3.1895158  -4.8353605   1.2211142   0.04247296]] [G loss: [ 1.5531070e+01  1.6537445e+01 -1.0770298e+00  7.0656999e-03]]
+Epoch: 72/100, [Dx loss: [-8.9304065e-03  1.6580177e+01 -1.6645367e+01  5.6256494e-03]] [Dz loss: [-1.9621463  -4.4469743   2.222718    0.02621097]] [G loss: [ 1.4517682e+01  1.6596910e+01 -2.1555128e+00  7.6284725e-03]]
+Epoch: 73/100, [Dx loss: [-5.9835152e-03  1.5807040e+01 -1.5887871e+01  7.4850330e-03]] [Dz loss: [-1.4229574  -5.255921    3.5834386   0.02495248]] [G loss: [ 1.2513147e+01  1.5922767e+01 -3.4944534e+00  8.4833186e-03]]
+Epoch: 74/100, [Dx loss: [  0.11688406  15.653708   -15.7108755    0.0174047 ]] [Dz loss: [-3.5600991  -5.584869    1.3970747   0.06276967]] [G loss: [ 1.4523676e+01  1.5619888e+01 -1.1998448e+00  1.0363191e-02]]
+Epoch: 75/100, [Dx loss: [  0.06721567  11.590036   -11.664327     0.01415075]] [Dz loss: [-2.7369988  -4.5487475   1.4498216   0.03619279]] [G loss: [ 1.01261721e+01  1.13978815e+01 -1.34240007e+00  7.06913741e-03]]
+Epoch: 76/100, [Dx loss: [ 6.6918157e-02  9.8663445e+00 -9.8680601e+00  6.8634776e-03]] [Dz loss: [-2.2670047  -4.4875846   1.9501612   0.02704188]] [G loss: [ 8.1640511e+00  9.8972397e+00 -1.8151516e+00  8.1962943e-03]]
+Epoch: 77/100, [Dx loss: [ 2.0999501e-02  1.0632663e+01 -1.0681740e+01  7.0077204e-03]] [Dz loss: [-2.2927825  -4.7709336   2.1300514   0.03480995]] [G loss: [ 9.028553   10.76459    -1.8907145   0.01546786]]
+Epoch: 78/100, [Dx loss: [  0.11456224  13.797764   -13.870531     0.01873306]] [Dz loss: [-3.44415    -3.5457604  -0.39461958  0.04962301]] [G loss: [1.4613450e+01 1.3927710e+01 5.5948186e-01 1.2625738e-02]]
+Epoch: 79/100, [Dx loss: [ 4.2334244e-02  1.0138875e+01 -1.0186433e+01  8.9894487e-03]] [Dz loss: [-1.9946102  -2.6825209   0.46123594  0.02266748]] [G loss: [ 9.683488e+00  9.983130e+00 -3.960890e-01  9.644547e-03]]
+Epoch: 80/100, [Dx loss: [ 2.41395226e-03  8.19369888e+00 -8.30000877e+00  1.08723575e-02]] [Dz loss: [-2.5095806  -3.8264198   0.9828696   0.03339704]] [G loss: [ 7.4110336   8.216766   -0.9508512   0.01451184]]
+Epoch: 81/100, [Dx loss: [  2.4769511   22.440575   -22.472416     0.25087887]] [Dz loss: [-2.9994514  -4.7568045   1.3360242   0.04213284]] [G loss: [ 2.2687164e+01  2.3877369e+01 -1.2855868e+00  9.5381327e-03]]/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+
+Epoch: 82/100, [Dx loss: [-2.4365231e-03  2.7770981e+01 -2.7826736e+01  5.3316033e-03]] [Dz loss: [-2.3778968 -4.3613353  1.6204488  0.036299 ]] [G loss: [ 2.6049879e+01  2.7464668e+01 -1.5027093e+00  8.7917903e-03]]
+Epoch: 83/100, [Dx loss: [-5.3232767e-02  2.5446270e+01 -2.5543379e+01  4.3886439e-03]] [Dz loss: [-2.6754355  -2.8851104  -0.18773113  0.03974061]] [G loss: [2.6040173e+01 2.5622852e+01 3.2668188e-01 9.0638734e-03]]
+Epoch: 84/100, [Dx loss: [ 1.7720759e-01  2.5791790e+01 -2.5848108e+01  2.3353299e-02]] [Dz loss: [-2.4168515  -2.9389417   0.17670208  0.03453884]] [G loss: [ 2.5654325e+01  2.5718321e+01 -1.7233977e-01  1.0834063e-02]]
+Epoch: 85/100, [Dx loss: [ 2.3103773e-03  2.2607141e+01 -2.2687174e+01  8.2339980e-03]] [Dz loss: [-2.391762   -3.102674    0.3598391   0.03510739]] [G loss: [ 2.2333559e+01  2.2528000e+01 -2.8326499e-01  8.8821789e-03]]
+Epoch: 86/100, [Dx loss: [-1.26929665e-02  2.18250542e+01 -2.18747959e+01  3.70518677e-03]] [Dz loss: [-2.358576   -2.8848305   0.1599546   0.03662997]] [G loss: [ 2.1921297e+01  2.2004866e+01 -1.6743933e-01  8.3871670e-03]]
+Epoch: 87/100, [Dx loss: [-1.6247014e-02  2.2635412e+01 -2.2695385e+01  4.3727066e-03]] [Dz loss: [-2.4749107  -3.0426428   0.18049937  0.03872333]] [G loss: [ 2.2626348e+01  2.2693560e+01 -1.4494358e-01  7.7729705e-03]]
+Epoch: 88/100, [Dx loss: [-2.4564242e-02  2.1595984e+01 -2.1666964e+01  4.6417974e-03]] [Dz loss: [-2.5610812  -2.809684   -0.15025045  0.03988534]] [G loss: [2.1760210e+01 2.1483583e+01 1.9380258e-01 8.2824016e-03]]
+Epoch: 89/100, [Dx loss: [ 2.8010819e-02  1.9535553e+01 -1.9564709e+01  5.7162247e-03]] [Dz loss: [-2.5944412 -2.0988548 -0.9192926  0.0423706]] [G loss: [2.0788134e+01 1.9675484e+01 1.0326835e+00 7.9964334e-03]]
+Epoch: 90/100, [Dx loss: [ 8.9124283e-03  2.2173323e+01 -2.2229813e+01  6.5403553e-03]] [Dz loss: [-2.7027543  -1.3905414  -1.664109    0.03518961]] [G loss: [2.4101702e+01 2.2319502e+01 1.6990486e+00 8.3149755e-03]]
+Epoch: 91/100, [Dx loss: [  0.3422703   15.192134   -15.236681     0.03868197]] [Dz loss: [-2.4250221  -1.6220495  -1.1622607   0.03592881]] [G loss: [1.61068439e+01 1.47844305e+01 1.23752546e+00 8.48893914e-03]]
+Epoch: 92/100, [Dx loss: [ 1.17085464e-01  1.93172150e+01 -1.93421936e+01  1.42061487e-02]] [Dz loss: [-2.419471   -1.5008283  -1.2708579   0.03522149]] [G loss: [2.0887798e+01 1.9494146e+01 1.3232976e+00 7.0353430e-03]]
+Epoch: 93/100, [Dx loss: [-1.1829706e-02  1.6009136e+01 -1.6075584e+01  5.4621636e-03]] [Dz loss: [-2.5059004  -1.1671407  -1.7260461   0.03872866]] [G loss: [1.7880312e+01 1.5978116e+01 1.8317593e+00 7.0433435e-03]]
+Epoch: 94/100, [Dx loss: [-6.1198689e-02  1.5684136e+01 -1.5776382e+01  3.1048635e-03]] [Dz loss: [-2.510969   -0.90970576 -2.0101545   0.0408892 ]] [G loss: [1.7883823e+01 1.5757248e+01 2.0465496e+00 8.0028698e-03]]
+Epoch: 95/100, [Dx loss: [-9.8684933e-03  1.5146517e+01 -1.5188257e+01  3.1873761e-03]] [Dz loss: [-2.6227949  -0.90904844 -2.1492276   0.04354813]] [G loss: [1.7460848e+01 1.5164806e+01 2.2142403e+00 8.1801405e-03]]
+Epoch: 96/100, [Dx loss: [-7.1600907e-02  1.3285118e+01 -1.3415071e+01  5.8350209e-03]] [Dz loss: [-2.522621   -0.4649188  -2.4655766   0.04078743]] [G loss: [1.59148855e+01 1.32856874e+01 2.53082013e+00 9.83771030e-03]]
+Epoch: 97/100, [Dx loss: [-3.8438186e-02  1.0400744e+01 -1.0490200e+01  5.1019401e-03]] [Dz loss: [-2.7254887  -0.1138222  -3.0371869   0.04255201]] [G loss: [1.3438999e+01 1.0288113e+01 3.0748930e+00 7.5992700e-03]]
+Epoch: 98/100, [Dx loss: [-3.5719458e-02  9.0695353e+00 -9.1535530e+00  4.8299772e-03]] [Dz loss: [-2.7178583  -0.60300195 -2.54628     0.0431424 ]] [G loss: [1.1848325e+01 9.2166510e+00 2.5548887e+00 7.6785851e-03]]
+Epoch: 99/100, [Dx loss: [-6.6830762e-02  9.6213264e+00 -9.7311258e+00  4.2968662e-03]] [Dz loss: [-2.809804   -0.8843481  -2.343181    0.04177256]] [G loss: [1.2214694e+01 9.7609053e+00 2.3485112e+00 1.0527655e-02]]
+Epoch: 100/100, [Dx loss: [-2.1637108e-02  1.0705194e+01 -1.0795774e+01  6.8944315e-03]] [Dz loss: [-2.6331496  -1.1396296  -1.8992739   0.04057539]] [G loss: [1.2868264e+01 1.0858793e+01 1.9234158e+00 8.6055696e-03]]
+Traceback (most recent call last):
+  File "/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/pandas/core/internals/managers.py", line 1651, in create_block_manager_from_blocks
+    placement=slice(0, len(axes[0])))]
+  File "/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/pandas/core/internals/blocks.py", line 3095, in make_block
+    return klass(values, ndim=ndim, placement=placement)
+  File "/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/pandas/core/internals/blocks.py", line 87, in __init__
+    '{mgr}'.format(val=len(self.values), mgr=len(self.mgr_locs)))
+ValueError: Wrong number of items passed 1, placement implies 3
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "driver.py", line 87, in <module>
+    main()
+  File "driver.py", line 62, in main
+    pca_score = run_tadgan(df_pca_dim, "full_rows_pca_dim-5" + str(rows) + "_")
+  File "/home/top/anomaly_detection_in_indestrial_control_systems/tulog/optimum.py", line 247, in run_tadgan
+    anomalies_window = pd.DataFrame(intervals_window, columns=['start', 'end', 'score']) #find the anomalies to compare with the new anomalies extracted at the beginning
+  File "/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/pandas/core/frame.py", line 424, in __init__
+    copy=copy)
+  File "/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/pandas/core/internals/construction.py", line 167, in init_ndarray
+    return create_block_manager_from_blocks([values], [columns, index])
+  File "/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/pandas/core/internals/managers.py", line 1660, in create_block_manager_from_blocks
+    construction_error(tot_items, blocks[0].shape[1:], axes, e)
+  File "/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/pandas/core/internals/managers.py", line 1689, in construction_error
+    raise ValueError("Empty data passed with indices specified.")
+ValueError: Empty data passed with indices specified.

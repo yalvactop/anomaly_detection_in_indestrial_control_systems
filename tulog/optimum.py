@@ -142,16 +142,14 @@ def run_tadgan(df, techniques):
     
     df_test = df.iloc[:len(df.index)*2//10]
     df_train = df.iloc[len(df.index)*2//10:]
-    print("df_train.shape", df_train.shape)
-    print("df_test.shape", df_test.shape)
-    
+
     window_size = 100 #these hyperparameters will be defined after grid search
     epoch = 100
     learning_rate = 0.0005
     latent_dim = 20
-    batch_size = 512
+    batch_size = 64
     comb = "mult"
-    step_size=100
+    step_size = 1
     drop_windows = False
 
     prev_state = "Normal"
@@ -169,13 +167,11 @@ def run_tadgan(df, techniques):
     known_anomalies = pd.DataFrame(anomalies, columns=['start', 'end'])
 
     del df_train["Normal/Attack"]
-    del df_test["Normal/Attack"]                               #CHANGE THIS!!
+    del df_test["Normal/Attack"]
 
     X_tsa_train, index_train = time_segments_aggregate(df_train, interval=1000000000, time_column='timestamp')
     X_tsa_test, index_test = time_segments_aggregate(df_test, interval=1000000000, time_column='timestamp')
 
-    print("X_tsa_train.shape", X_tsa_train.shape)
-    print("X_tsa_test.shape", X_tsa_test.shape)
     imp = SimpleImputer()
     X_imp_train = imp.fit_transform(X_tsa_train)
     X_imp_test = imp.fit_transform(X_tsa_test)
@@ -239,11 +235,16 @@ def run_tadgan(df, techniques):
     error, true_index, true, pred = score_anomalies(X_rws_test, X_hat, critic, X_index_test, rec_error_type="dtw", comb="mult")
     #find the anomaly score of the prediction
     pred = np.array(pred).mean(axis=2)
+    
 
     intervals_window = find_anomalies(error, index_test, 
                            window_size_portion=0.33, 
                            window_step_size_portion=0.1, 
                            fixed_threshold=True) # leave this part for now
+    
+    if len(intervals_window) == 0:
+        return "NO ANOMALIES FOUND"
+    
     anomalies_window = pd.DataFrame(intervals_window, columns=['start', 'end', 'score']) #find the anomalies to compare with the new anomalies extracted at the beginning
     del anomalies_window["score"]
 
@@ -292,8 +293,8 @@ def run_tadgan(df, techniques):
         plt.axvspan(anomalies_window["start"][ind], anomalies_window["end"][ind], color='blue', alpha=0.5)
 
     plt.savefig('tuning/output_window_size-' + str(window_size) + "_" + techniques + '_epoch-' + str(epoch) + '_learning_rate-0.0005_latent_dim-' + str(latent_dim) + '_batch_size-512_comb-mult.png')
-    
-    
+
+
     return str(score) + " / " + str(overall_count)
 
        
