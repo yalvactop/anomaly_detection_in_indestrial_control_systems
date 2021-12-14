@@ -145,7 +145,7 @@ def run_tadgan(df, techniques):
     df_train = df
 
     window_size = 100 #these hyperparameters will be defined after grid search
-    epoch = 100
+    epoch = 50
     learning_rate = 0.0005
     latent_dim = 20
     batch_size = 16
@@ -229,7 +229,7 @@ def run_tadgan(df, techniques):
 
     tgan = TadGAN(**hyperparameters)
     tgan.fit(X_rws_train)
-    tgan.save_model(str(hyperparameters["epochs"]) + "GPU_train")
+    tgan.save_model(str(hyperparameters["epochs"]) + techniques + "_GPU_train")
 
     X_hat, critic = tgan.predict(X_rws_test) # predict using model
 
