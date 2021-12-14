@@ -140,16 +140,17 @@ def rolling_window_sequences(X, index, window_size, target_size, step_size, targ
 
 def run_tadgan(df, techniques):
     
-    df_test = df.iloc[:len(df.index)*2//10]
-    df_train = df.iloc[len(df.index)*2//10:]
+    signal = 'SWaT_Dataset_Attack_v1.csv'
+    df_test = pd.read_csv(signal)
+    df_train = df
 
     window_size = 100 #these hyperparameters will be defined after grid search
     epoch = 100
     learning_rate = 0.0005
     latent_dim = 20
-    batch_size = 64
+    batch_size = 16
     comb = "mult"
-    step_size = 1
+    step_size = 100
     drop_windows = False
 
     prev_state = "Normal"
@@ -228,7 +229,7 @@ def run_tadgan(df, techniques):
 
     tgan = TadGAN(**hyperparameters)
     tgan.fit(X_rws_train)
-    #tgan.save_model(str(hyperparameters["epochs"]) + "_5/8")
+    tgan.save_model(str(hyperparameters["epochs"]) + "GPU_train")
 
     X_hat, critic = tgan.predict(X_rws_test) # predict using model
 

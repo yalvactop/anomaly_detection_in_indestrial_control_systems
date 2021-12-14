@@ -1,0 +1,805 @@
+nohup: ignoring input
+Using TensorFlow backend.
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/numpy/lib/function_base.py:2530: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/numpy/lib/function_base.py:2531: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/init_ops.py:97: calling GlorotUniform.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/init_ops.py:97: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/init_ops.py:97: calling Ones.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+2021-12-09 18:33:19.227751: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-12-09 18:33:19.860471: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:21:00.0
+2021-12-09 18:33:19.861458: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:41:00.0
+2021-12-09 18:33:19.861712: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-09 18:33:19.862701: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-09 18:33:19.863587: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-09 18:33:19.863983: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-09 18:33:19.865147: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-09 18:33:19.865967: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-09 18:33:19.868597: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-09 18:33:19.872608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-09 18:33:19.873096: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-12-09 18:33:19.887883: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1995975000 Hz
+2021-12-09 18:33:19.892274: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x72d48c0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-12-09 18:33:19.892345: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-12-09 18:33:19.999938: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x75bc190 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-12-09 18:33:19.999979: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): TITAN X (Pascal), Compute Capability 6.1
+2021-12-09 18:33:19.999984: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): GeForce GTX TITAN X, Compute Capability 5.2
+2021-12-09 18:33:20.001063: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:21:00.0
+2021-12-09 18:33:20.001883: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:41:00.0
+2021-12-09 18:33:20.001930: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-09 18:33:20.001944: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-09 18:33:20.001955: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-09 18:33:20.001966: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-09 18:33:20.001977: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-09 18:33:20.001987: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-09 18:33:20.001999: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-09 18:33:20.005086: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-09 18:33:20.005125: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-09 18:33:20.009193: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-09 18:33:20.009210: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 1 
+2021-12-09 18:33:20.009216: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N N 
+2021-12-09 18:33:20.009220: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 1:   N N 
+2021-12-09 18:33:20.011647: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11455 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:21:00.0, compute capability: 6.1)
+2021-12-09 18:33:20.012806: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11507 MB memory) -> physical GPU (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:41:00.0, compute capability: 5.2)
+2021-12-09 18:33:25.542392: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/math_grad.py:1424: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+2021-12-09 18:35:25.028795: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-09 18:35:41.449477: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-09 18:35:41.479163: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-09 18:35:41.516752: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-09 18:35:41.588496: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-09 18:35:41.823309: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-09 18:35:41.853107: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-09 18:35:41.877675: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-09 18:35:41.904592: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+
+ROW COUNT:  224959
+
+
+df_fs.shape:  (224959, 24)
+
+pca.n_components_:  5
+
+df_pca_dim.shape:  (224959, 5)
+
+pca.n_components_:  27
+
+df_pca_var.shape:  (224959, 27)
+
+X_ae.shape:  (224959, 26)
+
+Training for PCA for 5 dimensions
+
+Epoch: 1/100, [Dx loss: [-0.24053556 -2.065075    1.7640728   0.00604661]] [Dz loss: [-1.5481602   0.5694913  -2.85197     0.07343193]] [G loss: [ 2.1040258  -1.7540939   3.4125795   0.04455387]]
+Epoch: 2/100, [Dx loss: [-0.11989517 -4.60337     4.436692    0.0046786 ]] [Dz loss: [-1.8447752  -1.9213798  -0.2530159   0.03296187]] [G loss: [-3.8130934  -4.4383793   0.33402908  0.02912545]]
+Epoch: 3/100, [Dx loss: [-8.1339873e-02 -7.9956203e+00  7.8740435e+00  4.0237792e-03]] [Dz loss: [-2.2452526  1.693999  -4.3334837  0.0394229]] [G loss: [-3.2468264  -7.891194    4.386144    0.02582227]]
+Epoch: 4/100, [Dx loss: [-5.1478732e-02 -9.4246769e+00  9.3353357e+00  3.7860700e-03]] [Dz loss: [-2.2871037   2.4037483  -5.101909    0.04110577]] [G loss: [-3.955403   -9.31347     5.1455483   0.02125209]]
+Epoch: 5/100, [Dx loss: [-3.6706295e-02 -8.9802799e+00  8.9006529e+00  4.2917780e-03]] [Dz loss: [-2.200666    0.36846745 -2.949162    0.03800301]] [G loss: [-5.619502   -8.858095    3.0008311   0.02377617]]
+Epoch: 6/100, [Dx loss: [-7.484005e-02  8.020113e+00 -8.143709e+00  4.874510e-03]] [Dz loss: [-2.179992    1.5840496  -4.1466684   0.03826233]] [G loss: [12.487909    8.0460205   4.1967173   0.02451718]]
+Epoch: 7/100, [Dx loss: [-4.0003642e-02 -1.1582312e+01  1.1500022e+01  4.2283242e-03]] [Dz loss: [-2.1099467   0.1345471  -2.6194055   0.03749166]] [G loss: [ -8.680855  -11.536939    2.6562      0.0199884]]
+Epoch: 8/100, [Dx loss: [-1.1512600e-01 -1.7619883e+01  1.7416880e+01  8.7825060e-03]] [Dz loss: [-2.1373322  -1.0200655  -1.4959894   0.03787168]] [G loss: [-15.727199  -17.467335    1.5398276   0.0200317]]
+Epoch: 9/100, [Dx loss: [ 0.12668483 -1.4713749   1.556737    0.0041293 ]] [Dz loss: [-2.045632   -1.0643581  -1.3653702   0.03840984]] [G loss: [ 0.2835144  -1.3093202   1.4043885   0.01884477]]
+Epoch: 10/100, [Dx loss: [ 7.9027243e-02 -1.0405574e+01  1.0449367e+01  3.5221637e-03]] [Dz loss: [-1.8465294   1.5448626  -3.7640212   0.03726309]] [G loss: [ -6.252571   -10.267324     3.8243773    0.01903678]]
+Epoch: 11/100, [Dx loss: [ 3.0279368e-02  7.2766910e+00 -7.2808418e+00  3.4424602e-03]] [Dz loss: [-1.8650703   0.41975245 -2.66227     0.03774476]] [G loss: [10.290613    7.3954983   2.7128153   0.01823035]]
+Epoch: 12/100, [Dx loss: [ 8.0052167e-03 -1.5213566e+01  1.5185018e+01  3.6559370e-03]] [Dz loss: [-1.7937415   1.2193182  -3.3882947   0.03752287]] [G loss: [-11.553563   -15.194553     3.438784     0.02022076]]
+Epoch: 13/100, [Dx loss: [-1.9016314e-02  1.2889647e+01 -1.2947473e+01  3.8814398e-03]] [Dz loss: [-1.698115    1.6747216  -3.740364    0.03675323]] [G loss: [16.838764   12.878359    3.7679427   0.01924596]]
+Epoch: 14/100, [Dx loss: [-0.01075222  2.6246235  -2.7041698   0.006881  ]] [Dz loss: [-1.798428    0.8394544  -3.0054097   0.03675287]] [G loss: [5.794154   2.5582335  3.039266   0.01966588]]
+Epoch: 15/100, [Dx loss: [ 9.4546020e-02 -3.0743015e+01  3.0801132e+01  3.6446117e-03]] [Dz loss: [-1.6951076   1.0208063  -3.073359    0.03574473]] [G loss: [-2.7405811e+01 -3.0689247e+01  3.1134505e+00  1.6999926e-02]]
+Epoch: 16/100, [Dx loss: [ 2.2314724e-02 -2.0422314e+01  2.0409271e+01  3.5341308e-03]] [Dz loss: [-1.6628824   2.7106078  -4.718603    0.03451139]] [G loss: [-1.5409421e+01 -2.0317896e+01  4.7478576e+00  1.6060589e-02]]
+Epoch: 17/100, [Dx loss: [-0.09082936  1.5134603  -1.7098482   0.01055591]] [Dz loss: [-1.5831778   2.7936854  -4.7126284   0.03357656]] [G loss: [6.688949   1.7823644  4.7456     0.01609874]]
+Epoch: 18/100, [Dx loss: [ 4.9612585e-02  2.2609034e+01 -2.2630299e+01  7.0874002e-03]] [Dz loss: [-1.5732878  2.10503   -4.0239363  0.0345617]] [G loss: [2.6641212e+01 2.2407412e+01 4.0696402e+00 1.6416701e-02]]
+Epoch: 19/100, [Dx loss: [ 1.8917609e-02  6.4535713e+01 -6.4642021e+01  1.2519765e-02]] [Dz loss: [-1.5368885   2.1363666  -4.0227976   0.03495437]] [G loss: [6.9112930e+01 6.4884705e+01 4.0474930e+00 1.8076200e-02]]
+Epoch: 20/100, [Dx loss: [ 3.1458813e-01 -7.3570877e+01  7.3481880e+01  4.0354148e-02]] [Dz loss: [-1.450054    3.2415004  -5.0414615   0.03499021]] [G loss: [-6.8534683e+01 -7.3787460e+01  5.0747972e+00  1.7799387e-02]]
+Epoch: 21/100, [Dx loss: [ 1.7744452e-01 -1.2733082e+02  1.2747417e+02  3.4307241e-03]] [Dz loss: [-1.3717312   2.8592677  -4.5758896   0.03448856]] [G loss: [-1.2231981e+02 -1.2710123e+02  4.6142712e+00  1.6714038e-02]]
+Epoch: 22/100, [Dx loss: [ 4.7292508e-02 -3.4966366e+01  3.4897812e+01  1.1584746e-02]] [Dz loss: [-1.3429751   3.1178172  -4.797272    0.03364812]] [G loss: [-3.0044073e+01 -3.5035824e+01  4.8296022e+00  1.6213823e-02]]
+Epoch: 23/100, [Dx loss: [ 1.21714994e-01 -2.73784580e+01  2.74706497e+01  2.95468932e-03]] [Dz loss: [-1.2847425   2.2116241  -3.8326342   0.03362652]] [G loss: [-2.3261087e+01 -2.7293049e+01  3.8669798e+00  1.6495889e-02]]
+Epoch: 24/100, [Dx loss: [ 5.5639848e-02 -2.2576946e+01  2.2601366e+01  3.1227923e-03]] [Dz loss: [-1.2571698   2.059063   -3.6536908   0.03374585]] [G loss: [-1.8733795e+01 -2.2574463e+01  3.6803968e+00  1.6026936e-02]]
+Epoch: 25/100, [Dx loss: [ 2.6087493e-02 -1.3275146e+01  1.3255094e+01  4.6125855e-03]] [Dz loss: [-1.2972462   3.0106976  -4.63684     0.03288934]] [G loss: [ -8.605567   -13.438867     4.6723084    0.01609934]]
+Epoch: 26/100, [Dx loss: [ 1.6493960e-01 -1.0968349e+01  1.1075453e+01  5.7824659e-03]] [Dz loss: [-1.2294034  1.2191627 -2.7799535  0.033139 ]] [G loss: [ -7.8989806  -10.868671     2.8111324    0.01585624]]
+Epoch: 27/100, [Dx loss: [ 1.5500917e-01 -9.0163975e+00  9.1372757e+00  3.4119985e-03]] [Dz loss: [-0.70492667  1.4214106  -2.3738024   0.02474645]] [G loss: [-6.386979   -8.949261    2.4128387   0.01494237]]
+Epoch: 28/100, [Dx loss: [-4.4547031e-03  4.7270203e+01 -4.7331409e+01  5.6725899e-03]] [Dz loss: [-0.4040984   0.27240327 -0.8880909   0.0211588 ]] [G loss: [4.8437401e+01 4.7351238e+01 9.2919064e-01 1.5697695e-02]]
+Epoch: 29/100, [Dx loss: [ 1.12418145e-01 -3.63402138e+01  3.63931313e+01  5.94999595e-03]] [Dz loss: [-0.3276648  -0.7775266   0.24087325  0.02089889]] [G loss: [-3.6947147e+01 -3.6882587e+01 -2.0841065e-01  1.4384626e-02]]
+Epoch: 30/100, [Dx loss: [ 7.850302e-02 -6.670856e+01  6.674334e+01  4.367779e-03]] [Dz loss: [-0.2590285  3.7545533 -4.2088423  0.0195259]] [G loss: [-6.2506325e+01 -6.6884598e+01  4.2364731e+00  1.4173884e-02]]
+Epoch: 31/100, [Dx loss: [ 4.3814812e-02 -4.9682274e+01  4.9681580e+01  4.4365926e-03]] [Dz loss: [-0.21842694  1.2378768  -1.6498724   0.01935671]] [G loss: [-4.7906189e+01 -4.9716187e+01  1.6844404e+00  1.2555321e-02]]
+Epoch: 32/100, [Dx loss: [ 7.3891908e-02 -3.3166485e+01  3.3138962e+01  1.0139867e-02]] [Dz loss: [-0.18475826  0.06196006 -0.43775505  0.01910372]] [G loss: [-3.2753841e+01 -3.3346436e+01  4.6719038e-01  1.2541605e-02]]
+Epoch: 33/100, [Dx loss: [ 4.2439643e-02 -1.2053378e+01  1.2065134e+01  3.0656164e-03]] [Dz loss: [-0.24839392  0.42835742 -0.86561066  0.01888586]] [G loss: [-11.159407   -12.176848     0.8953628    0.01220766]]
+Epoch: 34/100, [Dx loss: [ 0.03094183  2.9724588  -3.0277522   0.00862369]] [Dz loss: [-0.27126512  2.0232317  -2.4900835   0.01955841]] [G loss: [5.5603127  2.9050696  2.541399   0.01138463]]
+Epoch: 35/100, [Dx loss: [  1.480438   -38.960182    38.622513     0.18181694]] [Dz loss: [-0.18404804  2.5044045  -2.8708525   0.01823992]] [G loss: [-3.6060360e+01 -3.9079369e+01  2.9108236e+00  1.0816855e-02]]
+Epoch: 36/100, [Dx loss: [ 1.3709825e-01 -6.9811241e+01  6.9907684e+01  4.0669031e-03]] [Dz loss: [-0.19281112  1.8357826  -2.2167168   0.01881233]] [G loss: [-6.77879562e+01 -7.01317978e+01  2.22847891e+00  1.15334345e-02]]
+Epoch: 37/100, [Dx loss: [  0.34133652 -17.199852    17.15305      0.03880876]] [Dz loss: [-0.15981053  4.0100875  -4.348998    0.01791001]] [G loss: [-1.2313159e+01 -1.6791624e+01  4.3702049e+00  1.0826419e-02]]
+Epoch: 38/100, [Dx loss: [ 1.1038955e-01  7.1532646e+01 -7.1478943e+01  5.6750984e-03]] [Dz loss: [-0.21892181  3.9484982  -4.353372    0.01859505]] [G loss: [7.5870354e+01 7.1349724e+01 4.3695517e+00 1.5105051e-02]]
+Epoch: 39/100, [Dx loss: [  0.28911832  20.092876   -20.19714      0.03933797]] [Dz loss: [-0.12979424  4.1611934  -4.47027     0.01792796]] [G loss: [2.5323702e+01 2.0730543e+01 4.4783573e+00 1.1481288e-02]]
+Epoch: 40/100, [Dx loss: [  0.40574244  19.706131   -19.636505     0.03360988]] [Dz loss: [-0.11979111  4.349594   -4.6492996   0.01799106]] [G loss: [2.4185083e+01 1.9388695e+01 4.6744370e+00 1.2193809e-02]]
+Epoch: 41/100, [Dx loss: [ 3.3198833e-01 -4.8529610e+01  4.8418438e+01  4.4315055e-02]] [Dz loss: [-0.16743515  4.717497   -5.072478    0.01875358]] [G loss: [-4.3501202e+01 -4.8687305e+01  5.0802965e+00  1.0580022e-02]]
+Epoch: 42/100, [Dx loss: [ 2.2447990e-01 -6.4872246e+01  6.5004791e+01  9.2045320e-03]] [Dz loss: [-0.1295133   2.7191699  -3.0261426   0.01774623]] [G loss: [-6.1633133e+01 -6.4801041e+01  3.0552104e+00  1.1269953e-02]]
+Epoch: 43/100, [Dx loss: [-2.5483055e-02 -2.3433914e+01  2.3315578e+01  9.2869960e-03]] [Dz loss: [-0.12549977  3.4075422  -3.7129037   0.01798605]] [G loss: [-1.9435329e+01 -2.3268095e+01  3.7187278e+00  1.1403896e-02]]
+Epoch: 44/100, [Dx loss: [  2.1072102  -31.168211    30.857576     0.24178284]] [Dz loss: [-0.14183609  2.225337   -2.5442603   0.01770893]] [G loss: [-2.8248917e+01 -3.0929611e+01  2.5743594e+00  1.0633947e-02]]
+Epoch: 45/100, [Dx loss: [  0.44747975  21.247995   -21.22051      0.04199744]] [Dz loss: [-0.12810953  1.928219   -2.2248662   0.01685424]] [G loss: [2.3554571e+01 2.1205088e+01 2.2412541e+00 1.0822210e-02]]
+Epoch: 46/100, [Dx loss: [  0.53136015 -16.970125    17.01144      0.04900115]] [Dz loss: [-0.07418802  3.5189648  -3.7674613   0.01743103]] [G loss: [-1.3106077e+01 -1.6993187e+01  3.7834165e+00  1.0367686e-02]]
+Epoch: 47/100, [Dx loss: [  0.8748661  -34.195522    34.259808     0.08105812]] [Dz loss: [-0.11371488  1.924061   -2.2158082   0.01780308]] [G loss: [-3.1832365e+01 -3.4166687e+01  2.2370825e+00  9.7237369e-03]]
+Epoch: 48/100, [Dx loss: [ 1.7659752e-01  3.2879665e+01 -3.2741528e+01  3.8434099e-03]] [Dz loss: [-0.1015339   4.814173   -5.082793    0.01670953]] [G loss: [3.8174259e+01 3.2977306e+01 5.1023803e+00 9.4533889e-03]]
+Epoch: 49/100, [Dx loss: [ 0.08194011  0.32093707 -0.39228103  0.01532791]] [Dz loss: [-0.10648798  4.3656297  -4.64041     0.016829  ]] [G loss: [5.4632006  0.69240993 4.676291   0.0094505 ]]
+Epoch: 50/100, [Dx loss: [  2.232053   18.869728  -18.789711    0.2152028]] [Dz loss: [-0.12933663  5.0666666  -5.365077    0.01690682]] [G loss: [2.4092646e+01 1.8613611e+01 5.3858027e+00 9.3220081e-03]]
+Epoch: 51/100, [Dx loss: [ 5.9555657e-02 -1.7187536e+01  1.7204514e+01  4.2577968e-03]] [Dz loss: [-0.08247635  1.7390877  -1.9911916   0.01696269]] [G loss: [-1.5064470e+01 -1.7171572e+01  2.0141919e+00  9.2907622e-03]]
+Epoch: 52/100, [Dx loss: [  0.4710865  -13.2469      13.328253     0.03897141]] [Dz loss: [-0.08400759  2.7795184  -3.0314262   0.01678976]] [G loss: [-9.9060440e+00 -1.3064262e+01  3.0640259e+00  9.4186030e-03]]
+Epoch: 53/100, [Dx loss: [ 0.13605098 -5.983666    5.9910407   0.01286633]] [Dz loss: [-0.09022032  2.288182   -2.5458393   0.01674387]] [G loss: [-3.3381689  -5.984746    2.5522518   0.00943285]]
+Epoch: 54/100, [Dx loss: [ 1.6981240e-01 -3.0122995e+01  3.0196217e+01  9.6543124e-03]] [Dz loss: [-0.08788066  3.6971443  -3.9520838   0.01670549]] [G loss: [-2.5907660e+01 -2.9974672e+01  3.9703674e+00  9.6660852e-03]]
+Epoch: 55/100, [Dx loss: [ 1.00422345e-01 -1.64265404e+01  1.64864368e+01  4.05214028e-03]] [Dz loss: [-0.09106079  5.1308537  -5.384618    0.01627208]] [G loss: [-1.1124277e+01 -1.6602989e+01  5.3928804e+00  8.5820463e-03]]
+Epoch: 56/100, [Dx loss: [ 0.20161508  1.8296849  -1.6878405   0.00597667]] [Dz loss: [-0.07336208  1.6719165  -1.9048593   0.01595822]] [G loss: [3.8711624  1.8459607  1.9279846  0.00972146]]
+Epoch: 57/100, [Dx loss: [ 0.0626718  -2.3852248   2.203112    0.02447923]] [Dz loss: [-0.07613062  4.1205564  -4.35214     0.01554411]] [G loss: [ 1.9772973  -2.4947932   4.3845525   0.00875358]]
+Epoch: 58/100, [Dx loss: [  0.39888456 -14.353066    14.261241     0.04907496]] [Dz loss: [-0.04985444  2.9461083  -3.1524134   0.01564479]] [G loss: [-1.1012195e+01 -1.4269459e+01  3.1717083e+00  8.5559711e-03]]
+Epoch: 59/100, [Dx loss: [ 3.5710767e-01  5.3540108e+01 -5.3586170e+01  4.0313095e-02]] [Dz loss: [-0.08156575  3.3445952  -3.5864005   0.0160238 ]] [G loss: [5.6460632e+01 5.2778889e+01 3.5976324e+00 8.4089730e-03]]
+Epoch: 60/100, [Dx loss: [  0.30181113  14.380526   -14.456102     0.03773712]] [Dz loss: [-0.09406053  4.736026   -4.988752    0.01586596]] [G loss: [1.9351730e+01 1.4271422e+01 4.9979448e+00 8.2356529e-03]]
+Epoch: 61/100, [Dx loss: [ 0.36033458 -6.906654    7.072051    0.01949471]] [Dz loss: [-0.08171048  4.4883323  -4.731127    0.01610876]] [G loss: [-2.3516846  -7.181028    4.7429585   0.00863895]]
+Epoch: 62/100, [Dx loss: [ 0.1747848  -3.4459856   3.3185692   0.03022117]] [Dz loss: [-0.07845858  3.6391077  -3.87968     0.01621216]] [G loss: [ 1.0152115  -2.9514709   3.8824828   0.00842075]]
+Epoch: 63/100, [Dx loss: [ 0.08848945  9.896332   -9.924669    0.0116849 ]] [Dz loss: [-0.08606514  5.111131   -5.364991    0.01677975]] [G loss: [1.5462157e+01 9.9963694e+00 5.3831868e+00 8.2603991e-03]]
+Epoch: 64/100, [Dx loss: [  0.1364941  -12.04002     12.0216875    0.01548155]] [Dz loss: [-0.09115817  5.4600744  -5.7100587   0.01588221]] [G loss: [-6.0406761e+00 -1.1862628e+01  5.7342787e+00  8.7649105e-03]]
+Epoch: 65/100, [Dx loss: [ 9.1471858e-02  3.8917419e+01 -3.8885708e+01  5.9655933e-03]] [Dz loss: [-0.06013434  4.472833   -4.6861367   0.01531708]] [G loss: [4.3911339e+01 3.9134163e+01 4.6913090e+00 8.5844453e-03]]
+Epoch: 66/100, [Dx loss: [  2.7506208  -66.137596    65.951866     0.29363865]] [Dz loss: [-0.01818368  1.7877324  -1.9459617   0.01400476]] [G loss: [-6.4346352e+01 -6.6370163e+01  1.9458293e+00  7.7951914e-03]]
+Epoch: 67/100, [Dx loss: [ 1.3789023e-01 -7.7890472e+01  7.8001373e+01  2.7073538e-03]] [Dz loss: [-7.0907583e-04  4.2828341e+00 -4.4332781e+00  1.4973559e-02]] [G loss: [-7.4246910e+01 -7.8779495e+01  4.4530120e+00  7.9576159e-03]]
+Epoch: 68/100, [Dx loss: [  1.0633056  -10.530072    10.6104145    0.09829944]] [Dz loss: [-0.02095927  7.8492155  -8.001739    0.01315667]] [G loss: [-1.8832656e+00 -9.9690933e+00  8.0043125e+00  8.1521403e-03]]
+Epoch: 69/100, [Dx loss: [  1.9333291  -28.835535    28.645618     0.21232508]] [Dz loss: [-0.00648961 -0.45385435  0.30193785  0.01454271]] [G loss: [-2.8689642e+01 -2.8495733e+01 -2.7044237e-01  7.6534627e-03]]
+Epoch: 70/100, [Dx loss: [ 0.4003578  -0.17101884 -0.05677709  0.0628157 ]] [Dz loss: [-0.00173875 -0.95866007  0.80434465  0.01525762]] [G loss: [-0.91022736 -0.20206313 -0.78323686  0.00750738]]
+Epoch: 71/100, [Dx loss: [  1.5791122   20.48893    -20.456179     0.15463677]] [Dz loss: [-0.01100532  0.9954373  -1.1647667   0.01583246]] [G loss: [2.1946461e+01 2.0676199e+01 1.1942433e+00 7.6018600e-03]]
+Epoch: 72/100, [Dx loss: [ 1.7340603e-01 -4.1257957e+01  4.1299110e+01  1.3222402e-02]] [Dz loss: [-0.01884153  5.53537    -5.7050066   0.01507909]] [G loss: [-3.5297405e+01 -4.1078167e+01  5.7033544e+00  7.7386037e-03]]
+Epoch: 73/100, [Dx loss: [ 0.38024905 -7.3394275   7.54518     0.01745042]] [Dz loss: [ 0.00918186  4.106216   -4.25197     0.01549416]] [G loss: [-3.1810749 -7.5153947  4.2533393  0.0080976]]
+Epoch: 74/100, [Dx loss: [  0.9147188   16.997358   -17.075619     0.09929958]] [Dz loss: [-0.0118955   6.361705   -6.5256414   0.01520485]] [G loss: [2.3378786e+01 1.6770229e+01 6.5294995e+00 7.9058595e-03]]
+Epoch: 75/100, [Dx loss: [  0.5237468   11.818587   -11.887804     0.05929757]] [Dz loss: [-2.9081388e-03  2.8160942e+00 -2.9686356e+00  1.4963690e-02]] [G loss: [1.50603485e+01 1.20095816e+01 2.97038937e+00 8.03676900e-03]]
+Epoch: 76/100, [Dx loss: [ 4.2296815e-01  3.5003628e+01 -3.4784126e+01  2.0349531e-02]] [Dz loss: [-4.7575703e-04  6.8717971e+00 -7.0272980e+00  1.5501526e-02]] [G loss: [4.1813412e+01 3.4678589e+01 7.0547371e+00 8.0080945e-03]]
+Epoch: 77/100, [Dx loss: [-0.10324731  5.6422057  -5.8077755   0.00623439]] [Dz loss: [-0.02899116  8.682734   -8.863023    0.01513033]] [G loss: [1.44850235e+01 5.52910566e+00 8.87676716e+00 7.91557133e-03]]2021-12-10 12:28:04.851583: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-10 12:28:04.881165: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-10 12:28:04.918672: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-10 12:28:04.990941: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_5/model_9_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_5/model_9_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-10 12:28:05.227738: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_5/model_9_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_5/model_9_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-10 12:28:05.257303: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-10 12:28:05.283199: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-10 12:28:05.310418: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+
+Epoch: 78/100, [Dx loss: [  0.8811937  -75.738716    75.67239      0.09475049]] [Dz loss: [-0.01578199  5.1555185  -5.326808    0.01555094]] [G loss: [-7.0521706e+01 -7.5941849e+01  5.3418250e+00  7.8370906e-03]]
+Epoch: 79/100, [Dx loss: [  0.673111   -10.708491    10.680826     0.07007672]] [Dz loss: [-0.01812297  5.504185   -5.681611    0.01593034]] [G loss: [-4.5279460e+00 -1.0297683e+01  5.6913729e+00  7.8371996e-03]]
+Epoch: 80/100, [Dx loss: [ 1.04964875e-01  2.71833038e+01 -2.71123619e+01  3.40244733e-03]] [Dz loss: [-0.02849452  5.393011   -5.571162    0.01496635]] [G loss: [3.3731087e+01 2.8061537e+01 5.5931311e+00 7.6431092e-03]]
+Epoch: 81/100, [Dx loss: [ 0.08053045  1.158712   -1.2625221   0.01843243]] [Dz loss: [-0.16208439  5.1387687  -5.468072    0.01672118]] [G loss: [6.2507615  0.66586995 5.481747   0.01031298]]
+Epoch: 82/100, [Dx loss: [  1.7233177   42.40743    -42.626965     0.19428842]] [Dz loss: [ -0.15312909  10.048929   -10.359087     0.01570338]] [G loss: [5.3171669e+01 4.2705807e+01 1.0376559e+01 8.9278137e-03]]
+Epoch: 83/100, [Dx loss: [ 2.1514431e-01  4.5191029e+01 -4.5009529e+01  3.3489678e-03]] [Dz loss: [ -0.13040127  11.3199835  -11.619011     0.01686195]] [G loss: [5.7016895e+01 4.5312050e+01 1.1619995e+01 8.4903194e-03]]
+Epoch: 84/100, [Dx loss: [  2.8253348   16.807186   -16.64905      0.26671976]] [Dz loss: [-0.07019031  9.768294   -9.998743    0.01602452]] [G loss: [2.6638363e+01 1.6554773e+01 1.0000210e+01 8.3386237e-03]]
+Epoch: 85/100, [Dx loss: [  1.0501604   40.76472    -40.63325      0.09186318]] [Dz loss: [-0.07226577  8.583006   -8.82391     0.01686248]] [G loss: [4.9491322e+01 4.0567272e+01 8.8440351e+00 7.9995850e-03]]
+Epoch: 86/100, [Dx loss: [-1.6354963e-02 -7.8370128e+00  7.7827125e+00  3.7940813e-03]] [Dz loss: [-0.02589147  8.9806185  -9.167538    0.01610211]] [G loss: [ 1.0500122e+00 -8.2097616e+00  9.1810026e+00  7.8771161e-03]]
+Epoch: 87/100, [Dx loss: [  0.56313014 -41.113777    41.053        0.06238864]] [Dz loss: [-0.04806452  4.262338   -4.4776692   0.01672711]] [G loss: [-3.6620804e+01 -4.1193542e+01  4.4912653e+00  8.1486478e-03]]
+Epoch: 88/100, [Dx loss: [  3.8251505 -45.01741    45.076843    0.3765614]] [Dz loss: [-0.05193285  6.4340825  -6.645959    0.01599553]] [G loss: [-3.8385136e+01 -4.5131115e+01  6.6669693e+00  7.9020569e-03]]
+Epoch: 89/100, [Dx loss: [ 1.0847826e+00 -1.1898513e+02  1.1896141e+02  1.1082383e-01]] [Dz loss: [-0.06673454  4.993132   -5.22974     0.01698706]] [G loss: [-1.1304762e+02 -1.1837130e+02  5.2451644e+00  7.8453459e-03]]
+Epoch: 90/100, [Dx loss: [  1.9796861  -41.23688     41.181896     0.20346984]] [Dz loss: [-0.09468833  3.883698   -4.1376276   0.01592441]] [G loss: [-3.6991238e+01 -4.1231621e+01  4.1573629e+00  8.3006211e-03]]
+Epoch: 91/100, [Dx loss: [ 0.12306263  0.740297   -0.95671403  0.033946  ]] [Dz loss: [-0.08210756  3.5118768  -3.7510705   0.01570955]] [G loss: [5.05642    1.2115896  3.766518   0.00783159]]
+Epoch: 92/100, [Dx loss: [  0.52064896  24.062878   -24.037447     0.04952534]] [Dz loss: [-0.03122613  7.493913   -7.679147    0.01540049]] [G loss: [3.2119843e+01 2.4333725e+01 7.7047272e+00 8.1378631e-03]]
+Epoch: 93/100, [Dx loss: [ 0.60360265 -7.142786    7.0689306   0.0677451 ]] [Dz loss: [-0.04287484  7.9231887  -8.118749    0.0152678 ]] [G loss: [ 1.0819073e+00 -7.1183248e+00  8.1253185e+00  7.4924463e-03]]
+Epoch: 94/100, [Dx loss: [ 3.2796243e-01 -2.4290091e+01  2.4428698e+01  1.8936345e-02]] [Dz loss: [-5.0645438e-03  6.9697933e+00 -7.1284995e+00  1.5364194e-02]] [G loss: [-1.7132053e+01 -2.4340118e+01  7.1304283e+00  7.7632908e-03]]
+Epoch: 95/100, [Dx loss: [ 0.4101722   4.0174103  -4.1677127   0.05604402]] [Dz loss: [-0.0562473   1.8581461  -2.0834396   0.01690465]] [G loss: [6.271017  4.100888  2.0936933 0.0076436]]
+Epoch: 96/100, [Dx loss: [ 2.756122   -5.3210278   5.1760035   0.29011464]] [Dz loss: [-0.07916219  1.3573953  -1.6043786   0.01678234]] [G loss: [-3.9024107  -5.617299    1.6352818   0.00796045]]
+Epoch: 97/100, [Dx loss: [ 2.2218107e-01 -4.1254292e+01  4.1075745e+01  4.0065508e-02]] [Dz loss: [-0.02919704  4.4805536  -4.6676297   0.01578839]] [G loss: [-3.6884747e+01 -4.1645031e+01  4.6825881e+00  7.7701728e-03]]
+Epoch: 98/100, [Dx loss: [  6.7086453   64.52986    -65.3489       0.75276834]] [Dz loss: [-0.0310831   5.619185   -5.7983227   0.01480448]] [G loss: [7.1358284e+01 6.5495911e+01 5.7841830e+00 7.8216791e-03]]
+Epoch: 99/100, [Dx loss: [ 2.1634114e-01  7.4743423e+01 -7.4580101e+01  5.3018527e-03]] [Dz loss: [-0.05040527  7.221414   -7.4248323   0.01530332]] [G loss: [8.2833015e+01 7.5299812e+01 7.4557071e+00 7.7466881e-03]]
+Epoch: 100/100, [Dx loss: [ 7.2471374e-01 -1.3136678e+02  1.3124802e+02  8.4358774e-02]] [Dz loss: [-0.05947592  6.894873   -7.110751    0.01563984]] [G loss: [-1.2513731e+02 -1.3232677e+02  7.1137867e+00  7.5542512e-03]]
+
+Training for PCA for .99 variance
+
+Epoch: 1/100, [Dx loss: [-0.03023177 -0.16539806  0.06518375  0.00699826]] [Dz loss: [-1.0121992   0.62499213 -2.638057    0.1000861 ]] [G loss: [ 3.4788017  -0.06147267  3.24117     0.0299104 ]]
+Epoch: 2/100, [Dx loss: [-0.0658908  -0.14843084  0.05837481  0.0024165 ]] [Dz loss: [-1.6338837  -2.6003294   0.67998296  0.02864616]] [G loss: [-0.46006763 -0.05642079 -0.62340057  0.02197538]]
+Epoch: 3/100, [Dx loss: [-0.05226507 -0.22545648  0.14874788  0.00244436]] [Dz loss: [-1.2889941  -2.4489198   0.9171081   0.02428194]] [G loss: [-0.78517264 -0.14772318 -0.8436152   0.02061654]]
+Epoch: 4/100, [Dx loss: [-0.03812664 -0.07683501  0.01480049  0.00239079]] [Dz loss: [-1.1897739  -1.7139369   0.28035975  0.02438028]] [G loss: [-0.04126925 -0.01763124 -0.21752821  0.01938904]]
+Epoch: 5/100, [Dx loss: [-0.05048769  0.6504516  -0.7280228   0.00270824]] [Dz loss: [-1.2281742  -1.138483   -0.3425112   0.02528169]] [G loss: [1.3278029  0.7384868  0.37798533 0.02113301]]
+Epoch: 6/100, [Dx loss: [-0.03948754 -0.3987558   0.334954    0.00243146]] [Dz loss: [-1.1436584  -0.69105405 -0.70430076  0.0251696 ]] [G loss: [ 0.6115475  -0.3370541   0.75689524  0.01917063]]
+Epoch: 7/100, [Dx loss: [-0.02965216  0.15918615 -0.21173626  0.00228988]] [Dz loss: [-1.1151073  -0.32242194 -1.0401275   0.02474421]] [G loss: [1.4950347  0.22370698 1.0856428  0.01856842]]
+Epoch: 8/100, [Dx loss: [-0.02360152 -0.31734025  0.27113795  0.00226011]] [Dz loss: [-1.1476381  -0.8985632  -0.50234246  0.02532692]] [G loss: [ 0.47093695 -0.26182494  0.5484097   0.01843519]]
+Epoch: 9/100, [Dx loss: [-0.02693076  0.25634298 -0.3054589   0.00221852]] [Dz loss: [-1.0631961  -0.84574586 -0.4861307   0.02686796]] [G loss: [1.0362664  0.31114376 0.54465425 0.01804676]]
+Epoch: 10/100, [Dx loss: [-0.02053868  0.30832627 -0.3516762   0.00228112]] [Dz loss: [-0.97179115  0.07565427 -1.3016099   0.02541646]] [G loss: [1.8729692  0.3268316  1.3542919  0.01918462]]
+Epoch: 11/100, [Dx loss: [-0.0297566   0.9102856  -0.96316034  0.00231195]] [Dz loss: [-0.9898866   0.14344189 -1.3959907   0.0262665 ]] [G loss: [2.5857487  0.9635632  1.43539    0.01867964]]
+Epoch: 12/100, [Dx loss: [-0.01154524  0.28211516 -0.3306201   0.003696  ]] [Dz loss: [-0.97918123  0.28559092 -1.5265666   0.02617946]] [G loss: [2.0701609  0.32458246 1.5698724  0.01757057]]
+Epoch: 13/100, [Dx loss: [-7.9334369e-03 -3.7511020e+00  3.7234473e+00  1.9721095e-03]] [Dz loss: [-0.94058424  0.783123   -1.9759744   0.02522689]] [G loss: [-1.5552238  -3.7446098   2.0171516   0.01722349]]
+Epoch: 14/100, [Dx loss: [-4.7300741e-02 -2.3923571e+00  2.3235207e+00  2.1534741e-03]] [Dz loss: [-0.9161647   0.8406381  -2.0104678   0.02536636]] [G loss: [-0.11269604 -2.3346498   2.0510828   0.01708703]]
+Epoch: 15/100, [Dx loss: [-0.02119794 -0.6269127   0.5826433   0.00230729]] [Dz loss: [-0.8927571   0.24351439 -1.3967683   0.02604978]] [G loss: [ 1.0461105  -0.5589664   1.4437846   0.01612931]]
+Epoch: 16/100, [Dx loss: [ 1.9628081e-02 -1.2008824e+01  1.1995577e+01  3.2866725e-03]] [Dz loss: [-0.8573066   1.3449391  -2.4533591   0.02511137]] [G loss: [ -9.39352    -12.051536     2.4996178    0.01584011]]
+Epoch: 17/100, [Dx loss: [ 7.4494886e-03 -6.7831473e+00  6.7695408e+00  2.1049709e-03]] [Dz loss: [-0.85990244  0.44835037 -1.5629054   0.02546521]] [G loss: [-4.9208713 -6.6799245  1.6010468  0.0158006]]
+Epoch: 18/100, [Dx loss: [ 3.2682661e-02  5.4763741e+00 -5.4713693e+00  2.7676243e-03]] [Dz loss: [-0.8191263   0.75708485 -1.8361691   0.02599564]] [G loss: [7.5120244  5.4764137  1.882298   0.01533143]]
+Epoch: 19/100, [Dx loss: [ 1.9600177e-02  6.4453230e+00 -6.4602346e+00  3.4514496e-03]] [Dz loss: [-0.7718441   0.04903948 -1.0695428   0.02486598]] [G loss: [7.710596   6.4610386  1.0970383  0.01525216]]
+Epoch: 20/100, [Dx loss: [-1.6742056e-02 -5.5990872e+00  5.5629482e+00  1.9393025e-03]] [Dz loss: [-0.77694863  0.818973   -1.8512704   0.02553487]] [G loss: [-3.5236707  -5.5610285   1.8918207   0.01455368]]
+Epoch: 21/100, [Dx loss: [ 1.27362795e-02 -1.26922722e+01  1.26725616e+01  3.23985773e-03]] [Dz loss: [-0.7550814   0.56823677 -1.5851485   0.02618308]] [G loss: [-10.868286   -12.630672     1.6136835    0.01487005]]
+Epoch: 22/100, [Dx loss: [ 0.00986556 -1.2419188   1.2341974   0.00175855]] [Dz loss: [-0.7375934   0.56789553 -1.5508212   0.02453356]] [G loss: [ 0.4706909  -1.2453517   1.5716163   0.01444262]]
+Epoch: 23/100, [Dx loss: [ 0.00897744 -0.9400525   0.9198923   0.00291366]] [Dz loss: [-0.7299846   0.08245701 -1.0601113   0.02476692]] [G loss: [ 0.28035656 -0.9561136   1.0970643   0.01394059]]
+Epoch: 24/100, [Dx loss: [ 1.3477510e-02 -1.1705853e+01  1.1701889e+01  1.7445554e-03]] [Dz loss: [-0.73803616  0.29451376 -1.2811031   0.02485546]] [G loss: [-10.226209   -11.679339     1.3129408    0.01401894]]
+Epoch: 25/100, [Dx loss: [ 0.08416194  2.3493018  -2.3366318   0.00714915]] [Dz loss: [-0.64668727  1.1312962  -2.0204892   0.02425026]] [G loss: [4.5155687  2.3402336  2.0392509  0.01360852]]
+Epoch: 26/100, [Dx loss: [ 1.1725560e-03  1.0524415e+01 -1.0539525e+01  1.6273306e-03]] [Dz loss: [-0.64934766  2.478091   -3.364216    0.02367802]] [G loss: [1.4152935e+01 1.0624539e+01 3.3937807e+00 1.3461343e-02]]
+Epoch: 27/100, [Dx loss: [ 1.8136285e-02  5.4164224e+00 -5.4227395e+00  2.4457830e-03]] [Dz loss: [-0.63440144  0.36928916 -1.24898     0.02452907]] [G loss: [6.714305   5.302825   1.2839094  0.01275665]]
+Epoch: 28/100, [Dx loss: [ 0.08436847 -2.2439384   2.2565727   0.0071736 ]] [Dz loss: [-0.65752816  2.4472175  -3.3454857   0.02407441]] [G loss: [ 1.2281451 -2.269564   3.3630283  0.0134681]]
+Epoch: 29/100, [Dx loss: [ 2.1514358e-02 -4.4906459e+00  4.4747190e+00  3.7434951e-03]] [Dz loss: [-0.6731069   0.49728084 -1.411872    0.02414824]] [G loss: [-2.882065   -4.4616184   1.448081    0.01314709]]
+Epoch: 30/100, [Dx loss: [ 1.1007783e-02  8.0697002e+00 -8.0769186e+00  1.8231880e-03]] [Dz loss: [-0.6126413   2.337227   -3.1919942   0.02421269]] [G loss: [11.394321    8.053222    3.2172742   0.01238312]]
+Epoch: 31/100, [Dx loss: [ 0.01815557  2.5795877  -2.599452    0.00380168]] [Dz loss: [-0.6438987   1.5132816  -2.3967943   0.02396129]] [G loss: [5.1150694  2.565382   2.424237   0.01254458]]
+Epoch: 32/100, [Dx loss: [ 0.18854576 -7.671536    7.656947    0.0203149 ]] [Dz loss: [-0.56968766  0.82881874 -1.6400468   0.02415415]] [G loss: [-5.8960667  -7.7071495   1.6830252   0.01280524]]
+Epoch: 33/100, [Dx loss: [-1.9631395e-02 -7.4103441e+00  7.3735180e+00  1.7191909e-03]] [Dz loss: [-0.5925595   1.4398364  -2.2639413   0.02315491]] [G loss: [-4.9904027 -7.401441   2.2885823  0.0122455]]
+Epoch: 34/100, [Dx loss: [ 1.4592380e-02 -3.6832891e+00  3.6827393e+00  1.5145821e-03]] [Dz loss: [-0.624455    1.4685969  -2.3303382   0.02372855]] [G loss: [-1.1677101  -3.6394403   2.3481553   0.01235761]]
+Epoch: 35/100, [Dx loss: [ 0.02033246 -1.3090751   1.2429248   0.0086477 ]] [Dz loss: [-0.559232    2.41261    -3.2061858   0.02343453]] [G loss: [ 2.0510998  -1.3083185   3.2286172   0.01308014]]
+Epoch: 36/100, [Dx loss: [ 0.02463605  4.468467   -4.489188    0.00453547]] [Dz loss: [-0.51427454  1.2194539  -1.9627793   0.02290516]] [G loss: [6.5651846  4.470985   1.9698212  0.01243782]]
+Epoch: 37/100, [Dx loss: [ 4.0795556e-03  1.8539255e+01 -1.8555910e+01  2.0726298e-03]] [Dz loss: [-0.49717832  2.066386   -2.7900157   0.02264491]] [G loss: [2.1465166e+01 1.8524445e+01 2.8211558e+00 1.1956725e-02]]
+Epoch: 38/100, [Dx loss: [ 3.2496341e-02 -1.3201507e+01  1.3136800e+01  9.7195795e-03]] [Dz loss: [-0.4803703   3.3722181  -4.076771    0.02241784]] [G loss: [-9.0905828e+00 -1.3307426e+01  4.1031818e+00  1.1365762e-02]]
+Epoch: 39/100, [Dx loss: [ 0.10353642 -1.0828491   1.0629116   0.01234717]] [Dz loss: [-0.46945813  3.5744464  -4.2774596   0.02335455]] [G loss: [ 3.2701728  -1.1307628   4.2898927   0.01110445]]
+Epoch: 40/100, [Dx loss: [ 6.2985018e-02  1.2849270e+01 -1.2806465e+01  2.0184657e-03]] [Dz loss: [-0.48137537  0.9333843  -1.648434    0.02336737]] [G loss: [1.4740894e+01 1.2967784e+01 1.6631067e+00 1.1000725e-02]]
+Epoch: 41/100, [Dx loss: [ 3.8404606e-02  1.7781675e+01 -1.7772379e+01  2.9102790e-03]] [Dz loss: [-0.44313666  1.694338   -2.3619578   0.0224481 ]] [G loss: [2.0200659e+01 1.7722927e+01 2.3717296e+00 1.0598836e-02]]
+Epoch: 42/100, [Dx loss: [ 0.08735369  9.03976    -9.051502    0.00990795]] [Dz loss: [-0.4131563  1.2871568 -1.9202178  0.0219906]] [G loss: [1.1048393e+01 9.0066833e+00 1.9340134e+00 1.0770757e-02]]
+Epoch: 43/100, [Dx loss: [ 7.1664132e-02 -1.0544188e+01  1.0522809e+01  9.3051139e-03]] [Dz loss: [-0.46283016  1.3843995  -2.0685666   0.02213368]] [G loss: [-8.4490700e+00 -1.0653954e+01  2.0998652e+00  1.0502257e-02]]
+Epoch: 44/100, [Dx loss: [-3.6359806e-02 -1.3306033e+01  1.3240881e+01  2.8800843e-03]] [Dz loss: [-0.4095989   3.0529203  -3.6776161   0.02150954]] [G loss: [-9.4903269e+00 -1.3283431e+01  3.6928563e+00  1.0024891e-02]]
+Epoch: 45/100, [Dx loss: [ 0.06364999  0.64102316 -0.65658176  0.00792078]] [Dz loss: [-0.38713548  3.4707837  -4.071341    0.02134245]] [G loss: [4.7538476  0.5702838  4.082522   0.01010434]]
+Epoch: 46/100, [Dx loss: [ 6.3791778e-03  6.3626795e+00 -6.3874536e+00  3.1148270e-03]] [Dz loss: [-0.38386413  3.2395592  -3.8483288   0.02249011]] [G loss: [10.282845    6.3002744   3.8791482   0.01034183]]
+Epoch: 47/100, [Dx loss: [ 0.4470042   0.16530189 -0.16018851  0.04418978]] [Dz loss: [-0.35849726  3.3215053  -3.9008067   0.02208049]] [G loss: [4.040416   0.01440515 3.9254134  0.0100596 ]]
+Epoch: 48/100, [Dx loss: [ 0.10463626 -7.5976987   7.601485    0.01008606]] [Dz loss: [-0.39786458  2.8134437  -3.4215877   0.02102717]] [G loss: [-4.0620713  -7.603895    3.444826    0.00969976]]
+Epoch: 49/100, [Dx loss: [ 3.7564162e-02  6.7375069e+00 -6.7158828e+00  1.5935798e-03]] [Dz loss: [-0.35153055  3.5946438  -4.1536417   0.02074665]] [G loss: [1.1038171e+01 6.7612133e+00 4.1791935e+00 9.7764898e-03]]
+Epoch: 50/100, [Dx loss: [ 0.2937659   1.6734419  -1.7582264   0.03785501]] [Dz loss: [-0.34639257  3.5910206  -4.1554413   0.02180314]] [G loss: [5.9410825 1.6678358 4.177432  0.0095814]]
+Epoch: 51/100, [Dx loss: [ 0.4929616   5.581376   -5.603488    0.05150643]] [Dz loss: [-0.3042776   1.8055207  -2.324077    0.02142812]] [G loss: [8.051446   5.621999   2.3350406  0.00944104]]
+Epoch: 52/100, [Dx loss: [ 0.31301463 -8.766557    8.706417    0.03731511]] [Dz loss: [-0.3186407  3.8560464 -4.392476   0.0217793]] [G loss: [-4.1961937  -8.693834    4.4035473   0.00940953]]
+Epoch: 53/100, [Dx loss: [ 0.08544271 -4.7157426   4.669005    0.01321817]] [Dz loss: [-0.30975023  1.4505261  -1.9781713   0.02178946]] [G loss: [-2.578439   -4.6594257   1.9885019   0.00924869]]
+Epoch: 54/100, [Dx loss: [  0.6063326  -20.283709    20.257814     0.06322327]] [Dz loss: [-0.3059675   3.1829512  -3.7081482   0.02192304]] [G loss: [-1.6495049e+01 -2.0327803e+01  3.7358615e+00  9.6901366e-03]]
+Epoch: 55/100, [Dx loss: [ 3.4571573e-02 -1.1226745e+01  1.1238244e+01  2.3074111e-03]] [Dz loss: [-0.3222035   3.3560126  -3.8979843   0.02197617]] [G loss: [-7.1272707e+00 -1.1123396e+01  3.8995743e+00  9.6547520e-03]]
+Epoch: 56/100, [Dx loss: [ 0.10932706 -3.6462924   3.6908557   0.00647722]] [Dz loss: [-0.31727356  2.0250828  -2.563832    0.02214724]] [G loss: [-0.9735739  -3.672616    2.607285    0.00917583]]
+Epoch: 57/100, [Dx loss: [ 0.21371895  9.068612   -9.06294     0.02080543]] [Dz loss: [-0.27668476  0.49660265 -0.98441046  0.02111229]] [G loss: [1.0127863e+01 9.0503569e+00 9.8524046e-01 9.2265280e-03]]
+Epoch: 58/100, [Dx loss: [ 0.7604939   4.2085633  -4.2751427   0.08270806]] [Dz loss: [-0.25209597  1.0007263  -1.4659358   0.02131144]] [G loss: [5.8046503 4.224394  1.4861064 0.0094149]]
+Epoch: 59/100, [Dx loss: [ 7.4631222e-02 -8.3203859e+00  8.3571281e+00  3.7885478e-03]] [Dz loss: [-0.2575859   0.9763836  -1.4521006   0.02181331]] [G loss: [-6.7579474  -8.325017    1.4759991   0.00910667]]
+Epoch: 60/100, [Dx loss: [ 0.18549633 -5.125337    5.132397    0.01784419]] [Dz loss: [-0.25686038  3.6664774  -4.1197996   0.01964639]] [G loss: [-0.87724406 -5.096694    4.131822    0.0087621 ]]
+Epoch: 61/100, [Dx loss: [ 0.18350908  2.163226   -2.0876098   0.01078925]] [Dz loss: [-0.25033253  2.4029982  -2.859622    0.02062911]] [G loss: [5.2031074  2.2398553  2.8752742  0.00879808]]
+Epoch: 62/100, [Dx loss: [ 0.41790354  1.2727373  -1.2874824   0.04326627]] [Dz loss: [-0.2742966   1.4505316  -1.9307327   0.02059047]] [G loss: [3.3261635  1.2806354  1.9562824  0.00892499]]
+Epoch: 63/100, [Dx loss: [ 5.2508701e-02 -2.6351051e+01  2.6381283e+01  2.2312189e-03]] [Dz loss: [-0.22169852  4.355484   -4.7879424   0.0210752 ]] [G loss: [-2.1456287e+01 -2.6348333e+01  4.8016977e+00  9.0350294e-03]]
+Epoch: 64/100, [Dx loss: [ 1.3699439e-01 -2.8381361e+01  2.8422264e+01  9.6099274e-03]] [Dz loss: [-0.26290601  1.1993124  -1.6712097   0.02089891]] [G loss: [-2.6628246e+01 -2.8418337e+01  1.7004921e+00  8.9580426e-03]]
+Epoch: 65/100, [Dx loss: [ 8.1082709e-02 -1.7374144e+01  1.7346401e+01  1.0881896e-02]] [Dz loss: [-0.2518253   2.6392665  -3.0945282   0.02034405]] [G loss: [-1.4158710e+01 -1.7362511e+01  3.1143975e+00  8.9401770e-03]]
+Epoch: 66/100, [Dx loss: [ 0.52589256  3.454634   -3.4295669   0.05008212]] [Dz loss: [-0.22481893  2.77082    -3.1948097   0.01991729]] [G loss: [6.799377   3.4997587  3.210379   0.00892425]]
+Epoch: 67/100, [Dx loss: [ 4.8879612e-02 -7.4332199e+00  7.4683962e+00  1.3701388e-03]] [Dz loss: [-0.23980841  4.2632194  -4.7054267   0.02024045]] [G loss: [-2.5741394  -7.383969    4.7239413   0.00858886]]
+Epoch: 68/100, [Dx loss: [ 0.19973509 -3.460852    3.5027423   0.01578472]] [Dz loss: [-0.22695196  5.0656934  -5.499771    0.02071281]] [G loss: [ 2.145392   -3.4488041   5.5058436   0.00883577]]
+Epoch: 69/100, [Dx loss: [ 0.16056761 -3.9782324   3.9803421   0.01584563]] [Dz loss: [-0.22005166  1.7265838  -2.1597931   0.02131562]] [G loss: [-1.715779   -3.9630623   2.1609483   0.00863357]]
+Epoch: 70/100, [Dx loss: [ 0.0940102  -0.21700315  0.2075512   0.01034644]] [Dz loss: [-0.25856066  2.8615994  -3.329479    0.02093154]] [G loss: [ 3.2403479  -0.20695816  3.3633442   0.00839642]]
+Epoch: 71/100, [Dx loss: [  0.31632048  12.405324   -12.409209     0.03202009]] [Dz loss: [-0.24935924  3.8580885  -4.3089886   0.02015354]] [G loss: [1.6748095e+01 1.2339772e+01 4.3232841e+00 8.5039763e-03]]
+Epoch: 72/100, [Dx loss: [ 0.654402   -6.7161374   6.714455    0.06560738]] [Dz loss: [-0.2062972   2.7958174  -3.2035184   0.02014028]] [G loss: [-3.370035   -6.6798267   3.2216125   0.00881797]]
+Epoch: 73/100, [Dx loss: [ 0.23374793 -7.5203743   7.563627    0.01905128]] [Dz loss: [-0.22466078  1.3445282  -1.7785448   0.02093555]] [G loss: [-5.65564    -7.50901     1.7691534   0.00842203]]
+Epoch: 74/100, [Dx loss: [ 4.1790836e-02 -1.4872528e+01  1.4889929e+01  2.4359017e-03]] [Dz loss: [-0.24124113  1.6057581  -2.0528147   0.02058183]] [G loss: [-1.2759205e+01 -1.4903517e+01  2.0619693e+00  8.2337391e-03]]
+Epoch: 75/100, [Dx loss: [ 0.63984555 -6.5101786   6.5039973   0.06460349]] [Dz loss: [-0.2173215   3.6577184  -4.079313    0.02042731]] [G loss: [-2.2367072  -6.417852    4.097767    0.00833756]]
+Epoch: 76/100, [Dx loss: [  0.14377433 -12.049465    12.007196     0.01860557]] [Dz loss: [-0.21774934  1.8375754  -2.266334    0.02110096]] [G loss: [-9.6176805e+00 -1.1994524e+01  2.2915745e+00  8.5263206e-03]]
+Epoch: 77/100, [Dx loss: [ 1.6038453e-02 -5.5828290e+00  5.5719967e+00  2.6871811e-03]] [Dz loss: [-0.22369523  2.4800465  -2.91366     0.02099157]] [G loss: [-2.6046567  -5.621111    2.9299715   0.00864818]]
+Epoch: 78/100, [Dx loss: [ 0.40603867  1.4643292  -1.4731568   0.04148672]] [Dz loss: [-0.20226201  1.627233   -2.0370734   0.02075788]] [G loss: [3.6918175  1.52544    2.0812197  0.00851595]]
+Epoch: 79/100, [Dx loss: [ 8.8160187e-02  2.4826953e+00 -2.4083107e+00  1.3773331e-03]] [Dz loss: [-0.17858325 -0.15526024 -0.22572367  0.02023998]] [G loss: [2.835391   2.5107458  0.24222773 0.00824162]]
+Epoch: 80/100, [Dx loss: [ 0.08258718  2.1183968  -2.0751607   0.0039346 ]] [Dz loss: [-0.18859223  0.7273096  -1.1143786   0.01984771]] [G loss: [3.3086433  2.0837657  1.1419148  0.00829615]]
+Epoch: 81/100, [Dx loss: [ 0.04994509  0.12471448 -0.09498646  0.00202181]] [Dz loss: [-0.17882217  1.2008603  -1.5798128   0.02001285]] [G loss: [1.8113202  0.14179993 1.588381   0.00811402]]
+Epoch: 82/100, [Dx loss: [ 0.12860405  2.3673654  -2.3223424   0.00835807]] [Dz loss: [-0.20174752  2.9142282  -3.3215322   0.02055509]] [G loss: [5.799138   2.3808203  3.3383968  0.00799257]]
+Epoch: 83/100, [Dx loss: [ 0.18771125  1.1378822  -1.2097248   0.02595499]] [Dz loss: [-0.19218187 -0.8748527   0.4722558   0.02104138]] [G loss: [ 0.66222996  1.0488923  -0.46566388  0.00790013]]
+Epoch: 84/100, [Dx loss: [ 5.220701e-03 -8.927705e+00  8.908983e+00  2.394037e-03]] [Dz loss: [-0.17269666  1.405922   -1.780025    0.02014072]] [G loss: [-7.0541506e+00 -8.9218445e+00  1.7887906e+00  7.8904871e-03]]
+Epoch: 85/100, [Dx loss: [ 0.1348032  -7.335283    7.274247    0.01958365]] [Dz loss: [-0.13944907 -0.11814893 -0.21999905  0.01986996]] [G loss: [-6.8642964  -7.169386    0.226862    0.00782245]]
+Epoch: 86/100, [Dx loss: [ 0.39722526  0.9430602  -0.9712527   0.04254196]] [Dz loss: [-0.15189789  3.21116    -3.5646255   0.02015612]] [G loss: [4.4614825 0.796952  3.5848901 0.0079641]]
+Epoch: 87/100, [Dx loss: [ 0.02908804  1.5539479  -1.5519472   0.00270889]] [Dz loss: [-0.13728654  2.5214121  -2.8560286   0.01973298]] [G loss: [4.691024   1.7372222  2.872408   0.00813933]]
+Epoch: 88/100, [Dx loss: [ 0.08400863  9.033196   -9.081535    0.01323448]] [Dz loss: [-0.16654682  4.061624   -4.429737    0.02015752]] [G loss: [1.3706634e+01 9.1722078e+00 4.4542685e+00 8.0154976e-03]]
+Epoch: 89/100, [Dx loss: [ 1.7751735e-01  1.6681854e+01 -1.6669233e+01  1.6485276e-02]] [Dz loss: [-0.16330323  3.193955   -3.5545487   0.0197286 ]] [G loss: [2.0219311e+01 1.6577194e+01 3.5630658e+00 7.9066185e-03]]
+Epoch: 90/100, [Dx loss: [ 8.7345265e-02  2.5376992e+00 -2.4670081e+00  1.6653631e-03]] [Dz loss: [-0.17104505  5.2216125  -5.588986    0.01963295]] [G loss: [8.2108831e+00 2.5350881e+00 5.5979791e+00 7.7812364e-03]]
+Epoch: 91/100, [Dx loss: [ 0.37152615  8.184086   -8.205556    0.03929929]] [Dz loss: [-0.14659078  1.7360935  -2.0742748   0.01915932]] [G loss: [1.0417904e+01 8.2473001e+00 2.0973639e+00 7.3239589e-03]]
+Epoch: 92/100, [Dx loss: [ 0.20443459  2.6639132  -2.6476126   0.01881337]] [Dz loss: [-0.15266828  2.4371483  -2.7869732   0.01971605]] [G loss: [5.534899   2.6687303  2.789551   0.00766155]]
+Epoch: 93/100, [Dx loss: [ 0.16465758  0.50940925 -0.41875994  0.00740051]] [Dz loss: [-0.1836305   2.0472715  -2.4300416   0.01991464]] [G loss: [3.0427856  0.5102903  2.45496    0.00775365]]
+Epoch: 94/100, [Dx loss: [ 0.52659285  3.5816343  -3.607763    0.05527259]] [Dz loss: [-0.15321472  2.3640332  -2.7068958   0.01896443]] [G loss: [6.465479  3.6644018 2.723517  0.0077556]]
+Epoch: 95/100, [Dx loss: [ 0.31286794 -0.15126386  0.12129827  0.03428337]] [Dz loss: [-0.15931316  3.3285184  -3.6795478   0.01917182]] [G loss: [ 3.7393763  -0.03922937  3.6994538   0.00791553]]
+Epoch: 96/100, [Dx loss: [ 0.0313965  -0.9015986   0.9166459   0.00163484]] [Dz loss: [-0.1669327  1.6155925 -1.9772416  0.0194714]] [G loss: [ 1.1030561  -0.968806    1.9962145   0.00756478]]
+Epoch: 97/100, [Dx loss: [ 0.27252632 -0.39624843  0.42859194  0.02401847]] [Dz loss: [-0.15830009  1.3243855  -1.6754098   0.01927234]] [G loss: [ 1.493337   -0.26637253  1.6835723   0.00761385]]
+Epoch: 98/100, [Dx loss: [ 0.30402577  2.9875472  -2.993095    0.03095725]] [Dz loss: [-0.14299908  3.9853165  -4.314491    0.01861686]] [G loss: [7.4221277  3.0032644  4.342846   0.00760193]]2021-12-11 06:43:07.447768: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-11 06:43:07.478593: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-11 06:43:07.517792: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-11 06:43:07.592958: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_8/model_16_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_8/model_16_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-11 06:43:07.839388: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_8/model_16_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_8/model_16_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-11 06:43:07.871489: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-11 06:43:07.897209: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-11 06:43:07.925528: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+
+Epoch: 99/100, [Dx loss: [ 0.19882548  4.576316   -4.6386213   0.02611275]] [Dz loss: [-0.15629655  0.73299104 -1.077223    0.01879368]] [G loss: [5.7333784  4.570572   1.0880513  0.00747456]]
+Epoch: 100/100, [Dx loss: [ 0.33613017  1.3571677  -1.3519279   0.03308836]] [Dz loss: [-0.1546538   0.8240489  -1.1707379   0.01920342]] [G loss: [2.6976752 1.4306616 1.1910005 0.0076013]]
+
+Training for autoencoder
+
+Epoch: 1/100, [Dx loss: [-0.10297592 -0.6115198   0.43915206  0.00693908]] [Dz loss: [-1.0460559   0.37444857 -2.1614902   0.07409848]] [G loss: [ 2.8874886  -0.43506712  2.6202803   0.07022721]]
+Epoch: 2/100, [Dx loss: [-0.08136944 -1.1707186   1.0584893   0.00308594]] [Dz loss: [-1.5986708  -1.3213546  -0.5776347   0.03003191]] [G loss: [ 0.09457113 -1.0582575   0.65983033  0.04929991]]
+Epoch: 3/100, [Dx loss: [-0.05138899 -1.6903533   1.6128432   0.00261205]] [Dz loss: [-1.8361394  -1.7869575  -0.41685808  0.0367677 ]] [G loss: [-0.7745757  -1.6123582   0.47344568  0.03643372]]
+Epoch: 4/100, [Dx loss: [-0.06878242 -2.3548763   2.2531435   0.00329501]] [Dz loss: [-2.0035486  -1.5681027  -0.8437534   0.04083119]] [G loss: [-0.8818777  -2.2513657   0.9089675   0.04605209]]
+Epoch: 5/100, [Dx loss: [-0.07004428 -2.7597852   2.6562004   0.00335382]] [Dz loss: [-1.9739397  -1.7385273  -0.5972401   0.03618315]] [G loss: [-1.5607797  -2.6611073   0.6574345   0.04428922]]
+Epoch: 6/100, [Dx loss: [-4.6322431e-02 -4.5588493e+00  4.4807940e+00  3.1725948e-03]] [Dz loss: [-1.8304847  -1.3310083  -0.858222    0.03587466]] [G loss: [-3.247531   -4.5048766   0.8860038   0.03713401]]
+Epoch: 7/100, [Dx loss: [-4.4012591e-02 -4.4802289e+00  4.4083819e+00  2.7834498e-03]] [Dz loss: [-1.5964291  -1.3441321  -0.5833021   0.03310047]] [G loss: [-3.482755   -4.4256873   0.6400242   0.03029094]]
+Epoch: 8/100, [Dx loss: [-0.01005394  2.9201567  -2.971793    0.00415826]] [Dz loss: [-1.5729885  -0.30072787 -1.5987056   0.03264428]] [G loss: [4.9423547  2.9839165  1.6523968  0.03060417]]
+Epoch: 9/100, [Dx loss: [-0.05579922 -0.8872145   0.8028487   0.00285653]] [Dz loss: [-1.6004759   1.1996701  -3.1406593   0.03405134]] [G loss: [ 2.7388368 -0.8115384  3.1703813  0.0379995]]
+Epoch: 10/100, [Dx loss: [ 0.0210845  -0.83917487  0.8006913   0.0059568 ]] [Dz loss: [-1.614374    0.89104974 -2.8409781   0.03355539]] [G loss: [ 2.4145513  -0.75399977  2.8753185   0.02932319]]
+Epoch: 11/100, [Dx loss: [-5.7249214e-03 -6.3738990e+00  6.3458366e+00  2.2352405e-03]] [Dz loss: [-1.5435228   1.5012612  -3.374477    0.03296946]] [G loss: [-2.6787293  -6.299729    3.4038353   0.02171636]]
+Epoch: 12/100, [Dx loss: [-9.3798786e-03 -1.2612273e+01  1.2583901e+01  1.8972564e-03]] [Dz loss: [-1.4124745   2.761274   -4.4897175   0.03159667]] [G loss: [ -7.9591575  -12.65876      4.52237      0.01772375]]
+Epoch: 13/100, [Dx loss: [ 0.02462969  3.852577   -3.8758602   0.00479151]] [Dz loss: [-1.4312321   1.1885997  -2.9380417   0.03182101]] [G loss: [7.054697   3.9002163  2.9862592  0.01682236]]
+Epoch: 14/100, [Dx loss: [ 4.2144611e-02  3.8035274e+00 -3.7947307e+00  3.3356771e-03]] [Dz loss: [-1.3086201   1.9121563  -3.5181353   0.02973628]] [G loss: [7.443318   3.7222202  3.5558982  0.01651953]]
+Epoch: 15/100, [Dx loss: [-5.5196141e-03  5.6333885e+00 -5.6569047e+00  1.8000080e-03]] [Dz loss: [-1.2110054   2.5830045  -4.0794663   0.02854536]] [G loss: [9.987961   5.7167797  4.1225185  0.01486623]]
+Epoch: 16/100, [Dx loss: [  0.36156896  18.365002   -18.404135     0.04007032]] [Dz loss: [-1.2420515   2.5233457  -4.0612946   0.02959002]] [G loss: [2.2628963e+01 1.8372122e+01 4.1062961e+00 1.5053764e-02]]
+Epoch: 17/100, [Dx loss: [ 1.5268881e-02 -3.8750939e+00  3.8656454e+00  2.4713431e-03]] [Dz loss: [-1.1640269   1.8333153  -3.2794652   0.02821159]] [G loss: [-0.39008296 -3.8515077   3.3202357   0.01411896]]
+Epoch: 18/100, [Dx loss: [ 0.02021899  1.3774269  -1.3713534   0.00141504]] [Dz loss: [-1.2160139   3.6621368  -5.1653113   0.02871581]] [G loss: [6.651803   1.3147182  5.2038054  0.01332763]]
+Epoch: 19/100, [Dx loss: [ 9.2780991e-03  1.3946686e+00 -1.3993813e+00  1.3988966e-03]] [Dz loss: [-1.1667242   1.8675171  -3.3275023   0.02932655]] [G loss: [4.9374466  1.4469802  3.360616   0.01298489]]
+Epoch: 20/100, [Dx loss: [ 0.01505629  0.91644275 -0.93703717  0.00356511]] [Dz loss: [-1.16798    2.0011518 -3.463144   0.0294011]] [G loss: [4.5834684  0.9275126  3.5285108  0.01274448]]
+Epoch: 21/100, [Dx loss: [ 4.4129312e-02  6.5110931e+00 -6.5320063e+00  6.5033040e-03]] [Dz loss: [-1.1534474   2.7826843  -4.2170053   0.02808705]] [G loss: [10.855245   6.4846025  4.253334   0.0117304]]
+Epoch: 22/100, [Dx loss: [ 1.3815311e-02  2.8032334e+00 -2.8050485e+00  1.5629947e-03]] [Dz loss: [-1.097722   3.5077336 -4.88141    0.0275956]] [G loss: [7.817871   2.7760491  4.9194903  0.01223353]]
+Epoch: 23/100, [Dx loss: [ 0.12959516  2.4772434  -2.518194    0.01705432]] [Dz loss: [-1.072002    1.7146571  -3.0584714   0.02718143]] [G loss: [5.788643   2.5705714  3.1026192  0.01154573]]
+Epoch: 24/100, [Dx loss: [ 5.8689646e-02 -4.6002889e+00  4.6446657e+00  1.4314011e-03]] [Dz loss: [-1.0613058   2.990817   -4.327846    0.02757189]] [G loss: [-0.19092883 -4.675151    4.366384    0.01178364]]
+Epoch: 25/100, [Dx loss: [ 0.1352017  -6.240892    6.193542    0.01825438]] [Dz loss: [-1.0278065   3.1610637  -4.464765    0.02758907]] [G loss: [-1.5051848  -6.1278925   4.510621    0.01120871]]
+Epoch: 26/100, [Dx loss: [ 2.8652672e-03 -1.9675982e+01  1.9663549e+01  1.5311694e-03]] [Dz loss: [-0.98626566  2.256831   -3.51826     0.02751621]] [G loss: [-1.5916349e+01 -1.9576338e+01  3.5527232e+00  1.0725923e-02]]
+Epoch: 27/100, [Dx loss: [  2.2123013  -10.943676    10.924519     0.22314714]] [Dz loss: [-0.9730957   2.4785032  -3.7184463   0.02668458]] [G loss: [-7.0578218e+00 -1.0919552e+01  3.7532039e+00  1.0851923e-02]]
+Epoch: 28/100, [Dx loss: [ 5.7215866e-02  9.0176573e+00 -9.0211859e+00  6.0724444e-03]] [Dz loss: [-0.9456152   3.236776   -4.4441524   0.02617632]] [G loss: [1.36143265e+01 9.02391815e+00 4.48171568e+00 1.08697526e-02]]
+Epoch: 29/100, [Dx loss: [ 0.05048221  0.44165877 -0.4164871   0.00253097]] [Dz loss: [-0.87303454  3.3032196  -4.437668    0.026141  ]] [G loss: [5.004932   0.435014   4.4551363  0.01147816]]
+Epoch: 30/100, [Dx loss: [ 0.0185729  -1.1090953   1.105994    0.00216749]] [Dz loss: [-0.85783446  3.7340715  -4.85575     0.02638406]] [G loss: [ 3.8211071  -1.1734711   4.8899145   0.01046657]]
+Epoch: 31/100, [Dx loss: [ 3.9625600e-02 -5.8973823e+00  5.8851252e+00  5.1881140e-03]] [Dz loss: [-0.8237117   2.9788234  -4.065726    0.02631886]] [G loss: [-1.7469097  -5.9460473   4.098151    0.01009892]]
+Epoch: 32/100, [Dx loss: [ 2.7533175e-02 -2.6251490e+01  2.6264229e+01  1.4828227e-03]] [Dz loss: [-0.8626274   4.1854267  -5.3087955   0.02607374]] [G loss: [-2.0878149e+01 -2.6324425e+01  5.3396316e+00  1.0665048e-02]]
+Epoch: 33/100, [Dx loss: [ 0.07080453 -3.9382584   3.943393    0.00656779]] [Dz loss: [-0.80627096  2.2421117  -3.320952    0.02725742]] [G loss: [-0.4970571  -3.9417274   3.3452544   0.00994156]]
+Epoch: 34/100, [Dx loss: [-0.00284076  0.65183395 -0.67927754  0.00246038]] [Dz loss: [-0.77373874  3.0362082  -4.069879    0.02599267]] [G loss: [4.880906   0.6874243  4.091968   0.01015165]]
+Epoch: 35/100, [Dx loss: [ 0.06175386 -2.6109192   2.6194563   0.00532184]] [Dz loss: [-0.76396745  3.1808062  -4.212238    0.0267464 ]] [G loss: [ 1.6906226  -2.6505642   4.2408376   0.01003516]]
+Epoch: 36/100, [Dx loss: [ 0.11728681 -3.2132006   3.2197146   0.01107712]] [Dz loss: [-0.74641377  4.1937165  -5.205139    0.02650013]] [G loss: [ 2.1526372  -3.1808188   5.237691    0.00957674]]
+Epoch: 37/100, [Dx loss: [ 0.0997387   1.5825233  -1.6357257   0.01529376]] [Dz loss: [-0.7403064  2.8589005 -3.8617449  0.0262538]] [G loss: [5.645816   1.6658648  3.8857248  0.00942252]]
+Epoch: 38/100, [Dx loss: [ 9.1892384e-02  8.8236971e+00 -8.8077965e+00  7.5994274e-03]] [Dz loss: [-0.7132512   4.087934   -5.0606256   0.02594426]] [G loss: [1.39767065e+01 8.78936481e+00 5.09376383e+00 9.35781747e-03]]
+Epoch: 39/100, [Dx loss: [ 4.1660406e-02  5.3400288e+00 -5.3326092e+00  3.4235597e-03]] [Dz loss: [-0.67817605  3.5564437  -4.4933925   0.02587776]] [G loss: [9.942803e+00 5.340969e+00 4.504500e+00 9.732893e-03]]
+Epoch: 40/100, [Dx loss: [ 6.6833906e-02  6.9389834e+00 -6.9362535e+00  6.4102011e-03]] [Dz loss: [-0.71679634  2.531905   -3.5043976   0.02556988]] [G loss: [1.0549041e+01 6.9155245e+00 3.5349891e+00 9.8530902e-03]]
+Epoch: 41/100, [Dx loss: [ 0.07479916  4.886321   -4.8691807   0.00576631]] [Dz loss: [-0.646627    4.712318   -5.6059594   0.02470081]] [G loss: [1.0621026e+01 4.9120855e+00 5.6174388e+00 9.1504464e-03]]
+Epoch: 42/100, [Dx loss: [ 0.22341761  2.2955089  -2.2838676   0.02117739]] [Dz loss: [-0.6587683   3.685233   -4.6042275   0.02602306]] [G loss: [7.0201097 2.303595  4.6228976 0.0093621]]
+Epoch: 43/100, [Dx loss: [-0.02854791 -0.15118948  0.09502504  0.00276167]] [Dz loss: [-0.73080623  3.5844247  -4.5801044   0.02648717]] [G loss: [ 4.5919375  -0.11288781  4.596015    0.01088133]]
+Epoch: 44/100, [Dx loss: [ 1.2610346e-01  4.2838259e+00 -4.1946626e+00  3.6934521e-03]] [Dz loss: [-0.6711449   5.093616   -6.033997    0.02692264]] [G loss: [1.0323424e+01 4.1598840e+00 6.0642352e+00 9.9309934e-03]]
+Epoch: 45/100, [Dx loss: [ 0.01763466  0.79861397 -0.8205823   0.00396032]] [Dz loss: [-0.69931024  3.9748175  -4.936945    0.02628072]] [G loss: [5.8626046  0.82845    4.940745   0.00934079]]
+Epoch: 46/100, [Dx loss: [ 9.4611160e-02  1.3377544e+01 -1.3355751e+01  7.2803008e-03]] [Dz loss: [-0.7012132   4.12863    -5.0938644   0.02640268]] [G loss: [1.8555592e+01 1.3348325e+01 5.1111679e+00 9.6097495e-03]]
+Epoch: 47/100, [Dx loss: [ 0.09292028  3.5721617  -3.5498033   0.00705675]] [Dz loss: [-0.6082018   3.9388049  -4.791792    0.02447858]] [G loss: [8.399751   3.484051   4.8227124  0.00929924]]
+Epoch: 48/100, [Dx loss: [ 2.229909e-02 -8.096360e+00  8.100690e+00  1.797363e-03]] [Dz loss: [-0.650474    5.0095267  -5.9248013   0.02648003]] [G loss: [-2.129838   -8.18045     5.9523196   0.00982895]]
+Epoch: 49/100, [Dx loss: [ 0.03424712  1.3365768  -1.3251232   0.00227962]] [Dz loss: [-0.60657245  4.3799314  -5.2459235   0.02594195]] [G loss: [6.77169    1.413797   5.2631016  0.00947886]]
+Epoch: 50/100, [Dx loss: [ 0.0342823 -2.2554855  2.25617    0.0033597]] [Dz loss: [-0.66633403  4.911547   -5.83186     0.02539757]] [G loss: [ 3.7063115  -2.2302918   5.845753    0.00908525]]
+Epoch: 51/100, [Dx loss: [ 6.3730724e-02 -1.1088675e+01  1.1057538e+01  9.4879931e-03]] [Dz loss: [-0.6319594   4.148231   -5.0293      0.02491119]] [G loss: [-5.9258370e+00 -1.1078464e+01  5.0584831e+00  9.4140796e-03]]
+Epoch: 52/100, [Dx loss: [  1.4881446  -15.575312    15.576567     0.14868723]] [Dz loss: [-0.56259614  3.0808487  -3.8892922   0.02458435]] [G loss: [-1.1625964e+01 -1.5631650e+01  3.9137280e+00  9.1957077e-03]]
+Epoch: 53/100, [Dx loss: [-9.8920166e-03 -2.7540150e+00  2.7169187e+00  2.7201830e-03]] [Dz loss: [-0.56347185  3.0843527  -3.8942604   0.0246435 ]] [G loss: [ 1.2655002  -2.7470932   3.9269793   0.00856152]]
+Epoch: 54/100, [Dx loss: [ 5.4378216e-03 -7.6087542e+00  7.5989928e+00  1.5194590e-03]] [Dz loss: [-0.581301    5.7868485  -6.613403    0.02452677]] [G loss: [-0.73085034 -7.4610376   6.6408877   0.00892935]]
+Epoch: 55/100, [Dx loss: [ 0.55077654  0.8406871  -0.78894234  0.04990336]] [Dz loss: [-0.5602464   5.780946   -6.5873833   0.02461911]] [G loss: [7.586672   0.8815659  6.6149187  0.00901913]]
+Epoch: 56/100, [Dx loss: [ 2.2004267e-02 -1.7408715e+00  1.7473979e+00  1.5493730e-03]] [Dz loss: [-0.5505136   5.308419   -6.1112356   0.02523029]] [G loss: [ 4.5448365  -1.6675723   6.1269054   0.00854993]]
+Epoch: 57/100, [Dx loss: [ 0.30957562  4.2761164  -4.2803054   0.03137628]] [Dz loss: [-0.53350836  4.4780626  -5.254873    0.02433052]] [G loss: [9.649703e+00 4.278288e+00 5.281158e+00 9.025592e-03]]
+Epoch: 58/100, [Dx loss: [-3.6458943e-02  5.9866071e+00 -6.0467348e+00  2.3663242e-03]] [Dz loss: [-0.47384524  3.5715775  -4.295197    0.02497779]] [G loss: [1.0411012e+01 6.0145640e+00 4.3101039e+00 8.6339368e-03]]
+Epoch: 59/100, [Dx loss: [ 1.22623354e-01 -1.88788071e+01  1.88451519e+01  1.56282615e-02]] [Dz loss: [-0.4870986   4.455203   -5.178485    0.02361762]] [G loss: [-1.3644583e+01 -1.8925526e+01  5.1941404e+00  8.6806864e-03]]
+Epoch: 60/100, [Dx loss: [ 1.4634372e-01 -1.4013936e+01  1.4056987e+01  1.0328728e-02]] [Dz loss: [-0.48513553  4.384683   -5.115308    0.024549  ]] [G loss: [-8.7185383e+00 -1.3938599e+01  5.1325645e+00  8.7503390e-03]]
+Epoch: 61/100, [Dx loss: [ 0.2800834  -2.7952445   2.7754984   0.02998224]] [Dz loss: [-0.51108783  5.4235735  -6.1809187   0.02462592]] [G loss: [ 3.5435023  -2.7425358   6.195554    0.00904867]]
+Epoch: 62/100, [Dx loss: [ 0.05323425  6.6507354  -6.6687922   0.0071287 ]] [Dz loss: [-0.48862517  6.2375846  -6.9667788   0.02405613]] [G loss: [1.3760060e+01 6.6817203e+00 6.9918242e+00 8.6517753e-03]]
+Epoch: 63/100, [Dx loss: [ 3.7587397e-02 -5.5734553e+00  5.5934758e+00  1.7567180e-03]] [Dz loss: [-0.5151871   5.4072065  -6.1646805   0.02422926]] [G loss: [ 0.6474055  -5.625899    6.1815      0.00918044]]
+Epoch: 64/100, [Dx loss: [ 0.43440798 -5.1276617   5.1279373   0.04341324]] [Dz loss: [-0.48599887  5.6412864  -6.367547    0.02402527]] [G loss: [ 1.2901102  -5.1961293   6.3966966   0.00895459]]
+Epoch: 65/100, [Dx loss: [ 3.9379023e-02 -6.5674057e+00  6.5902071e+00  1.6589188e-03]] [Dz loss: [-0.4887839   4.7260814  -5.4560323   0.02411614]] [G loss: [-0.98915756 -6.530103    5.4551682   0.00857833]]
+Epoch: 66/100, [Dx loss: [ 0.0830372  -5.097205    5.040874    0.01393475]] [Dz loss: [-0.47869977  3.166844   -3.889174    0.0243625 ]] [G loss: [-1.2374347  -5.2326055   3.9103117   0.00848511]]
+Epoch: 67/100, [Dx loss: [ 0.09319624 -1.5573751   1.6330229   0.00175498]] [Dz loss: [-0.46778446  4.5270658  -5.237132    0.02422829]] [G loss: [ 3.6575441  -1.676667    5.248017    0.00861962]]
+Epoch: 68/100, [Dx loss: [ 0.18415646 -0.13640219  0.13961895  0.0180941 ]] [Dz loss: [-0.48935333  6.3338675  -7.056304    0.02330568]] [G loss: [ 6.990228   -0.16100119  7.0700693   0.00811635]]
+Epoch: 69/100, [Dx loss: [ 0.12094532  1.2910155  -1.3103926   0.01403223]] [Dz loss: [-0.41774565  4.6957874  -5.355301    0.02417627]] [G loss: [6.704098   1.2506716  5.3735375  0.00798893]]
+Epoch: 70/100, [Dx loss: [ 0.15744758 -3.4577217   3.422491    0.01926798]] [Dz loss: [-0.39582655  4.9022083  -5.531972    0.02339475]] [G loss: [ 2.1194916  -3.506964    5.542264    0.00841923]]
+Epoch: 71/100, [Dx loss: [ 2.2669842e-02 -1.6547276e+01  1.6551369e+01  1.8575406e-03]] [Dz loss: [-0.4173702   2.7192833  -3.36654     0.02298886]] [G loss: [-1.3057305e+01 -1.6547533e+01  3.4002686e+00  8.9950161e-03]]
+Epoch: 72/100, [Dx loss: [ 0.38517067 -6.743885    6.749565    0.0379481 ]] [Dz loss: [-0.41439208  3.5703566  -4.2237296   0.02389752]] [G loss: [-2.5578873  -6.883151    4.2393093   0.00859525]]
+Epoch: 73/100, [Dx loss: [ 0.18446338  7.8734083  -7.93572     0.02467786]] [Dz loss: [-0.41093034  4.7600794  -5.3994865   0.02284677]] [G loss: [1.3453134e+01 7.9464750e+00 5.4250665e+00 8.1598153e-03]]
+Epoch: 74/100, [Dx loss: [ 7.11140931e-02  1.01420040e+01 -1.00895815e+01  1.86856790e-03]] [Dz loss: [-0.38631275  2.4293802  -3.0487027   0.02330099]] [G loss: [1.3353564e+01 1.0203628e+01 3.0692127e+00 8.0714347e-03]]
+Epoch: 75/100, [Dx loss: [ 1.0310065e-01  1.2738248e+01 -1.2716353e+01  8.1210667e-03]] [Dz loss: [-0.4073639   2.9050138  -3.545474    0.02330974]] [G loss: [1.6320627e+01 1.2684808e+01 3.5556362e+00 8.0179833e-03]]
+Epoch: 76/100, [Dx loss: [ 0.40810138  1.4540671  -1.5199664   0.04740031]] [Dz loss: [-0.4016812   5.52412    -6.1615973   0.02357943]] [G loss: [7.7070365  1.4417126  6.1847897  0.00805354]]
+Epoch: 77/100, [Dx loss: [ 5.3571720e-02  3.0576220e+00 -3.0211740e+00  1.7126095e-03]] [Dz loss: [-0.3625267   4.5291295  -5.120562    0.02289071]] [G loss: [8.303178e+00 3.091409e+00 5.132737e+00 7.903307e-03]]
+Epoch: 78/100, [Dx loss: [ 0.2977864  -0.96372235  0.96594614  0.02955652]] [Dz loss: [-0.4094278   5.2183185  -5.8701096   0.02423624]] [G loss: [ 5.035895   -0.93098724  5.884833    0.0082046 ]]
+Epoch: 79/100, [Dx loss: [ 0.2522902   3.3086574  -3.3592665   0.03029032]] [Dz loss: [-0.395979   1.6942918 -2.3353686  0.0245096]] [G loss: [5.826431   3.408676   2.3348355  0.00829198]]
+Epoch: 80/100, [Dx loss: [ 0.35335228 -6.6153846   6.630314    0.03384165]] [Dz loss: [-0.34748495  4.639881   -5.2144594   0.02270902]] [G loss: [-1.3560662  -6.6589313   5.225036    0.00778297]]2021-12-12 01:03:51.408081: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-12 01:03:51.438545: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-12 01:03:51.477507: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-12 01:03:51.554370: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_11/model_23_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_11/model_23_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-12 01:03:51.794945: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_11/model_23_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_11/model_23_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-12 01:03:51.826753: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-12 01:03:51.852154: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-12 01:03:51.880070: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+
+Epoch: 81/100, [Dx loss: [-1.1339890e-02 -5.3151464e+00  5.2871614e+00  1.6646096e-03]] [Dz loss: [-0.3591407  4.1667914 -4.755282   0.0229358]] [G loss: [-0.50170165 -5.3482933   4.767945    0.00786499]]
+Epoch: 82/100, [Dx loss: [ 0.12360599 -7.0643106   7.0458527   0.01420498]] [Dz loss: [-0.40836772  4.1058774  -4.7545066   0.02402649]] [G loss: [-2.2076824 -7.0491323  4.758621   0.0082829]]
+Epoch: 83/100, [Dx loss: [ 0.30379477  5.35472    -5.3045063   0.02535828]] [Dz loss: [-0.3692819   5.237756   -5.843922    0.02368842]] [G loss: [1.1354558e+01 5.4147859e+00 5.8517799e+00 8.7998267e-03]]
+Epoch: 84/100, [Dx loss: [ 3.4350757e-02  9.1132393e+00 -9.0932665e+00  1.4371289e-03]] [Dz loss: [-0.3495176   3.7521002  -4.3510413   0.02494219]] [G loss: [1.3584869e+01 9.1286545e+00 4.3683863e+00 8.7833907e-03]]
+Epoch: 85/100, [Dx loss: [ 8.2536787e-02  1.1800204e+01 -1.1752245e+01  3.4574713e-03]] [Dz loss: [-0.35681725  2.7154775  -3.3028314   0.02305324]] [G loss: [1.5222806e+01 1.1821184e+01 3.3236597e+00 7.7965381e-03]]
+Epoch: 86/100, [Dx loss: [ 0.16490975  1.3624444  -1.3658712   0.01683383]] [Dz loss: [-0.41302285  6.424159   -7.0779195   0.0240739 ]] [G loss: [8.5509481e+00 1.3734486e+00 7.0924654e+00 8.5028540e-03]]
+Epoch: 87/100, [Dx loss: [ 0.0588335  -0.8824316   0.915472    0.00257908]] [Dz loss: [-0.41056347  5.678289   -6.3268914   0.02380333]] [G loss: [ 5.589562  -0.8328028  6.333928   0.0088437]]
+Epoch: 88/100, [Dx loss: [ 0.10145814 -6.6351986   6.5760894   0.01605654]] [Dz loss: [-0.38352984  4.0441933  -4.6691394   0.02414181]] [G loss: [-1.8407072  -6.613594    4.686654    0.00862326]]
+Epoch: 89/100, [Dx loss: [ 0.11929338  1.2077283  -1.2160474   0.01276149]] [Dz loss: [-0.4332243   3.272173   -3.9568012   0.02514037]] [G loss: [5.254222   1.2071623  3.9624457  0.00846135]]
+Epoch: 90/100, [Dx loss: [ 7.8031458e-03  1.2100976e+01 -1.2116750e+01  2.3570065e-03]] [Dz loss: [-0.39387256  5.72832    -6.3486      0.02264027]] [G loss: [1.8534710e+01 1.2097110e+01 6.3542109e+00 8.3395215e-03]]
+Epoch: 91/100, [Dx loss: [  0.13185371  14.225393   -14.24148      0.01479355]] [Dz loss: [-0.415091    4.7821274  -5.4359436   0.02387256]] [G loss: [1.9818756e+01 1.4269302e+01 5.4651814e+00 8.4263822e-03]]
+Epoch: 92/100, [Dx loss: [ 0.0611205  -0.94221     0.95882946  0.00444958]] [Dz loss: [-0.34472415  3.8705044  -4.44218     0.0226944 ]] [G loss: [ 3.5614834 -0.9840845  4.4631553  0.0082413]]
+Epoch: 93/100, [Dx loss: [ 0.09312452 -3.7552853   3.7641342   0.00842747]] [Dz loss: [-0.3629969   4.7801037  -5.376585    0.02334739]] [G loss: [ 1.7114018  -3.774413    5.403859    0.00819545]]
+Epoch: 94/100, [Dx loss: [ 0.15863463 -7.7179728   7.7627516   0.01138484]] [Dz loss: [-0.33460993  3.5542371  -4.1085668   0.02197242]] [G loss: [-3.4414783  -7.664715    4.1441135   0.00791176]]
+Epoch: 95/100, [Dx loss: [ 0.05432694 -1.6560162   1.6638194   0.00465229]] [Dz loss: [-0.33846584  5.0431256  -5.6120734   0.02304797]] [G loss: [ 4.1068244  -1.5954642   5.624103    0.00781847]]
+Epoch: 96/100, [Dx loss: [ 0.34955016 -0.79883415  0.79010224  0.03582804]] [Dz loss: [-0.34763223  5.556617   -6.1296005   0.02253636]] [G loss: [ 5.3996587  -0.8366224   6.1548347   0.00814476]]
+Epoch: 97/100, [Dx loss: [ 8.4491419e-03 -9.1714573e+00  9.1283474e+00  5.1540975e-03]] [Dz loss: [-0.3649141   4.693378   -5.2821503   0.02238569]] [G loss: [-3.8426213e+00 -9.2243700e+00  5.3044620e+00  7.7285888e-03]]
+Epoch: 98/100, [Dx loss: [ 0.1186748 -1.5210658  1.5379959  0.0101742]] [Dz loss: [-0.32139018  4.738348   -5.296915    0.02371715]] [G loss: [ 3.8027697  -1.5872064   5.311168    0.00788156]]
+Epoch: 99/100, [Dx loss: [ 0.1932801  -7.0321717   6.984568    0.02408898]] [Dz loss: [-0.32542223  3.991949   -4.544775    0.02274029]] [G loss: [-2.3028386  -6.95338     4.571672    0.00788712]]
+Epoch: 100/100, [Dx loss: [ 0.36909527 -2.683177    2.6861422   0.03661281]] [Dz loss: [-0.31864777  4.8265085  -5.373744    0.02285856]] [G loss: [ 2.7952137  -2.6606228   5.3802495   0.00755876]]
+
+Training for feature selection
+
+Epoch: 1/100, [Dx loss: [-0.20654796 -0.69102496  0.42202225  0.00624544]] [Dz loss: [-1.1630707   1.3959662  -4.0897355   0.15306987]] [G loss: [ 5.618927   -0.42124882  4.9933586   0.10468213]]
+Epoch: 2/100, [Dx loss: [-0.15825975 -1.3673966   1.1694384   0.00397002]] [Dz loss: [-1.2585669  -1.5478672  -0.06944142  0.03587421]] [G loss: [-0.3457878  -1.1686347   0.14257611  0.06802703]]
+Epoch: 3/100, [Dx loss: [-0.10490769 -1.7950562   1.6534935   0.00366549]] [Dz loss: [-1.7642931  -2.2924573   0.20703684  0.03211283]] [G loss: [-1.2774011  -1.6504977  -0.17398675  0.05470842]]
+Epoch: 4/100, [Dx loss: [-0.07741999 -2.0659912   1.9526385   0.00359324]] [Dz loss: [-1.6833597  -2.600476    0.60089463  0.0316222 ]] [G loss: [-2.0277374  -1.943537   -0.55866194  0.04744628]]
+Epoch: 5/100, [Dx loss: [-0.06934731 -2.452143    2.348122    0.00346666]] [Dz loss: [-1.6207683  -2.5701847   0.63777196  0.03116468]] [G loss: [-2.5170105 -2.342876  -0.5954996  0.0421367]]
+Epoch: 6/100, [Dx loss: [-0.04616537 -2.646168    2.5673656   0.00326343]] [Dz loss: [-1.5655543  -2.4567986   0.5935659   0.02976777]] [G loss: [-2.692499   -2.5463386  -0.5449177   0.03987565]]
+Epoch: 7/100, [Dx loss: [-3.5704006e-02 -3.6175594e+00  3.5508730e+00  3.0983253e-03]] [Dz loss: [-1.4205625  -2.0766904   0.38267598  0.02734536]] [G loss: [-3.4763782  -3.518972   -0.31812662  0.03607197]]
+Epoch: 8/100, [Dx loss: [-0.01704247 -2.3396053   2.2911143   0.00314474]] [Dz loss: [-1.4034111  -1.9818809   0.2832251   0.02952468]] [G loss: [-2.176792   -2.284771   -0.23888905  0.03468651]]
+Epoch: 9/100, [Dx loss: [-0.00467458  0.7370308  -0.7683933   0.00266876]] [Dz loss: [-1.3177902  -1.6739328   0.06843623  0.02877039]] [G loss: [ 1.1320839   0.8108435  -0.01273523  0.03339761]]
+Epoch: 10/100, [Dx loss: [-3.1556624e-03  4.9852366e+00 -5.0141368e+00  2.5735579e-03]] [Dz loss: [-1.2291816  -1.5002847  -0.01706371  0.02881656]] [G loss: [5.455675   5.062128   0.08934235 0.03042073]]
+Epoch: 11/100, [Dx loss: [-0.0170418   0.04041879 -0.08285209  0.00253917]] [Dz loss: [-1.184808   -1.2427269  -0.23829873  0.02962161]] [G loss: [0.7011511  0.10773257 0.29608107 0.0297338 ]]
+Epoch: 12/100, [Dx loss: [-3.6494157e-03 -4.5505672e+00  4.5145311e+00  3.2388640e-03]] [Dz loss: [-1.0907485  -0.54844755 -0.8275801   0.0285282 ]] [G loss: [-3.369129   -4.538126    0.888425    0.02805732]]
+Epoch: 13/100, [Dx loss: [-8.1556011e-03 -4.7437086e+00  4.7116737e+00  2.3878838e-03]] [Dz loss: [-1.1468167  -0.8793178  -0.554772    0.02872743]] [G loss: [-3.8729017  -4.7571044   0.61549056  0.02687133]]
+Epoch: 14/100, [Dx loss: [ 5.0313529e-03  3.2406621e+00 -3.2610195e+00  2.5389676e-03]] [Dz loss: [-1.0893185  -0.71855015 -0.6559532   0.02851846]] [G loss: [4.2450843  3.2710495  0.70183074 0.0272202 ]]
+Epoch: 15/100, [Dx loss: [ 0.00390523 -0.19839421  0.17780773  0.00244922]] [Dz loss: [-1.0564163  -0.32530046 -1.0182087   0.02870918]] [G loss: [ 1.1397443  -0.18366945  1.0660285   0.0257386 ]]
+Epoch: 16/100, [Dx loss: [-8.0182269e-04  1.2699391e+00 -1.3232034e+00  5.2469452e-03]] [Dz loss: [-0.98285663  0.15844652 -1.4132555   0.02719529]] [G loss: [2.9681342  1.2670077  1.4537042  0.02474235]]
+Epoch: 17/100, [Dx loss: [ 1.0546305e-02 -9.4081106e+00  9.3954630e+00  2.3184952e-03]] [Dz loss: [-0.9217535  -0.00699817 -1.190657    0.02759027]] [G loss: [-7.9275613  -9.389968    1.2199489   0.02424566]]
+Epoch: 18/100, [Dx loss: [ 2.1151762e-02 -3.1835868e+00  3.1791835e+00  2.5544891e-03]] [Dz loss: [-0.91961986 -0.44302014 -0.75433874  0.02777397]] [G loss: [-2.162357  -3.1874394  0.786656   0.0238426]]
+Epoch: 19/100, [Dx loss: [-3.9789919e-03 -6.5425553e+00  6.5042219e+00  3.4350050e-03]] [Dz loss: [-0.947804   -0.5271494  -0.7028192   0.02821656]] [G loss: [-5.5534267  -6.5410767   0.74761474  0.02400338]]
+Epoch: 20/100, [Dx loss: [-3.4574527e-02 -3.5068843e+00  3.4372609e+00  3.5055301e-03]] [Dz loss: [-0.92109376  0.02214671 -1.2297803   0.02865399]] [G loss: [-1.9678794  -3.4910202   1.274065    0.02490707]]
+Epoch: 21/100, [Dx loss: [ 1.6985709e-02 -6.8241687e+00  6.8187332e+00  2.2409714e-03]] [Dz loss: [-0.9406829  -0.14086336 -1.0824739   0.02826542]] [G loss: [-5.5064344  -6.864991    1.1241493   0.02344029]]
+Epoch: 22/100, [Dx loss: [ 3.4817468e-02  1.1248359e+01 -1.1237964e+01  2.4432112e-03]] [Dz loss: [-0.936636   -0.05072596 -1.1622572   0.0276348 ]] [G loss: [12.640904   11.211509    1.19688     0.02325236]]
+Epoch: 23/100, [Dx loss: [-1.9134374e-02  1.4779278e+01 -1.4825303e+01  2.6926061e-03]] [Dz loss: [-0.88254887  0.06580134 -1.2220026   0.02736525]] [G loss: [16.301397   14.823974    1.248919    0.02284948]]
+Epoch: 24/100, [Dx loss: [ 1.3492861e-02  2.3643827e+01 -2.3656012e+01  2.5666631e-03]] [Dz loss: [-0.8401906  -0.12384681 -0.9921172   0.02757742]] [G loss: [2.4860907e+01 2.3599085e+01 1.0450368e+00 2.1677870e-02]]
+Epoch: 25/100, [Dx loss: [ 5.3809572e-02  1.6556038e+01 -1.6533894e+01  3.1661403e-03]] [Dz loss: [-0.74618393  0.90689456 -1.9173206   0.02642429]] [G loss: [18.693842   16.516008    1.959626    0.02181961]]
+Epoch: 26/100, [Dx loss: [ 1.0779487e-02  7.8117042e+00 -7.8332906e+00  3.2373995e-03]] [Dz loss: [-0.7107723   1.0443299  -2.0094688   0.02543657]] [G loss: [10.1328745   7.892526    2.0309458   0.02094069]]
+Epoch: 27/100, [Dx loss: [ 2.1056240e-02 -1.2819296e+01  1.2777259e+01  6.3085174e-03]] [Dz loss: [-0.7368415   1.3229277  -2.3198903   0.02601171]] [G loss: [-10.274987   -12.842339     2.356782     0.02105675]]
+Epoch: 28/100, [Dx loss: [ 1.1100530e-02 -1.2374843e+01  1.2364713e+01  2.1195873e-03]] [Dz loss: [-0.69041055  2.334273   -3.2773917   0.02527103]] [G loss: [ -8.891792  -12.404452    3.3144693   0.0198193]]
+Epoch: 29/100, [Dx loss: [ 5.8775537e-02 -1.0961503e+01  1.0995336e+01  2.4954667e-03]] [Dz loss: [-0.6643609   1.4225521  -2.3365982   0.02496871]] [G loss: [ -8.47375    -11.04602      2.3748224    0.01974483]]
+Epoch: 30/100, [Dx loss: [ 1.1007713e-04 -1.7058418e+01  1.7010422e+01  4.8098061e-03]] [Dz loss: [-0.66720706  1.8639699  -2.7874584   0.0256281 ]] [G loss: [-14.157939   -17.167141     2.810198     0.01990053]]
+Epoch: 31/100, [Dx loss: [ 4.9272932e-02 -1.5955169e+01  1.5981188e+01  2.3268317e-03]] [Dz loss: [-0.61634123  2.355032   -3.2279904   0.02566183]] [G loss: [-12.431831   -15.893459     3.2677412    0.01938981]]
+Epoch: 32/100, [Dx loss: [ 0.44377553 -9.510339    9.487208    0.04669107]] [Dz loss: [-0.6547386   2.2020545  -3.1107829   0.02539938]] [G loss: [-6.119132   -9.4417515   3.1338315   0.01887958]]
+Epoch: 33/100, [Dx loss: [ 9.6448290e-04 -1.5917034e+01  1.5896743e+01  2.1253573e-03]] [Dz loss: [-0.6566469   0.592584   -1.508248    0.02590168]] [G loss: [-14.107205   -15.832954     1.5269336    0.01988065]]
+Epoch: 34/100, [Dx loss: [-1.8112136e-02 -1.1817044e+01  1.1771517e+01  2.7398122e-03]] [Dz loss: [-0.63888496  2.0339026  -2.9216197   0.02488316]] [G loss: [ -8.538614   -11.680375     2.9490354    0.01927217]]
+Epoch: 35/100, [Dx loss: [ 0.08298849  6.788408   -6.796459    0.00910445]] [Dz loss: [-0.622051    2.5195735  -3.3910744   0.02494501]] [G loss: [10.324704    6.7142196   3.4191182   0.01913674]]
+Epoch: 36/100, [Dx loss: [ 4.7952939e-02 -9.9678593e+00  9.9604673e+00  5.5346987e-03]] [Dz loss: [-0.60944414  2.0431771  -2.9098477   0.02572268]] [G loss: [-6.661606   -9.787065    2.9394312   0.01860356]]
+Epoch: 37/100, [Dx loss: [ 0.03025459  3.527186   -3.5598173   0.00628945]] [Dz loss: [-0.6054276   1.8067795  -2.6648395   0.02526323]] [G loss: [6.335998   3.4499846  2.6876106  0.01984064]]
+Epoch: 38/100, [Dx loss: [ 5.7327900e-02 -7.1286006e+00  7.1647320e+00  2.1189456e-03]] [Dz loss: [-0.63677156  2.2019901  -3.0803      0.02415423]] [G loss: [-3.8006926 -7.101668   3.1161253  0.018485 ]]
+Epoch: 39/100, [Dx loss: [ 4.770755e-02 -9.832661e+00  9.824307e+00  5.604916e-03]] [Dz loss: [-0.5826069   1.8598318  -2.6850667   0.02426304]] [G loss: [-7.0534825  -9.945752    2.712559    0.01797219]]
+Epoch: 40/100, [Dx loss: [ 6.7314729e-02  3.2481220e+00 -3.2032516e+00  2.2445051e-03]] [Dz loss: [-0.5212253   3.1758263  -3.938643    0.02415996]] [G loss: [7.3602715  3.2200875  3.956053   0.01841309]]
+Epoch: 41/100, [Dx loss: [ 0.1098894   6.4514055  -6.477813    0.01362866]] [Dz loss: [-0.5340316  1.9637522 -2.7404933  0.024271 ]] [G loss: [9.485708   6.5320954  2.7780647  0.01755465]]
+Epoch: 42/100, [Dx loss: [ 6.7944936e-02  1.1022858e+01 -1.0974464e+01  1.9542705e-03]] [Dz loss: [-0.51481295  3.7255626  -4.4707336   0.02303572]] [G loss: [15.627467   10.956122    4.497483    0.01738635]]
+Epoch: 43/100, [Dx loss: [ 0.0726422   4.7915473  -4.798867    0.00799771]] [Dz loss: [-0.5045949   4.285685   -5.027439    0.02371608]] [G loss: [10.129116    4.885199    5.059564    0.01843538]]
+Epoch: 44/100, [Dx loss: [ 0.17735595  4.9150434  -4.947634    0.02099439]] [Dz loss: [-0.53350586  5.2653623  -6.0409575   0.02420898]] [G loss: [11.218622    4.97941     6.065732    0.01734821]]
+Epoch: 45/100, [Dx loss: [ 1.3355656e-02  1.4617243e+01 -1.4625774e+01  2.1900514e-03]] [Dz loss: [-0.5027338   3.010383   -3.7586818   0.02455573]] [G loss: [1.8571920e+01 1.4617661e+01 3.7743983e+00 1.7985512e-02]]
+Epoch: 46/100, [Dx loss: [ 5.8732156e-02  1.9548382e+01 -1.9589565e+01  9.9905338e-03]] [Dz loss: [-0.5000453   0.8822236  -1.6263727   0.02441026]] [G loss: [2.1551933e+01 1.9722315e+01 1.6502023e+00 1.7941689e-02]]
+Epoch: 47/100, [Dx loss: [ 6.1383642e-02  1.5285266e+01 -1.5246391e+01  2.2541259e-03]] [Dz loss: [-0.49429572  2.2025905  -2.9426055   0.02457198]] [G loss: [1.8408350e+01 1.5280251e+01 2.9539442e+00 1.7414348e-02]]
+Epoch: 48/100, [Dx loss: [ 3.9553162e-02  6.2469306e+00 -6.2492251e+00  4.1850801e-03]] [Dz loss: [-0.46209666  2.8710694  -3.5734055   0.02402465]] [G loss: [10.031409    6.2664704   3.5905802   0.01743593]]
+Epoch: 49/100, [Dx loss: [ 0.13882773  6.7804213  -6.8226376   0.01810257]] [Dz loss: [-0.45971683  5.489771   -6.186221    0.02367268]] [G loss: [13.288245    6.9183555   6.1880655   0.01818272]]
+Epoch: 50/100, [Dx loss: [ 0.03698028 -1.6806052   1.6894094   0.00281771]] [Dz loss: [-0.4568213   3.3243973  -4.0127153   0.02314942]] [G loss: [ 2.5455892  -1.676717    4.041222    0.01810791]]
+Epoch: 51/100, [Dx loss: [ 0.13470179 -4.407615    4.384287    0.01580273]] [Dz loss: [-0.444705    3.6431987  -4.330465    0.02425604]] [G loss: [ 0.22157991 -4.305951    4.360107    0.01674217]]
+Epoch: 52/100, [Dx loss: [  0.21172453 -16.040716    16.06601      0.01864351]] [Dz loss: [-0.41345027  3.0806327  -3.736127    0.0242037 ]] [G loss: [-12.072833   -16.001328     3.7570353    0.01714563]]
+Epoch: 53/100, [Dx loss: [ 1.1985585e-02  1.6558069e+01 -1.6565737e+01  1.9642662e-03]] [Dz loss: [-0.39609683  3.1435935  -3.7762456   0.02365497]] [G loss: [2.0593029e+01 1.6617924e+01 3.8075664e+00 1.6754691e-02]]
+Epoch: 54/100, [Dx loss: [ 0.22076505  7.382721   -7.410526    0.02485832]] [Dz loss: [-0.40132767  3.4790654  -4.1093407   0.02289447]] [G loss: [11.5689335   7.2618833   4.136242    0.01708155]]
+Epoch: 55/100, [Dx loss: [ 3.5707053e-02 -2.2078358e+01  2.2092480e+01  2.1592609e-03]] [Dz loss: [-0.3908325   3.7519245  -4.3718505   0.02290912]] [G loss: [-1.7401649e+01 -2.1953802e+01  4.3838110e+00  1.6833894e-02]]
+Epoch: 56/100, [Dx loss: [ 6.9596045e-02 -1.9244856e+01  1.9226292e+01  8.8176476e-03]] [Dz loss: [-0.37239444  2.2908554  -2.8945231   0.02312738]] [G loss: [-1.6076412e+01 -1.9153036e+01  2.9155855e+00  1.6103067e-02]]
+Epoch: 57/100, [Dx loss: [ 2.5288947e-02 -3.0166936e+00  3.0206537e+00  2.1330691e-03]] [Dz loss: [-0.34369254  3.023445   -3.586027    0.02188863]] [G loss: [ 0.7185568  -3.0451875   3.6015313   0.01622133]]
+Epoch: 58/100, [Dx loss: [ 0.35990623 -4.3901577   4.397209    0.03528527]] [Dz loss: [-0.3361936   1.6978406  -2.2598505   0.02258181]] [G loss: [-1.9714984  -4.4132967   2.273971    0.01678288]]
+Epoch: 59/100, [Dx loss: [ 4.8178345e-02 -1.4144239e+01  1.4163829e+01  2.8597610e-03]] [Dz loss: [-0.33338818  1.9929259  -2.5554388   0.02291241]] [G loss: [-11.383082   -14.129694     2.5787225    0.01678929]]
+Epoch: 60/100, [Dx loss: [ 5.6365408e-02 -1.5588091e+01  1.5607507e+01  3.6952512e-03]] [Dz loss: [-0.31189257  3.2994993  -3.821737    0.02103438]] [G loss: [-11.561902   -15.566199     3.8466003    0.01576888]]
+Epoch: 61/100, [Dx loss: [ 0.30487722 -7.2658377   7.25144     0.03192635]] [Dz loss: [-0.3282637   3.0675478  -3.6198728   0.02240582]] [G loss: [-3.4329007  -7.2225666   3.6358538   0.01538139]]2021-12-12 19:51:58.478432: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-12 19:51:58.510044: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-12 19:51:58.550407: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-12 19:51:58.628258: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_14/model_30_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_14/model_30_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-12 19:51:58.880571: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_14/model_30_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_14/model_30_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-12 19:51:58.912961: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-12 19:51:58.939640: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-12 19:51:58.968730: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+
+Epoch: 62/100, [Dx loss: [  0.35106888 -12.456916    12.392958     0.04150417]] [Dz loss: [-0.33978698  2.6699312  -3.2314482   0.02217285]] [G loss: [ -9.010331   -12.418149     3.253812     0.01540092]]
+Epoch: 63/100, [Dx loss: [ 4.0888973e-02  4.8244262e+00 -4.8202748e+00  3.6738049e-03]] [Dz loss: [-0.33563256  1.6841283  -2.2488537   0.0229092 ]] [G loss: [7.1199284  4.6802254  2.2811627  0.01585399]]
+Epoch: 64/100, [Dx loss: [ 1.0899798  -2.675763    2.5880337   0.11777151]] [Dz loss: [-0.29133967  2.3170598  -2.818891    0.0210493 ]] [G loss: [ 0.4931459  -2.4991417   2.8353968   0.01568927]]
+Epoch: 65/100, [Dx loss: [ 0.1501912   7.301661   -7.239057    0.00875949]] [Dz loss: [-0.29935393  2.197848   -2.7212873   0.02240871]] [G loss: [10.159913   7.2499685  2.760197   0.0149744]]
+Epoch: 66/100, [Dx loss: [ 0.06504644  0.8013329  -0.7692089   0.00329227]] [Dz loss: [-0.29965663  4.1052914  -4.62511     0.02201604]] [G loss: [5.466174   0.69303805 4.6249866  0.01481453]]
+Epoch: 67/100, [Dx loss: [ 0.0426933  -1.8361771   1.8580014   0.00208648]] [Dz loss: [-0.30959284  3.3757775  -3.8976789   0.02123092]] [G loss: [ 2.2732923  -1.8018473   3.9260266   0.01491147]]
+Epoch: 68/100, [Dx loss: [ 0.07325418 -5.661777    5.6730814   0.00619474]] [Dz loss: [-0.27375898  1.9362131  -2.4206078   0.02106376]] [G loss: [-3.0309572  -5.6092606   2.4250417   0.01532615]]
+Epoch: 69/100, [Dx loss: [ 0.05640925 -1.8778982   1.9140409   0.00202655]] [Dz loss: [-0.26225495  4.3988104  -4.8667536   0.02056986]] [G loss: [ 3.1796353  -1.8627769   4.8882885   0.01541237]]
+Epoch: 70/100, [Dx loss: [ 0.05525874  1.861905   -1.8448408   0.00381937]] [Dz loss: [-0.28705603  5.747066   -6.2427616   0.02086337]] [G loss: [8.247046   1.8278409  6.2642503  0.01549553]]
+Epoch: 71/100, [Dx loss: [ 0.1224253  -2.8928945   2.8964834   0.01188353]] [Dz loss: [-0.28723508  2.2275944  -2.7270632   0.02122384]] [G loss: [ 0.0138432  -2.8891032   2.7492304   0.01537172]]
+Epoch: 72/100, [Dx loss: [ 0.06997218 -0.40003416  0.40546262  0.00645435]] [Dz loss: [-0.2942562   4.427162   -4.9399514   0.02185415]] [G loss: [ 4.7231193  -0.38793075  4.9587083   0.01523405]]
+Epoch: 73/100, [Dx loss: [ 4.9205754e-02 -9.8446188e+00  9.8400021e+00  5.3832019e-03]] [Dz loss: [-0.28564978  2.5477664  -3.0469816   0.0213568 ]] [G loss: [-6.627406   -9.826741    3.0525732   0.01467599]]
+Epoch: 74/100, [Dx loss: [ 0.13106853  3.697236   -3.690438    0.01242699]] [Dz loss: [-0.2814004  3.7985682 -4.2937617  0.0213796]] [G loss: [8.109341   3.6578555  4.301705   0.01497832]]
+Epoch: 75/100, [Dx loss: [ 3.9062534e-02 -9.2184877e+00  9.2301846e+00  2.7384723e-03]] [Dz loss: [-0.28084585  2.6928592  -3.1913373   0.02176383]] [G loss: [-5.951631   -9.33027     3.227621    0.01510217]]
+Epoch: 76/100, [Dx loss: [ 4.6113674e-02  6.0126114e+00 -6.0250263e+00  5.8512930e-03]] [Dz loss: [-0.25853854  3.5959783  -4.065276    0.02107561]] [G loss: [10.313811    6.0804043   4.0853477   0.01480729]]
+Epoch: 77/100, [Dx loss: [ 3.3056173e-02 -1.7460159e+01  1.7471054e+01  2.2152432e-03]] [Dz loss: [-0.27390248  2.426725   -2.9136188   0.02129944]] [G loss: [-1.4347519e+01 -1.7420769e+01  2.9280753e+00  1.4517369e-02]]
+Epoch: 78/100, [Dx loss: [ 0.1946705  -2.1638074   2.1319432   0.02265413]] [Dz loss: [-0.26666725  3.6136115  -4.094786    0.02145094]] [G loss: [ 2.0899136  -2.1807423   4.1198072   0.01508531]]
+Epoch: 79/100, [Dx loss: [ 0.24664249  4.9744587  -4.916414    0.01885981]] [Dz loss: [-0.33502385  2.2774637  -2.8275278   0.02150396]] [G loss: [7.9422517 4.925305  2.8631682 0.015377 ]]
+Epoch: 80/100, [Dx loss: [ 0.04878277 -1.1070673   1.1378909   0.00179618]] [Dz loss: [-0.25023112  3.9297347  -4.387748    0.02077852]] [G loss: [ 3.4819412  -1.075973    4.405386    0.01525329]]
+Epoch: 81/100, [Dx loss: [ 0.39698508 -1.5645667   1.5520387   0.04095143]] [Dz loss: [-0.25211254  5.4669414  -5.934455    0.02154079]] [G loss: [ 4.5969296  -1.518482    5.962228    0.01531859]]
+Epoch: 82/100, [Dx loss: [  0.4568123  -16.695683    16.680159     0.04723513]] [Dz loss: [-0.26501757  5.5086703  -5.983518    0.02098274]] [G loss: [-1.0540146e+01 -1.6695093e+01  6.0090213e+00  1.4590916e-02]]
+Epoch: 83/100, [Dx loss: [ 6.5867506e-02 -4.9439573e+00  4.9790468e+00  3.0771275e-03]] [Dz loss: [-0.24032208  5.2137175  -5.667643    0.02136029]] [G loss: [ 0.9178862  -4.9067435   5.6871624   0.01374657]]
+Epoch: 84/100, [Dx loss: [ 0.12410431 -3.1622686   3.1865256   0.00998499]] [Dz loss: [-0.26301843  5.462273   -5.9322786   0.02069801]] [G loss: [ 2.9485126  -3.147507    5.9515705   0.01444528]]
+Epoch: 85/100, [Dx loss: [  0.07661656 -12.388358    12.326552     0.01384296]] [Dz loss: [-0.23266098  4.4481683  -4.891697    0.02108638]] [G loss: [ -7.3424807  -12.388818     4.9016905    0.01446396]]
+Epoch: 86/100, [Dx loss: [ 2.0095978e-02 -4.7462654e+00  4.7267828e+00  3.9582141e-03]] [Dz loss: [-0.2366837   4.9331307  -5.37825     0.02084402]] [G loss: [ 0.83438486 -4.6923428   5.38288     0.01438443]]
+Epoch: 87/100, [Dx loss: [ 0.10483692  8.230125   -8.235934    0.01106356]] [Dz loss: [-0.24848968  2.6246529  -3.0848875   0.02117487]] [G loss: [11.526074    8.289617    3.0900989   0.01463513]]
+Epoch: 88/100, [Dx loss: [ 0.18998826 -1.10675     1.1213039   0.01754379]] [Dz loss: [-0.2223549   5.0740676  -5.503557    0.02071376]] [G loss: [ 4.514186   -1.1365443   5.5076137   0.01431177]]
+Epoch: 89/100, [Dx loss: [ 3.6970206e-02 -1.0836716e+01  1.0852312e+01  2.1363727e-03]] [Dz loss: [-0.24571724  4.003612   -4.4594235   0.02100967]] [G loss: [ -6.202278   -10.80707      4.460596     0.01441947]]
+Epoch: 90/100, [Dx loss: [ 0.06135292  4.484632   -4.4974914   0.0074205 ]] [Dz loss: [-0.21982466  3.4714308  -3.8950295   0.02037712]] [G loss: [8.597659   4.5335946  3.9198377  0.01442285]]
+Epoch: 91/100, [Dx loss: [ 0.17293796  7.283802   -7.275012    0.01641577]] [Dz loss: [-0.2314147   3.6005633  -4.0438695   0.02118899]] [G loss: [11.491341    7.2757845   4.0683713   0.01471759]]
+Epoch: 92/100, [Dx loss: [ 3.4720980e-02  3.0682456e+00 -3.0554636e+00  2.1943611e-03]] [Dz loss: [-0.23141237  3.9772482  -4.4115295   0.02028725]] [G loss: [7.6103706  3.0367928  4.4284496  0.01451302]]
+Epoch: 93/100, [Dx loss: [ 0.0829304  4.1154656 -4.104703   0.0072172]] [Dz loss: [-0.1866437   5.9849935  -6.358509    0.01868661]] [G loss: [10.54265     4.0313807   6.3652534   0.01460165]]
+Epoch: 94/100, [Dx loss: [ 0.08629355  2.764029   -2.734706    0.00569637]] [Dz loss: [-0.21623236  4.9843845  -5.399626    0.01990136]] [G loss: [8.300381   2.7513642  5.4072604  0.01417547]]
+Epoch: 95/100, [Dx loss: [ 0.08946504  2.3930721  -2.352101    0.00484944]] [Dz loss: [-0.17668118  3.2292225  -3.607735    0.02018294]] [G loss: [6.203588   2.4374135  3.623239   0.01429367]]
+Epoch: 96/100, [Dx loss: [ 2.4187321e-02  5.4169316e+00 -5.4355865e+00  4.2845905e-03]] [Dz loss: [-0.18144304  2.5102518  -2.9012153   0.02095196]] [G loss: [8.581565   5.51276    2.923825   0.01449799]]
+Epoch: 97/100, [Dx loss: [ 0.14527526  2.3090057  -2.369545    0.02058154]] [Dz loss: [-0.18558988  1.7647942  -2.1532292   0.02028477]] [G loss: [4.690687   2.3815832  2.1685293  0.01405745]]
+Epoch: 98/100, [Dx loss: [-4.469015e-02  9.837272e+00 -9.917632e+00  3.567255e-03]] [Dz loss: [-0.19037378  3.2988873  -3.6967227   0.02074643]] [G loss: [13.702514    9.841842    3.7215285   0.01391423]]
+Epoch: 99/100, [Dx loss: [ 0.11572856  3.4826355  -3.4254336   0.00585255]] [Dz loss: [-0.17070349  4.7405295  -5.1103635   0.01991293]] [G loss: [8.725002   3.4548218  5.1296115  0.01405655]]
+Epoch: 100/100, [Dx loss: [ 0.3456474  0.2673756 -0.3097428  0.0388015]] [Dz loss: [-0.19963497  4.260263   -4.6593857   0.01994857]] [G loss: [4.959758   0.15006444 4.669027   0.01406624]]
+
+Bare training
+
+Epoch: 1/100, [Dx loss: [-0.06717689 -0.3992677   0.1620597   0.01700306]] [Dz loss: [-3.4249637  -0.4639734  -4.749179    0.17881891]] [G loss: [ 6.972955   -0.16106668  5.8115807   0.13224436]]
+Epoch: 2/100, [Dx loss: [-0.13645568 -0.73327214  0.5655964   0.003122  ]] [Dz loss: [-2.3108225  -2.8073852   0.11161493  0.03849482]] [G loss: [ 0.06538126 -0.5657421  -0.05371748  0.0684841 ]]
+Epoch: 3/100, [Dx loss: [-0.08153439 -1.2055943   1.093521    0.00305378]] [Dz loss: [-2.2042532  -3.0903807   0.5096324   0.03764946]] [G loss: [-1.0316414  -1.0959926  -0.45282787  0.05171796]]
+Epoch: 4/100, [Dx loss: [-0.04771898 -2.436174    2.360182    0.00282714]] [Dz loss: [-1.956191   -2.6533437   0.34604213  0.03511163]] [G loss: [-2.2132201  -2.3528087  -0.28714213  0.04267332]]
+Epoch: 5/100, [Dx loss: [-3.5117663e-02 -3.0384543e+00  2.9752092e+00  2.8127045e-03]] [Dz loss: [-1.8094761  -2.2334216   0.08770545  0.03362359]] [G loss: [-2.661953   -2.9871998  -0.03775293  0.03630004]]
+Epoch: 6/100, [Dx loss: [-3.5487417e-02 -3.5099046e+00  3.4469266e+00  2.7492084e-03]] [Dz loss: [-1.6209291  -2.2647958   0.3109232   0.03329425]] [G loss: [-3.3702242  -3.4797401  -0.2413802   0.03508962]]
+Epoch: 7/100, [Dx loss: [-3.9153164e-03 -4.6777363e+00  4.6442919e+00  2.9525375e-03]] [Dz loss: [-1.5201764  -2.0075715   0.15460409  0.0332794 ]] [G loss: [-4.378336   -4.6272664  -0.09204659  0.03409749]]
+Epoch: 8/100, [Dx loss: [ 0.12100509 -1.0090411   0.9790969   0.01509511]] [Dz loss: [-1.472072   -1.8837557   0.07811891  0.03335675]] [G loss: [-0.65286607 -0.98891693 -0.00655988  0.03426114]]
+Epoch: 9/100, [Dx loss: [ 3.9890427e-03 -3.2292728e+00  3.2091062e+00  2.4155008e-03]] [Dz loss: [-1.4071107  -2.084013    0.34339836  0.0333503 ]] [G loss: [-3.1604803  -3.2194574  -0.27337575  0.03323541]]
+Epoch: 10/100, [Dx loss: [ 0.00315974 -1.3754598   1.352651    0.00259688]] [Dz loss: [-1.2950946  -1.8228129   0.19812897  0.03295921]] [G loss: [-1.1727352  -1.3457354  -0.12998699  0.03029875]]
+Epoch: 11/100, [Dx loss: [ 0.02196414 -3.9791117   3.94452     0.00565522]] [Dz loss: [-1.2426163  -1.339449   -0.23423815  0.03310725]] [G loss: [-3.307835   -3.9262238   0.32027122  0.02981162]]
+Epoch: 12/100, [Dx loss: [-1.2011397e-02 -9.5198927e+00  9.4825401e+00  2.5339923e-03]] [Dz loss: [-1.2565943  -1.4435067  -0.14504841  0.03319603]] [G loss: [-8.897046   -9.454147    0.24675852  0.03103423]]
+Epoch: 13/100, [Dx loss: [ 5.2992001e-02  2.2143250e+01 -2.2164545e+01  7.4306857e-03]] [Dz loss: [-1.2079263  -1.5854598   0.04364556  0.03338876]] [G loss: [22.53104    22.218397    0.02670798  0.02859491]]
+Epoch: 14/100, [Dx loss: [-7.2780419e-03  7.4352226e+00 -7.4686065e+00  2.6103342e-03]] [Dz loss: [-1.2866378  -1.1212102  -0.49114335  0.0325719 ]] [G loss: [8.270479   7.456556   0.53749555 0.02764211]]
+Epoch: 15/100, [Dx loss: [ 0.03185576  2.3278852  -2.3522108   0.00561804]] [Dz loss: [-1.1853999  -1.0434928  -0.4566368   0.03147306]] [G loss: [3.2037497  2.4302268  0.4957723  0.02777498]]
+Epoch: 16/100, [Dx loss: [ 0.00965885  2.3483868  -2.3638725   0.00251438]] [Dz loss: [-1.1373767  -1.3416644  -0.11248517  0.03167722]] [G loss: [2.8602977  2.3893282  0.19135097 0.0279618 ]]
+Epoch: 17/100, [Dx loss: [ 2.6326215e-02  1.9847425e+01 -1.9864956e+01  4.3846504e-03]] [Dz loss: [-1.2267015  -1.0322412  -0.51747775  0.03230157]] [G loss: [20.722553   19.875181    0.57671696  0.02706574]]
+Epoch: 18/100, [Dx loss: [  0.10882081  10.18525    -10.20507      0.01286476]] [Dz loss: [-1.1146517  -0.70538676 -0.71834236  0.03090765]] [G loss: [11.199268   10.188146    0.76371336  0.02474154]]
+Epoch: 19/100, [Dx loss: [ 1.1427417e-02 -3.2243342e+00  3.2157931e+00  1.9964259e-03]] [Dz loss: [-1.1067545  -1.2603306  -0.16464555  0.03182218]] [G loss: [-2.7022994  -3.168769    0.21502557  0.02514395]]
+Epoch: 20/100, [Dx loss: [ 0.01036069 -1.5262187   1.5141816   0.0022398 ]] [Dz loss: [-1.0686427  -1.0026351  -0.3647334   0.02987275]] [G loss: [-0.82436746 -1.488568    0.40830937  0.02558913]]
+Epoch: 21/100, [Dx loss: [ 0.0880172   1.8035426  -1.8634346   0.01479082]] [Dz loss: [-1.0870972  -0.84991366 -0.5447311   0.03075485]] [G loss: [2.6480572  1.7929775  0.6019804  0.02530987]]
+Epoch: 22/100, [Dx loss: [ 7.5822207e-03  1.2076563e+01 -1.2090034e+01  2.1037541e-03]] [Dz loss: [-0.98291886 -0.7641694  -0.52663094  0.03078821]] [G loss: [12.920187   12.097281    0.57434875  0.0248553 ]]
+Epoch: 23/100, [Dx loss: [ 8.2734097e-03  6.5580673e+00 -6.5791459e+00  2.9337103e-03]] [Dz loss: [-0.9453782   0.11191019 -1.3528837   0.0295596 ]] [G loss: [8.216912   6.5739646  1.4003131  0.02426321]]
+Epoch: 24/100, [Dx loss: [ 0.06268013  1.0789138  -1.0703375   0.00541026]] [Dz loss: [-0.93811154 -0.5603166  -0.68153846  0.0303742 ]] [G loss: [2.0729911  1.1045314  0.72770613 0.02407555]]
+Epoch: 25/100, [Dx loss: [-0.01185096 -0.70739156  0.65735656  0.00381841]] [Dz loss: [-0.9347604   0.37374532 -1.6041008   0.02955976]] [G loss: [ 1.2111517  -0.69167     1.6629899   0.02398317]]
+Epoch: 26/100, [Dx loss: [ 0.8418812  1.5839523 -1.6639849  0.0921912]] [Dz loss: [-0.89943916 -0.4926168  -0.71069854  0.03038746]] [G loss: [2.6714203  1.6717842  0.76199377 0.02376419]]
+Epoch: 27/100, [Dx loss: [ 0.08740529 -2.6996024   2.7377818   0.00492191]] [Dz loss: [-0.8855699   0.4298855  -1.6033579   0.02878994]] [G loss: [-0.84196657 -2.7124445   1.63912     0.0231356 ]]
+Epoch: 28/100, [Dx loss: [ 0.01356867 -2.311611    2.3011267   0.00240523]] [Dz loss: [-0.8736436   0.5387105  -1.7005916   0.02882384]] [G loss: [-0.36137813 -2.3397212   1.746752    0.02315912]]
+Epoch: 29/100, [Dx loss: [ 0.31622592 -6.704225    6.686464    0.03339914]] [Dz loss: [-0.8776561  -0.26975697 -0.88809115  0.02801932]] [G loss: [-5.4799695  -6.6356      0.9226157   0.02330173]]
+Epoch: 30/100, [Dx loss: [ 5.0211087e-02 -6.8334250e+00  6.8566971e+00  2.6948354e-03]] [Dz loss: [-0.80553967  0.73742175 -1.82614     0.02831776]] [G loss: [-4.6879797 -6.782334   1.8631871  0.023117 ]]
+Epoch: 31/100, [Dx loss: [-0.01784873 -0.90320385  0.8648507   0.00205127]] [Dz loss: [-0.83209974 -0.19984663 -0.91733336  0.02850794]] [G loss: [ 0.26221249 -0.919581    0.95341057  0.02283808]]
+Epoch: 32/100, [Dx loss: [ 0.04145075 -5.1764703   5.15004     0.0067873 ]] [Dz loss: [-0.78800803  0.0667752  -1.1309938   0.02762115]] [G loss: [-3.7663743  -5.1551404   1.1578716   0.02308923]]
+Epoch: 33/100, [Dx loss: [ 2.86510345e-02  1.03646965e+01 -1.03566999e+01  2.06406903e-03]] [Dz loss: [-0.73044026  1.3441466  -2.347815    0.02732277]] [G loss: [13.007798   10.4008875   2.385064    0.02218443]]
+Epoch: 34/100, [Dx loss: [ 0.5370569 -2.266595   2.285617   0.0518032]] [Dz loss: [-0.7445807   1.0571626  -2.0661807   0.02644367]] [G loss: [ 0.0137313  -2.3077452   2.1010213   0.02204528]]
+Epoch: 35/100, [Dx loss: [-7.7397830e-04 -1.1587748e+01  1.1558374e+01  2.8595736e-03]] [Dz loss: [-0.73470026  2.22053    -3.221108    0.02658741]] [G loss: [ -8.100573   -11.573924     3.2491286    0.02242239]]
+Epoch: 36/100, [Dx loss: [ 7.6476276e-02 -9.9776354e+00  1.0002728e+01  5.1385453e-03]] [Dz loss: [-0.68738407  1.4045353  -2.3627725   0.02708557]] [G loss: [-7.344849  -9.961761   2.3931751  0.0223735]]
+Epoch: 37/100, [Dx loss: [ 3.9363094e-02  1.7391903e+01 -1.7369999e+01  1.7440087e-03]] [Dz loss: [-0.6268232   2.0339334  -2.9191134   0.02583544]] [G loss: [20.56765    17.40354     2.9499407   0.02141693]]
+Epoch: 38/100, [Dx loss: [ 0.02301915 -0.27593032  0.24992222  0.00490296]] [Dz loss: [-0.592263    0.90932155 -1.7645776   0.02629919]] [G loss: [ 1.7282126  -0.28139418  1.7944958   0.02151094]]
+Epoch: 39/100, [Dx loss: [-1.6840659e-02 -5.1651239e+00  5.1220193e+00  2.6266142e-03]] [Dz loss: [-0.598196    0.81788677 -1.6733193   0.02572329]] [G loss: [-3.1930122 -5.106836   1.6984516  0.0215372]]
+Epoch: 40/100, [Dx loss: [ 0.21823654 -5.4401917   5.4694705   0.01889629]] [Dz loss: [-0.60756207  1.8034443  -2.6662846   0.02552766]] [G loss: [-2.6215718  -5.5246224   2.6944518   0.02085977]]
+Epoch: 41/100, [Dx loss: [ 9.333821e-03 -7.663573e+00  7.628551e+00  4.436316e-03]] [Dz loss: [-0.5899768   1.1457497  -1.983327    0.02475999]] [G loss: [-5.364949   -7.579323    2.0085335   0.02058407]]
+Epoch: 42/100, [Dx loss: [ 0.32169598 -1.1008612   1.0514119   0.03711444]] [Dz loss: [-0.5520896   1.2726374  -2.0738194   0.02490898]] [G loss: [ 1.2213292  -1.1007538   2.1098108   0.02122731]]
+Epoch: 43/100, [Dx loss: [ 4.3663196e-02 -3.9830444e+00  3.9978411e+00  2.8868525e-03]] [Dz loss: [-0.560963    2.198407   -3.0139282   0.02545651]] [G loss: [-0.7322239  -3.9881942   3.0483623   0.02076085]]
+Epoch: 44/100, [Dx loss: [ 1.8774973e-02 -5.2892075e+00  5.2834682e+00  2.4517598e-03]] [Dz loss: [-0.53653586  2.0952792  -2.8900075   0.02581941]] [G loss: [-2.1570413  -5.2747874   2.9075348   0.02102065]]
+Epoch: 45/100, [Dx loss: [ 0.02246136 -0.82916456  0.8326094   0.00190196]] [Dz loss: [-0.55830306  1.6140841  -2.4284074   0.02560192]] [G loss: [ 1.8241882  -0.8373315   2.4570327   0.02044859]]
+Epoch: 46/100, [Dx loss: [ 0.05358382  6.4590893  -6.490508    0.00850011]] [Dz loss: [-0.5730971   2.5278857  -3.3652503   0.02642693]] [G loss: [10.119477    6.5277786   3.392542    0.01991589]]
+Epoch: 47/100, [Dx loss: [ 0.11011156 -0.09747418  0.06127115  0.01463121]] [Dz loss: [-0.54576397  0.99148256 -1.7849021   0.0247654 ]] [G loss: [ 1.7932951  -0.22146147  1.8106427   0.02041136]]
+Epoch: 48/100, [Dx loss: [ 0.46544066 -5.5927377   5.5572443   0.05009508]] [Dz loss: [-0.5517731   3.3212998  -4.1338263   0.02607552]] [G loss: [-1.1971861  -5.557592    4.1618505   0.01985537]]
+Epoch: 49/100, [Dx loss: [ 2.6778033e-02  3.3617001e+00 -3.3571308e+00  2.2205771e-03]] [Dz loss: [-0.50227296  4.718646   -5.4789467   0.02580258]] [G loss: [9.0434265  3.3576021  5.492784   0.01930405]]
+Epoch: 50/100, [Dx loss: [  0.3834599   12.747903   -12.790182     0.04257552]] [Dz loss: [-0.52302915  3.0351667  -3.816056    0.02578602]] [G loss: [16.867296   12.818204    3.8512726   0.01978191]]
+Epoch: 51/100, [Dx loss: [ 6.5568939e-02 -1.6632645e+01  1.6593208e+01  1.0501873e-02]] [Dz loss: [-0.53355604  1.1350435  -1.9224653   0.0253866 ]] [G loss: [-14.395598   -16.5315       1.9414922    0.01943959]]
+Epoch: 52/100, [Dx loss: [ 2.8078767e-02 -4.3599358e+00  4.3555956e+00  3.2416964e-03]] [Dz loss: [-0.501705    3.058574   -3.8104281   0.02501475]] [G loss: [-0.35052583 -4.3842316   3.8338068   0.01998994]]
+Epoch: 53/100, [Dx loss: [ 0.10097165 -4.3381014   4.2860317   0.0153042 ]] [Dz loss: [-0.51164865  2.2263203  -2.988548    0.02505748]] [G loss: [-1.1364692  -4.3421893   3.016454    0.01892659]]
+Epoch: 54/100, [Dx loss: [ 0.04096286  4.2136655  -4.269005    0.00962983]] [Dz loss: [-0.5325443   0.6783521  -1.4579637   0.02470672]] [G loss: [5.936952   4.268721   1.4817847  0.01864467]]
+Epoch: 55/100, [Dx loss: [ 6.6539526e-02  1.5287933e+01 -1.5239451e+01  1.8034088e-03]] [Dz loss: [-0.48139796  3.3410525  -4.0674295   0.02449764]] [G loss: [1.9546091e+01 1.5254822e+01 4.1023002e+00 1.8896913e-02]]
+Epoch: 56/100, [Dx loss: [ 0.37506893  3.651256   -3.694528    0.04183258]] [Dz loss: [-0.4696576   1.8823272  -2.6072016   0.02552177]] [G loss: [6.4823995  3.665668   2.6235385  0.01931956]]
+Epoch: 57/100, [Dx loss: [ 3.1056698e-02 -1.1150144e+01  1.1162931e+01  1.8296172e-03]] [Dz loss: [-0.4750386  5.436595  -6.153701   0.0242069]] [G loss: [ -4.7496386 -11.118032    6.180878    0.0187517]]
+Epoch: 58/100, [Dx loss: [  1.3474427  -17.605328    17.53957      0.14132181]] [Dz loss: [-0.50147706  3.022507   -3.7753294   0.02513495]] [G loss: [-13.626156   -17.616903     3.804726     0.01860129]]
+Epoch: 59/100, [Dx loss: [ 0.05665014 -1.4405638   1.4601716   0.00370389]] [Dz loss: [-0.47895613  3.1304948  -3.8643622   0.02549086]] [G loss: [ 2.6474395  -1.4316      3.8862944   0.01927431]]
+Epoch: 60/100, [Dx loss: [-1.4804179e-02  4.3697748e+00 -4.4034805e+00  1.8899790e-03]] [Dz loss: [-0.4628125   3.280076   -3.9899704   0.02470854]] [G loss: [8.470379   4.2688103  4.0193806  0.01821891]]
+Epoch: 61/100, [Dx loss: [ 0.10021963 -4.341854    4.3357043   0.01063691]] [Dz loss: [-0.47165805  2.0258605  -2.7496157   0.02520977]] [G loss: [-1.5028721 -4.471708   2.7841797  0.0184658]]
+Epoch: 62/100, [Dx loss: [ 0.13429935  0.07996243 -0.10408784  0.01584255]] [Dz loss: [-0.45786     4.1835847  -4.8954487   0.02540002]] [G loss: [5.2033224  0.09244692 4.9263916  0.01844852]]
+Epoch: 63/100, [Dx loss: [ 0.21725377 -4.084426    4.0701623   0.02315201]] [Dz loss: [-0.4292863   4.5197616  -5.200954    0.02519101]] [G loss: [ 1.3783494  -4.0433893   5.238174    0.01835694]]
+Epoch: 64/100, [Dx loss: [ 3.6973115e-02 -8.2885628e+00  8.3036432e+00  2.1900018e-03]] [Dz loss: [-0.46427688  5.0585685  -5.7710056   0.02481507]] [G loss: [-2.2743206  -8.251005    5.794286    0.01823948]]
+Epoch: 65/100, [Dx loss: [ 0.7568344  -4.7236176   4.737189    0.07432605]] [Dz loss: [-0.43863636  3.975039   -4.666861    0.0253196 ]] [G loss: [ 0.2865691  -4.585466    4.6876764   0.01843601]]
+Epoch: 66/100, [Dx loss: [ 3.1809501e-02  1.9089775e+01 -1.9099466e+01  4.1505904e-03]] [Dz loss: [-0.5035678   4.8426433  -5.601851    0.02556436]] [G loss: [2.4905060e+01 1.9092253e+01 5.6245909e+00 1.8820519e-02]]
+Epoch: 67/100, [Dx loss: [ 3.2127153e-02  1.6359541e+01 -1.6351540e+01  2.4098032e-03]] [Dz loss: [-0.49858207  4.4352784  -5.18975     0.02558937]] [G loss: [2.1739546e+01 1.6334885e+01 5.2190213e+00 1.8563328e-02]]
+Epoch: 68/100, [Dx loss: [ 3.851868e-02  7.801621e+00 -7.784793e+00  2.168687e-03]] [Dz loss: [-0.46851116  3.303794   -4.021378    0.0249077 ]] [G loss: [12.033682    7.7994885   4.045576    0.01886193]]
+Epoch: 69/100, [Dx loss: [  0.4694459   10.888026   -10.864403     0.04458186]] [Dz loss: [-0.4280903   3.4889169  -4.15824     0.02412381]] [G loss: [15.199008   10.840277    4.179129    0.01795967]]
+Epoch: 70/100, [Dx loss: [ 2.2050478e-02  9.2782564e+00 -9.2933102e+00  3.7109631e-03]] [Dz loss: [-0.44977626  3.3277242  -4.026444    0.02489391]] [G loss: [13.527057    9.298926    4.048534    0.01795987]]
+Epoch: 71/100, [Dx loss: [ 4.6592645e-02  3.5203824e+00 -3.4903841e+00  1.6589563e-03]] [Dz loss: [-0.44617656  1.7824217  -2.4752512   0.02466586]] [G loss: [6.1817465  3.523348   2.480313   0.01780869]]
+Epoch: 72/100, [Dx loss: [ 0.26416963  8.731519   -8.713431    0.02460723]] [Dz loss: [-0.40433457  2.8301015  -3.475377    0.0240938 ]] [G loss: [12.480875    8.785456    3.513253    0.01821606]]
+Epoch: 73/100, [Dx loss: [ 0.1162512   5.037947   -5.0085597   0.00868728]] [Dz loss: [-0.44825995  3.0224557  -3.7187767   0.02480562]] [G loss: [8.945032   5.027027   3.73883    0.01791685]]
+Epoch: 74/100, [Dx loss: [ 0.56207234  4.448287   -4.4554367   0.05692181]] [Dz loss: [-0.43217447  2.068879   -2.7529821   0.02519279]] [G loss: [7.433593   4.474333   2.7812867  0.01779726]]
+Epoch: 75/100, [Dx loss: [-5.1190522e-03  1.1416615e+01 -1.1440147e+01  1.8406851e-03]] [Dz loss: [-0.4633218  3.7053995 -4.423176   0.0254451]] [G loss: [16.156633   11.532303    4.449463    0.01748743]]
+Epoch: 76/100, [Dx loss: [ 1.0130129   6.794128   -6.7846527   0.10035405]] [Dz loss: [-0.48918974  2.769462   -3.5115886   0.025294  ]] [G loss: [10.422838    6.702952    3.5421817   0.01777067]]
+Epoch: 77/100, [Dx loss: [ 0.0171134  -3.3140879   3.2943196   0.00368819]] [Dz loss: [-0.42075792  2.4608164  -3.131407    0.02498322]] [G loss: [ 0.06218215 -3.274292    3.1568756   0.01796004]]
+Epoch: 78/100, [Dx loss: [ 8.0055043e-02 -2.0600853e+01  2.0650393e+01  3.0515937e-03]] [Dz loss: [-0.46319875  3.3556108  -4.075582    0.02567776]] [G loss: [-1.6357584e+01 -2.0617382e+01  4.0888062e+00  1.7101230e-02]]
+Epoch: 79/100, [Dx loss: [ 0.23290391 -4.174995    4.1144996   0.02933837]] [Dz loss: [-0.44093403  2.8539233  -3.553572    0.02587192]] [G loss: [-0.3013913  -4.0469766   3.5727775   0.01728082]]
+Epoch: 80/100, [Dx loss: [-4.4005156e-02  1.5888859e+01 -1.5958495e+01  2.5646891e-03]] [Dz loss: [-0.39813474  2.4315264  -3.0801203   0.02504578]] [G loss: [1.9340908e+01 1.6055079e+01 3.1141429e+00 1.7167963e-02]]
+Epoch: 81/100, [Dx loss: [  2.3228333   17.021763   -16.983727     0.22848001]] [Dz loss: [-0.44708225  0.7922111  -1.492295    0.02530011]] [G loss: [1.8739058e+01 1.7058546e+01 1.5114790e+00 1.6905766e-02]]
+Epoch: 82/100, [Dx loss: [ 1.1240785e-01 -1.5080908e+01  1.5095191e+01  9.8112868e-03]] [Dz loss: [-0.4290505   0.68761224 -1.3738395   0.02571763]] [G loss: [-13.481471   -15.049843     1.3900201    0.01783475]]
+Epoch: 83/100, [Dx loss: [ 4.6185870e-02 -1.5188436e+01  1.5194357e+01  4.0284507e-03]] [Dz loss: [-0.4071199   3.8678257  -4.5267253   0.02517844]] [G loss: [-10.342953   -15.065176     4.5516257    0.01705934]]
+Epoch: 84/100, [Dx loss: [ 0.0024281  -1.7629251   1.6885518   0.00768061]] [Dz loss: [-0.44972223  2.9592984  -3.6704955   0.02614785]] [G loss: [ 2.2548356  -1.5988588   3.6835358   0.01701599]]/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+driver.py:85: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  df_fs["Normal/Attack"] = y
+driver.py:86: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  df_fs["timestamp"] = timestamp
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+driver.py:92: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  df["Normal/Attack"] = y
+driver.py:93: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  df["timestamp"] = timestamp
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/numpy/lib/function_base.py:2530: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/numpy/lib/function_base.py:2531: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+2021-12-13 14:53:06.235246: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-13 14:53:06.264346: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-13 14:53:06.301292: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-13 14:53:06.373569: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_17/model_37_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_17/model_37_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-13 14:53:06.609077: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_17/model_37_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_17/model_37_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-13 14:53:06.638237: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-13 14:53:06.664160: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-13 14:53:06.690893: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+
+Epoch: 85/100, [Dx loss: [ 0.29885727  0.5841641  -0.60267234  0.03173666]] [Dz loss: [-0.42267862  0.87462515 -1.5553422   0.02580377]] [G loss: [2.4674098  0.7068025  1.5843753  0.01762315]]
+Epoch: 86/100, [Dx loss: [ 1.8842191e-02  3.6564112e+00 -3.6678245e+00  3.0261078e-03]] [Dz loss: [-0.45887023  2.6038215  -3.3157737   0.02530853]] [G loss: [7.2514052  3.724515   3.341569   0.01853193]]
+Epoch: 87/100, [Dx loss: [ 0.3273063   7.9365063  -7.958375    0.03491702]] [Dz loss: [-0.44709364  1.1135681  -1.8185538   0.02578967]] [G loss: [10.019726    7.9994335   1.8375742   0.01827262]]
+Epoch: 88/100, [Dx loss: [ 7.5103447e-02  9.3540545e+00 -9.3034382e+00  2.4495318e-03]] [Dz loss: [-0.42106086  1.8190272  -2.4931378   0.02530472]] [G loss: [12.092869    9.389434    2.5296812   0.01737585]]
+Epoch: 89/100, [Dx loss: [ 0.07828229  1.0039954  -1.0305      0.01047828]] [Dz loss: [-0.4349198   2.6903746  -3.378953    0.02536575]] [G loss: [4.747322   1.1564188  3.4131734  0.01777286]]
+Epoch: 90/100, [Dx loss: [ 1.6136086e-02  8.9786558e+00 -8.9930582e+00  3.0538593e-03]] [Dz loss: [-0.42440727  2.8209076  -3.4906232   0.02453067]] [G loss: [12.696773    8.996807    3.5267997   0.01731591]]
+Epoch: 91/100, [Dx loss: [ 0.35064113 -1.3312198   1.3097194   0.03721352]] [Dz loss: [-0.39884752  3.6752653  -4.3222623   0.02481483]] [G loss: [ 3.2962632  -1.2321367   4.3602357   0.01681636]]
+Epoch: 92/100, [Dx loss: [ 3.7736878e-02 -2.0448214e+01  2.0465790e+01  2.0147483e-03]] [Dz loss: [-0.42436463  4.381456   -5.0598416   0.02540282]] [G loss: [-1.5288462e+01 -2.0556072e+01  5.0986686e+00  1.6893527e-02]]
+Epoch: 93/100, [Dx loss: [ 9.2344791e-02 -2.2381096e+01  2.2394495e+01  7.8943074e-03]] [Dz loss: [-0.41583434  2.485041   -3.1558626   0.02549833]] [G loss: [-1.8956978e+01 -2.2295229e+01  3.1691797e+00  1.6906496e-02]]
+Epoch: 94/100, [Dx loss: [ 0.09908907  4.3114195  -4.3075438   0.00952184]] [Dz loss: [-0.41006547  2.9182444  -3.5824707   0.02541599]] [G loss: [8.159144   4.3739457  3.620513   0.01646812]]
+Epoch: 95/100, [Dx loss: [ 0.40378705  2.3955095  -2.4164436   0.04247211]] [Dz loss: [-0.38845676  3.8099306  -4.4431295   0.02447389]] [G loss: [7.117357   2.484127   4.4694643  0.01637702]]
+Epoch: 96/100, [Dx loss: [-1.9021811e-02  8.3800192e+00 -8.4375553e+00  3.8520256e-03]] [Dz loss: [-0.39364406  1.8639737  -2.5103705   0.02527559]] [G loss: [11.099182    8.396627    2.5362787   0.01662722]]
+Epoch: 97/100, [Dx loss: [ 0.06807546  0.70268863 -0.65622973  0.00216168]] [Dz loss: [-0.39882132  2.2071733  -2.8584955   0.02524981]] [G loss: [3.761639   0.70718163 2.884807   0.01696505]]
+Epoch: 98/100, [Dx loss: [ 0.334597   -0.36153442  0.3579278   0.03382045]] [Dz loss: [-0.37671968  3.2613134  -3.8838372   0.02458044]] [G loss: [ 3.7572677  -0.32028013  3.9083793   0.01691693]]
+Epoch: 99/100, [Dx loss: [ 0.08037736 -0.13620311  0.13046145  0.00861151]] [Dz loss: [-0.41175488  2.6946867  -3.3516927   0.02452475]] [G loss: [ 3.4470625  -0.08647019  3.3640537   0.01694852]]
+Epoch: 100/100, [Dx loss: [  0.7915147 -10.062731   10.051167    0.0803094]] [Dz loss: [-0.3535768   0.28286016 -0.8794046   0.02429671]] [G loss: [ -9.037656   -10.114241     0.90177053   0.01748153]]
+
+bare_score:  0 / 4458
+fs_score:  0 / 4458
+pca_09_score:  NO ANOMALIES FOUND
+ae_score:  0 / 4458
+
+ROW COUNT:  281199
+
+
+df_fs.shape:  (281199, 28)
+
+pca.n_components_:  5
+
+df_pca_dim.shape:  (281199, 5)
+
+pca.n_components_:  23
+
+df_pca_var.shape:  (281199, 23)
+
+X_ae.shape:  (281199, 26)
+
+Training for PCA for 5 dimensions
+
+Epoch: 1/100, [Dx loss: [-0.30884808 -3.3614075   2.974948    0.00776131]] [Dz loss: [-1.4688107   0.29303515 -2.3928745   0.06310269]] [G loss: [ 0.4341025  -2.9733438   2.8550844   0.05523641]]
+Epoch: 2/100, [Dx loss: [-1.2932882e-01 -7.2006116e+00  7.0183692e+00  5.2913879e-03]] [Dz loss: [-2.3641877  -1.9510628  -0.77254325  0.03594161]] [G loss: [-5.8680735  -7.018602    0.82853884  0.03219883]]
+Epoch: 3/100, [Dx loss: [-8.795279e-02 -9.413784e+00  9.283158e+00  4.267617e-03]] [Dz loss: [-2.4008095   2.9922352  -5.8159757   0.04229353]] [G loss: [-3.1444     -9.271226    5.8499064   0.02769137]]
+Epoch: 4/100, [Dx loss: [-7.9925880e-02 -1.2708192e+01  1.2585013e+01  4.3271859e-03]] [Dz loss: [-2.4687417   0.82014126 -3.702832    0.04139438]] [G loss: [ -8.5770235  -12.572417     3.7315333    0.02638611]]
+Epoch: 5/100, [Dx loss: [-1.3731103e-01 -1.2037134e+01  1.1843227e+01  5.6587467e-03]] [Dz loss: [-2.4560902   1.3892443  -4.259225    0.04138862]] [G loss: [ -7.1184006 -11.842009    4.2973695   0.0426245]]
+Epoch: 6/100, [Dx loss: [-7.3122755e-02 -1.5788925e+01  1.5669215e+01  4.6604178e-03]] [Dz loss: [-2.4584043   1.5713519  -4.435731    0.04059834]] [G loss: [-10.920955   -15.662504     4.468575     0.02729842]]
+Epoch: 7/100, [Dx loss: [-9.4191305e-02 -1.3456490e+01  1.3314601e+01  4.7700675e-03]] [Dz loss: [-2.4265733   0.96500164 -3.7986715   0.04070963]] [G loss: [ -9.166655   -13.301225     3.8333635    0.03012046]]
+Epoch: 8/100, [Dx loss: [-5.0174534e-02 -1.4099277e+01  1.4006051e+01  4.3025953e-03]] [Dz loss: [-2.3454716   1.7985548  -4.5456667   0.04016392]] [G loss: [ -9.065479   -13.969793     4.578657     0.03256546]]
+Epoch: 9/100, [Dx loss: [-5.3859260e-02 -1.0596410e+01  1.0500687e+01  4.1870335e-03]] [Dz loss: [-2.0931811   2.1084986  -4.5851774   0.03834964]] [G loss: [ -5.659249  -10.572297    4.6296115   0.0283437]]
+Epoch: 10/100, [Dx loss: [-3.8264487e-02 -1.7657791e+01  1.7567001e+01  5.2526258e-03]] [Dz loss: [-2.0854769   2.0412843  -4.5188513   0.03920908]] [G loss: [-12.47649    -17.522264     4.587245     0.04585207]]
+Epoch: 11/100, [Dx loss: [-3.1445242e-02 -6.5646472e+00  6.4899344e+00  4.3269582e-03]] [Dz loss: [-2.1547115   2.0462024  -4.5835958   0.03826804]] [G loss: [-1.6011121  -6.4901953   4.6279626   0.02611167]]
+Epoch: 12/100, [Dx loss: [-6.9418259e-02 -1.1311248e+01  1.1185263e+01  5.6551844e-03]] [Dz loss: [-2.482134    3.601932   -6.5241003   0.04400408]] [G loss: [ -4.1328907  -11.025705     6.5587792    0.03340341]]
+Epoch: 13/100, [Dx loss: [-2.1893924e-02 -7.3565741e+00  7.2905149e+00  4.4168062e-03]] [Dz loss: [-2.1712148   0.92277145 -3.483878    0.03898926]] [G loss: [-3.5259075  -7.3018036   3.513171    0.02627266]]
+Epoch: 14/100, [Dx loss: [ 1.5407270e-02  2.7718781e+01 -2.7749249e+01  4.5855199e-03]] [Dz loss: [-2.085938    1.3976277  -3.882356    0.03988007]] [G loss: [3.2206730e+01 2.8035030e+01 3.9114065e+00 2.6027407e-02]]
+Epoch: 15/100, [Dx loss: [ 1.8943399e-02  3.4814903e+01 -3.4837631e+01  4.1725244e-03]] [Dz loss: [-1.9705622  -0.48420733 -1.8639787   0.03776219]] [G loss: [3.6972301e+01 3.4837536e+01 1.9002277e+00 2.3449961e-02]]
+Epoch: 16/100, [Dx loss: [ 0.02504206  2.1805112  -2.1899433   0.00344809]] [Dz loss: [-1.9385165 -0.416618  -1.8918614  0.0369966]] [G loss: [4.263309   2.1327634  1.9221771  0.02083721]]
+Epoch: 17/100, [Dx loss: [ 6.6889547e-02  6.0809078e+00 -6.0476909e+00  3.3665388e-03]] [Dz loss: [-1.8953344   0.48675802 -2.7453892   0.03632958]] [G loss: [8.984198   5.9969053  2.7818658  0.02054138]]
+Epoch: 18/100, [Dx loss: [ 0.02860625  2.6176019  -2.6237955   0.00347972]] [Dz loss: [-1.8133675   1.5514483  -3.7272673   0.03624482]] [G loss: [6.4995804  2.5453768  3.747345   0.02068615]]
+Epoch: 19/100, [Dx loss: [ 0.02171648 -1.7893034   1.7732898   0.00377315]] [Dz loss: [-1.5605303   1.8955653  -3.8046122   0.03485073]] [G loss: [ 2.1434078  -1.8934152   3.834851    0.02019705]]
+Epoch: 20/100, [Dx loss: [ 4.6940174e-02 -8.2042131e+00  8.2090025e+00  4.2145094e-03]] [Dz loss: [-0.8135991   0.5326489  -1.6128418   0.02665902]] [G loss: [-6.2337537  -8.152458    1.6913705   0.02273309]]
+Epoch: 21/100, [Dx loss: [ 4.0540703e-02 -1.4495246e+01  1.4495261e+01  4.0521123e-03]] [Dz loss: [-0.7707553   1.4424309  -2.4650898   0.02519067]] [G loss: [-11.7728     -14.485983     2.500369     0.02128082]]
+Epoch: 22/100, [Dx loss: [ 5.7036523e-02 -1.9262930e+01  1.9261118e+01  5.8889142e-03]] [Dz loss: [-0.65435266  0.6521579  -1.5456731   0.02391647]] [G loss: [-1.7408678e+01 -1.9194727e+01  1.5951475e+00  1.9091468e-02]]
+Epoch: 23/100, [Dx loss: [ 0.02462348  4.1851153  -4.204405    0.00439066]] [Dz loss: [-0.53495187  2.3947272  -3.171736    0.0242055 ]] [G loss: [7.673015   4.25221    3.2134387  0.02073685]]
+Epoch: 24/100, [Dx loss: [-0.00643891 -2.3895464   2.338342    0.00447661]] [Dz loss: [-0.49148595  1.2872071  -2.0129306   0.02342357]] [G loss: [-0.06436634 -2.3003106   2.0540526   0.0181893 ]]
+Epoch: 25/100, [Dx loss: [ 1.0557566e-02  3.4497448e+01 -3.4539532e+01  5.2558258e-03]] [Dz loss: [-0.40085098  1.1850522  -1.8207508   0.02348495]] [G loss: [3.6470127e+01 3.4431755e+01 1.8555328e+00 1.8278716e-02]]
+Epoch: 26/100, [Dx loss: [ 6.99541867e-02 -1.35384912e+01  1.35612545e+01  4.71770903e-03]] [Dz loss: [-0.41522762  2.7581203  -3.411987    0.02386367]] [G loss: [-10.095563   -13.71548      3.443735     0.01761902]]
+Epoch: 27/100, [Dx loss: [-5.9905284e-05  1.9463612e+01 -1.9506014e+01  4.2314907e-03]] [Dz loss: [-0.3794937   1.3568066  -1.9689658   0.02326684]] [G loss: [2.1771156e+01 1.9597782e+01 2.0024815e+00 1.7089639e-02]]
+Epoch: 28/100, [Dx loss: [-2.1757089e-02  1.3042891e+01 -1.3132745e+01  6.8077170e-03]] [Dz loss: [-0.3928525  2.3045127 -2.914796   0.0217432]] [G loss: [1.6234341e+01 1.3120002e+01 2.9585876e+00 1.5575637e-02]]
+Epoch: 29/100, [Dx loss: [ 4.8476858e-03 -1.7040285e+01  1.6984867e+01  6.0247425e-03]] [Dz loss: [-0.916222    0.97405267 -2.1271207   0.02368463]] [G loss: [-1.4804232e+01 -1.7154293e+01  2.1934426e+00  1.5662018e-02]]
+Epoch: 30/100, [Dx loss: [ 0.08597141 -2.828403    2.8523479   0.00620286]] [Dz loss: [-0.4415167   3.0999513  -3.7315876   0.01901165]] [G loss: [ 1.2914115  -2.6168957   3.7644053   0.01438993]]
+Epoch: 31/100, [Dx loss: [ 1.1704959e-01  3.2743637e+01 -3.2672699e+01  4.6090065e-03]] [Dz loss: [-0.34790006  2.0173187  -2.5868573   0.02216348]] [G loss: [3.5468361e+01 3.2708370e+01 2.6152151e+00 1.4477992e-02]]
+Epoch: 32/100, [Dx loss: [ 1.6632420e-01  2.6671324e+01 -2.6553360e+01  4.8347730e-03]] [Dz loss: [-0.43562174  2.0196981  -2.6668136   0.02114947]] [G loss: [2.9612667e+01 2.6760689e+01 2.6953831e+00 1.5658962e-02]]
+Epoch: 33/100, [Dx loss: [-2.9001463e-02 -1.4445468e+01  1.4348075e+01  6.8389722e-03]] [Dz loss: [-0.37973812  1.6769408  -2.2394357   0.01827566]] [G loss: [-1.1928987e+01 -1.4319201e+01  2.2593782e+00  1.3082857e-02]]
+Epoch: 34/100, [Dx loss: [ 1.3074340e-01  1.0021126e+01 -9.9345226e+00  4.4145915e-03]] [Dz loss: [-0.2733288   1.8842747  -2.3584406   0.02008445]] [G loss: [12.59062    10.088498    2.37394     0.01281853]]
+Epoch: 35/100, [Dx loss: [ 0.14081416 -2.856995    2.8840687   0.01137371]] [Dz loss: [-0.64305586  0.35042432 -1.2364647   0.02429868]] [G loss: [-1.458257   -2.868688    1.2704344   0.01399972]]
+Epoch: 36/100, [Dx loss: [  0.25660917  14.663453   -14.663248     0.02564024]] [Dz loss: [-0.741858    0.08639182 -1.0882297   0.02599797]] [G loss: [1.60741501e+01 1.48345852e+01 1.10486984e+00 1.34703545e-02]]
+Epoch: 37/100, [Dx loss: [ 3.5802655e-02  2.6618076e+01 -2.6650373e+01  6.8130707e-03]] [Dz loss: [-0.5882521   2.1845014  -3.0248463   0.02520877]] [G loss: [2.9930046e+01 2.6752855e+01 3.0469692e+00 1.3020041e-02]]
+Epoch: 38/100, [Dx loss: [ 1.6406730e-01 -1.0645999e+01  1.0747469e+01  6.2598633e-03]] [Dz loss: [-0.43116757  3.9627352  -4.6324825   0.02385846]] [G loss: [ -5.612719   -10.380691     4.6426373    0.01253323]]
+Epoch: 39/100, [Dx loss: [ 1.4385702e-01 -1.9295273e+01  1.9321524e+01  1.1763981e-02]] [Dz loss: [-0.3363722   2.5416873  -3.1161249   0.02380558]] [G loss: [-1.6142508e+01 -1.9391079e+01  3.1262569e+00  1.2231554e-02]]
+Epoch: 40/100, [Dx loss: [ 8.3542317e-02 -2.5452993e+01  2.5483471e+01  5.3058011e-03]] [Dz loss: [-0.26620716  2.8116524  -3.314013    0.02361525]] [G loss: [-2.1922787e+01 -2.5383547e+01  3.3305564e+00  1.3023443e-02]]
+Epoch: 41/100, [Dx loss: [ 9.7132139e-02  3.6150455e+01 -3.6140713e+01  8.7395087e-03]] [Dz loss: [-0.26581815  2.656874   -3.145431    0.02227402]] [G loss: [3.9957294e+01 3.6661732e+01 3.1646972e+00 1.3086675e-02]]
+Epoch: 42/100, [Dx loss: [ 5.5599649e-02  3.5526035e+01 -3.5522034e+01  5.1618181e-03]] [Dz loss: [-0.29051667  2.2427757  -2.7566938   0.02234049]] [G loss: [3.8407848e+01 3.5504646e+01 2.7644458e+00 1.3874209e-02]]
+Epoch: 43/100, [Dx loss: [ 0.15968828 -6.524482    6.5865397   0.00976233]] [Dz loss: [-0.30548623  3.30873    -3.8457303   0.02315128]] [G loss: [-2.510822   -6.512409    3.865762    0.01358313]]
+Epoch: 44/100, [Dx loss: [ 2.1781254e-01 -8.8686699e+01  8.8604317e+01  3.0016314e-02]] [Dz loss: [-0.30294093  1.5893294  -2.1008563   0.0208585 ]] [G loss: [-8.5773804e+01 -8.8036407e+01  2.1252449e+00  1.3745050e-02]]
+Epoch: 45/100, [Dx loss: [-1.3732451e-01  1.9506784e+01 -1.9735893e+01  9.1842916e-03]] [Dz loss: [-0.20476294  1.4968857  -1.9154018   0.02137595]] [G loss: [2.1694057e+01 1.9633133e+01 1.9337339e+00 1.2719672e-02]]
+Epoch: 46/100, [Dx loss: [ 1.04537256e-01 -1.51179523e+01  1.51008720e+01  1.21625522e-02]] [Dz loss: [-0.26925698  2.1929474  -2.6924894   0.02302822]] [G loss: [-12.253949   -15.1214695    2.7123952    0.01551263]]
+Epoch: 47/100, [Dx loss: [ 1.4118493e-01 -3.7455956e+01  3.7543713e+01  5.3375987e-03]] [Dz loss: [-0.2646497   3.606388   -4.0845904   0.02135622]] [G loss: [-3.3564465e+01 -3.7830402e+01  4.1210551e+00  1.4485208e-02]]
+Epoch: 48/100, [Dx loss: [ 0.1873339   5.0486994  -4.9258533   0.00644897]] [Dz loss: [-0.25460583  2.8152053  -3.2936547   0.02238427]] [G loss: [8.454201   5.0179305  3.3108766  0.01253925]]
+Epoch: 49/100, [Dx loss: [ 9.4714634e-02 -6.3085399e+00  6.3527822e+00  5.0465339e-03]] [Dz loss: [-0.781674    1.7464426  -2.7683358   0.02402242]] [G loss: [-3.2876854  -6.259247    2.8182092   0.01533542]]
+Epoch: 50/100, [Dx loss: [ 1.2611556e-01  1.9433338e+01 -1.9377991e+01  7.0817377e-03]] [Dz loss: [-0.49431005  0.90052104 -1.5727746   0.01779425]] [G loss: [2.1427519e+01 1.9684679e+01 1.6329978e+00 1.0984171e-02]]
+Epoch: 51/100, [Dx loss: [ 0.16233     5.8882465  -5.841637    0.01157207]] [Dz loss: [-0.72161454  1.2198807  -2.1257715   0.01842774]] [G loss: [8.357559   6.049086   2.191534   0.01169326]]
+Epoch: 52/100, [Dx loss: [ 1.3206303e-01  4.7789780e+01 -4.7718079e+01  6.0277060e-03]] [Dz loss: [-0.8604575   0.8907374  -1.9248022   0.01736033]] [G loss: [4.98817596e+01 4.77607994e+01 2.00429845e+00 1.16652055e-02]]
+Epoch: 53/100, [Dx loss: [ 1.3631489e-02  1.3226956e+01 -1.3288466e+01  7.5158835e-03]] [Dz loss: [-1.1000663   1.2369963  -2.533898    0.01968323]] [G loss: [1.6198744e+01 1.3435289e+01 2.6384540e+00 1.2500236e-02]]
+Epoch: 54/100, [Dx loss: [ 0.12077545  3.4024992  -3.364513    0.00827841]] [Dz loss: [-0.9001538   1.015871   -2.0902812   0.01742577]] [G loss: [5.506448   3.2373018  2.1508439  0.01182976]]
+Epoch: 55/100, [Dx loss: [ 3.7634075e-01  3.2746967e+01 -3.2526241e+01  1.5558945e-02]] [Dz loss: [-0.9260636  -0.2510583  -0.8505017   0.01754967]] [G loss: [3.3871838e+01 3.2823475e+01 9.3686467e-01 1.1152243e-02]]
+Epoch: 56/100, [Dx loss: [-0.03123257  5.737457   -5.8423395   0.00736737]] [Dz loss: [-1.3272532   0.83918995 -2.3800814   0.02136363]] [G loss: [8.188174   5.598627   2.4828997  0.01066185]]
+Epoch: 57/100, [Dx loss: [  0.82756466  15.078129   -15.321585     0.1071023 ]] [Dz loss: [-1.2631439   0.77750325 -2.2474918   0.02068403]] [G loss: [1.8045856e+01 1.5595636e+01 2.3429532e+00 1.0726469e-02]]
+Epoch: 58/100, [Dx loss: [  1.2064385   23.986317   -24.031805     0.12519284]] [Dz loss: [-1.2499803  -0.30653507 -1.143428    0.01999837]] [G loss: [2.5242062e+01 2.3873119e+01 1.2526619e+00 1.1627522e-02]]
+Epoch: 59/100, [Dx loss: [  0.29668102 -19.2826      19.316021     0.02632368]] [Dz loss: [-1.3450148   0.7558589  -2.3090022   0.02081214]] [G loss: [-1.6809502e+01 -1.9331627e+01  2.4132860e+00  1.0884498e-02]]
+Epoch: 60/100, [Dx loss: [ 3.1126598e-01 -2.7438143e+01  2.7637541e+01  1.1190816e-02]] [Dz loss: [-1.3354053  -0.08464894 -1.4752928   0.02245342]] [G loss: [-2.5473555e+01 -2.7163864e+01  1.5698303e+00  1.2045503e-02]]
+Epoch: 61/100, [Dx loss: [ 0.10611665  8.767833   -8.78136     0.01196112]] [Dz loss: [-1.135291    0.17350827 -1.5005729   0.01917729]] [G loss: [10.627729    8.892697    1.6043019   0.01307319]]
+Epoch: 62/100, [Dx loss: [ 1.8313842e-01  2.0498293e+01 -2.0413778e+01  9.8539209e-03]] [Dz loss: [-1.0554991  -0.23680873 -0.9993227   0.01806325]] [G loss: [2.1926865e+01 2.0730692e+01 1.0878333e+00 1.0830803e-02]]

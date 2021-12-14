@@ -43,17 +43,17 @@ def select_features(df, y_binary):
     chi_feature = df_scl.loc[:,chi_support].columns.tolist()
 
     #rfe
-    rfe_selector = RFE(estimator=LogisticRegression(solver='lbfgs', multi_class='auto', max_iter=1000), n_features_to_select=len(feature_names), step=10, verbose=5)
-    rfe_selector.fit(X_norm, y_binary)
-    rfe_support = rfe_selector.get_support()
-    rfe_feature = df_scl.loc[:,rfe_support].columns.tolist()
+#     rfe_selector = RFE(estimator=LogisticRegression(solver='lbfgs', multi_class='auto', max_iter=1000), n_features_to_select=len(feature_names), step=10, verbose=5)
+#     rfe_selector.fit(X_norm, y_binary)
+#     rfe_support = rfe_selector.get_support()
+#     rfe_feature = df_scl.loc[:,rfe_support].columns.tolist()
 
     #logistic regression
-    embeded_lr_selector = SelectFromModel(LogisticRegression(solver='lbfgs', multi_class='auto', penalty="l2", max_iter=1000), max_features=len(feature_names))
-    embeded_lr_selector.fit(X_norm, y_binary)
+#     embeded_lr_selector = SelectFromModel(LogisticRegression(solver='lbfgs', multi_class='auto', penalty="l2", max_iter=1000), max_features=len(feature_names))
+#     embeded_lr_selector.fit(X_norm, y_binary)
 
-    embeded_lr_support = embeded_lr_selector.get_support()
-    embeded_lr_feature = df_scl.loc[:,embeded_lr_support].columns.tolist()
+#     embeded_lr_support = embeded_lr_selector.get_support()
+#     embeded_lr_feature = df_scl.loc[:,embeded_lr_support].columns.tolist()
 
     #random forest classifier
     embeded_rf_selector = SelectFromModel(RandomForestClassifier(n_estimators=100), max_features=len(feature_names))
@@ -64,7 +64,7 @@ def select_features(df, y_binary):
 
     #result
     # put all selection together
-    feature_selection_df = pd.DataFrame({'Feature':feature_names, 'Pearson':cor_support, 'Chi-2':chi_support, 'RFE':rfe_support, 'Logistics':embeded_lr_support,
+    feature_selection_df = pd.DataFrame({'Feature':feature_names, 'Pearson':cor_support, 'Chi-2':chi_support,
                                         'Random Forest':embeded_rf_support})
     # count the selected times for each feature
     feature_selection_df['Total'] = np.sum(feature_selection_df, axis=1)
