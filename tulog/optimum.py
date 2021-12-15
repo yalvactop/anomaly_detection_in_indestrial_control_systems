@@ -174,8 +174,8 @@ def run_tadgan(df, techniques):
     X_tsa_test, index_test = time_segments_aggregate(df_test, interval=1000000000, time_column='timestamp')
 
     imp = SimpleImputer()
-    X_imp_train = imp.fit_transform(X_tsa_train)
     X_imp_test = imp.fit_transform(X_tsa_test)
+    X_imp_train = imp.fit_transform(X_tsa_train)
 
     scaler = MinMaxScaler(feature_range=(-1, 1)) ## for the gradients to converge faster == try 0-1 StandardScaler()
     X_scl_train = scaler.fit_transform(X_imp_train)

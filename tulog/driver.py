@@ -9,17 +9,16 @@ import tensorflow as tf
 def main():
     
     signal = 'SWaT_Dataset_Normal_v1.csv'
-    df = pd.read_csv(signal)
-    rows = len(df.index)
-
-    df = df.iloc[21600:]
+    df_init = pd.read_csv(signal)
+    rows = len(df_init.index)
+    df = df_init.iloc[21600:rows]
     rows = rows - 21600
-    print(df.head())
+
     print()
     print("ROW COUNT: ", rows)
     print()
     y = df["Normal/Attack"]
-    timestamp = df["timestamp"]
+    timestamp = list(df["timestamp"])
     del df["Normal/Attack"]
     del df["timestamp"]
 
@@ -32,19 +31,21 @@ def main():
             y_binary.append(True)   #true == attack
 
     y_binary = np.array(y_binary)
+    print(y_binary)
 
-
-    #feature selection
-    #use the feature selection table to eliminate some features
-    feature_selection_df = select_features(df, y_binary)
-    selected_features = []
-    for i in range(1, len(feature_selection_df["Total"])):
-        if feature_selection_df["Total"][i] > 3:
-            selected_features.append(feature_selection_df["Feature"][i])
-    df_fs = df[selected_features]
-    print()
-    print("df_fs.shape: ", df_fs.shape)
-    print()
+#     #feature selection
+#     #use the feature selection table to eliminate some features
+#     feature_selection_df = select_features(df, y_binary)
+#     selected_features = []
+#     print(feature_selection_df["Total"])
+#     for i in range(1, len(feature_selection_df["Total"])):
+#         if feature_selection_df["Total"][i] > 3:
+#             selected_features.append(feature_selection_df["Feature"][i])
+#     df_fs = df[selected_features]
+#     print(df_fs)
+#     print("df_fs.shape: ", df_fs.shape)
+#     print()
+#     return
 
     #feature extraction
     #pca
@@ -63,35 +64,37 @@ def main():
     print("X_ae.shape: ", X_ae.shape)
 
     #try these different techniques and their combination with tadgan
-    df_pca_dim["Normal/Attack"] = y
+    df_pca_dim["Normal/Attack"] = y_binary
     df_pca_dim["timestamp"] = timestamp
+    print("df_pca_dim.head()")
+    print(df_pca_dim.head())
     print()
     print("Training for PCA for 5 dimensions")
     print()
-    pca_score = run_tadgan(df_pca_dim, str(rows) + "_rows_GPU_FINAL_pca_dim-5")
+    pca_dim_score = run_tadgan(df_pca_dim, str(rows) + "_rows_GPU_FINAL_pca_dim-5")
 
-    df_pca_var["Normal/Attack"] = y
+    df_pca_var["Normal/Attack"] = y_binary
     df_pca_var["timestamp"] = timestamp
     print()
     print("Training for PCA for .99 variance")
     print()
-    pca_score = run_tadgan(df_pca_var, str(rows) + "_rows_GPU_FINAL_rows_pca_var-099")
+    pca_var_score = run_tadgan(df_pca_var, str(rows) + "_rows_GPU_FINAL_rows_pca_var-099")
 
-    df_ae["Normal/Attack"] = y
+    df_ae["Normal/Attack"] = y_binary
     df_ae["timestamp"] = timestamp
     print()
     print("Training for autoencoder")
     print()
     ae_score = run_tadgan(df_ae, str(rows) + "_rows_GPU_FINAL_rows_autoencoder_")
 
-    df_fs["Normal/Attack"] = y
-    df_fs["timestamp"] = timestamp
-    print()
-    print("Training for feature selection")
-    print()
-    fs_score = run_tadgan(df_fs, str(rows) + "_rows_GPU_FINAL_rows_feature_selection_")
+#     df_fs["Normal/Attack"] = y_binary
+#     df_fs["timestamp"] = timestamp
+#     print()
+#     print("Training for feature selection")
+#     print()
+#     fs_score = run_tadgan(df_fs, str(rows) + "_rows_GPU_FINAL_rows_feature_selection_")
 
-    df["Normal/Attack"] = y
+    df["Normal/Attack"] = y_binary
     df["timestamp"] = timestamp
     print()
     print("Bare training")
@@ -101,7 +104,8 @@ def main():
     print()
     print("bare_score: ", bare_score)
     print("fs_score: ", fs_score)
-    print("pca_09_score: ", pca_score)
+    print("pca_5_score: ", pca_dim_score)
+    print("pca_099_score: ", pca_var_score)
     print("ae_score: ", ae_score)
 
     

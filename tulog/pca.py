@@ -6,7 +6,6 @@ from sklearn.decomposition import PCA
 def run_pca(df, pca_param):
 
     feature_names = np.array(df.columns, dtype=str)
-    feature_names
 
     # Separating out the features
     x = df.loc[:, feature_names[1:]].values
