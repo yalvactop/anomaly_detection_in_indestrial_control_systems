@@ -138,11 +138,11 @@ def rolling_window_sequences(X, index, window_size, target_size, step_size, targ
     return np.asarray(out_X), np.asarray(out_y), np.asarray(X_index), np.asarray(y_index)
 
 
-def run_tadgan(df, techniques):
+def run_tadgan(df_train, df_test_init, techniques):
     
-    signal = 'SWaT_Dataset_Attack_v1.csv'
-    df_test = pd.read_csv(signal)
-    df_train = df
+#     signal = 'SWaT_Dataset_Attack_v1.csv'
+#     df_test = pd.read_csv(signal)
+    df_test = df_test_init.iloc[:35*len(df_test_init.index)//40]
 
     window_size = 100 #these hyperparameters will be defined after grid search
     epoch = 50
@@ -153,12 +153,12 @@ def run_tadgan(df, techniques):
     step_size = 100
     drop_windows = False
 
-    prev_state = "Normal"
+    prev_state = "False"
     anomalies = []
     for ind in df_test.index:
-        if prev_state == "Normal" and df_test['Normal/Attack'][ind] == "Attack":
+        if prev_state == "False" and df_test['Normal/Attack'][ind] == "True":
             start = df_test['timestamp'][ind]
-        if prev_state == "Attack" and df_test['Normal/Attack'][ind] == "Normal":
+        if prev_state == "True" and df_test['Normal/Attack'][ind] == "False":
             stop = df_test['timestamp'][ind-1]
             anomalies.append([start, stop])
 
@@ -166,6 +166,8 @@ def run_tadgan(df, techniques):
 
 
     known_anomalies = pd.DataFrame(anomalies, columns=['start', 'end'])
+    print("known_anomalies")
+    print(known_anomalies)
 
     del df_train["Normal/Attack"]
     del df_test["Normal/Attack"]

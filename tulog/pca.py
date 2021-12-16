@@ -16,4 +16,4 @@ def run_pca(df, pca_param):
     principal_df = pd.DataFrame(data = principalComponents)
 
     print("pca.n_components_: ", pca.n_components_)
-    return principal_df
+    return principal_df, pca.n_components_
