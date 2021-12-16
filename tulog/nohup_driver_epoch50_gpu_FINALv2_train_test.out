@@ -12,272 +12,47 @@ Call initializer instance with the dtype argument instead of passing it to the c
 WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
 Instructions for updating:
 If using Keras pass *_constraint arguments to layers.
-2021-12-16 11:17:37.895130: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
-2021-12-16 11:17:38.542962: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+2021-12-16 16:16:48.721791: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-12-16 16:16:49.364044: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
 name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
 pciBusID: 0000:21:00.0
-2021-12-16 11:17:38.543808: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+2021-12-16 16:16:49.364891: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
 name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
 pciBusID: 0000:41:00.0
-2021-12-16 11:17:38.544096: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
-2021-12-16 11:17:38.545221: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
-2021-12-16 11:17:38.546307: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
-2021-12-16 11:17:38.546611: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
-2021-12-16 11:17:38.547828: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
-2021-12-16 11:17:38.548793: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
-2021-12-16 11:17:38.551546: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
-2021-12-16 11:17:38.554911: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
-2021-12-16 11:17:38.555342: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2021-12-16 11:17:38.565859: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1995975000 Hz
-2021-12-16 11:17:38.570187: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7628fb0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2021-12-16 11:17:38.570255: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2021-12-16 11:17:38.667188: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x6357640 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2021-12-16 11:17:38.667228: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): TITAN X (Pascal), Compute Capability 6.1
-2021-12-16 11:17:38.667243: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): GeForce GTX TITAN X, Compute Capability 5.2
-2021-12-16 11:17:38.668370: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+2021-12-16 16:16:49.365155: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-16 16:16:49.366245: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-16 16:16:49.367212: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-16 16:16:49.367506: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-16 16:16:49.368664: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-16 16:16:49.369524: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-16 16:16:49.372374: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-16 16:16:49.375706: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-16 16:16:49.376153: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-12-16 16:16:49.388120: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1995975000 Hz
+2021-12-16 16:16:49.392429: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5abb3b0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-12-16 16:16:49.392499: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-12-16 16:16:49.497368: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x520afd0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-12-16 16:16:49.497410: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): TITAN X (Pascal), Compute Capability 6.1
+2021-12-16 16:16:49.497427: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): GeForce GTX TITAN X, Compute Capability 5.2
+2021-12-16 16:16:49.498474: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
 name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
 pciBusID: 0000:21:00.0
-2021-12-16 11:17:38.669176: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+2021-12-16 16:16:49.499314: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
 name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
 pciBusID: 0000:41:00.0
-2021-12-16 11:17:38.669219: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
-2021-12-16 11:17:38.669232: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
-2021-12-16 11:17:38.669243: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
-2021-12-16 11:17:38.669255: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
-2021-12-16 11:17:38.669265: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
-2021-12-16 11:17:38.669276: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
-2021-12-16 11:17:38.669288: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
-2021-12-16 11:17:38.672568: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
-2021-12-16 11:17:38.672606: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
-2021-12-16 11:17:38.674940: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
-2021-12-16 11:17:38.674956: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 1 
-2021-12-16 11:17:38.674962: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N N 
-2021-12-16 11:17:38.674967: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 1:   N N 
-2021-12-16 11:17:38.677391: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11455 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:21:00.0, compute capability: 6.1)
-2021-12-16 11:17:38.678637: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11507 MB memory) -> physical GPU (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:41:00.0, compute capability: 5.2)
-2021-12-16 11:17:39.265070: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
-/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
-  'Discrepancy between trainable weights and collected trainable'
-WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/tensorflow_core/python/ops/math_grad.py:1424: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
-Instructions for updating:
-Use tf.where in 2.0, which has the same broadcast rule as np.where
-WARNING:tensorflow:From /home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
-
-2021-12-16 11:21:22.873877: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
-2021-12-16 11:21:37.333080: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
-2021-12-16 11:21:37.362200: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
-2021-12-16 11:21:37.399230: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
-2021-12-16 11:21:37.470304: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
-2021-12-16 11:21:37.702893: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
-2021-12-16 11:21:37.732636: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
-2021-12-16 11:21:37.756582: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
-2021-12-16 11:21:37.783081: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
-
-ROW COUNT:  18400
-
-pca.n_components_:  5
-
-df_pca_dim_train.shape:  (18400, 5)
-
-pca.n_components_:  25
-
-df_pca_var_train.shape:  (18400, 25)
-
-df_ae_train.shape:  (18400, 26)
-pca.n_components_:  5
-
-df_pca_dim_test.shape:  (449919, 5)
-
-pca.n_components_:  25
-
-df_pca_var_test.shape:  (449919, 25)
-
-df_ae_test.shape:  (449919, 26)
-
-Training for PCA for 5 dimensions
-
-               0         1  ...  Normal/Attack            timestamp
-0      -2.266779 -1.264435  ...          False  1451296800000000000
-1      -2.280896 -1.257904  ...          False  1451296801000000000
-2      -2.279393 -1.258019  ...          False  1451296802000000000
-3      -2.270006 -1.261618  ...          False  1451296803000000000
-4      -2.270398 -1.260209  ...          False  1451296804000000000
-5      -2.264605 -1.262199  ...          False  1451296805000000000
-6      -2.261958 -1.264258  ...          False  1451296806000000000
-7      -2.256184 -1.265497  ...          False  1451296807000000000
-8      -2.261765 -1.260704  ...          False  1451296808000000000
-9      -2.271709 -1.257318  ...          False  1451296809000000000
-10     -2.271016 -1.257794  ...          False  1451296810000000000
-11     -2.276900 -1.261738  ...          False  1451296811000000000
-12     -2.272691 -1.266623  ...          False  1451296812000000000
-13     -2.271081 -1.268419  ...          False  1451296813000000000
-14     -2.278054 -1.264807  ...          False  1451296814000000000
-15     -2.277616 -1.263467  ...          False  1451296815000000000
-16     -2.284657 -1.257692  ...          False  1451296816000000000
-17     -2.288221 -1.253486  ...          False  1451296817000000000
-18     -2.287180 -1.251862  ...          False  1451296818000000000
-19     -2.289372 -1.250570  ...          False  1451296819000000000
-20     -2.285981 -1.252024  ...          False  1451296820000000000
-21     -2.284129 -1.257083  ...          False  1451296821000000000
-22     -2.285740 -1.252006  ...          False  1451296822000000000
-23     -2.279412 -1.254649  ...          False  1451296823000000000
-24     -2.278666 -1.254691  ...          False  1451296824000000000
-25     -2.274138 -1.257207  ...          False  1451296825000000000
-26     -2.267443 -1.262176  ...          False  1451296826000000000
-27     -2.262678 -1.264427  ...          False  1451296827000000000
-28     -2.266967 -1.264342  ...          False  1451296828000000000
-29     -2.267682 -1.265586  ...          False  1451296829000000000
-...          ...       ...  ...            ...                  ...
-393649 -1.800780 -0.876708  ...          False  1451690530000000000
-393650 -1.790173 -0.882182  ...          False  1451690531000000000
-393651 -1.792074 -0.881452  ...          False  1451690532000000000
-393652 -1.792992 -0.880432  ...          False  1451690533000000000
-393653 -1.787969 -0.879696  ...          False  1451690534000000000
-393654 -1.781035 -0.883670  ...          False  1451690535000000000
-393655 -1.778552 -0.884789  ...          False  1451690536000000000
-393656 -1.789271 -0.880353  ...          False  1451690537000000000
-393657 -1.797651 -0.874093  ...          False  1451690538000000000
-393658 -1.805961 -0.869861  ...          False  1451690539000000000
-393659 -1.804778 -0.865484  ...          False  1451690540000000000
-393660 -1.796390 -0.865943  ...          False  1451690541000000000
-393661 -1.793831 -0.866667  ...          False  1451690542000000000
-393662 -1.797390 -0.863679  ...          False  1451690543000000000
-393663 -1.804462 -0.859119  ...          False  1451690544000000000
-393664 -1.797859 -0.862996  ...          False  1451690545000000000
-393665 -1.797423 -0.859038  ...          False  1451690546000000000
-393666 -1.794078 -0.863301  ...          False  1451690547000000000
-393667 -1.794353 -0.863640  ...          False  1451690548000000000
-393668 -1.797809 -0.862911  ...          False  1451690549000000000
-393669 -1.807653 -0.857537  ...          False  1451690550000000000
-393670 -1.809289 -0.855738  ...          False  1451690551000000000
-393671 -1.805447 -0.856989  ...          False  1451690552000000000
-393672 -1.801016 -0.858641  ...          False  1451690553000000000
-393673 -1.793075 -0.855787  ...          False  1451690554000000000
-393674 -1.787196 -0.857123  ...          False  1451690555000000000
-393675 -1.787238 -0.857386  ...          False  1451690556000000000
-393676 -1.786086 -0.858226  ...          False  1451690557000000000
-393677 -1.785387 -0.858052  ...          False  1451690558000000000
-393678 -1.782820 -0.857006  ...          False  1451690559000000000
-
-[393679 rows x 7 columns]
-known_anomalies
-Empty DataFrame
-Columns: [start, end]
-Index: []
-Epoch: 1/50, [Dx loss: [ 0.11229946 -0.11866336  0.00741715  0.02235457]] [Dz loss: [ 1.645248   -0.03172641  0.20312831  0.1473846 ]] [G loss: [ 1.676403   -0.01340553 -0.23785672  0.19276652]]
-Epoch: 2/50, [Dx loss: [-0.23993619 -0.4571086   0.03304093  0.01841315]] [Dz loss: [ 1.9407324  -0.27964884  1.7639787   0.04564025]] [G loss: [-0.03250432 -0.04376636 -1.9243538   0.19356158]]
-Epoch: 3/50, [Dx loss: [-0.56475675 -0.8050968   0.07602791  0.01643122]] [Dz loss: [ 4.0056834  -0.53443396  4.2269015   0.03132164]] [G loss: [-2.0856795  -0.08444379 -4.0272584   0.20260227]]
-Epoch: 4/50, [Dx loss: [-0.8130209  -1.0708096   0.12146328  0.01363256]] [Dz loss: [ 4.3443727  -0.5734727   4.2009664   0.07168792]] [G loss: [ 0.35892022 -0.11588351 -1.8561225   0.2330926 ]]
-Epoch: 5/50, [Dx loss: [-0.81890696 -1.1662486   0.15814283  0.01891989]] [Dz loss: [-3.7362778  -0.74170226 -3.4952064   0.05006307]] [G loss: [10.257448   -0.15035912  8.216566    0.21912411]]
-Epoch: 6/50, [Dx loss: [-0.84695184 -1.1786621   0.18061516  0.0151095 ]] [Dz loss: [-11.711345    -0.84663326 -12.661514     0.17968014]] [G loss: [18.368412   -0.16723973 16.551006    0.19846481]]
-Epoch: 7/50, [Dx loss: [-0.8410388  -1.1994758   0.20001814  0.01584188]] [Dz loss: [-10.368801    -0.62385476 -13.75679      0.4011844 ]] [G loss: [17.554485   -0.19153416 16.14011     0.16059105]]
-Epoch: 8/50, [Dx loss: [-0.8271554  -1.2080942   0.2470102   0.01339287]] [Dz loss: [-5.1241508  -0.50219667 -9.836042    0.52140886]] [G loss: [10.512799   -0.22719446  9.135195    0.16047987]]
-Epoch: 9/50, [Dx loss: [-0.8618004  -1.2353227   0.26678997  0.01067324]] [Dz loss: [-2.6174011  -0.28733006 -5.3336663   0.3003596 ]] [G loss: [ 9.974581   -0.25004572  8.742849    0.1481778 ]]
-Epoch: 10/50, [Dx loss: [-0.88336134 -1.2229701   0.25961322  0.00799955]] [Dz loss: [-2.0938296  -0.4040727  -2.7276974   0.10379405]] [G loss: [ 6.967083  -0.2116138  5.805533   0.1373164]]
-Epoch: 11/50, [Dx loss: [-0.85799086 -1.2217127   0.27044997  0.00932719]] [Dz loss: [-1.3555579   0.1575975  -1.9714333   0.04582777]] [G loss: [ 5.0097246 -0.2578972  3.9945347  0.1273087]]
-Epoch: 12/50, [Dx loss: [-0.8242052  -1.2595916   0.3554271   0.00799592]] [Dz loss: [-3.301046    0.43140426 -4.203146    0.04706956]] [G loss: [ 7.5055776  -0.3388278   6.5780783   0.12663269]]
-Epoch: 13/50, [Dx loss: [-0.7771796  -1.278531    0.42534772  0.00760037]] [Dz loss: [-8.047339    0.78788847 -9.835974    0.10007451]] [G loss: [14.408577   -0.4223804  13.521188    0.13097697]]
-Epoch: 14/50, [Dx loss: [-0.7181727  -1.242588    0.40677014  0.01176451]] [Dz loss: [-11.767341     1.2127216  -16.54569      0.35656285]] [G loss: [18.68732   -0.3769855 17.825417   0.1238891]]
-Epoch: 15/50, [Dx loss: [-0.6352364  -1.1502645   0.3774944   0.01375338]] [Dz loss: [ -7.7439294    1.536528   -15.299828     0.60193706]] [G loss: [16.81884    -0.3478973  16.060673    0.11060652]]
-Epoch: 16/50, [Dx loss: [-0.57784665 -1.0947484   0.34508306  0.01718186]] [Dz loss: [-5.4120355   1.6702421  -9.19365     0.21113722]] [G loss: [ 9.417528   -0.3362559   8.696178    0.10576056]]
-Epoch: 17/50, [Dx loss: [-0.5799848  -1.0162958   0.2753238   0.01609873]] [Dz loss: [-4.588469    1.6157863  -6.8979673   0.06937121]] [G loss: [ 9.297173   -0.24808076  8.283666    0.12615871]]
-Epoch: 18/50, [Dx loss: [-0.612366   -0.9299965   0.1861421   0.01314883]] [Dz loss: [-5.4965887   2.0083385  -8.272287    0.07673606]] [G loss: [10.13457    -0.13278082  9.05558     0.12117715]]
-Epoch: 19/50, [Dx loss: [-0.58980525 -0.87916136  0.06263398  0.02267222]] [Dz loss: [-5.445609    2.1301816  -8.945543    0.13697532]] [G loss: [10.3337345  -0.02554868  9.407297    0.09519865]]
-Epoch: 20/50, [Dx loss: [-0.6302105  -0.77522004  0.02513434  0.01198751]] [Dz loss: [-3.160302    2.130308   -6.998915    0.17083058]] [G loss: [ 8.0193882e+00 -3.2319804e-03  6.9421926e+00  1.0804278e-01]]
-Epoch: 21/50, [Dx loss: [-0.58677    -0.7795168  -0.01382201  0.02065687]] [Dz loss: [-1.9138756   2.0252457  -4.788099    0.08489776]] [G loss: [6.090233   0.03065091 5.098908   0.09606737]]
-Epoch: 22/50, [Dx loss: [-0.6214971  -0.7284368  -0.00761664  0.01145564]] [Dz loss: [-2.4765449   1.9911544  -4.9141626   0.04464634]] [G loss: [ 6.1681013  -0.02279026  5.04924     0.11416519]]
-Epoch: 23/50, [Dx loss: [-0.6658899  -0.88322324  0.0907018   0.01266316]] [Dz loss: [-4.2764406   1.9975306  -6.7485723   0.04746016]] [G loss: [ 8.1291065  -0.1331      7.152338    0.11098683]]
-Epoch: 24/50, [Dx loss: [-0.6685723  -0.904757    0.13609794  0.01000867]] [Dz loss: [-4.149827    2.1708574  -7.7307167   0.14100325]] [G loss: [ 9.668172   -0.11951086  8.687246    0.1100436 ]]
-Epoch: 25/50, [Dx loss: [-0.6859994  -0.95941955  0.15450808  0.0118912 ]] [Dz loss: [-2.531185    1.9116255  -6.1823163   0.17395054]] [G loss: [ 6.830172   -0.15854521  6.2259607   0.07627568]]
-Epoch: 26/50, [Dx loss: [-0.7028259  -1.0037379   0.18906407  0.01118479]] [Dz loss: [-0.7067419   1.7761062  -3.286942    0.08040936]] [G loss: [ 4.147251   -0.21173453  3.3089006   0.10500851]]
-Epoch: 27/50, [Dx loss: [-0.714968   -1.0274701   0.2015563   0.01109458]] [Dz loss: [ 0.14826946  1.524616   -1.8559005   0.0479554 ]] [G loss: [ 2.7469625  -0.18875796  1.8995149   0.10362054]]
-Epoch: 28/50, [Dx loss: [-0.735401   -1.075336    0.20439847  0.01355365]] [Dz loss: [ 0.09879065  1.491616   -1.8053497   0.04125241]] [G loss: [ 3.2212083  -0.23079205  2.1692748   0.12827258]]
-Epoch: 29/50, [Dx loss: [-0.7121657  -1.042959    0.24070147  0.00900917]] [Dz loss: [-0.18592198  1.4712304  -2.173761    0.05166088]] [G loss: [ 3.415978   -0.25471947  2.5263681   0.11443292]]
-Epoch: 30/50, [Dx loss: [-0.72694796 -1.0906513   0.2596222   0.01040811]] [Dz loss: [ 0.01751783  1.3119084  -1.999765    0.07053746]] [G loss: [ 2.7392476  -0.23617435  2.11378     0.08616421]]
-Epoch: 31/50, [Dx loss: [-0.68711823 -1.0771477   0.26843613  0.01215933]] [Dz loss: [ 0.44617397  1.2778332  -1.4005425   0.05688834]] [G loss: [ 1.9881206  -0.2606136   1.3632565   0.08854777]]
-Epoch: 32/50, [Dx loss: [-0.6977405 -1.074209   0.2999836  0.0076485]] [Dz loss: [ 0.37395263  1.1639731  -1.1514367   0.03614162]] [G loss: [ 2.0167513  -0.2955673   1.2725013   0.10398173]]
-Epoch: 33/50, [Dx loss: [-0.6822151  -1.0813793   0.3142447   0.00849195]] [Dz loss: [ 0.6388769   1.0960481  -0.88763094  0.04304598]] [G loss: [ 1.6620613  -0.29937208  0.998049    0.09633844]]
-Epoch: 34/50, [Dx loss: [-0.68041706 -1.0704089   0.30187744  0.00881145]] [Dz loss: [ 0.71191394  1.0828284  -0.7887537   0.04178393]] [G loss: [ 1.5013837  -0.2753814   0.66021615  0.11165489]]
-Epoch: 35/50, [Dx loss: [-0.6622059  -1.0687497   0.3065454   0.00999983]] [Dz loss: [ 0.96720153  1.1123642  -0.66585505  0.05206924]] [G loss: [ 1.4588656  -0.28113145  0.96420616  0.0775791 ]]
-Epoch: 36/50, [Dx loss: [-0.6528753  -1.0837429   0.32658783  0.01042797]] [Dz loss: [ 0.6786538  1.147439  -0.8509413  0.0382156]] [G loss: [ 1.3988627  -0.35274085  1.0318772   0.07197264]]
-Epoch: 37/50, [Dx loss: [-0.59443736 -1.0521662   0.36721686  0.0090512 ]] [Dz loss: [ 0.44366613  1.2062558  -1.3560662   0.05934764]] [G loss: [ 1.8292356  -0.34766194  1.4815717   0.06953258]]
-Epoch: 38/50, [Dx loss: [-0.6242865  -1.1108683   0.41186935  0.00747125]] [Dz loss: [ 0.13705035  1.3240452  -1.6988914   0.05118967]] [G loss: [ 2.5636296  -0.43045962  2.0316935   0.09623956]]
-Epoch: 39/50, [Dx loss: [-0.58457947 -1.1070918   0.45102558  0.00714868]] [Dz loss: [-0.12031151  1.3707422  -1.9601076   0.04690542]] [G loss: [ 2.1069212  -0.49176425  2.0702357   0.05284496]]
-Epoch: 40/50, [Dx loss: [-0.5555153  -1.1498916   0.52180725  0.0072569 ]] [Dz loss: [-0.07179035  1.3856759  -1.9298382   0.04723717]] [G loss: [ 2.0615928  -0.52191997  1.9666281   0.06168847]]
-Epoch: 41/50, [Dx loss: [-0.52804196 -1.1337106   0.54291105  0.00627578]] [Dz loss: [ 0.07595166  1.3925283  -1.7512922   0.04347157]] [G loss: [ 1.9410026  -0.5381042   1.7436156   0.07354912]]
-Epoch: 42/50, [Dx loss: [-0.48937756 -1.1379724   0.56412524  0.00844697]] [Dz loss: [ 0.2864652   1.2555112  -1.3566347   0.03875887]] [G loss: [ 1.8582762  -0.5229292   1.3841863   0.09970191]]
-Epoch: 43/50, [Dx loss: [-0.43504095 -1.1254553   0.58849835  0.01019161]] [Dz loss: [ 0.33672944  1.089597   -1.1405418   0.03876743]] [G loss: [ 1.8495048  -0.5418129   1.471954    0.09193638]]
-Epoch: 44/50, [Dx loss: [-0.39927578 -1.1140112   0.6253377   0.00893976]] [Dz loss: [ 0.58764285  0.9632622  -0.79025775  0.04146384]] [G loss: [ 0.8404021  -0.64557934  0.7468873   0.07390942]]
-Epoch: 45/50, [Dx loss: [-0.39498737 -1.1343552   0.6495316   0.00898362]] [Dz loss: [ 0.9534319  1.020485  -0.5871121  0.0520059]] [G loss: [ 0.9350805  -0.6181358   0.7349666   0.08182497]]
-Epoch: 46/50, [Dx loss: [-0.35359487 -1.101682    0.67078483  0.00773022]] [Dz loss: [ 1.024864    0.7556113  -0.25634342  0.0525596 ]] [G loss: [ 0.16525143 -0.650401    0.21285596  0.06027965]]
-Epoch: 47/50, [Dx loss: [-0.27662438 -1.0662371   0.69599813  0.00936145]] [Dz loss: [1.1415733  0.67379344 0.09481673 0.03729631]] [G loss: [ 0.17616346 -0.73832333 -0.02536638  0.09398532]]
-Epoch: 48/50, [Dx loss: [-0.31747964 -1.0749438   0.65426457  0.01031996]] [Dz loss: [1.1371706  0.42950934 0.30319327 0.04044678]] [G loss: [-0.18334836 -0.5871249  -0.2676192   0.06713957]]
-Epoch: 49/50, [Dx loss: [-0.2730813  -1.0423231   0.67683136  0.00924104]] [Dz loss: [1.1002777  0.38019437 0.3966417  0.03234415]] [G loss: [ 0.40375638 -0.70545703  0.15763307  0.09515804]]
-Epoch: 50/50, [Dx loss: [-0.24821305 -1.0128764   0.66971624  0.00949472]] [Dz loss: [ 0.5886625   0.26731262 -0.05014399  0.03714939]] [G loss: [ 0.6548849  -0.6571512   0.45995796  0.08520782]]
-
-Training for PCA for .99 variance
-
-               0         1  ...  Normal/Attack            timestamp
-0      -2.266779 -1.264415  ...          False  1451296800000000000
-1      -2.280896 -1.257884  ...          False  1451296801000000000
-2      -2.279392 -1.257999  ...          False  1451296802000000000
-3      -2.270006 -1.261597  ...          False  1451296803000000000
-4      -2.270397 -1.260188  ...          False  1451296804000000000
-5      -2.264604 -1.262178  ...          False  1451296805000000000
-6      -2.261958 -1.264237  ...          False  1451296806000000000
-7      -2.256184 -1.265475  ...          False  1451296807000000000
-8      -2.261765 -1.260683  ...          False  1451296808000000000
-9      -2.271709 -1.257297  ...          False  1451296809000000000
-10     -2.271016 -1.257773  ...          False  1451296810000000000
-11     -2.276900 -1.261717  ...          False  1451296811000000000
-12     -2.272691 -1.266602  ...          False  1451296812000000000
-13     -2.271081 -1.268398  ...          False  1451296813000000000
-14     -2.278053 -1.264785  ...          False  1451296814000000000
-15     -2.277616 -1.263445  ...          False  1451296815000000000
-16     -2.284657 -1.257670  ...          False  1451296816000000000
-17     -2.288220 -1.253464  ...          False  1451296817000000000
-18     -2.287180 -1.251840  ...          False  1451296818000000000
-19     -2.289371 -1.250548  ...          False  1451296819000000000
-20     -2.285981 -1.252002  ...          False  1451296820000000000
-21     -2.284129 -1.257062  ...          False  1451296821000000000
-22     -2.285740 -1.251984  ...          False  1451296822000000000
-23     -2.279411 -1.254627  ...          False  1451296823000000000
-24     -2.278666 -1.254669  ...          False  1451296824000000000
-25     -2.274138 -1.257186  ...          False  1451296825000000000
-26     -2.267443 -1.262154  ...          False  1451296826000000000
-27     -2.262677 -1.264405  ...          False  1451296827000000000
-28     -2.266966 -1.264320  ...          False  1451296828000000000
-29     -2.267681 -1.265564  ...          False  1451296829000000000
-...          ...       ...  ...            ...                  ...
-393649 -1.800780 -0.876689  ...          False  1451690530000000000
-393650 -1.790173 -0.882163  ...          False  1451690531000000000
-393651 -1.792074 -0.881433  ...          False  1451690532000000000
-393652 -1.792991 -0.880413  ...          False  1451690533000000000
-393653 -1.787968 -0.879678  ...          False  1451690534000000000
-393654 -1.781035 -0.883652  ...          False  1451690535000000000
-393655 -1.778551 -0.884770  ...          False  1451690536000000000
-393656 -1.789271 -0.880335  ...          False  1451690537000000000
-393657 -1.797651 -0.874074  ...          False  1451690538000000000
-393658 -1.805961 -0.869843  ...          False  1451690539000000000
-393659 -1.804778 -0.865466  ...          False  1451690540000000000
-393660 -1.796390 -0.865925  ...          False  1451690541000000000
-393661 -1.793830 -0.866648  ...          False  1451690542000000000
-393662 -1.797389 -0.863661  ...          False  1451690543000000000
-393663 -1.804462 -0.859100  ...          False  1451690544000000000
-393664 -1.797859 -0.862977  ...          False  1451690545000000000
-393665 -1.797423 -0.859019  ...          False  1451690546000000000
-393666 -1.794077 -0.863283  ...          False  1451690547000000000
-393667 -1.794353 -0.863621  ...          False  1451690548000000000
-393668 -1.797809 -0.862892  ...          False  1451690549000000000
-393669 -1.807652 -0.857518  ...          False  1451690550000000000
-393670 -1.809288 -0.855720  ...          False  1451690551000000000
-393671 -1.805447 -0.856971  ...          False  1451690552000000000
-393672 -1.801016 -0.858622  ...          False  1451690553000000000
-393673 -1.793075 -0.855769  ...          False  1451690554000000000
-393674 -1.787196 -0.857107  ...          False  1451690555000000000
-393675 -1.787238 -0.857370  ...          False  1451690556000000000
-393676 -1.786086 -0.858210  ...          False  1451690557000000000
-393677 -1.785386 -0.858035  ...          False  1451690558000000000
-393678 -1.782820 -0.856989  ...          False  1451690559000000000
-
-[393679 rows x 27 columns]
+2021-12-16 16:16:49.499363: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-16 16:16:49.499379: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-16 16:16:49.499393: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-16 16:16:49.499407: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-16 16:16:49.499420: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-16 16:16:49.499434: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-16 16:16:49.499447: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-16 16:16:49.502649: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-16 16:16:49.502685: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-16 16:16:49.505032: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-16 16:16:49.505046: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 1 
+2021-12-16 16:16:49.505051: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N N 
+2021-12-16 16:16:49.505055: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 1:   N N 
+2021-12-16 16:16:49.507481: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11455 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:21:00.0, compute capability: 6.1)
+2021-12-16 16:16:49.508629: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11507 MB memory) -> physical GPU (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:41:00.0, compute capability: 5.2)
+2021-12-16 16:16:50.121152: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0

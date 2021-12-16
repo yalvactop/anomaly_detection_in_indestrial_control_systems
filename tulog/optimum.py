@@ -142,7 +142,7 @@ def run_tadgan(df_train, df_test_init, techniques):
     
 #     signal = 'SWaT_Dataset_Attack_v1.csv'
 #     df_test = pd.read_csv(signal)
-    df_test = df_test_init.iloc[:35*len(df_test_init.index)//40]
+    df_test = df_test_init.iloc[:7*len(df_test_init.index)//8]
 
     window_size = 100 #these hyperparameters will be defined after grid search
     epoch = 50
@@ -153,12 +153,12 @@ def run_tadgan(df_train, df_test_init, techniques):
     step_size = 100
     drop_windows = False
 
-    prev_state = "False"
+    prev_state = False
     anomalies = []
     for ind in df_test.index:
-        if prev_state == "False" and df_test['Normal/Attack'][ind] == "True":
+        if prev_state == False and df_test['Normal/Attack'][ind] == True:
             start = df_test['timestamp'][ind]
-        if prev_state == "True" and df_test['Normal/Attack'][ind] == "False":
+        if prev_state == True and df_test['Normal/Attack'][ind] == False:
             stop = df_test['timestamp'][ind-1]
             anomalies.append([start, stop])
 
@@ -166,7 +166,7 @@ def run_tadgan(df_train, df_test_init, techniques):
 
 
     known_anomalies = pd.DataFrame(anomalies, columns=['start', 'end'])
-    print("known_anomalies")
+    print("known_anomalies:")
     print(known_anomalies)
 
     del df_train["Normal/Attack"]

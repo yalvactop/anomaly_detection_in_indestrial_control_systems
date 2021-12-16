@@ -11,7 +11,7 @@ def main():
     df_init_train = pd.read_csv('SWaT_Dataset_Normal_v1.csv')
     df_init_test = pd.read_csv('SWaT_Dataset_Attack_v1.csv')
     rows = len(df_init_train.index)
-    rows = 40000
+#     rows = 40000
     df_train = df_init_train.iloc[21600:rows]
     df_test = df_init_test#.iloc[:rows]
     rows = rows - 21600

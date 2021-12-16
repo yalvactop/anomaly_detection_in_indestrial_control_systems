@@ -36,3 +36,5 @@
 0 / 0  window_size-100_epoch-50_learning_rate-0.0005_latent_dim-20_batch_size-512_comb-mult_475200_rows_GPU_FINAL_rows_autoencoder_
 0 / 0  window_size-100_epoch-50_learning_rate-0.0005_latent_dim-20_batch_size-512_comb-mult_475200_rows_GPU_FINAL_rows_bare_
 0 / 0  window_size-100_epoch-50_learning_rate-0.0005_latent_dim-20_batch_size-512_comb-mult_18400_rows_GPU_FINAL_pca_dim-5
+0 / 0  window_size-100_epoch-50_learning_rate-0.0005_latent_dim-20_batch_size-512_comb-mult_18400_rows_GPU_FINAL_rows_pca_var-099
+0 / 0  window_size-100_epoch-50_learning_rate-0.0005_latent_dim-20_batch_size-512_comb-mult_18400_rows_GPU_FINAL_rows_autoencoder_
