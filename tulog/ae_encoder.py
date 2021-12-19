@@ -15,9 +15,8 @@ import numpy as np
 
 def ae_train():
     print("TRAINING")
-    df = pd.read_csv("swat.csv")
-    df = df.iloc[:5*len(df.index)//8]
-    #df = df.iloc[:7500]
+    df = pd.read_csv("SWaT_Dataset_Normal_v1.csv")
+    df = df.iloc[21600:]
 
     y = df["Normal/Attack"]
     timestamp = df["timestamp"]
@@ -61,11 +60,14 @@ def ae_train():
 
     model.compile(optimizer='adam', loss='mse')
 
-    history = model.fit(X_train, X_train, epochs=100, batch_size=512, verbose=2, validation_data=(X_test,X_test))
+    history = model.fit(X_train, X_train, epochs=200, batch_size=512, verbose=2, validation_data=(X_test,X_test))
 
     encoder = Model(inputs=visible, outputs=bottleneck)
 
-    encoder.save('encoder.h5')
+    pyplot.plot(history.history['loss'], label='train')
+    pyplot.plot(history.history['val_loss'], label='test')
+    pyplot.legend()
+    pyplot.savefig("ae_history_chart.png")
     
     
 def ae_test(X):
