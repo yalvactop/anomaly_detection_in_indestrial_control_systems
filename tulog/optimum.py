@@ -150,7 +150,7 @@ def run_tadgan(df_train, df_test_init, techniques):
     latent_dim = 20
     batch_size = 16
     comb = "mult"
-    step_size = 100
+    step_size = 1
     drop_windows = False
 
     prev_state = False

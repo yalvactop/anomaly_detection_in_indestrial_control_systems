@@ -19,8 +19,6 @@ from orion.primitives.timeseries_anomalies import find_anomalies
 from tadgan import score_anomalies
 
 import json
-
-import concurrent.futures
 import os
 
 def time_segments_aggregate(X, interval, time_column, method=['mean']):
@@ -137,95 +135,117 @@ def rolling_window_sequences(X, index, window_size, target_size, step_size, targ
 
 
 def main():
-    signal = 'swat.csv'
+    df_init_train = pd.read_csv('SWaT_Dataset_Normal_v1.csv')
+    df_init_test = pd.read_csv('SWaT_Dataset_Attack_v1.csv')
+    rows = len(df_init_train.index)
+#     rows = 40000
+    df_train = df_init_train.iloc[21600:rows]
+    df_test = df_init_test.iloc[:7*len(df_init_test.index)//8]
+    rows = rows - 21600
 
-    df = pd.read_csv(signal)
-
-    df = df.iloc[:5*len(df.index)//8]
-    #df = df.iloc[:len(df.index)//2]
-    #df = df.iloc[:7500] 
+    print()
+    print("ROW COUNT: ", rows)
+    print()
 
     prev_state = "Normal"
     anomalies = []
-    for ind in df.index:
+    for ind in df_test.index:
         #print(df['timestamp'][ind], df['Normal/Attack'][ind])
-        if prev_state == "Normal" and df['Normal/Attack'][ind] == "Attack":
-            start = df['timestamp'][ind]
-        if prev_state == "Attack" and df['Normal/Attack'][ind] == "Normal":
-            stop = df['timestamp'][ind-1]
+        if prev_state == "Normal" and df_test['Normal/Attack'][ind] == "Attack":
+            start = df_test['timestamp'][ind]
+        if prev_state == "Attack" and df_test['Normal/Attack'][ind] == "Normal":
+            stop = df_test['timestamp'][ind-1]
             anomalies.append([start, stop])
 
-        prev_state = df['Normal/Attack'][ind]
+        prev_state = df_test['Normal/Attack'][ind]
 
     known_anomalies = pd.DataFrame(anomalies, columns=['start', 'end'])
 
-    del df["Normal/Attack"]                                  #CHANGE THIS!!!
+    del df_train["Normal/Attack"]  
+    del df_test["Normal/Attack"]                                  #CHANGE THIS!!!
 
-    X_tsa, index = time_segments_aggregate(df, interval=1000000000, time_column='timestamp')
+    print("Before time segment train")
+    X_tsa_train, index_train = time_segments_aggregate(df_train, interval=1000000000, time_column='timestamp')
+    print("Before time segment test")
+    X_tsa_test, index_test = time_segments_aggregate(df_test, interval=1000000000, time_column='timestamp')
 
+    print("Before imputer")
     imp = SimpleImputer()
-    X_imp = imp.fit_transform(X_tsa)
+    X_imp_train = imp.fit_transform(X_tsa_train)
+    X_imp_test = imp.fit_transform(X_tsa_test)
 
+    print("Before minmax scaler")
     scaler = MinMaxScaler(feature_range=(-1, 1)) ## for the gradients to converge faster
-    X_scl = scaler.fit_transform(X_imp)
+    X_scl_train = scaler.fit_transform(X_imp_train)
+    X_scl_test = scaler.fit_transform(X_imp_test)
 
     fig1, ax1 = plt.subplots()
-    ax1.plot(X_scl)
-    ax1.set_title("X_scl")
-    fig1.savefig('tuning/X_scl.png')
+    ax1.plot(X_scl_train)
+    ax1.set_title("X_scl_train")
+    fig1.savefig('grid_search/X_scl_train.png')
 
     ##################### tuning starts here #####################
 
-    window_size = np.linspace(start=50, stop=1050, num=11, dtype=int)#[100]#
-    epoch = np.linspace(start=50, stop=500, num=10, dtype=int)#[1]#
-    learning_rate = [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]#[0.0005]#
-    latent_dim = np.linspace(start=10, stop=110, num=11, dtype=int)#[20]#
-    batch_size = [32, 64, 128, 256, 512]#[64]#
-    comb = ["mult", "sum", "rec"]#["mult"]#
+    window_size = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    epoch = [50, 100]
+    learning_rate = [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]
+    latent_dim = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    batch_size = [16, 32, 64, 128, 256, 512]
+    comb = ["mult", "sum", "rec"]
     
     print("before tuning for loops")
 
-    with concurrent.futures.ProcessPoolExecutor(max_workers=25) as executor:
-        for window in reversed(window_size):
-            for e in reversed(epoch):
-                for rate in reversed(learning_rate):
-                    for dim in reversed(latent_dim):
-                        for batch in reversed(batch_size):
-                            for c in reversed(comb):
-                                params = (X_scl, index, known_anomalies, window, e, rate, dim, batch, c) #pack
-                                executor.submit(tune, params)
+    for e in epoch:
+        for window in window_size:
+            for rate in learning_rate:
+                for dim in latent_dim:
+                    for batch in batch_size:
+                        for c in comb:
+                            try:
+                                tf.keras.backend.clear_session()
+                                params = (X_scl_train, X_scl_test, index_train, index_test, known_anomalies, window, e, rate, dim, batch, c) #pack
+                                tune(params)
+                            except Exception as ex:
+                                print(ex)
+                                print("PATLAK PARAMS: " + str((window, e, rate, dim, batch, c)))
 
     
 def tune(params):
     
-    (X_scl, index, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb) = params #unpack
+    (X_scl_train, X_scl_test, index_train, index_test, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb) = params #unpack
     print("before rolling window")
     
-    X_rws, y, X_index, y_index = rolling_window_sequences(X_scl, index, 
+    X_rws_train, y_train, X_index_train, y_index_train = rolling_window_sequences(X_scl_train, index_train, 
                                                       window_size=window_size, 
-                                                      target_size=51, 
+                                                      target_size=X_scl_train.shape[1], 
                                                       step_size=1,
-                                                      target_column=50)
+                                                      target_column=X_scl_train.shape[1]-1)
+    X_rws_test, y_test, X_index_test, y_index_test = rolling_window_sequences(X_scl_test, index_test, 
+                                                      window_size=window_size, 
+                                                      target_size=X_scl_test.shape[1], 
+                                                      step_size=1,
+                                                      target_column=X_scl_test.shape[1]-1)
     print("after rolling window")
     hyperparameters["epochs"] = epoch
-    
-    hyperparameters["shape"] = (window_size, 51) # based on the window size
-    hyperparameters["critic_x_input_shape"] = (window_size, 51)
-    hyperparameters["encoder_input_shape"] = (window_size, 51)
+
+    hyperparameters["shape"] = (window_size, X_rws_train.shape[2]) # based on the window size
+    hyperparameters["critic_x_input_shape"] = (window_size, X_rws_train.shape[2])
+    hyperparameters["encoder_input_shape"] = (window_size, X_rws_train.shape[2])
     hyperparameters["layers_generator"][1]["parameters"]["units"] = window_size//2
     hyperparameters["generator_reshape_shape"] = (window_size//2, 1)
     hyperparameters["layers_encoder"][0]["parameters"]["layer"]["parameters"]["units"] = window_size
     hyperparameters["layers_critic_z"][1]["parameters"]["units"] = window_size
     hyperparameters["layers_critic_z"][4]["parameters"]["units"] = window_size
-    
+
+    hyperparameters["optimizer"] = "keras.optimizers.Adam"
     hyperparameters["learning_rate"] = learning_rate
-    
+
     hyperparameters["latent_dim"] = latent_dim
     hyperparameters["generator_input_shape"] = (latent_dim, 1)
     hyperparameters["critic_z_input_shape"] = (latent_dim, 1)
     hyperparameters["encoder_reshape_shape"] = (latent_dim, 1)
     hyperparameters["layers_encoder"][2]["parameters"]["units"] = latent_dim
-    
+
     hyperparameters["batch_size"] = batch_size
     hyperparameters["layers_generator"][3]["parameters"]["layer"]["parameters"]["units"] = batch_size
     hyperparameters["layers_generator"][5]["parameters"]["layer"]["parameters"]["units"] = batch_size
@@ -233,50 +253,57 @@ def tune(params):
     hyperparameters["layers_critic_x"][3]["parameters"]["filters"] = batch_size
     hyperparameters["layers_critic_x"][6]["parameters"]["filters"] = batch_size
     hyperparameters["layers_critic_x"][9]["parameters"]["filters"] = batch_size
+
+    hyperparameters["layers_generator"][6]["parameters"]["layer"]["parameters"]["units"] = X_rws_train.shape[2]
+    hyperparameters["layers_critic_x"][-1]["parameters"]["units"] = X_rws_train.shape[2]
     
                     
     res = dict()
     res["window_size"] = window_size
-    res["batch_size"] = batch_size
     res["epoch"] = epoch
     res["learning_rate"] = learning_rate
     res["latent_dim"] = latent_dim
+    res["batch_size"] = batch_size
     res["comb"] = comb
 
 
     print("before tgan.fit")
     tgan = TadGAN(**hyperparameters)
-    tgan.fit(X_rws)
+    tgan.fit(X_rws_train)
     print("after tgan.fit")
     
-    X_hat, critic = tgan.predict(X_rws)
+    X_hat, critic = tgan.predict(X_rws_test)
 
     print("after tgan.predict")
-    error, true_index, true, pred = score_anomalies(X_rws, X_hat, critic, X_index, rec_error_type="dtw", comb=comb)
+    error, true_index, true, pred = score_anomalies(X_rws_test, X_hat, critic, X_index_test, rec_error_type="dtw", comb=comb)
     pred = np.array(pred).mean(axis=2)
     print("after score_anomalies")
     
     # find anomalies
-    intervals_window = find_anomalies(error, index, 
+    intervals_window = find_anomalies(error, index_test, 
                                window_size_portion=0.33, 
                                window_step_size_portion=0.1, 
                                fixed_threshold=True) # leave this part for now
+    if len(intervals_window) == 0:
+        return "NO ANOMALIES FOUND"
     print("after find_anomalies")
     anomalies_window = pd.DataFrame(intervals_window, columns=['start', 'end', 'score'])
     del anomalies_window["score"]
     
     score = 0
-    
+    overall_count = 0
     for ind in range(len(known_anomalies)):
         for i in range(known_anomalies["start"][ind], known_anomalies["end"][ind], 1000000000):
+            
+            overall_count += 1
             for j in range(len(anomalies_window)):
                 if anomalies_window["start"][j] <= i <= anomalies_window["end"][j]:
                     score += 1
                     
     print("after score calculation")
-    res["score"] = score
+    res["score"] = str(score) + " / " + str(overall_count)
 
-    with open('tuning/resultfile', 'a') as fout:
+    with open('grid_search/result', 'a') as fout:
         fout.write(json.dumps(str(os.getpid()) + "  " + str(list(res.values()))))
         fout.write("\n")
     
