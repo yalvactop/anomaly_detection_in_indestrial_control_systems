@@ -9012,4 +9012,156 @@ Epoch: 25/50, [Dx loss: [ 0.0408195  -0.03621719 -0.01802744  0.00950642]] [Dz l
 Epoch: 26/50, [Dx loss: [ 0.0394723  -0.03657069 -0.01669308  0.00927359]] [Dz loss: [ 0.6243963  -0.45855623  0.51320404  0.0569749 ]] [G loss: [ 0.2100726   0.01658045 -0.5140808   0.07075746]]
 Epoch: 27/50, [Dx loss: [ 0.04357086 -0.03389805 -0.016895    0.00943638]] [Dz loss: [ 0.62414527 -0.37609768  0.44455054  0.05556941]] [G loss: [ 0.27772626  0.01696092 -0.44577107  0.07065363]]
 Epoch: 28/50, [Dx loss: [ 0.04406511 -0.03370021 -0.01682324  0.00945886]] [Dz loss: [ 0.6311566  -0.1654158   0.21944487  0.05771246]] [G loss: [ 0.49612954  0.01688151 -0.21359277  0.06928416]]
-Epoch: 29/50, [Dx loss: [ 0.04599388 -0.03180848 -0.01787319  0.00956754]] [Dz loss: [ 0.640982   -0.25511408  0.32936364  0.05667357]] [G loss: [ 0.36662638  0.01781401 -0.32638636  0.06751968]]
+Epoch: 29/50, [Dx loss: [ 0.04599388 -0.03180848 -0.01787319  0.00956754]] [Dz loss: [ 0.640982   -0.25511408  0.32936364  0.05667357]] [G loss: [ 0.36662638  0.01781401 -0.32638636  0.06751968]]2021-12-21 19:19:46.015499: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:21:00.0
+2021-12-21 19:19:46.016675: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:41:00.0
+2021-12-21 19:19:46.016749: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-21 19:19:46.016764: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-21 19:19:46.016777: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-21 19:19:46.016790: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-21 19:19:46.016802: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-21 19:19:46.016816: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-21 19:19:46.016831: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-21 19:19:46.020124: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-21 19:19:46.020170: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-21 19:19:46.020177: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 1 
+2021-12-21 19:19:46.020182: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N N 
+2021-12-21 19:19:46.020185: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 1:   N N 
+2021-12-21 19:19:46.022624: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11455 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:21:00.0, compute capability: 6.1)
+2021-12-21 19:19:46.023685: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11507 MB memory) -> physical GPU (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:41:00.0, compute capability: 5.2)
+2021-12-21 19:20:01.586310: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-21 19:20:01.614377: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-21 19:20:01.649870: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-21 19:20:01.719162: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-21 19:20:01.945046: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-21 19:20:01.974054: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-21 19:20:01.997462: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-21 19:20:02.023027: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+
+Epoch: 30/50, [Dx loss: [ 0.04377562 -0.03353222 -0.01700969  0.00943172]] [Dz loss: [ 0.6370105  -0.04909392  0.1351248   0.05509783]] [G loss: [ 0.5486906   0.01705776 -0.13982145  0.06714529]]
+Epoch: 31/50, [Dx loss: [ 0.0418711  -0.03580066 -0.01508997  0.00927617]] [Dz loss: [ 0.6149114  -0.13319573  0.23254962  0.05155611]] [G loss: [ 0.4416415   0.01510536 -0.23715563  0.06636932]]
+Epoch: 32/50, [Dx loss: [ 0.04287552 -0.03538524 -0.01502938  0.009329  ]] [Dz loss: [ 0.5864461  -0.08137325  0.17386456  0.04939547]] [G loss: [ 0.49089822  0.01501565 -0.16814978  0.06440323]]
+Epoch: 33/50, [Dx loss: [ 0.04260027 -0.03267714 -0.0150045   0.00902815]] [Dz loss: [ 0.5743366   0.20179501 -0.11574829  0.04882913]] [G loss: [0.7588955  0.01496964 0.11384752 0.06300785]]
+Epoch: 34/50, [Dx loss: [ 0.04308672 -0.02921098 -0.01716983  0.0089468 ]] [Dz loss: [ 0.545953    0.3737117  -0.3051458   0.04773858]] [G loss: [0.94143677 0.01719438 0.3071509  0.06170923]]
+Epoch: 35/50, [Dx loss: [ 0.04486471 -0.02857028 -0.01717042  0.0090605 ]] [Dz loss: [ 0.5142145   0.5856491  -0.5369631   0.04655303]] [G loss: [1.1640215  0.01716316 0.53907686 0.06077813]]
+Epoch: 36/50, [Dx loss: [ 0.04589109 -0.02848187 -0.01635928  0.00907322]] [Dz loss: [ 0.5031659   0.7594741  -0.6984936   0.04421829]] [G loss: [1.3153958  0.01631588 0.70085055 0.05982303]]
+Epoch: 37/50, [Dx loss: [ 0.04674811 -0.02687989 -0.01624831  0.00898761]] [Dz loss: [ 0.502381    0.7489691  -0.67555577  0.04289661]] [G loss: [1.2821991  0.01622213 0.67461836 0.05913602]]
+Epoch: 38/50, [Dx loss: [ 0.04549561 -0.02569629 -0.01690732  0.00880997]] [Dz loss: [ 0.50444543  0.6704121  -0.5975073   0.04315386]] [G loss: [1.1977962  0.01692598 0.5998545  0.05810189]]
+Epoch: 39/50, [Dx loss: [ 0.04648324 -0.02489203 -0.01690793  0.00882833]] [Dz loss: [ 0.48693052  0.73768145 -0.6473552   0.03966078]] [G loss: [1.2363397  0.0169939  0.6517125  0.05676338]]
+Epoch: 40/50, [Dx loss: [ 0.04771201 -0.02367432 -0.0181795   0.00895657]] [Dz loss: [ 0.47076324  0.8134957  -0.7408326   0.03980979]] [G loss: [1.314831   0.01834805 0.7363569  0.0560123 ]]
+Epoch: 41/50, [Dx loss: [ 0.04760301 -0.02649938 -0.01559807  0.00896999]] [Dz loss: [ 0.46888614  0.6738651  -0.6104278   0.04054495]] [G loss: [1.1580472  0.01561314 0.60790473 0.05345303]]
+Epoch: 42/50, [Dx loss: [ 0.04809693 -0.02690556 -0.01449558  0.00894982]] [Dz loss: [ 0.4594653   0.9429304  -0.87982523  0.03963648]] [G loss: [1.4171505  0.01442733 0.8789806  0.05237403]]
+Epoch: 43/50, [Dx loss: [ 0.04955864 -0.02578478 -0.01531106  0.00906545]] [Dz loss: [ 0.4656036   0.9483646  -0.8649987   0.03822399]] [G loss: [1.3976548  0.01531162 0.8632036  0.05191368]]
+Epoch: 44/50, [Dx loss: [ 0.05039096 -0.02526635 -0.0143276   0.00899849]] [Dz loss: [ 0.44195637  0.8143662  -0.754683    0.03822681]] [G loss: [1.2734517  0.01418802 0.75405097 0.05052103]]
+Epoch: 45/50, [Dx loss: [ 0.04924672 -0.02517031 -0.01399905  0.00884159]] [Dz loss: [ 0.45498973  1.0842811  -1.0188682   0.03895808]] [G loss: [1.54242    0.01396275 1.0343295  0.04941263]]
+Epoch: 46/50, [Dx loss: [ 0.05172518 -0.02540306 -0.01341931  0.00905473]] [Dz loss: [ 0.43788993  0.929921   -0.8770473   0.03850193]] [G loss: [1.3800185  0.01331546 0.88212997 0.04845715]]
+Epoch: 47/50, [Dx loss: [ 0.0535176  -0.02670559 -0.01204701  0.00922702]] [Dz loss: [ 0.44223133  0.7338003  -0.65682495  0.03652579]] [G loss: [1.1516913  0.01206799 0.6598849  0.04797363]]
+Epoch: 48/50, [Dx loss: [ 0.05505893 -0.02666166 -0.01172201  0.00934425]] [Dz loss: [ 0.4323398   0.70788234 -0.6406478   0.03651133]] [G loss: [1.1104941  0.01185991 0.63052565 0.046811  ]]
+Epoch: 49/50, [Dx loss: [ 0.05707189 -0.02728468 -0.01083123  0.00951873]] [Dz loss: [ 0.43271944  0.9044789  -0.8474182   0.03756526]] [G loss: [1.3329746  0.01087944 0.85387576 0.04682164]]
+Epoch: 50/50, [Dx loss: [ 0.06046516 -0.02814213 -0.00909489  0.00977022]] [Dz loss: [ 0.4190739   0.72837627 -0.6772411   0.03679405]] [G loss: [1.1442097  0.00926138 0.6792391  0.04557101]]
+after tgan.fit
+after tgan.predict
+after score_anomalies
+before rolling window
+after rolling window
+before tgan.fit
+Epoch: 1/50, [Dx loss: [ 1.7397517  -0.10600381  0.06283864  0.17828976]] [Dz loss: [2.1052542  0.13541022 0.37367436 0.15961787]] [G loss: [ 2.8325772  -0.06283635 -0.36844593  0.32638592]]
+Epoch: 2/50, [Dx loss: [ 0.05354252 -0.14116226  0.06311221  0.01315933]] [Dz loss: [1.6429207  0.0882391  0.17997266 0.1374705 ]] [G loss: [ 1.7782261  -0.06309034 -0.17893198  0.20202526]]
+Epoch: 3/50, [Dx loss: [ 0.02534008 -0.13598047  0.03254693  0.01287742]] [Dz loss: [ 1.4560386   0.1993134  -0.13776945  0.13945039]] [G loss: [ 1.8311522  -0.03252975  0.14566371  0.17180146]]
+Epoch: 4/50, [Dx loss: [ 0.03602054 -0.13514625  0.04513917  0.01260269]] [Dz loss: [1.5970538  0.21364358 0.1506209  0.12327844]] [G loss: [ 1.3106294  -0.04517053 -0.1480131   0.15038128]]
+Epoch: 5/50, [Dx loss: [ 0.03449918 -0.12695482  0.0334153   0.01280393]] [Dz loss: [1.3521286  0.01928702 0.07854982 0.12542945]] [G loss: [ 1.3103107  -0.03341192 -0.08182501  0.14255495]]
+Epoch: 6/50, [Dx loss: [ 0.10326972 -0.11879911  0.02395187  0.01981168]] [Dz loss: [ 1.2443908  -0.1704662   0.25920182  0.11556525]] [G loss: [ 1.0777335  -0.02397692 -0.26488763  0.13665995]]
+Epoch: 7/50, [Dx loss: [ 0.05336394 -0.10920347  0.01655462  0.0146012 ]] [Dz loss: [ 1.1467417  -0.48445868  0.4980884   0.11331082]] [G loss: [ 0.8044432  -0.01656829 -0.49610943  0.13171263]]
+Epoch: 8/50, [Dx loss: [ 0.04373312 -0.0986226   0.00856743  0.0133789 ]] [Dz loss: [ 1.2341301  -0.09231423  0.28438383  0.10420601]] [G loss: [ 1.0063258  -0.00854923 -0.2860389   0.13009137]]
+Epoch: 9/50, [Dx loss: [ 0.04280775 -0.08856276  0.00296796  0.01284024]] [Dz loss: [ 1.0866594  -0.34358305  0.3886994   0.1041546 ]] [G loss: [ 0.8533268  -0.00294483 -0.387616    0.12438872]]
+Epoch: 10/50, [Dx loss: [ 0.04413512 -0.06936473 -0.01457381  0.01280739]] [Dz loss: [ 1.0564176  -0.49057755  0.49951583  0.10474742]] [G loss: [ 0.7120558   0.01460144 -0.5009634   0.11984191]]
+Epoch: 11/50, [Dx loss: [ 0.04450765 -0.04438026 -0.03578876  0.01246773]] [Dz loss: [ 0.95163226 -0.4356423   0.4225224   0.0964756 ]] [G loss: [ 0.7713065   0.0358417  -0.41629702  0.11517635]]
+Epoch: 12/50, [Dx loss: [ 0.04200116 -0.0329086  -0.04329604  0.0118206 ]] [Dz loss: [ 1.0186325  -0.32048452  0.3763784   0.0962741 ]] [G loss: [ 0.7703202   0.0431856  -0.37492362  0.11020614]]
+Epoch: 13/50, [Dx loss: [ 0.04633171 -0.01991285 -0.05313024  0.01193749]] [Dz loss: [ 0.8927458  -0.4673569   0.43631616  0.09237864]] [G loss: [ 0.676196    0.05311663 -0.4394294   0.10625122]]
+Epoch: 14/50, [Dx loss: [ 0.04522271 -0.01058726 -0.06138806  0.01171979]] [Dz loss: [ 0.9097641  -0.51312065  0.5023043   0.09205785]] [G loss: [ 0.6117693   0.06143527 -0.50023144  0.10505638]]
+Epoch: 15/50, [Dx loss: [ 0.04697308  0.00292021 -0.07344519  0.0117498 ]] [Dz loss: [ 0.8593937  -0.6531559   0.60992134  0.09026307]] [G loss: [ 0.47237396  0.07345078 -0.6181375   0.10170616]]
+Epoch: 16/50, [Dx loss: [ 0.04398923  0.01266603 -0.08236922  0.0113692 ]] [Dz loss: [ 0.86038053 -0.70832735  0.69644153  0.08722682]] [G loss: [ 0.3692286   0.08227272 -0.6902342   0.09771903]]
+Epoch: 17/50, [Dx loss: [ 0.04063503  0.00934258 -0.07876217  0.01100556]] [Dz loss: [ 0.8541246  -0.6100633   0.6010817   0.08631116]] [G loss: [ 0.44767848  0.07879033 -0.6015644   0.09704533]]
+Epoch: 18/50, [Dx loss: [ 0.03746849  0.00612758 -0.07494367  0.01062845]] [Dz loss: [ 0.7784463  -0.7802039   0.7339508   0.08246959]] [G loss: [ 0.3014294   0.07489853 -0.73216033  0.09586886]]
+Epoch: 19/50, [Dx loss: [ 0.03514397  0.01216276 -0.08276813  0.01057495]] [Dz loss: [ 0.8034042  -0.5121634   0.52373695  0.07918276]] [G loss: [ 0.4962899   0.08276795 -0.523563    0.09370856]]
+Epoch: 20/50, [Dx loss: [ 0.03542503  0.01743042 -0.08595869  0.01039537]] [Dz loss: [ 0.77008474 -0.48640358  0.502273    0.07542143]] [G loss: [ 0.50518715  0.08592593 -0.49837902  0.09176401]]
+Epoch: 21/50, [Dx loss: [ 0.03314655  0.01396209 -0.08447037  0.01036549]] [Dz loss: [ 0.7532349  -0.61488754  0.6276779   0.07404433]] [G loss: [ 0.38855475  0.08449321 -0.61929     0.0923351 ]]2021-12-23 02:08:13.462766: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:21:00.0
+2021-12-23 02:08:13.463895: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:41:00.0
+2021-12-23 02:08:13.463970: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-23 02:08:13.463986: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-23 02:08:13.464001: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-23 02:08:13.464016: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-23 02:08:13.464030: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-23 02:08:13.464045: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-23 02:08:13.464059: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-23 02:08:13.467279: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-23 02:08:13.467326: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-23 02:08:13.467333: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 1 
+2021-12-23 02:08:13.467338: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N N 
+2021-12-23 02:08:13.467342: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 1:   N N 
+2021-12-23 02:08:13.469808: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11455 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:21:00.0, compute capability: 6.1)
+2021-12-23 02:08:13.470868: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11507 MB memory) -> physical GPU (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:41:00.0, compute capability: 5.2)
+2021-12-23 02:08:28.943682: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-23 02:08:28.971912: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-23 02:08:29.007498: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-23 02:08:29.076368: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-23 02:08:29.302227: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-23 02:08:29.330895: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-23 02:08:29.354324: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-23 02:08:29.379868: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+
+Epoch: 22/50, [Dx loss: [ 0.03605438  0.01551562 -0.0819173   0.01024567]] [Dz loss: [ 0.7887244  -0.76785403  0.82434446  0.07322314]] [G loss: [ 0.1671318   0.08189008 -0.8228785   0.09081188]]
+Epoch: 23/50, [Dx loss: [ 0.03006118  0.01303851 -0.08332972  0.01003528]] [Dz loss: [ 0.7846022  -0.71009755  0.8316564   0.06630464]] [G loss: [ 0.1340347   0.08340339 -0.83392984  0.08845616]]
+Epoch: 24/50, [Dx loss: [ 0.0303783   0.01954691 -0.08630711  0.00971385]] [Dz loss: [ 0.7844749  -0.53619725  0.6123731   0.0708302 ]] [G loss: [ 0.34532595  0.08625524 -0.6101658   0.08692356]]
+Epoch: 25/50, [Dx loss: [ 0.02662288  0.01873654 -0.08813796  0.00960241]] [Dz loss: [ 0.73290217 -0.8726336   0.9271664   0.06783714]] [G loss: [ 0.02820669  0.08819906 -0.9290592   0.08690672]]
+Epoch: 26/50, [Dx loss: [ 0.02556585  0.02011763 -0.08840252  0.00938506]] [Dz loss: [ 0.71093994 -0.75554717  0.797921    0.06685618]] [G loss: [ 0.14749609  0.08845692 -0.7962525   0.08552942]]
+Epoch: 27/50, [Dx loss: [ 0.02703073  0.02164078 -0.08635811  0.00917486]] [Dz loss: [ 0.7298604  -0.7051119   0.7764433   0.06585274]] [G loss: [ 0.15529643  0.08638966 -0.77368367  0.08425892]]
+Epoch: 28/50, [Dx loss: [ 0.02232522  0.01859415 -0.08595026  0.00896809]] [Dz loss: [ 0.6971145  -0.6651142   0.6981432   0.06640843]] [G loss: [ 0.21386205  0.08610131 -0.69559777  0.08233576]]
+Epoch: 29/50, [Dx loss: [ 0.02694331  0.02677431 -0.08876371  0.00889326]] [Dz loss: [ 0.66999686 -0.64651066  0.69431764  0.06221895]] [G loss: [ 0.20862082  0.08878516 -0.6948114   0.08146472]]
+Epoch: 30/50, [Dx loss: [ 0.02325566  0.02278245 -0.08850691  0.00889803]] [Dz loss: [ 0.63911694 -0.50187576  0.5306437   0.06103496]] [G loss: [ 0.36053675  0.08848102 -0.5282326   0.08002864]]
+Epoch: 31/50, [Dx loss: [ 0.02725759  0.02916489 -0.09110087  0.00891939]] [Dz loss: [ 0.65178144 -0.37281772  0.41272372  0.06118742]] [G loss: [ 0.4723482   0.09105424 -0.41378415  0.07950787]]
+Epoch: 32/50, [Dx loss: [ 0.02485856  0.02942684 -0.09367532  0.00891076]] [Dz loss: [ 0.6333202  -0.34619126  0.34134847  0.06381658]] [G loss: [ 0.5289421   0.0936807  -0.3436555   0.07789163]]
+Epoch: 33/50, [Dx loss: [ 0.0243202   0.0297273  -0.09361956  0.00882126]] [Dz loss: [ 0.6389367  -0.20289797  0.28126854  0.05605669]] [G loss: [ 0.57947516  0.09371411 -0.28120425  0.07669672]]
+Epoch: 34/50, [Dx loss: [ 0.02606387  0.03232304 -0.09443659  0.0088177 ]] [Dz loss: [ 0.62352765 -0.35907328  0.3842925   0.05983054]] [G loss: [ 0.47251448  0.0943178  -0.38093752  0.07591353]]
+Epoch: 35/50, [Dx loss: [ 0.02465347  0.0322488  -0.09517778  0.00875823]] [Dz loss: [ 0.6573776  -0.12501778  0.19473772  0.0587659 ]] [G loss: [ 0.6373235   0.09514929 -0.19432747  0.0736501 ]]
+Epoch: 36/50, [Dx loss: [ 0.02551715  0.03169206 -0.09251905  0.00863443]] [Dz loss: [ 0.6304878   0.1282796  -0.06058858  0.05627957]] [G loss: [0.88297224 0.09255966 0.0653092  0.07251019]]
+Epoch: 37/50, [Dx loss: [ 0.02334896  0.02802702 -0.08938807  0.00847095]] [Dz loss: [ 0.60849625  0.43998745 -0.3825526   0.05510625]] [G loss: [1.2060431  0.08927921 0.39394468 0.07228186]]
+Epoch: 38/50, [Dx loss: [ 0.0264062   0.03218195 -0.09053791  0.00847617]] [Dz loss: [ 0.60235167  0.6786121  -0.6884141   0.06121548]] [G loss: [1.4993252  0.09058381 0.69231975 0.07164199]]
+Epoch: 39/50, [Dx loss: [ 0.02706567  0.03590398 -0.09439389  0.00855555]] [Dz loss: [ 0.55149156  0.9177089  -0.91756505  0.05513449]] [G loss: [1.7129309  0.0944089  0.920449   0.06980745]]
+Epoch: 40/50, [Dx loss: [ 0.0260459   0.03120898 -0.08914194  0.00839787]] [Dz loss: [ 0.56624997  1.0395079  -1.0297637   0.05565019]] [G loss: [1.8253372  0.08917333 1.0267074  0.07094599]]
+Epoch: 41/50, [Dx loss: [ 0.02537508  0.02782803 -0.08534361  0.00828904]] [Dz loss: [ 0.5101633   1.1770912  -1.1838431   0.05169142]] [G loss: [1.9739457  0.0852557  1.1823559  0.07063315]]
+Epoch: 42/50, [Dx loss: [ 0.02848884  0.03866554 -0.09518706  0.00850111]] [Dz loss: [ 0.63632554  1.2496787  -1.1408591   0.05275052]] [G loss: [1.9355047  0.09509236 1.1432395  0.06971737]]
+Epoch: 43/50, [Dx loss: [ 0.02623484  0.03711188 -0.09615845  0.0085282 ]] [Dz loss: [ 0.5800102   1.2273887  -1.20311     0.05557293]] [G loss: [1.9846255  0.09617482 1.2015579  0.06868911]]
+Epoch: 44/50, [Dx loss: [ 0.02492368  0.03538348 -0.09546655  0.00850066]] [Dz loss: [ 0.5810929   1.3532664  -1.3073083   0.05351374]] [G loss: [2.0881214  0.09552813 1.3103955  0.06821971]]
+Epoch: 45/50, [Dx loss: [ 0.02605548  0.03405416 -0.09256845  0.00845698]] [Dz loss: [ 0.5531429  1.2548548 -1.2573019  0.0555592]] [G loss: [2.0208192  0.09253648 1.2561411  0.06721447]]
+Epoch: 46/50, [Dx loss: [ 0.02720457  0.03425197 -0.09015385  0.00831066]] [Dz loss: [ 0.5348801   1.169137   -1.1880993   0.05538394]] [G loss: [1.9300601  0.09027062 1.1753343  0.06644571]]
+Epoch: 47/50, [Dx loss: [ 0.02559816  0.02836807 -0.08680269  0.0084033 ]] [Dz loss: [ 0.5264444   1.4084018  -1.4298084   0.05478453]] [G loss: [2.1700218  0.08685898 1.4266274  0.06565311]]
+Epoch: 48/50, [Dx loss: [ 0.02892875  0.03570278 -0.08942346  0.00826492]] [Dz loss: [ 0.51821727  1.455861   -1.4507046   0.05130604]] [G loss: [2.192672   0.08940686 1.4443129  0.06589536]]
+Epoch: 49/50, [Dx loss: [ 0.02821425  0.03863576 -0.0933798   0.00829582]] [Dz loss: [ 0.5148044   1.4687728  -1.4791235   0.05251553]] [G loss: [2.2227333  0.09338937 1.4755356  0.06538038]]
+Epoch: 50/50, [Dx loss: [ 0.02786578  0.03881488 -0.09377915  0.00828303]] [Dz loss: [ 0.545718    1.65611    -1.6285176   0.05181199]] [G loss: [2.3684115  0.09380551 1.6386875  0.06359224]]
+after tgan.fit
+after tgan.predict
+after score_anomalies
+before rolling window
+after rolling window
+before tgan.fit
+Epoch: 1/50, [Dx loss: [ 1.0489718  -0.00207004 -0.00543382  0.10564753]] [Dz loss: [ 2.1712708  -1.1495037   1.5439969   0.17767659]] [G loss: [ 1.7646846   0.00543794 -1.5321766   0.32914197]]
+Epoch: 2/50, [Dx loss: [ 0.12360723 -0.03224356  0.00175833  0.0154093 ]] [Dz loss: [ 3.522914  -0.7644558  2.6649706  0.1622383]] [G loss: [-5.7161564e-01 -1.7381457e-03 -2.6673207e+00  2.0974432e-01]]
+Epoch: 3/50, [Dx loss: [ 0.07729001 -0.09275728  0.01016747  0.0159879 ]] [Dz loss: [ 2.2167215  -0.24730325  0.9741118   0.14899015]] [G loss: [ 1.0087069  -0.01020271 -0.96046305  0.1979362 ]]
+Epoch: 4/50, [Dx loss: [ 0.04200301 -0.1172149   0.02110968  0.01381081]] [Dz loss: [ 1.5781518   0.72563326 -0.70891595  0.15614305]] [G loss: [ 2.4437275  -0.02110484  0.70875436  0.17560837]]
+Epoch: 5/50, [Dx loss: [ 0.04684126 -0.11214309  0.03101333  0.01279708]] [Dz loss: [ 1.5195165   0.71798295 -0.10545117  0.09069785]] [G loss: [ 1.5970862  -0.03102787  0.10594298  0.15221712]]
+Epoch: 6/50, [Dx loss: [ 0.03864359 -0.10054013  0.01115769  0.01280255]] [Dz loss: [ 1.1614487   0.45331147 -0.06344584  0.0771585 ]] [G loss: [ 1.4341655  -0.0111752   0.06440989  0.13809328]]
+Epoch: 7/50, [Dx loss: [ 0.01797357 -0.09838964  0.00326456  0.01130982]] [Dz loss: [ 1.0319102   0.36718243 -0.07921162  0.07439388]] [G loss: [ 1.4306562  -0.00327828  0.07555217  0.13583815]]
+Epoch: 8/50, [Dx loss: [ 0.01048747 -0.09525638 -0.00163415  0.01073781]] [Dz loss: [ 0.9550299   0.37931055 -0.12138197  0.06971026]] [G loss: [1.4383664  0.00159718 0.12075426 0.13160144]]
+Epoch: 9/50, [Dx loss: [ 0.01398773 -0.09152971 -0.00014177  0.01056598]] [Dz loss: [ 0.8983941   0.59238434 -0.31746033  0.06234704]] [G loss: [1.5562736e+00 6.2194202e-05 3.1789118e-01 1.2383215e-01]]
+Epoch: 10/50, [Dx loss: [ 0.01471708 -0.09126449  0.00470137  0.01012803]] [Dz loss: [ 0.8800096   0.68334955 -0.42443174  0.06210926]] [G loss: [ 1.6115751  -0.0047684   0.42464682  0.11916959]]
+Epoch: 11/50, [Dx loss: [ 0.01183276 -0.09185673  0.00590412  0.00977858]] [Dz loss: [ 0.8281078   0.75293165 -0.50955987  0.05847357]] [G loss: [ 1.6598215  -0.00582276  0.50754195  0.11581051]]
+Epoch: 12/50, [Dx loss: [ 0.0144984  -0.0913949   0.00823535  0.00976576]] [Dz loss: [ 0.822555    0.8253957  -0.5831465   0.05803126]] [G loss: [ 1.6870079  -0.00820422  0.5814318   0.11137821]]
+Epoch: 13/50, [Dx loss: [ 0.01419408 -0.09184054  0.01027343  0.00957607]] [Dz loss: [ 0.73752624  0.89990926 -0.7093548   0.05469713]] [G loss: [ 1.7601281  -0.01022095  0.7063165   0.10640314]]

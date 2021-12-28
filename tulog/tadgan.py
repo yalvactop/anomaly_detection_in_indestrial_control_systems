@@ -18,6 +18,7 @@ from scipy import stats
 
 #from orion.primitives.timeseries_errors import reconstruction_errors
 from timeseries_errors import reconstruction_errors
+from tensorflow.keras.utils import plot_model
 
 import os
 
@@ -116,6 +117,7 @@ class TadGAN(object):
         #print(Model(x, model(x)).__dict__)
         #print()
         #print()
+        
         return Model(x, model(x))
 
     def _wasserstein_loss(self, y_true, y_pred):
@@ -250,6 +252,13 @@ class TadGAN(object):
                                                    'mse'], optimizer=self.optimizer,
                                              loss_weights=[1, 1, 10])
         
+        plot_model(self.encoder_generator_model, 'encoder_generator_model.png', show_shapes=True)
+        plot_model(self.critic_z_model, 'critic_z_model.png', show_shapes=True)
+        plot_model(self.critic_x_model, 'critic_x_model.png', show_shapes=True)
+        plot_model(self.encoder, 'encoder.png', show_shapes=True)
+        plot_model(self.generator, 'generator.png', show_shapes=True)
+        plot_model(self.critic_x, 'critic_x.png', show_shapes=True)
+        plot_model(self.critic_z, 'critic_z.png', show_shapes=True)
         
         #os.system("nvidia-smi")
         #print("Results After Compile")  

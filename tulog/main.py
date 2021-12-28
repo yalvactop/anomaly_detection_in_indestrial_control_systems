@@ -164,17 +164,17 @@ def main():
     del df_train["Normal/Attack"]  
     del df_test["Normal/Attack"]                                  #CHANGE THIS!!!
 
-    print("Before time segment train")
+    
     X_tsa_train, index_train = time_segments_aggregate(df_train, interval=1000000000, time_column='timestamp')
-    print("Before time segment test")
+    
     X_tsa_test, index_test = time_segments_aggregate(df_test, interval=1000000000, time_column='timestamp')
 
-    print("Before imputer")
+    
     imp = SimpleImputer()
     X_imp_train = imp.fit_transform(X_tsa_train)
     X_imp_test = imp.fit_transform(X_tsa_test)
 
-    print("Before minmax scaler")
+    
     scaler = MinMaxScaler(feature_range=(-1, 1)) ## for the gradients to converge faster
     X_scl_train = scaler.fit_transform(X_imp_train)
     X_scl_test = scaler.fit_transform(X_imp_test)
@@ -191,9 +191,9 @@ def main():
     learning_rate = [0.00001, 0.00005, 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]
     latent_dim = [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     batch_size = [16, 32, 64, 128, 256, 512]
-    comb = ["mult", "sum", "rec"]
+    comb = ["mult"]#, "sum", "rec"]
     
-    print("before tuning for loops")
+    
 
     for e in epoch:
         for window in window_size:
@@ -213,7 +213,11 @@ def main():
 def tune(params):
     
     (X_scl_train, X_scl_test, index_train, index_test, known_anomalies, window_size, epoch, learning_rate, latent_dim, batch_size, comb) = params #unpack
-    print("before rolling window")
+    print("TUNE WITH: ", str((window_size, epoch, learning_rate, latent_dim, batch_size, comb)))
+    
+    with open('grid_search/result', 'a') as fout:
+        fout.write("TUNE WITH: " + str((window_size, epoch, learning_rate, latent_dim, batch_size, comb)))
+        fout.write("\n")
     
     X_rws_train, y_train, X_index_train, y_index_train = rolling_window_sequences(X_scl_train, index_train, 
                                                       window_size=window_size, 
@@ -225,7 +229,7 @@ def tune(params):
                                                       target_size=X_scl_test.shape[1], 
                                                       step_size=1,
                                                       target_column=X_scl_test.shape[1]-1)
-    print("after rolling window")
+    
     hyperparameters["epochs"] = epoch
 
     hyperparameters["shape"] = (window_size, X_rws_train.shape[2]) # based on the window size
@@ -267,17 +271,17 @@ def tune(params):
     res["comb"] = comb
 
 
-    print("before tgan.fit")
+    
     tgan = TadGAN(**hyperparameters)
     tgan.fit(X_rws_train)
-    print("after tgan.fit")
+    
     
     X_hat, critic = tgan.predict(X_rws_test)
 
-    print("after tgan.predict")
+    
     error, true_index, true, pred = score_anomalies(X_rws_test, X_hat, critic, X_index_test, rec_error_type="dtw", comb=comb)
     pred = np.array(pred).mean(axis=2)
-    print("after score_anomalies")
+    
     
     # find anomalies
     intervals_window = find_anomalies(error, index_test, 
@@ -286,7 +290,7 @@ def tune(params):
                                fixed_threshold=True) # leave this part for now
     if len(intervals_window) == 0:
         return "NO ANOMALIES FOUND"
-    print("after find_anomalies")
+    
     anomalies_window = pd.DataFrame(intervals_window, columns=['start', 'end', 'score'])
     del anomalies_window["score"]
     
@@ -300,7 +304,8 @@ def tune(params):
                 if anomalies_window["start"][j] <= i <= anomalies_window["end"][j]:
                     score += 1
                     
-    print("after score calculation")
+    
+    print(str(score) + " / " + str(overall_count))
     res["score"] = str(score) + " / " + str(overall_count)
 
     with open('grid_search/result', 'a') as fout:
