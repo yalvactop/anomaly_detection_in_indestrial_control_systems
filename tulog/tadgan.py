@@ -252,13 +252,13 @@ class TadGAN(object):
                                                    'mse'], optimizer=self.optimizer,
                                              loss_weights=[1, 1, 10])
         
-        plot_model(self.encoder_generator_model, 'encoder_generator_model.png', show_shapes=True)
-        plot_model(self.critic_z_model, 'critic_z_model.png', show_shapes=True)
-        plot_model(self.critic_x_model, 'critic_x_model.png', show_shapes=True)
-        plot_model(self.encoder, 'encoder.png', show_shapes=True)
-        plot_model(self.generator, 'generator.png', show_shapes=True)
-        plot_model(self.critic_x, 'critic_x.png', show_shapes=True)
-        plot_model(self.critic_z, 'critic_z.png', show_shapes=True)
+#         plot_model(self.encoder_generator_model, 'encoder_generator_model.png', show_shapes=True)
+#         plot_model(self.critic_z_model, 'critic_z_model.png', show_shapes=True)
+#         plot_model(self.critic_x_model, 'critic_x_model.png', show_shapes=True)
+#         plot_model(self.encoder, 'encoder.png', show_shapes=True)
+#         plot_model(self.generator, 'generator.png', show_shapes=True)
+#         plot_model(self.critic_x, 'critic_x.png', show_shapes=True)
+#         plot_model(self.critic_z, 'critic_z.png', show_shapes=True)
         
         #os.system("nvidia-smi")
         #print("Results After Compile")  
@@ -343,7 +343,7 @@ class TadGAN(object):
         
     def save_model(self, epoch):
         self.critic_x_model.save("criticx_"+epoch)
-        self.critic_z_model.save("criticz"+epoch)
+        self.critic_z_model.save("criticz_"+epoch)
         self.generator.save("generator"+epoch)
         self.encoder.save("encoder"+epoch)
         self.critic_x.save("critic_x"+epoch)
