@@ -292,7 +292,7 @@ def run_tadgan(df_train, df_test_init, techniques):
 
     for ind in range(len(known_anomalies)):
         plt.axvspan(known_anomalies["start"][ind], known_anomalies["end"][ind], color='red', alpha=0.5)
-    for ind in range(len(intervals_window)):
+    for ind in range(len(anomalies_window)):
         plt.axvspan(anomalies_window["start"][ind], anomalies_window["end"][ind], color='blue', alpha=0.5)
 
     plt.savefig('tuning/output_window_size-' + str(window_size) + "_" + techniques + '_epoch-' + str(epoch) + '_learning_rate-0.0005_latent_dim-' + str(latent_dim) + '_batch_size-512_comb-mult.png')

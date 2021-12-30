@@ -25,8 +25,11 @@ def swat(seq_length, seq_step, num_signals, randomize=False):
     """ Load and serialise """
     train = np.load('./data/swat.npy')
     print('Loaded swat from .npy')
-    # train = np.loadtxt(open('./data/swat.csv'), delimiter=',')
-    # print('Loaded swat from .csv')
+#     train = np.loadtxt(open('./data/swat.csv'), delimiter=',')
+#     print('Loaded swat from .csv')
+    train = train[:,1:] # get rid of the time column
+    print("SHAPE: ", train.shape)
+    print("m=496800, n=52")
     m, n = train.shape # m=496800, n=52
     for i in range(n - 1):
         A = max(train[:, i])
@@ -144,8 +147,12 @@ def swat_test(seq_length, seq_step, num_signals, randomize=False):
     """ Load and serialise """
     test = np.load('./data/swat_a.npy')
     print('Loaded swat_a from .npy')
-    # test = np.loadtxt(open('./data/swat_a.csv'), delimiter=',')
-    # print('Loaded swat_a from .csv')
+#     test = np.loadtxt(open('./data/swat_a.csv'), delimiter=',')
+#     print('Loaded swat_a from .csv')
+
+    test = test[:,1:] #get rid of the time column
+    print("SHAPE: ", test.shape)
+    print("m1=449919, n1=52")
     m, n = test.shape  # m1=449919, n1=52
     for i in range(n - 1):
         B = max(test[:, i])

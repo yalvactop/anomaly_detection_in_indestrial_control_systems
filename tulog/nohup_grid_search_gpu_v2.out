@@ -2896,4 +2896,85 @@ Epoch: 40/50, [Dx loss: [ 0.0577621   0.07255337 -0.11490624  0.01001148]] [Dz l
 Epoch: 41/50, [Dx loss: [ 0.05748735  0.07560898 -0.11630801  0.00981863]] [Dz loss: [ 0.46765074 -0.12303176  0.2003235   0.03903589]] [G loss: [ 0.48671973  0.11621536 -0.19929175  0.05697965]]
 Epoch: 42/50, [Dx loss: [ 0.05553412  0.07417545 -0.11579385  0.00971529]] [Dz loss: [ 0.43605286 -0.16953495  0.18542297  0.0420165 ]] [G loss: [ 0.4923327   0.11577515 -0.18292244  0.05594811]]
 Epoch: 43/50, [Dx loss: [ 0.05841209  0.07981057 -0.11973766  0.00983392]] [Dz loss: [ 0.44533432 -0.12737362  0.17209437  0.04006126]] [G loss: [ 0.5160817   0.11982152 -0.16855793  0.0564818 ]]
-Epoch: 44/50, [Dx loss: [ 0.05200431  0.07735895 -0.11943841  0.0094084 ]] [Dz loss: [ 0.46921968 -0.16817226  0.24813724  0.03892561]] [G loss: [ 0.43553433  0.11941197 -0.2485966   0.05647192]]
+Epoch: 44/50, [Dx loss: [ 0.05200431  0.07735895 -0.11943841  0.0094084 ]] [Dz loss: [ 0.46921968 -0.16817226  0.24813724  0.03892561]] [G loss: [ 0.43553433  0.11941197 -0.2485966   0.05647192]]2021-12-30 11:26:50.193619: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:21:00.0
+2021-12-30 11:26:50.194731: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.076
+pciBusID: 0000:41:00.0
+2021-12-30 11:26:50.194814: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-12-30 11:26:50.194830: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-12-30 11:26:50.194843: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-12-30 11:26:50.194856: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-12-30 11:26:50.194868: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-12-30 11:26:50.194880: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-12-30 11:26:50.194894: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-30 11:26:50.198293: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0, 1
+2021-12-30 11:26:50.198339: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-30 11:26:50.198346: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 1 
+2021-12-30 11:26:50.198352: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N N 
+2021-12-30 11:26:50.198356: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 1:   N N 
+2021-12-30 11:26:50.200808: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11455 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:21:00.0, compute capability: 6.1)
+2021-12-30 11:26:50.201880: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11507 MB memory) -> physical GPU (device: 1, name: GeForce GTX TITAN X, pci bus id: 0000:41:00.0, compute capability: 5.2)
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+/home/top/.pyenv/versions/3.7.12/lib/python3.7/site-packages/keras/engine/training.py:297: UserWarning: Discrepancy between trainable weights and collected trainable weights, did you set `model.trainable` without calling `model.compile` after ?
+  'Discrepancy between trainable weights and collected trainable'
+2021-12-30 11:27:06.855931: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-30 11:27:06.888237: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-30 11:27:06.929733: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] layout failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-30 11:27:07.008130: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] model_pruner failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-30 11:27:07.262728: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] remapper failed: Invalid argument: MutableGraphView::MutableGraphView error: node 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat' has self cycle fanin 'loss_2/model_2_loss/mean_squared_error/weighted_loss/concat'.
+2021-12-30 11:27:07.296447: E tensorflow/core/grappler/optimizers/meta_optimizer.cc:533] arithmetic_optimizer failed: Invalid argument: The graph couldn't be sorted in topological order.
+2021-12-30 11:27:07.323079: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 0, topological sort failed with message: The graph couldn't be sorted in topological order.
+2021-12-30 11:27:07.352428: E tensorflow/core/grappler/optimizers/dependency_optimizer.cc:697] Iteration = 1, topological sort failed with message: The graph couldn't be sorted in topological order.
